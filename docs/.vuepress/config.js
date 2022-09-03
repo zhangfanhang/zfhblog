@@ -26,20 +26,9 @@ module.exports = {
     search: false,
     sidebarDepth: 2,
     lastUpdated: '上次更新',
-    logo: '/logo.png',
+    logo: '/logo.jpg',
   },
   plugins: [
-    // 动态标题展示
-    [
-      'dynamic-title',
-      {
-        showIcon: '/favicon.ico',
-        showText: '好孩子真听话~~',
-        hideIcon: '/favicon.ico',
-        hideText: '不要摸鱼快来学习~',
-        recoverTime: 2000,
-      },
-    ],
     // 平滑滚动
     'vuepress-plugin-smooth-scroll',
     // 代码复制

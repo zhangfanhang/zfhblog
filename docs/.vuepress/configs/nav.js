@@ -257,8 +257,8 @@ module.exports = [
    * 数据结构与算法
    */
   {
-    text: '数据结构算法',
-    link: '/数据结构算法/时间空间复杂度',
+    text: '算法',
+    link: '/算法/时间空间复杂度',
   },
   /**
    * 杂记
@@ -281,4 +281,48 @@ module.exports = [
     text: '博客',
     link: '/博客/初来南京',
   },
+  /**
+   * 项目
+   */
+  {
+    text:'项目',
+    items:[
+
+      {
+        text:'Vue',
+        items:[
+          {
+            text:'todolist',
+            link:'https://todo.zfhblog.top'
+          },
+          {
+            text:'Vue3 admin',
+            link:'https://v3admin.zfhblog.top'
+          },
+          {
+            text:'生鲜到家',
+            link:'https://fresh.zfhblog.top'
+          },
+          {
+            text:'外卖数据可视化',
+            link:'https://datav.zfhblog.top'
+          }
+        ]
+      },
+      {
+        text:'其他',
+        items:[
+          {
+            text:'泛家居',
+            link:'https://fanjiaju.zfhblog.top'
+          },
+          {
+            text:'demo',
+            link:'https://demo.zfhblog.top'
+          }
+        ]
+      }
+
+    ]
+  }
 ]
