@@ -1,13 +1,13 @@
 ---
-title:iterm2
+title: iterm2
 date: 2022/09/05 08:36:15
 ---
 
-iterm2 替换mac系统自带终端配合ohmyZsh 打造个性终端
+iterm2 替换 mac 系统自带终端配合 ohmyZsh 打造个性终端
 
 [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 
-## 安装ohmyzsh
+## 安装 ohmyzsh
 
 1. 安装：
 
@@ -18,7 +18,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 2. 修改主题：
 
 ```
-ZSH_THEME="agnoster" 
+ZSH_THEME="agnoster"
 ```
 
 3. 安装主题需要`powerline`字体：
@@ -34,7 +34,7 @@ cd ..
 rm -rf fonts
 ```
 
-在iterm，vscode等软件添加后缀带有`powerline`的字体
+在 iterm，vscode 等软件添加后缀带有`powerline`的字体
 
 然后可以删除其他字体,在用户文件下的`Fonts`文件夹保留你要使用的字体，删除其他你不需要使用的字体
 
@@ -42,7 +42,7 @@ rm -rf fonts
 
 ```shell
 # powerline fonts
-sudo chmod 777 ./uninstall.sh 
+sudo chmod 777 ./uninstall.sh
 ```
 
 原来的`.zshrc`将重命名为`.zshrc .pre-oh-my-zsh `。在安装之后，你可以将你原来的终端配置移到新的`.zshrc`中
