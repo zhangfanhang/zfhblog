@@ -1,5 +1,8 @@
 // 导航栏配置
 module.exports = [
+  /**
+   * 首页
+   */
   {
     text: '首页',
     link: '/',
@@ -221,6 +224,10 @@ module.exports = [
             text: 'Docker',
             link: '/开发工具/Docker',
           },
+          {
+            text: 'iterm2',
+            link: '/开发工具/iterm2',
+          },
         ],
       },
     ],
@@ -254,7 +261,7 @@ module.exports = [
     ],
   },
   /**
-   * 数据结构与算法
+   *  算法
    */
   {
     text: '算法',
