@@ -117,7 +117,18 @@ userStore.saveUserInfo(res)
 
 ## proxy 代理配置
 
-// TODO 24 号早上 check
+// TODO: 看尚硅谷
+
+```js
+server: {
+    proxy: {
+        "/api": {
+            target: "http://api-manager.marsview.cc/",
+            changeOrigin: true 
+        }
+    }
+}
+```
 
 ## storage 二次封装
 

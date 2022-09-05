@@ -1,11 +1,12 @@
 ---
 title: iterm2
 date: 2022/09/05 08:36:15
+sidebar: auto
 ---
 
-iterm2 替换 mac 系统自带终端配合 ohmyZsh 打造个性终端
+`iterm2` 替换 `mac` 系统自带终端配合[ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) 打造个性终端
 
-[ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
+
 
 ## 安装 ohmyzsh
 
@@ -34,7 +35,7 @@ cd ..
 rm -rf fonts
 ```
 
-在 iterm，vscode 等软件添加后缀带有`powerline`的字体
+在 `iterm2`，`vscode` 等软件添加后缀带有`powerline`的字体
 
 然后可以删除其他字体,在用户文件下的`Fonts`文件夹保留你要使用的字体，删除其他你不需要使用的字体
 
