@@ -1,7 +1,12 @@
 ---
 title: v-model,Sync修饰符使用和原理
-date: 2022/08/29 17:50:08
+tags:
+  - 2022/08/29 17:50:08
+  - v-model
+  - .sync修饰符
 ---
+
+# v-model,Sync 修饰符使用和原理
 
 ## v-model 原理
 
@@ -159,9 +164,9 @@ export default {
 
 ## vue2 和 vue3 的差异
 
- `vue3`已将`v-bind`的`sync`修饰符<span style='color:red'>废弃</span>
+`vue3`已将`v-bind`的`sync`修饰符<span style='color:red'>废弃</span>
 
-`vue2`中， 使用`v-model`，`sync`可以实现父子组件之间的数据双向绑定。但是`v-model`只能使用一次，如果多个数据需要双向绑定，那就得使用`sync`修饰符。vue3将v-model进行了升级
+`vue2`中， 使用`v-model`，`sync`可以实现父子组件之间的数据双向绑定。但是`v-model`只能使用一次，如果多个数据需要双向绑定，那就得使用`sync`修饰符。vue3 将 v-model 进行了升级
 
 看代码，子组件中：
 
@@ -174,8 +179,8 @@ defineEmits(['update:modelValue'])
 <template>
   <h2>hello world!</h2>
   <input
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
   />
 </template>
 ```
@@ -185,14 +190,14 @@ defineEmits(['update:modelValue'])
 ```vue
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-import {ref} from 'vue'
-let text =ref('123')
+import { ref } from 'vue'
+let text = ref('123')
 </script>
 
 <template>
-   <HelloWorld v-model="text"/>
+  <HelloWorld v-model="text" />
   <!--  相当于:-->
-<!--  <hello-world :modelValue="text" @update:modelValue="newValue => text = newValue"></hello-world>-->
+  <!--  <hello-world :modelValue="text" @update:modelValue="newValue => text = newValue"></hello-world>-->
 </template>
 ```
 
@@ -203,12 +208,12 @@ let text =ref('123')
 ```vue
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-import {ref} from 'vue'
-let text =ref('123')
+import { ref } from 'vue'
+let text = ref('123')
 let text2 = ref('456')
 </script>
 <template>
-  <HelloWorld v-model:text="text" v-model:text2="text2"/>
+  <HelloWorld v-model:text="text" v-model:text2="text2" />
 </template>
 ```
 
@@ -216,23 +221,13 @@ let text2 = ref('456')
 
 ```vue
 <script setup>
-defineProps(['text','text2'])
-defineEmits(['update:text','update:text2'])
+defineProps(['text', 'text2'])
+defineEmits(['update:text', 'update:text2'])
 </script>
 
 <template>
   <h2>hello world!!</h2>
-  <input
-      :value="text"
-      @input="$emit('update:text', $event.target.value)"
-  />
-  <input
-      :value="text2"
-      @input="$emit('update:text2', $event.target.value)"
-  />
+  <input :value="text" @input="$emit('update:text', $event.target.value)" />
+  <input :value="text2" @input="$emit('update:text2', $event.target.value)" />
 </template>
-
 ```
-
-
-

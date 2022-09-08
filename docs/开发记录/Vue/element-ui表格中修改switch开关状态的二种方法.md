@@ -1,7 +1,12 @@
 ---
 title: element-ui表格中修改switch开关状态的二种方法
-date: 2022/08/15 09:13:46
+tags:
+  - 2022/08/15 09:13:46
+  - element-ui
+  - switch
 ---
+
+# element-ui 表格中修改 switch 开关状态的二种方法
 
 Swich 默认是 boolean 类型，如果后台传值为 number 类型，这个时候我们想用 number 来取代 boolean 类型
 

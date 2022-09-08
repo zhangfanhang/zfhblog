@@ -1,7 +1,12 @@
 ---
 title: element-ui清除表单的奇怪现象
-date: 2022/08/15 14:58:06
+tags:
+  - 2022/08/15 14:58:06
+  - elementUI
+  - 表单
 ---
+
+# element-ui 清除表单的奇怪现象
 
 `element-ui `中` form` 中有个清空表单的方法，即假如给表单一个 `ref='form'`, 则清空表单的方法为 `this.$refs.form.resetFields()`
 
@@ -38,4 +43,4 @@ this.$nextTick(() => {
 })
 ```
 
- 使用`this.$refs.xxx.resetFields()`会将所有的表单信息清楚，如果你只想清除验证消息：`  this.$refs.xxx.clearValidate()`
+使用`this.$refs.xxx.resetFields()`会将所有的表单信息清楚，如果你只想清除验证消息：` this.$refs.xxx.clearValidate()`

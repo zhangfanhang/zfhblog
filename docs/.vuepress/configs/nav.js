@@ -244,7 +244,7 @@ module.exports = [
       },
       {
         text: 'JS',
-        link: '/开发记录/JS/关于async和await',
+        link: '/开发记录/JS/数组对象对比找出差异项',
       },
       {
         text: 'Node',
@@ -280,13 +280,6 @@ module.exports = [
   {
     text: '书签',
     link: '/书签',
-  },
-  /**
-   * 博文
-   */
-  {
-    text: '博文',
-    link: '/博文/初来南京',
   },
   /**
    * 项目

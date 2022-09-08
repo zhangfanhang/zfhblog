@@ -23,12 +23,19 @@ module.exports = {
   themeConfig: {
     nav,
     sidebar,
-    search: false,
     sidebarDepth: 2,
     lastUpdated: '上次更新',
     logo: '/logo.jpg',
   },
   plugins: [
+    //标题下面显示标签
+    [
+      'vuepress-plugin-tags',
+      {
+        color: '#fff', // 标签字体颜色
+        backgroundColor: '#000', // 标签背景颜色
+      },
+    ],
     // 平滑滚动
     'vuepress-plugin-smooth-scroll',
     // 代码复制

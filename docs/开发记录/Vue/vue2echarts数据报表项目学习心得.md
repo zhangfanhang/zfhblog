@@ -1,6 +1,12 @@
 ---
 title: vue2+echarts数据报表项目学习心得
+tags:
+  - 2022/09/07 16:50:11
+  - echarts
+  - 数据报表
 ---
+
+# vue2+echarts 数据报表项目学习心得
 
 ::: tip 项目演示地址
 [演示地址](https://datav.zfhblog.top/)

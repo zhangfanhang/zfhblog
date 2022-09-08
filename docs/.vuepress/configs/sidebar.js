@@ -9,12 +9,13 @@ module.exports = {
    */
   '/开发记录/CSS/': ['calc函数', 'CSS文本溢出处理方式'],
   '/开发记录/JS/': [
-    '数组对象对比输出差异项',
+    '数组对象对比找出差异项',
     '关于async和await',
     '理解js事件循环',
     '数组对象根据对象中指定的属性去重',
     '数组对象根据数据项状态属性如何筛选数据',
     '重新理解闭包',
+    '在输入框的光标处插入内容',
     'Array.prototype.slice.call()&Array.from()的应用和理解',
     'js的严格模式',
   ],
@@ -24,13 +25,15 @@ module.exports = {
   ],
   '/开发记录/Vue/': [
     'vue2如何实现界面刷新',
+    'vue2实现滚动窗口同步滚动',
     'vue2echarts数据报表项目学习心得',
     'v-modelSync修饰符使用和原理',
     'element-ui清除表单的奇怪现象',
     'element-ui树控件自动定位到当前选择项',
     'element-ui表格中修改switch开关状态的二种方法',
-    'vite3.0项目支持路径别名',
-    'Vue3ElementPlusKoa2全栈开发后台系统学习记录',
+    'vue3vite3.0项目支持路径别名',
+    'vue3ElementPlusKoa2全栈开发后台系统学习记录',
+    'elementPlus公共表格封装',
   ],
   '/开发记录/React/': ['开发流程管理平台学习心得', 'Hook对比HOC和renderProps'],
   /**

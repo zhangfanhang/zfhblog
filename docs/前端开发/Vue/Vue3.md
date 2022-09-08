@@ -1,6 +1,11 @@
 ---
 title: Vue3
+tags:
+- vue3
+- Composition API
 ---
+
+# Vue3
 
 ::: tip 注意
 
@@ -27,9 +32,9 @@ npm create vite@latest my-vue-app --template vue
 
 [Composition API](https://v3.cn.vuejs.org/guide/composition-api-introduction.html)
 
-## ref
+## ref()
 
-- 作用: 定义一个响应式的数据
+- 作用: 创建可以使用任何值类型的响应式 ` ref` 
 - 语法:
 
 ```js
@@ -37,21 +42,56 @@ import { ref } from 'vue'
 const xxx = ref(initValue)
 ```
 
-- JS 中操作数据： `xxx.value`
+- `js`中操作数据： `xxx.value`
+- 一般的我们通过 `ref `声明响应式数据，在` js` 中访问需要加`.value`
+
+  通过响应式语法糖，我们可以省去 `value`
+
+  通过配置开启：
+
+  ```js
+  // vite.config.js
+  export default {
+    plugins: [
+      vue({
+        reactivityTransform: true,
+      }),
+    ],
+  }
+  ```
 - 模板中读取数据: 不需要`.value`，直接`xxx`使用
 - 备注：
   - 接收的数据可以是：`基本类型`、也可以是`对象类型`
   - 基本类型的数据：响应式依然是靠`Object.defineProperty()`的`get`与`set`完成的
-  - 对象类型的数据：内部使用了`Vue3.0` 中的一个新函数—— `reactive`函数，模板中读取：`obj.xxx`,JS 中读取数据:`obj.value.xxx`
+  - 对象类型的数据：内部使用了`Vue3.0` 中的一个新函数—— `reactive`函数，模板中读取：`obj.xxx`,`js`中读取数据:`obj.value.xxx`
 
-### reactive  
+## reactive()  
 
-// TODO:
+- 作用: 创建一个响应式对象或数组
 
-- 作用: 定义一个对象类型的响应式数据（基本类型不要用它，要用`ref`函数）
-- 语法：`const 代理对象= reactive(源对象)`接收一个对象（或数组），返回一个代理对象（Proxy 的实例对象，简称 proxy 对象
-- 内部基于 ES6 的 Proxy 实现，通过代理对象操作源对象内部数据进行操作
-- 操作数据与读取数据：均不需要</strong>`.value`
+- 语法：
+
+  ```js
+  import { reactive } from 'vue'
+  const xxx = ref({})
+
+- 内部基于 `ES6 `的 `Proxy` 实现，通过代理对象操作源对象内部数据进行操作
+
+- 操作数据与读取数据：均不需要`.value`
+
+## reactive 对比 ref
+
+- 从定义数据角度对比：
+  - `ref` 用来定义：基本数据类型
+  - `reactive` 用来定义：对象（或数组）类型数据
+  - 备注：`ref` 也可以用来定义对象（或数组）类型数据 , 它内部会自动通过`reactive`转为代理对象
+- 从原理角度对比：
+  - `ref `通过`Object.defineProperty()`的`get`与`set`来实现响应式（数据劫持）
+  - `reactive` 通过使用`Proxy`来实现响应式（数据劫持）, 并通过`Reflect`操作源对象内部的数据
+- 从使用角度对比：
+  - `ref` 定义的数据：操作数据需要 `.value`，读取数据时模板中直接读取不需要`.value`
+  - `reactive` 定义的数据：操作数据与读取数据均不需要`.value`
+  - `reactive`存在局限性：一个包含对象类型值的` ref `可以响应式地替换整个对象,`ref `被传递给函数或是从一般对象上被解构时，不会丢失响应性;不可以随意地“替换”用`reactive`创建的响应式对象，将响应式对象的属性赋值或解构至本地变量时，或是将该属性传入一个函数时，会失去响应性
 
 ## Vue3 的响应式原理
 
@@ -116,20 +156,6 @@ console.log(b) //{ name: 'zhang' }
 - MDN 文档中描述的 Proxy 与 Reflect： [Proxy](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy) [Reflect](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
 - 阮一峰[Proxy](https://es6.ruanyifeng.com/#docs/proxy)教程，[Reflect](https://es6.ruanyifeng.com/#docs/reflect)教程
 
-## reactive 对比 ref
-
-// TODO
-
-- 从定义数据角度对比：
-  - `ref` 用来定义：基本数据类型
-  - `reactive` 用来定义：对象（或数组）类型数据
-  - 备注：`ref` 也可以用来定义对象（或数组）类型数据 , 它内部会自动通过`reactive`转为代理对象
-- 从原理角度对比：
-  - `ref `通过`Object.defineProperty()`的`get`与`set`来实现响应式（数据劫持）
-  - `reactive` 通过使用`Proxy`来实现响应式（数据劫持）, 并通过`Reflect`操作源对象内部的数据
-- 从使用角度对比：
-  - `ref` 定义的数据：操作数据<strong style="color:#DD5145">需要</strong>`.value`，读取数据时模板中直接读取不需要`.value`
-  - `reactive` 定义的数据：操作数据与读取数据：均不需要`.value`
 
 ## props
 
@@ -173,63 +199,80 @@ console.log(props.foo)
   }
   ```
 
-### watch
+## watch
 
-- 与 Vue2.x 中 watch 配置功能一致
+```js
+import { watch,reactive,ref } from 'vue'
 
-- 两个小“坑”：
+let sum=ref(1)
+let msg1=ref('123')
+let msg2=ref('456')
 
-  - 监视 reactive 定义的响应式数据时：oldValue 无法正确获取、强制开启了深度监视（deep 配置失效）。
-  - 监视 reactive 定义的响应式数据中某个属性时：deep 配置有效。
-
-  ```js
-  import { watch } from 'vue'
-    setup(){
-  //情况一：监视ref定义的响应式数据
-  watch(sum,(newValue,oldValue)=>{
-  	console.log('sum变化了',newValue,oldValue)
-  },{immediate:true})
-  
-  //情况二：监视多个ref定义的响应式数据
-  watch([sum,msg],(newValue,oldValue)=>{
-  	console.log('sum或msg变化了',newValue,oldValue)
-  })
-  
-  /* 情况三：监视reactive定义的响应式数据
-  			若watch监视的是reactive定义的响应式数据，则无法正确获得oldValue！！
-  			若watch监视的是reactive定义的响应式数据，则强制开启了深度监视
-  */
-  watch(person,(newValue,oldValue)=>{
-  	console.log('person变化了',newValue,oldValue)
-  },{immediate:true,deep:false}) //此处的deep配置不再奏效
-  
-  //情况四：监视reactive定义的响应式数据中的某个属性
-  watch(()=>person.job,(newValue,oldValue)=>{
-  	console.log('person的job变化了',newValue,oldValue)
-  },{immediate:true,deep:true})
-  
-  //情况五：监视reactive定义的响应式数据中的某些属性
-  watch([()=>person.job,()=>person.name],(newValue,oldValue)=>{
-  	console.log('person的job变化了',newValue,oldValue)
-  },{immediate:true,deep:true})
-  
-  //特殊情况
-  watch(()=>person.job,(newValue,oldValue)=>{
-      console.log('person的job变化了',newValue,oldValue)
-  },{deep:true}) //此处由于监视的是reactive定义的对象中的某个属性，所以deep配置有效
+let person=reactive({
+  job:'fe',
+  name:'frank',
+    fun:{
+    a:{
+      x:1
+    }
   }
-  ```
+})
 
-### watchEffect
+//情况一：单个ref 
+watch(sum,(newValue,oldValue)=>{
+	console.log('sum变化了',newValue,oldValue)
+},{immediate:true})
 
-- watch 的套路是：既要指明监视的属性，也要指明监视的回调。
+//情况二：多个来源组成的数组
+watch([sum,()=>msg1.value+msg2.value],(newValue,oldValue)=>{
+	console.log('sum或msg1+msg2变化了',newValue,oldValue)
+})
 
-- watchEffect 的套路是：不用指明监视哪个属性，监视的回调中用到哪个属性，那就监视哪个属性。
+// 情况三：一个getter 函数
+watch(()=>msg1.value+msg2.value,(newValue,oldValue)=>{
+  console.log('msg1+msg2变化了',newValue,oldValue)
+})
 
-- watchEffect 有点像 computed：
+// 情况四： reactive 
+watch(person,(newValue,oldValue)=>{
+   // 强制开启深层侦听器
+   // 在嵌套的属性变更时触发
+  // 注意：`newValue` 此处和 `oldValue` 是相等的,因为它们是同一个对象！
+	console.log('person变化了',newValue,oldValue)
+},{immediate:true,deep:false}) //此处的deep配置失效
 
-  - 但 computed 注重的计算出来的值（回调函数的返回值），所以必须要写返回值。
-  - 而 watchEffect 更注重的是过程（回调函数的函数体），所以不用写返回值。
+//情况五：监视reactive定义的响应式中的某个属性
+// 不能直接侦听响应式对象的属性值;错误，因为 watch() 得到的参数是一个string
+watch(person.job, (newValue,oldValue) => {
+ console.log('person的job变化了',newValue,oldValue)
+})
+// 正确
+watch(()=>person.job, (newValue,oldValue) => {
+ console.log('person的job变化了',newValue,oldValue)
+})
+// 当属性也是响应式对象
+watch(()=>person.fun.a,(newValue,oldValue)=>{
+  // 仅当person.fun.a被替换触发
+  console.log('person的fun的a变化了',newValue,oldValue)
+}) 
+// 监视 reactive 定义的响应式对象中某个属性时：deep 配置有效
+watch(()=>person.fun.a,(newValue,oldValue)=>{
+  // 注意：`newValue` 此处和 `oldValue` 是相等的
+    // *除非* person.fun.a 被整个替换了
+  console.log('person的fun的a变化了',newValue,oldValue)
+}, {deep:true}) 
+```
+
+## watchEffect
+
+- `watch` 的套路是：既要指明监视的属性，也要指明监视的回调
+
+- `watchEffect` 的套路是：不用指明监视哪个属性，监视的回调中用到哪个属性，那就监视哪个属性
+
+- `watchEffect `有点像 `computed`：
+
+  - 但` computed `注重的计算出来的值（回调函数的返回值），所以必须要写返回值
+  - 而 `watchEffect` 更注重的是过程（回调函数的函数体），所以不用写返回值
 
   ```js
   //watchEffect所指定的回调中用到的数据只要发生变化，则直接重新执行回调。

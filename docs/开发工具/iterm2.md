@@ -1,12 +1,14 @@
 ---
 title: iterm2
-date: 2022/09/05 08:36:15
 sidebar: auto
+tags:
+  - 2022/09/05 08:36:15
+    - iterm2
+    - 终端插件
+    - ohmyzsh
 ---
 
 `iterm2` 替换 `mac` 系统自带终端配合[ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) 打造个性终端
-
-
 
 ## 安装 ohmyzsh
 
@@ -51,3 +53,22 @@ sudo chmod 777 ./uninstall.sh
 ## 效果图
 
 ![iterm2界面截图](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/iterm2%E7%95%8C%E9%9D%A2%E6%88%AA%E5%9B%BE.png)
+
+## 其他插件
+
+- [autojump](https://github.com/wting/autojump),快速跳转目录(只能跳转已经 cd 的目录)
+
+  ![autojump](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/autojump.gif)
+
+```shell
+# .zshrc
+ [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+fpath=($fpath "/Users/frank/.zfunctions")
+```
+
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting):高亮终端的代码
+
+```shell
+# .zshrc
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+```

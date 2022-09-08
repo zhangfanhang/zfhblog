@@ -1,6 +1,14 @@
 ---
-title: Vue3+ElementPlus+Koa2全栈开发后台系统学习记录
+title: vue3+ElementPlus+Koa2全栈开发后台系统学习记录
+tags:
+  - 2022/09/07 16:36:19
+  - vue3
+  - ElementPlus
+  - Koa2
+  - 后台
 ---
+
+# vue3+ElementPlus+Koa2 全栈开发后台系统学习记录
 
 ## 前端部分
 
@@ -124,7 +132,7 @@ server: {
     proxy: {
         "/api": {
             target: "http://api-manager.marsview.cc/",
-            changeOrigin: true 
+            changeOrigin: true
         }
     }
 }
@@ -282,3 +290,7 @@ const props = defineProps(['menuList', 'isCollapse'])
 ## 重置 element 颜色主题
 
 // TODO 24 号早上 check
+
+## 公共表格封装
+
+[查看](/开发记录/Vue/elementPlus公共表格封装)
