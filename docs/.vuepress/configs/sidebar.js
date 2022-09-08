@@ -32,7 +32,7 @@ module.exports = {
     'element-ui树控件自动定位到当前选择项',
     'element-ui表格中修改switch开关状态的二种方法',
     'vue3vite3.0项目支持路径别名',
-    'vue3ElementPlusKoa2全栈开发后台系统学习记录',
+    'vue3+ElementPlus+Koa2全栈开发后台系统学习记录',
     'elementPlus公共表格封装',
   ],
   '/开发记录/React/': ['开发流程管理平台学习心得', 'Hook对比HOC和renderProps'],
