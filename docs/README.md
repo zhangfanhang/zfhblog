@@ -12,7 +12,7 @@ features:
     details: 关于我接触、学习到的开发技术的笔记以及平时工作开发记录下来的问题;一些生活日常博文
   - title: 🤔网站愿景
     details: 笔记千锤百炼,努力成为一名合格的前端开发工程师;博文记录生活,总结工作
-footer: Copyright © 2020-2022 FANHANG ZHANG.
+footer: Copyright © 2020-2022 FANHANG ZHANG
 ---
 
 <busuanzi />

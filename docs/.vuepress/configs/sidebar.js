@@ -28,6 +28,7 @@ module.exports = {
     'vue2实现滚动窗口同步滚动',
     'vue2echarts数据报表项目学习心得',
     'v-modelSync修饰符使用和原理',
+    'element-ui修改表格数据跨页回显',
     'element-ui清除表单的奇怪现象',
     'element-ui树控件自动定位到当前选择项',
     'element-ui表格中修改switch开关状态的二种方法',
