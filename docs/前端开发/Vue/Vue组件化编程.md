@@ -357,11 +357,11 @@ Vue.extend = function (extendOptions) {
 3.  接收数据：
 
         1. 第一种方式（只接收）：```props:['name'] ```
-
+        
         2. 第二种方式（限制类型）：```props:{name:String}```
-
+        
         3. 第三种方式（限制类型、限制必要性、指定默认值）：
-
+        
             ```js
             props:{
             	name:{
@@ -441,7 +441,7 @@ Vue.extend = function (extendOptions) {
 (2).实现动态组件：考虑好数据的存放位置，数据是一个组件在用，还是一些组件在用：
 
     1).一个组件在用：放在组件自身即可。
-
+    
     ​2). 一些组件在用：放在他们共同的父组件上（这种行为被称为状态提升）
 
 (3).实现交互：从绑定事件开始。
@@ -462,6 +462,8 @@ Vue.extend = function (extendOptions) {
 - [onchange 事件](https://www.runoob.com/jsref/event-onchange.html)
 
 ## webStorage
+
+// TODO 删除合并
 
 1. 存储内容大小一般支持 5MB 左右（不同浏览器可能还不一样）
 
@@ -727,6 +729,8 @@ this.$nextTick(function () {
 ```
 
 ## vue 脚手架配置代理
+
+// TODO 查 changeOrigin 
 
 ### 方法一
 
