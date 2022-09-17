@@ -9,7 +9,7 @@ tags:
 
 当 `<style>` 标签有 `scoped` 属性时，它的 CSS 只作用于当前组件中的元素，父组件的样式将不会渗透到子组件。 如果你希望 scoped 样式中的一个选择器能够作用得“更深”，例如影响子组件，你可以使用深度选择器。
 
-使用较多的场景是去定制 elementUI 等组件库的样式。
+使用较多的场景是去定制 elementUI 等组件库的样式
 
 ## 写法
 
@@ -21,4 +21,4 @@ tags:
 }
 ```
 
-参考：[vue 中的 css 深度选择器 :deep(<inner-selector>)、/deep/、>>>、::v-deep 到底是什么？](https://juejin.cn/post/6978781674070884366)
+参考：[vue 中的 css 深度选择器](https://juejin.cn/post/6978781674070884366)

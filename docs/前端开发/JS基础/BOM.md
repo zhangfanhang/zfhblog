@@ -14,17 +14,17 @@ window 对象是当前 JS 脚本运行所处的窗口，而这个窗口中包含
 
 ### 全局变量是 window 的属性
 
-![全局变量window](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8Fwindow.png)
+![全局变量window](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8Fwindow.png)
 
 这就意味着，多个 js 文件之间是共享全局作用域的，即 s 文件没有作用域
 
 ### 内置函数普遍是 window 的方法
 
-![内置函数普遍是 window的方法](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0%E6%99%AE%E9%81%8D%E6%98%AF%20window%E7%9A%84%E6%96%B9%E6%B3%95.png)
+![内置函数普遍是 window的方法](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0%E6%99%AE%E9%81%8D%E6%98%AF%20window%E7%9A%84%E6%96%B9%E6%B3%95.png)
 
 ### 窗口尺寸相关属性
 
-![窗口尺寸相关属性](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E7%AA%97%E5%8F%A3%E5%B0%BA%E5%AF%B8%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7.png)
+![窗口尺寸相关属性](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E7%AA%97%E5%8F%A3%E5%B0%BA%E5%AF%B8%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7.png)
 
 > document.documentElement 是一个会返回文档对象（document）的根元素的只读属性（如 HTML 文档的 html 元素）。
 
@@ -37,7 +37,7 @@ window 对象是当前 JS 脚本运行所处的窗口，而这个窗口中包含
 
 - window.scrollY 属性表示在垂直方向已滚动的像素值
 
-![已卷动高度](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%B7%B2%E5%8D%B7%E5%8A%A8%E9%AB%98%E5%BA%A6.png)
+![已卷动高度](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%B7%B2%E5%8D%B7%E5%8A%A8%E9%AB%98%E5%BA%A6.png)
 
 - document.documentElement.scrollTop 属性也表示窗口卷动高度
 
@@ -56,13 +56,13 @@ document.documentElement.scrollTop**不是**只读的，而 window.scrollY 是**
 
 window.navigator 属性可以检索 navigator 对象，它内部含有用户此次活动的浏览器的相关属性和标识
 
-![ Navigator对象](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/Navigator%E5%AF%B9%E8%B1%A1.png)
+![ Navigator对象](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/Navigator%E5%AF%B9%E8%B1%A1.png)
 
 ### 识别用户浏览器品牌
 
 识别用户浏览器品牌通常使用 naviator.userAgent 属性
 
-![识别用户浏览器品牌](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E8%AF%86%E5%88%AB%E6%B5%8F%E8%A7%88%E5%99%A8%E5%93%81%E7%89%8C.png)
+![识别用户浏览器品牌](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%AF%86%E5%88%AB%E6%B5%8F%E8%A7%88%E5%99%A8%E5%93%81%E7%89%8C.png)
 
 ## History 对象
 
@@ -79,7 +79,7 @@ history.go(-1) //等同于back()
 
 window.location 标识当前所在网址，可以通过给这个属性赋值命令浏览器进行页面跳转
 
-![Location对象](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/Location%E5%AF%B9%E8%B1%A1.png)
+![Location对象](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/Location%E5%AF%B9%E8%B1%A1.png)
 
 ### 重新加载当前页面
 
@@ -93,7 +93,7 @@ window.location.reload(true)
 
 window.location.search 属性即为当前浏览器的 GET 请求查询参数
 
-![get请求参数](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/get%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0.png)
+![get请求参数](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/get%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0.png)
 
 ## BOM 特效
 

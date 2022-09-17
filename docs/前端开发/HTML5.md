@@ -286,7 +286,7 @@ sidebar: auto
 
 ### 常见的语义化标签
 
-![语义化](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E8%AF%AD%E4%B9%89%E5%8C%96.png)
+![语义化](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%AF%AD%E4%B9%89%E5%8C%96.png)
 
 #### h1~h6 元素
 

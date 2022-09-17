@@ -12,7 +12,7 @@ title: VueX
 
 ## VueX 工作原理
 
-![vuex](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/vuex.png)
+![vuex](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/vuex.png)
 
 ## 搭建 vuex 环境
 

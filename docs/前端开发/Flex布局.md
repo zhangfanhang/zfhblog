@@ -10,7 +10,7 @@ sidebar: auto
 - 容器默认存在两根轴：水平的主轴`main axis`和垂直的交叉轴`cross axis`。主轴的开始位置叫做 `main start`，结束位置叫做 `main end`；交叉轴的开始位置叫做`cross start`，结束位置叫做 `cross end`
 - **项目默认沿主轴排列**,单个项目占据的主轴空间叫做 `main size`，占据的交叉轴空间叫做 `cross size`
 
-![flex-容器](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/flex-%E5%AE%B9%E5%99%A8.png)
+![flex-容器](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/flex-%E5%AE%B9%E5%99%A8.png)
 
 ## 容器的属性
 
@@ -26,11 +26,11 @@ sidebar: auto
 
 - `display:flex;`将对象作为弹性伸缩盒显示
 
-![displayflex](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/displayflex.png)
+![displayflex](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/displayflex.png)
 
 - `diisplay:inline-flex; `将对象作为内联块级弹性伸缩盒显示
 
-![displayinline-flex](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/displayinline-flex.png)
+![displayinline-flex](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/displayinline-flex.png)
 
 ### flex-direction
 
@@ -38,19 +38,19 @@ sidebar: auto
 
 - `row`（默认值）主轴为水平方向，起点在左端
 
-![flex-direction-row](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/flex-direction-row.png)
+![flex-direction-row](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/flex-direction-row.png)
 
 - `row-reverse` 主轴为水平方向，起点在右端
 
-![flex-direction-row-reverse](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/flex-direction-row-reverse.png)
+![flex-direction-row-reverse](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/flex-direction-row-reverse.png)
 
 - `column` 主轴为垂直方向，起点在上沿
 
-![flex-direction-column](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/flex-direction-column.png)
+![flex-direction-column](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/flex-direction-column.png)
 
 - `column-reverse` 主轴为垂直方向，起点在下沿
 
-![flex-direction-column-reverse](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/flex-direction-column-reverse.png)
+![flex-direction-column-reverse](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/flex-direction-column-reverse.png)
 
 ### flex-wrap
 
@@ -64,15 +64,15 @@ sidebar: auto
 
   :::
 
-![flex-wrap-nowrap](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/flex-wrap-nowrap.png)
+![flex-wrap-nowrap](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/flex-wrap-nowrap.png)
 
 - `wrap `换行 第一行在上方
 
-![flex-wrap-wrap](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/flex-wrap-wrap.png)
+![flex-wrap-wrap](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/flex-wrap-wrap.png)
 
 - `wrap-reverse` 换行 第一行在下方
 
-![flex-wrap-reverse](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/flex-wrap-reverse.png)
+![flex-wrap-reverse](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/flex-wrap-reverse.png)
 
 ### flex-flow
 
@@ -84,23 +84,23 @@ sidebar: auto
 
 - `flex-start`(默认值) 左对齐
 
-![justify-content-flex-start](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/justify-content-flex-start.png)
+![justify-content-flex-start](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/justify-content-flex-start.png)
 
 - `flex-end` 右对齐
 
-![justify-content- flex-end](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/justify-content-%20flex-end.png)
+![justify-content- flex-end](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/justify-content-%20flex-end.png)
 
 - `center` 居中
 
-![justify-content-center](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/justify-content-center.png)
+![justify-content-center](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/justify-content-center.png)
 
 - `space-between` 两端对齐，项目之间的间隔都相等
 
-![justify-content-space-between](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/justify-content-space-between.png)
+![justify-content-space-between](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/justify-content-space-between.png)
 
 - `space-around` 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍
 
-![justify-content-space-around](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/justify-content-space-around.png)
+![justify-content-space-around](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/justify-content-space-around.png)
 
 ### align-items
 
@@ -108,23 +108,23 @@ sidebar: auto
 
 - `stretch`(默认值)：如果 Flex 项目未设置交叉轴方向的大小或设为 auto，将占满整个容器交叉轴方向的大小
 
-![align-items-stretch](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/align-items-stretch.png)
+![align-items-stretch](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-items-stretch.png)
 
 - `flex-start` 交叉轴的起点对齐
 
-![align-items-flex-start](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/align-items-flex-start.png)
+![align-items-flex-start](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-items-flex-start.png)
 
 - `flex-end` 交叉轴的终点对齐
 
-![align-items-flex-end](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/align-items-flex-end.png)
+![align-items-flex-end](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-items-flex-end.png)
 
 - `center` 交叉轴的中点对齐(垂直居中)
 
-![align-items-center](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/align-items-center.png)
+![align-items-center](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-items-center.png)
 
 - `baseline` 项目的第一行文字的基线对齐
 
-![align-items-baseline](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/align-items-baseline.png)
+![align-items-baseline](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-items-baseline.png)
 
 ### align-content
 
@@ -134,27 +134,27 @@ sidebar: auto
 
 - `stretch`(默认值) 主轴线平分 Flex 容器交叉轴方向上的空间
 
-![align-content-stretch](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/align-content-stretch.png)
+![align-content-stretch](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-content-stretch.png)
 
 - `flex-start` 交叉轴的起点对齐
 
-![align-content-flex-start](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/align-content-flex-start.png)
+![align-content-flex-start](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-content-flex-start.png)
 
 - `flex-end` 交叉轴的终点对齐
 
-![align-content-flex-end](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/align-content-flex-end.png)!
+![align-content-flex-end](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-content-flex-end.png)!
 
 - `center `与交叉轴的中点对齐
 
-![align-content-center](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/align-content-center.png)
+![align-content-center](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-content-center.png)
 
 - space-between 与交叉轴的两端对齐，轴线之间的间隔平均分布
 
-![align-content-space-between](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/align-content-space-between.png)
+![align-content-space-between](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-content-space-between.png)
 
 - space-around 每根轴线两侧的间隔都相等，所以轴线之间的间隔比轴线与边框大一倍
 
-![align-content-space-around](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/align-content-space-around.png)
+![align-content-space-around](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-content-space-around.png)
 
 ## 项目的属性
 
@@ -162,18 +162,18 @@ sidebar: auto
 
 属性定义项目的排列顺序。数值越小，排列越靠前，默认为 0。
 
-![order](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/order.png)
+![order](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/order.png)
 
 ### flex-grow
 
 - 属性定义项目的放大比例，默认为**0**，即如果存在剩余空间，也不放大。
 - 如果所有项目的 `flex-grow` 属性都为 1，则它们将等分主轴剩余空间（如果有的话）。如果一个项目的` flex-grow` 属性为 2，其他项目都为 1，则前者占据的主轴剩余空间将是其他项的 2 倍。
 
-![flex-grow](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/flex-grow.png)
+![flex-grow](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/flex-grow.png)
 
 - 如果有的项目有 `flex-grow` 属性，有的项目没有 `flex-grow` 属性,但有 `width` 属性，有 `flex-grow `属性的项目将等分主轴剩余空间
 
-![flex-grow-2](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/flex-grow-2.png)
+![flex-grow-2](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/flex-grow-2.png)
 
 ### flex-shrink
 
@@ -182,7 +182,7 @@ sidebar: auto
 - 如果所有项目的 `flex-shrink` 属性都为 1，当空间不足时，都将等比例缩小。如果一个项目的 `flex-shrink` 属性为 0，其他项目都为 1，则空间不足时，前者不缩小。
 - 负值对该属性无效。
 
-![flex-shrink](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/flex-shrink.png)
+![flex-shrink](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/flex-shrink.png)
 
 ### flex-basis
 

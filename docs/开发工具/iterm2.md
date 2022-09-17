@@ -52,13 +52,13 @@ sudo chmod 777 ./uninstall.sh
 
 ## 效果图
 
-![iterm2界面截图](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/iterm2%E7%95%8C%E9%9D%A2%E6%88%AA%E5%9B%BE.png)
+![iterm2界面截图](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/iterm2%E7%95%8C%E9%9D%A2%E6%88%AA%E5%9B%BE.png)
 
 ## 其他插件
 
 - [autojump](https://github.com/wting/autojump),快速跳转目录(只能跳转已经 cd 的目录)
 
-  ![autojump](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/autojump.gif)
+  ![autojump](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/autojump.gif)
 
 ```shell
 # .zshrc

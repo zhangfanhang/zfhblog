@@ -313,4 +313,4 @@ server.listen(3000, () => {
 
 - 在 postman 中发送 json 数据
 
-![服务端如何接收流](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%A6%82%E4%BD%95%E6%8E%A5%E6%94%B6%E6%B5%81.png)
+![服务端如何接收流](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%A6%82%E4%BD%95%E6%8E%A5%E6%94%B6%E6%B5%81.png)

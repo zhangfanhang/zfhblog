@@ -209,11 +209,11 @@ css 中，min-width 是用来限制元素的最小宽度，max-width 用来限�
 
 ## display:none、visibility:hidden 和 opacity:0 之间的区别？
 
-![dis区别](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/dis%E5%8C%BA%E5%88%AB.png)
+![dis区别](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/dis%E5%8C%BA%E5%88%AB.png)
 
 ::: tip 扩展：visibility 还有哪些其他的属性值？
 
-![visibility可能的值](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/visibility%E5%8F%AF%E8%83%BD%E7%9A%84%E5%80%BC.png)
+![visibility可能的值](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/visibility%E5%8F%AF%E8%83%BD%E7%9A%84%E5%80%BC.png)
 
 :::
 
@@ -244,7 +244,7 @@ css 中，min-width 是用来限制元素的最小宽度，max-width 用来限�
 
 ## line-height 如何继承
 
-![line-height 如何继承](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/line-height%E5%A6%82%E4%BD%95%E7%BB%A7%E6%89%BF.png)
+![line-height 如何继承](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/line-height%E5%A6%82%E4%BD%95%E7%BB%A7%E6%89%BF.png)
 
 - 写具体数值，如 30px，则继承该值（比较好理解），
 - 写比例，如 2/1.5，则继承该比例（比较好理解），

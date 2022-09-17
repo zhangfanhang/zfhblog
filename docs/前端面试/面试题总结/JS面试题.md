@@ -326,7 +326,7 @@ for (let i = 1; i <= 5; i++) {
 
 - 作为对象方法被调用
 
-![作为对象方法被调用](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E4%BD%9C%E4%B8%BA%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E8%A2%AB%E8%B0%83%E7%94%A8.png)
+![作为对象方法被调用](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E4%BD%9C%E4%B8%BA%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E8%A2%AB%E8%B0%83%E7%94%A8.png)
 
 - 在 class 方法中调用
 
@@ -505,11 +505,11 @@ data.then(res => console.log(res))
 
 DOM 查询做缓存
 
-![DOM查询做缓存](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/DOM%E6%9F%A5%E8%AF%A2%E5%81%9A%E7%BC%93%E5%AD%98.png)
+![DOM查询做缓存](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/DOM%E6%9F%A5%E8%AF%A2%E5%81%9A%E7%BC%93%E5%AD%98.png)
 
 将频繁操作改为一次性操作(一次性插入多个节点，考虑性能)
 
-![将频繁操作改为一次性操作](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%B0%86%E9%A2%91%E7%B9%81%E6%93%8D%E4%BD%9C%E6%94%B9%E4%B8%BA%E4%B8%80%E6%AC%A1%E6%80%A7%E6%93%8D%E4%BD%9C.png)
+![将频繁操作改为一次性操作](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%B0%86%E9%A2%91%E7%B9%81%E6%93%8D%E4%BD%9C%E6%94%B9%E4%B8%BA%E4%B8%80%E6%AC%A1%E6%80%A7%E6%93%8D%E4%BD%9C.png)
 
 ## JS-Web-API-事件
 

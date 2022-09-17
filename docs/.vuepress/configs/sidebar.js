@@ -22,13 +22,14 @@ module.exports = {
   '/开发记录/Node/': [
     '在Vuekoa项目中如何解决跨域和cookie问题',
     '记一次koa2项目部署过程',
+    'm1如何安装低版本node',
   ],
   '/开发记录/Vue/': [
     'vue2如何实现界面刷新',
     'vue2实现滚动窗口同步滚动',
+    'vue2中的css深度选择器',
     'vue2echarts数据报表项目学习心得',
     'v-modelSync修饰符使用和原理',
-    'element-ui修改表格数据跨页回显',
     'element-ui清除表单的奇怪现象',
     'element-ui树控件自动定位到当前选择项',
     'element-ui表格中修改switch开关状态的二种方法',
@@ -36,7 +37,11 @@ module.exports = {
     'vue3+ElementPlus+Koa2全栈开发后台系统学习记录',
     'elementPlus公共表格封装',
   ],
-  '/开发记录/React/': ['开发流程管理平台学习心得', 'Hook对比HOC和renderProps'],
+  '/开发记录/React/': [
+    '开发流程管理平台学习心得',
+    'Hook对比HOC和renderProps',
+    'React中引入图片',
+  ],
   /**
    *  算法
    */
@@ -108,7 +113,7 @@ module.exports = {
     'React的SSR',
     'React好用的库',
   ],
-  '/前端开发/Three.js/': ['开发环境搭建'],
+  '/前端开发/Three.js/': ['开发环境搭建', 'Three开发入门与调试设置'],
   '/前端开发/TypeScript/': ['TS基础', 'TS面向对象', 'TS进阶'],
   '/前端开发/Vue/': [
     'Vue核心',

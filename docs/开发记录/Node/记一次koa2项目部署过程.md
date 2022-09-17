@@ -2,6 +2,8 @@
 title: 记一次koa2项目部署过程
 ---
 
+// TODO 有服务器改
+
 ## 准备
 
 一台安装宝塔面板的`centOS`服务器,我的版本是 7.9
@@ -14,13 +16,13 @@ title: 记一次koa2项目部署过程
 
 在服务器`/www/wwwroot`目录下放入前端**打包后**代码
 
-![wwwroot](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/wwwroot.png)
+![wwwroot](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/wwwroot.png)
 
 然后配置`nginx`，随便在那个文件夹(我是在`/www/wwwroot/nginx`下)，新建一个`.conf`配置文件，如下进行配置，我已经配置好了域名
 
 一定要在`nginx`主配置文件中加上：`include /www/nginx/*.conf;`
 
-![nginx主配置文件](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/nginx%E4%B8%BB%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png)
+![nginx主配置文件](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/nginx%E4%B8%BB%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png)
 
 ```conf
 server {
@@ -42,7 +44,7 @@ server {
 
 在软件商店打开 `PM2`,如图进行添加项目，看下有没有出现停止重启，说明基本成功了，再看下有没有报错
 
-![PM2配置](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/PM2%E9%85%8D%E7%BD%AE.png)
+![PM2配置](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/PM2%E9%85%8D%E7%BD%AE.png)
 
 **我遇到了一个比较奇葩的报错，说找不到某个具体的模块，怀疑是相对路径的问题，于是我把相对路径，全部换成了服务器的文件绝对路径，最后可以了**
 

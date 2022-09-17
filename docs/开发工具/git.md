@@ -118,7 +118,7 @@ ProxyCommand nc -v -x 127.0.0.1:7890 %h %p
 - `git log` ：查看提交内容
 - ` git log --oneline`：以一行的方式查看提交记录
 
-![git本地版本控制](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/git%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.png)
+![git本地版本控制](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/git%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.png)
 
 ### 重置版本
 

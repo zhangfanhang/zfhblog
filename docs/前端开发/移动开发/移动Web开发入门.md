@@ -47,7 +47,7 @@ title: 移动Web开发入门
 
 **`PPI/DPI的计算`**：
 
-![PPI计算公式](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/PPI%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png)
+![PPI计算公式](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/PPI%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png)
 
 <span style="color:red">
 相同的分辨率，更高的 PPI 表现为物理尺寸更小;
@@ -92,7 +92,7 @@ pt 和 px 的关系就是—— **1pt 里面有几个像素点**。（比如 1pt
 
 所谓的一倍屏、二倍屏(Retina)、三倍屏，指的是设备以多少物理像素来显示一个 CSS 像素，也就是说，多倍屏以更多更精细的物理像素点来显示一个 CSS 像素点，在普通屏幕下 1 个 CSS 像素对应 1 个物理像素。在 Retina 屏幕下，1 个 CSS 像素对应 4 个物理像素。
 
-![dpr](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/dpr.png)
+![dpr](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/dpr.png)
 
 可以发现，在同样的大小下，2dpr 的屏幕时普通屏幕像素点的 4 倍，3dpr 的屏幕时普通屏幕像素点的 9 倍。这就是 retina 屏幕
 

@@ -563,7 +563,7 @@ export default () => {
 
 - useLayoutEffect 会在渲染的内容更新到 DOM 上之前执行，会阻塞 DOM 的更新
 
-![useLayoutEffect](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/useLayoutEffect.png)
+![useLayoutEffect](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/useLayoutEffect.png)
 
 如果我们希望在某些操作发生之后再更新 DOM，那么应该将这个操作放到 useLayoutEffect：
 

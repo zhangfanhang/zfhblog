@@ -7,10 +7,10 @@ const WebpackAliyunOss = require('webpack-aliyun-oss')
 new WebpackAliyunOss({
   from: './dist/assets',
   dist: 'blog-assets/',
-  region: 'oss-cn-shanghai',
+  region: 'oss-cn-nanjing',
   accessKeyId: 'LTAI5tG9FP7DXeJFj4krraLB',
   accessKeySecret: 'G5ZzWfxAFpxqwn729nS3wfiRJVau4d',
-  bucket: 'zfh-oss',
+  bucket: 'zfh-nanjing-bucket',
   setOssPath(filePath) {
     let index = filePath.lastIndexOf('dist')
     let Path = filePath.substring(index + 4, filePath.length)

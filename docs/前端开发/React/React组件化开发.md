@@ -86,7 +86,7 @@ export default function App() {
 
 ### 生命周期函数
 
-![生命周期解析](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90.png)
+![生命周期解析](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90.png)
 
 #### Constructor
 
@@ -138,7 +138,7 @@ componentDidUpdate(prevProps) {
 
 <center>
 
-![组件的嵌套](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E7%BB%84%E4%BB%B6%E7%9A%84%E5%B5%8C%E5%A5%97.png)
+![组件的嵌套](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E7%BB%84%E4%BB%B6%E7%9A%84%E5%B5%8C%E5%A5%97.png)
 
 </center>
 
@@ -473,7 +473,7 @@ export default class NavBar extends Component {
 
 效果图：
 
-![在React中实现Slot](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%9C%A8React%E4%B8%AD%E5%AE%9E%E7%8E%B0Slot.jpg)
+![在React中实现Slot](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%9C%A8React%E4%B8%AD%E5%AE%9E%E7%8E%B0Slot.jpg)
 
 ### Context(跨组件通信)
 

@@ -10,7 +10,7 @@ title: 理解js事件循环
 
 ---
 
-![浏览器完整流程图](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
+![浏览器完整流程图](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 
 **任务队列**的执行过程是：先执行一个`宏任务`，执行过程中如果产出新的`宏/微任务`，就将他们推入相应的`任务队列`，之后在执行一队`微任务`，之后再执行`宏任务`，如此循环。以上不断重复的过程就叫做 `Event Loop(事件循环)`。
 
@@ -21,4 +21,4 @@ title: 理解js事件循环
 
 :::
 
-![宏任务微任务](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%BE%AE%E4%BB%BB%E5%8A%A1.png)
+![宏任务微任务](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%BE%AE%E4%BB%BB%E5%8A%A1.png)

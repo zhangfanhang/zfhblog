@@ -14,4 +14,4 @@ title: 邂逅Node
 
 `libuv` 提供了事件循环、文件系统读写、网络 IO、线程池等等内容；
 
-![node架构](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/node%E6%9E%B6%E6%9E%84.png)
+![node架构](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/node%E6%9E%B6%E6%9E%84.png)

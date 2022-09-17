@@ -4,7 +4,7 @@ date: 2022/08/23 16:23:41
 ---
 
 <center>
-  <img src='https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/pinia_logo.svg' style='width:200px;height:200px'>
+  <img src='https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/pinia_logo.svg' style='width:200px;height:200px'>
 </center>
 
 [Pinia](https://pinia.web3doc.top/) 是 Vue 的存储库，它允许您跨组件/页面共享状态。它被认为是`vuex 5.0`

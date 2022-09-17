@@ -50,11 +50,11 @@ p3.then(
 
 回调地狱不方便阅读，也不便于异常处理
 
-![回调地狱](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%9B%9E%E8%B0%83%E5%9C%B0%E7%8B%B1.png)
+![回调地狱](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%9B%9E%E8%B0%83%E5%9C%B0%E7%8B%B1.png)
 
 ## Promise 的基本流程
 
-![promise的基本流程](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/promise%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B.png)
+![promise的基本流程](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/promise%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B.png)
 
 ## Promise 的基本用法
 

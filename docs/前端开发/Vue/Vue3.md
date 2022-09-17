@@ -1,8 +1,8 @@
 ---
 title: Vue3
 tags:
-- vue3
-- Composition API
+  - vue3
+  - Composition API
 ---
 
 # Vue3
@@ -13,7 +13,7 @@ tags:
 
 :::
 
-## 使用vite创建 Vue3.0 工程
+## 使用 vite 创建 Vue3.0 工程
 
 ::: danger 警告
 在 `vite` 项目中，引入组件时，`.vue` 不能省略
@@ -34,7 +34,7 @@ npm create vite@latest my-vue-app --template vue
 
 ## ref()
 
-- 作用: 创建可以使用任何值类型的响应式 ` ref` 
+- 作用: 创建可以使用任何值类型的响应式 ` ref`
 - 语法:
 
 ```js
@@ -59,13 +59,14 @@ const xxx = ref(initValue)
     ],
   }
   ```
+
 - 模板中读取数据: 不需要`.value`，直接`xxx`使用
 - 备注：
   - 接收的数据可以是：`基本类型`、也可以是`对象类型`
   - 基本类型的数据：响应式依然是靠`Object.defineProperty()`的`get`与`set`完成的
   - 对象类型的数据：内部使用了`Vue3.0` 中的一个新函数—— `reactive`函数，模板中读取：`obj.xxx`,`js`中读取数据:`obj.value.xxx`
 
-## reactive()  
+## reactive()
 
 - 作用: 创建一个响应式对象或数组
 
@@ -74,6 +75,7 @@ const xxx = ref(initValue)
   ```js
   import { reactive } from 'vue'
   const xxx = ref({})
+  ```
 
 - 内部基于 `ES6 `的 `Proxy` 实现，通过代理对象操作源对象内部数据进行操作
 
@@ -91,7 +93,7 @@ const xxx = ref(initValue)
 - 从使用角度对比：
   - `ref` 定义的数据：操作数据需要 `.value`，读取数据时模板中直接读取不需要`.value`
   - `reactive` 定义的数据：操作数据与读取数据均不需要`.value`
-  - `reactive`存在局限性：一个包含对象类型值的` ref `可以响应式地替换整个对象,`ref `被传递给函数或是从一般对象上被解构时，不会丢失响应性;不可以随意地“替换”用`reactive`创建的响应式对象，将响应式对象的属性赋值或解构至本地变量时，或是将该属性传入一个函数时，会失去响应性
+  - `reactive`存在局限性：一个包含对象类型值的`ref`可以响应式地替换整个对象,`ref `被传递给函数或是从一般对象上被解构时，不会丢失响应性;不可以随意地“替换”用`reactive`创建的响应式对象，将响应式对象的属性赋值或解构至本地变量时，或是将该属性传入一个函数时，会失去响应性
 
 ## Vue3 的响应式原理
 
@@ -156,7 +158,6 @@ console.log(b) //{ name: 'zhang' }
 - MDN 文档中描述的 Proxy 与 Reflect： [Proxy](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy) [Reflect](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
 - 阮一峰[Proxy](https://es6.ruanyifeng.com/#docs/proxy)教程，[Reflect](https://es6.ruanyifeng.com/#docs/reflect)教程
 
-
 ## props
 
 [更多细节](https://cn.vuejs.org/guide/components/props.html#props-declaration)
@@ -178,7 +179,7 @@ console.log(props.foo)
 
   ```js
   import {computed} from 'vue'
-  
+
   setup(){
       ...
   	//计算属性——简写
@@ -202,65 +203,86 @@ console.log(props.foo)
 ## watch
 
 ```js
-import { watch,reactive,ref } from 'vue'
+import { watch, reactive, ref } from 'vue'
 
-let sum=ref(1)
-let msg1=ref('123')
-let msg2=ref('456')
+let sum = ref(1)
+let msg1 = ref('123')
+let msg2 = ref('456')
 
-let person=reactive({
-  job:'fe',
-  name:'frank',
-    fun:{
-    a:{
-      x:1
-    }
-  }
+let person = reactive({
+  job: 'fe',
+  name: 'frank',
+  fun: {
+    a: {
+      x: 1,
+    },
+  },
 })
 
-//情况一：单个ref 
-watch(sum,(newValue,oldValue)=>{
-	console.log('sum变化了',newValue,oldValue)
-},{immediate:true})
+//情况一：单个ref
+watch(
+  sum,
+  (newValue, oldValue) => {
+    console.log('sum变化了', newValue, oldValue)
+  },
+  { immediate: true }
+)
 
 //情况二：多个来源组成的数组
-watch([sum,()=>msg1.value+msg2.value],(newValue,oldValue)=>{
-	console.log('sum或msg1+msg2变化了',newValue,oldValue)
+watch([sum, () => msg1.value + msg2.value], (newValue, oldValue) => {
+  console.log('sum或msg1+msg2变化了', newValue, oldValue)
 })
 
 // 情况三：一个getter 函数
-watch(()=>msg1.value+msg2.value,(newValue,oldValue)=>{
-  console.log('msg1+msg2变化了',newValue,oldValue)
-})
+watch(
+  () => msg1.value + msg2.value,
+  (newValue, oldValue) => {
+    console.log('msg1+msg2变化了', newValue, oldValue)
+  }
+)
 
-// 情况四： reactive 
-watch(person,(newValue,oldValue)=>{
-   // 强制开启深层侦听器
-   // 在嵌套的属性变更时触发
-  // 注意：`newValue` 此处和 `oldValue` 是相等的,因为它们是同一个对象！
-	console.log('person变化了',newValue,oldValue)
-},{immediate:true,deep:false}) //此处的deep配置失效
+// 情况四： reactive
+watch(
+  person,
+  (newValue, oldValue) => {
+    // 强制开启深层侦听器
+    // 在嵌套的属性变更时触发
+    // 注意：`newValue` 此处和 `oldValue` 是相等的,因为它们是同一个对象！
+    console.log('person变化了', newValue, oldValue)
+  },
+  { immediate: true, deep: false }
+) //此处的deep配置失效
 
 //情况五：监视reactive定义的响应式中的某个属性
 // 不能直接侦听响应式对象的属性值;错误，因为 watch() 得到的参数是一个string
-watch(person.job, (newValue,oldValue) => {
- console.log('person的job变化了',newValue,oldValue)
+watch(person.job, (newValue, oldValue) => {
+  console.log('person的job变化了', newValue, oldValue)
 })
 // 正确
-watch(()=>person.job, (newValue,oldValue) => {
- console.log('person的job变化了',newValue,oldValue)
-})
+watch(
+  () => person.job,
+  (newValue, oldValue) => {
+    console.log('person的job变化了', newValue, oldValue)
+  }
+)
 // 当属性也是响应式对象
-watch(()=>person.fun.a,(newValue,oldValue)=>{
-  // 仅当person.fun.a被替换触发
-  console.log('person的fun的a变化了',newValue,oldValue)
-}) 
+watch(
+  () => person.fun.a,
+  (newValue, oldValue) => {
+    // 仅当person.fun.a被替换触发
+    console.log('person的fun的a变化了', newValue, oldValue)
+  }
+)
 // 监视 reactive 定义的响应式对象中某个属性时：deep 配置有效
-watch(()=>person.fun.a,(newValue,oldValue)=>{
-  // 注意：`newValue` 此处和 `oldValue` 是相等的
+watch(
+  () => person.fun.a,
+  (newValue, oldValue) => {
+    // 注意：`newValue` 此处和 `oldValue` 是相等的
     // *除非* person.fun.a 被整个替换了
-  console.log('person的fun的a变化了',newValue,oldValue)
-}, {deep:true}) 
+    console.log('person的fun的a变化了', newValue, oldValue)
+  },
+  { deep: true }
+)
 ```
 
 ## watchEffect
@@ -271,7 +293,7 @@ watch(()=>person.fun.a,(newValue,oldValue)=>{
 
 - `watchEffect `有点像 `computed`：
 
-  - 但` computed `注重的计算出来的值（回调函数的返回值），所以必须要写返回值
+  - 但`computed`注重的计算出来的值（回调函数的返回值），所以必须要写返回值
   - 而 `watchEffect` 更注重的是过程（回调函数的函数体），所以不用写返回值
 
   ```js
@@ -287,11 +309,11 @@ watch(()=>person.fun.a,(newValue,oldValue)=>{
 
 ### Vue2
 
-![vue2生命周期](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/vue2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
+![vue2生命周期](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/vue2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
 
 ### Vue3
 
-![vue3生命周期](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/vue3%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
+![vue3生命周期](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/vue3%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
 
 - Vue3.0 中可以继续使用 Vue2.x 中的生命周期钩子，但有有两个被更名：
   - `beforeDestroy`改名为 `beforeUnmount`

@@ -6,7 +6,7 @@ title: DOM
 
 **"DOM 是 JS 操控 HTML 和 CSS 的桥梁"**
 
-// TODO 重新梳理 22.8.18
+// TODO 重新梳理
 
 ## DOM 简介
 
@@ -14,17 +14,17 @@ title: DOM
 
 - DOM 最大的特点就是将文档表示为节点树
 
-![dom节点树](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/dom%E8%8A%82%E7%82%B9%E6%A0%91.png)
+![dom节点树](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/dom%E8%8A%82%E7%82%B9%E6%A0%91.png)
 
-![dom节点树2](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/dom%E8%8A%82%E7%82%B9%E6%A0%912.png)
+![dom节点树2](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/dom%E8%8A%82%E7%82%B9%E6%A0%912.png)
 
 - DOM 的继承关系图解
 
-![DOM继承树](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/DOM%E7%BB%A7%E6%89%BF%E6%A0%91.jpg)
+![DOM继承树](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/DOM%E7%BB%A7%E6%89%BF%E6%A0%91.jpg)
 
 - 节点的 nodeType 属性可以显示这个节点具体的类型
 
-![nodeType常用属性值](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/nodeType%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%E5%80%BC.png)
+![nodeType常用属性值](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/nodeType%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%E5%80%BC.png)
 
 ## 访问元素节点
 
@@ -38,13 +38,13 @@ title: DOM
 
 ### 访问元素节点的常用方法
 
-![访问元素节点方法](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E6%96%B9%E6%B3%95.png)
+![访问元素节点方法](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E6%96%B9%E6%B3%95.png)
 
 #### getElementById()
 
 document.getElementById()功能是通过**id**得到元素节点
 
-![getElementById()](<https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/getElementById().png>)
+![getElementById()](<https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/getElementById().png>)
 
 - 如果页面上有相同 id 的元素，则只能得到第一个(一个页面一个 id 命名一般只能出现一次)
 - 括号里面**不要写#**
@@ -62,7 +62,7 @@ document.getElementById()功能是通过**id**得到元素节点
 
 getElementsByTagName()方法的功能是通过标签名得到节点数组
 
-![getElementsByTagName()](<https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/getElementsByTagName().png>)
+![getElementsByTagName()](<https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/getElementsByTagName().png>)
 
 - 数组方便遍历，从而可以批量操控元素节点
 - 即使页面上只有一个指定标签名的节点，也将得到长度为 1 的数组
@@ -72,7 +72,7 @@ getElementsByTagName()方法的功能是通过标签名得到节点数组
 
 getElementsByClassName()方法的功能是通过类名得到节点数组
 
-![getElementsByClassName()](<https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/getElementsByClassName().png>)
+![getElementsByClassName()](<https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/getElementsByClassName().png>)
 
 - 即使页面上只有一个指定类名的节点，也将得到长度为 1 的数组
 - 某个节点元素也可以调用 getElementsByClassName()方法，从而得到其内部的某类名的元素节点
@@ -81,7 +81,7 @@ getElementsByClassName()方法的功能是通过类名得到节点数组
 
 querySelector()方法的功能是通过选择器得到元素
 
-![querySelector()](<https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/querySelector().png>)
+![querySelector()](<https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/querySelector().png>)
 
 - querySelector()方法只能得到页面上一个元素，如果有多个元素符合条件，则只能得到第一个元素
 
@@ -97,9 +97,9 @@ querySelectorAll()方法的功能是通过选择器得到元素数组
 
 ## 节点的关系
 
-![节点的关系](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E8%8A%82%E7%82%B9%E7%9A%84%E5%85%B3%E7%B3%BB.png)
+![节点的关系](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%8A%82%E7%82%B9%E7%9A%84%E5%85%B3%E7%B3%BB.png)
 
-![节点的关系2](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E8%8A%82%E7%82%B9%E7%9A%84%E5%85%B3%E7%B3%BB2.png)
+![节点的关系2](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%8A%82%E7%82%B9%E7%9A%84%E5%85%B3%E7%B3%BB2.png)
 
 ### 文本节点也属于节点
 
@@ -111,7 +111,7 @@ querySelectorAll()方法的功能是通过选择器得到元素数组
 
 从 IE9 开始支持一些“只考虑元素节点”的属性
 
-![排除文本节点的干扰](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E6%8E%92%E9%99%A4%E6%96%87%E6%9C%AC%E8%8A%82%E7%82%B9%E7%9A%84%E5%B9%B2%E6%89%B0.png)
+![排除文本节点的干扰](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E6%8E%92%E9%99%A4%E6%96%87%E6%9C%AC%E8%8A%82%E7%82%B9%E7%9A%84%E5%B9%B2%E6%89%B0.png)
 
 ### 书写常见的节点关系函数
 
@@ -233,7 +233,7 @@ querySelectorAll()方法的功能是通过选择器得到元素数组
 
 改变元素节点的 CSS 样式需要使用这样的语句
 
-![改变元素节点的css样式](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E7%9A%84css%E6%A0%B7%E5%BC%8F.png)
+![改变元素节点的css样式](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E7%9A%84css%E6%A0%B7%E5%BC%8F.png)
 
 ### 改变元素节点的 HTML 属性
 
@@ -516,23 +516,23 @@ var 孤儿节点 = 老节点.cloneNode(true)
 
 ### 事件监听
 
-![事件监听eg](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%ACeg.png)
+![事件监听eg](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%ACeg.png)
 
 #### 常见的鼠标事件监听
 
-![常见的鼠标事件监听](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%B8%B8%E8%A7%81%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC.png)
+![常见的鼠标事件监听](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%B8%B8%E8%A7%81%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC.png)
 
 #### 常见的键盘事件监听
 
-![常见的键盘事件监听](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%B8%B8%E8%A7%81%E7%9A%84%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC.png)
+![常见的键盘事件监听](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%B8%B8%E8%A7%81%E7%9A%84%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC.png)
 
 #### 常见的表单事件监听
 
-![常见的表单事件监听](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%B8%B8%E8%A7%81%E7%9A%84%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC.png)
+![常见的表单事件监听](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%B8%B8%E8%A7%81%E7%9A%84%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC.png)
 
 #### 常见的页面事件监听
 
-![常见的页面事件监听](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%B8%B8%E8%A7%81%E7%9A%84%E9%A1%B5%E9%9D%A2%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6.png)
+![常见的页面事件监听](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%B8%B8%E8%A7%81%E7%9A%84%E9%A1%B5%E9%9D%A2%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6.png)
 
 ### 事件传播
 
@@ -540,15 +540,15 @@ var 孤儿节点 = 老节点.cloneNode(true)
 
 事件的传播是：先从外到内，然后再从内到外
 
-![盒子嵌套事件监听的执行顺序](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E7%9B%92%E5%AD%90%E5%B5%8C%E5%A5%97%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD%E9%A1%BA%E5%BA%8F.png)
+![盒子嵌套事件监听的执行顺序](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E7%9B%92%E5%AD%90%E5%B5%8C%E5%A5%97%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD%E9%A1%BA%E5%BA%8F.png)
 
 - onXXX 这样的写法只能监听冒泡阶段
 
-![onxxx事件传播](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/onxxx%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD.png)
+![onxxx事件传播](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/onxxx%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD.png)
 
 #### addEventListener()方法
 
-![addEventListener0方法](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/addEventListener0%E6%96%B9%E6%B3%95.png)
+![addEventListener0方法](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/addEventListener0%E6%96%B9%E6%B3%95.png)
 
 - 最内部元素不再区分捕获和冒泡阶段，会先执行写在前面的监听，然后执行后写的监听
 - 如果给元素设置相同的两个或多个同名事件，则 DOM0 级写法后面写的会覆盖先写的;而 D0M2 级会按顺序执行
@@ -557,11 +557,11 @@ var 孤儿节点 = 老节点.cloneNode(true)
 
 - 事件处理函数提供一个形式参数，它是一个对象，封裝了本次事件的细节
 - 这个参数通常用单词 event 或字母 e 表示
-  ![事件对象e](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1e.png)
+  ![事件对象e](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1e.png)
 
 #### 鼠标位置
 
-![鼠标位置](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E9%BC%A0%E6%A0%87%E4%BD%8D%E7%BD%AE.png)
+![鼠标位置](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E9%BC%A0%E6%A0%87%E4%BD%8D%E7%BD%AE.png)
 
 **demo**
 
@@ -604,11 +604,11 @@ var 孤儿节点 = 老节点.cloneNode(true)
 
 - e.charCode 属性通常用于 onkeypress 事件中，表示用户输入的字符的“字符码”
 
-![字符码](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%AD%97%E7%AC%A6%E7%A0%81.png)
+![字符码](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%AD%97%E7%AC%A6%E7%A0%81.png)
 
 - e.keyCode 属性通常用于 onkeydown 事件和 onkeyup 中，表示用户按下的按键的“键码“
 
-![键码](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E9%94%AE%E7%A0%81.png)
+![键码](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E9%94%AE%E7%A0%81.png)
 
 - **eg** 按方向键可以控制页面上的盒子移动
 
@@ -768,11 +768,11 @@ var 孤儿节点 = 老节点.cloneNode(true)
 
 - 利用**事件冒泡**机制，将后代元素**事件委托**给祖先元素
 
-![事件委托](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98.png)
+![事件委托](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98.png)
 
 - 事件委托通常需要结合使用 e.target 属性
 
-![e,target](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/e,target.png)
+![e,target](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/e,target.png)
 
 eg：在下面的例子中，点击事件中，每个 li 元素就是**事件源元素**，而 list 就是**e.currentTarget**
 
@@ -822,7 +822,7 @@ onmouseenter 这个属性天生就是“不冒泡”的，相当于你事件处�
 
 - 最内层元素不能再有额外的内层元素了，比如：
 
-![最内层元素不能再有额外的内层元素](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E6%9C%80%E5%86%85%E5%B1%82%E5%85%83%E7%B4%A0%E4%B8%8D%E8%83%BD%E5%86%8D%E6%9C%89%E9%A2%9D%E5%A4%96%E7%9A%84%E5%86%85%E5%B1%82%E5%85%83%E7%B4%A0.png)
+![最内层元素不能再有额外的内层元素](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E6%9C%80%E5%86%85%E5%B1%82%E5%85%83%E7%B4%A0%E4%B8%8D%E8%83%BD%E5%86%8D%E6%9C%89%E9%A2%9D%E5%A4%96%E7%9A%84%E5%86%85%E5%B1%82%E5%85%83%E7%B4%A0.png)
 
 ## 定时器和延时器
 
@@ -830,27 +830,27 @@ onmouseenter 这个属性天生就是“不冒泡”的，相当于你事件处�
 
 - setInterval()函数可以重复调用一个函数，在每次调用之间具有固定的时间间隔
 
-![setInterval()](<https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/setInterval().png>)
+![setInterval()](<https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/setInterval().png>)
 
 - setInterval()函数可以接收第 3、4…个参数，它们将按顺序传入函数
 
-![3，4个参数](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/3%EF%BC%8C4%E4%B8%AA%E5%8F%82%E6%95%B0.png)
+![3，4个参数](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/3%EF%BC%8C4%E4%B8%AA%E5%8F%82%E6%95%B0.png)
 
 - 具名函数也可以传入 setInterval()
 
-![具名函数传入](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%85%B7%E5%90%8D%E5%87%BD%E6%95%B0%E4%BC%A0%E5%85%A5.png)
+![具名函数传入](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%85%B7%E5%90%8D%E5%87%BD%E6%95%B0%E4%BC%A0%E5%85%A5.png)
 
 #### 清除定时器
 
 ClearInterval()函数可以清除一个定时器
 
-![清除定时器](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E6%B8%85%E9%99%A4%E5%AE%9A%E6%97%B6%E5%99%A8.png)
+![清除定时器](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E6%B8%85%E9%99%A4%E5%AE%9A%E6%97%B6%E5%99%A8.png)
 
 ### 延时器
 
 setTimeout()函数可以设置一个延时器，当指定时间到了之后，会执行函数一次，不再重复执行。
 
-![延时器](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%BB%B6%E6%97%B6%E5%99%A8.png)
+![延时器](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%BB%B6%E6%97%B6%E5%99%A8.png)
 
 #### 清除延时器
 
@@ -862,7 +862,7 @@ clearTimeout()函数可以清除延时器
 
 节流的意思是让函数有节制地执行，而不是毫无节制的触发一次就执行一次。什么叫有节制呢？第一次执行之后，在设定的时间之后才执行第二次。
 
-![函数节流](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81.png)
+![函数节流](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81.png)
 
 ## 动画效果开发
 

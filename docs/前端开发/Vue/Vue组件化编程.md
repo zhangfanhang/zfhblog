@@ -284,7 +284,7 @@ Vue.extend = function (extendOptions) {
 
 **一个重要的内置关系**
 
-![重要的内置关系 ](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E9%87%8D%E8%A6%81%E7%9A%84%E5%86%85%E7%BD%AE%E5%85%B3%E7%B3%BB%20.png)
+![重要的内置关系 ](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E9%87%8D%E8%A6%81%E7%9A%84%E5%86%85%E7%BD%AE%E5%85%B3%E7%B3%BB%20.png)
 
 1.一个重要的内置关系：`VueComponent.prototype.__proto__=== Vue.prototype`
 
@@ -357,11 +357,11 @@ Vue.extend = function (extendOptions) {
 3.  接收数据：
 
         1. 第一种方式（只接收）：```props:['name'] ```
-        
+
         2. 第二种方式（限制类型）：```props:{name:String}```
-        
+
         3. 第三种方式（限制类型、限制必要性、指定默认值）：
-        
+
             ```js
             props:{
             	name:{
@@ -441,7 +441,7 @@ Vue.extend = function (extendOptions) {
 (2).实现动态组件：考虑好数据的存放位置，数据是一个组件在用，还是一些组件在用：
 
     1).一个组件在用：放在组件自身即可。
-    
+
     ​2). 一些组件在用：放在他们共同的父组件上（这种行为被称为状态提升）
 
 (3).实现交互：从绑定事件开始。
@@ -730,7 +730,7 @@ this.$nextTick(function () {
 
 ## vue 脚手架配置代理
 
-// TODO 查 changeOrigin 
+// TODO 查 changeOrigin
 
 ### 方法一
 

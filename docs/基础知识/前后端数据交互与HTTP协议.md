@@ -98,7 +98,7 @@ HTML、JS、CSS、图片、字体、音频、视频等等文件，都是通过`H
 
 2. HTTP 请求响应的过程
 
-![HTTP请求响应的过程](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/HTTP%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E7%9A%84%E8%BF%87%E7%A8%8B.png)
+![HTTP请求响应的过程](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/HTTP%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E7%9A%84%E8%BF%87%E7%A8%8B.png)
 
 - 浏览器地址栏输入 URL 并回车
 - 浏览器查找当前 URL 是否存在缓存，并比较缓存是否过期
@@ -123,7 +123,7 @@ HTML、JS、CSS、图片、字体、音频、视频等等文件，都是通过`H
 
 1. 请求头：起始行(黄色高亮部分)+首部（剩余部分为首部）
 
-![起始行](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E8%B5%B7%E5%A7%8B%E8%A1%8C.png)
+![起始行](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%B5%B7%E5%A7%8B%E8%A1%8C.png)
 
 2. 请求体
 

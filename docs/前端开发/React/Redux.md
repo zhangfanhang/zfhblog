@@ -89,7 +89,7 @@ Redux 要求我们通过 action 来更新数据：
 
 ## Redux 使用流程
 
-![redux使用流程](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/redux%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B.png)
+![redux使用流程](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/redux%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B.png)
 
 ## 在 react 项目中使用 redux
 
@@ -307,7 +307,7 @@ import { connect } from 'react-redux'
 
 ​ 事实上，网络请求到的数据也属于我们状态管理的一部分，更好的一种方式应该是将其也交给 redux 来管理
 
-![redux-异步操作](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/redux-%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C.png)
+![redux-异步操作](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/redux-%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C.png)
 
 但是在 redux 中如何可以进行异步的操作呢？
 
@@ -431,7 +431,7 @@ const store = createStore(
 
 代码结构如下：
 
-![redux代码拆分](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/redux%E4%BB%A3%E7%A0%81%E6%8B%86%E5%88%86.png)
+![redux代码拆分](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/redux%E4%BB%A3%E7%A0%81%E6%8B%86%E5%88%86.png)
 
 主目录 reducer.js:
 

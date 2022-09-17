@@ -18,13 +18,13 @@ title: Vue核心
 
 ⭐ 声明式编码,无需直接操作`DOM`(命令式编码关心的是”how to do“，声明式编码关心的是“what to do”，how 的部分由框架完成)
 
-![声明式编码](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E5%A3%B0%E6%98%8E%E5%BC%8F%E7%BC%96%E7%A0%81.png)
+![声明式编码](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%A3%B0%E6%98%8E%E5%BC%8F%E7%BC%96%E7%A0%81.png)
 
 ⭐ 使用`虛拟DOM`+优秀的`Diff算法`，尽量复用`DOM`节点。
 
-![真实DOM](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E7%9C%9F%E5%AE%9EDOM.png)
+![真实DOM](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E7%9C%9F%E5%AE%9EDOM.png)
 
-![虚拟DOM](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E8%99%9A%E6%8B%9FDOM.png)
+![虚拟DOM](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%99%9A%E6%8B%9FDOM.png)
 
 ## 初识 Vue
 
@@ -163,7 +163,7 @@ data(){
 
 这两个方向都实现的，我们称之为数据的双向绑定。
 
-![MVVM](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/MVVM.png)
+![MVVM](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/MVVM.png)
 
 ## 事件处理
 
@@ -261,7 +261,7 @@ v-on:xxx
 <input type="text" placeholder="按下回车提示输入" @keydown.13="showInfo" />
 ```
 
-![keycode不推荐MDN](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/keycode%E4%B8%8D%E6%8E%A8%E8%8D%90MDN.png)
+![keycode不推荐MDN](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/keycode%E4%B8%8D%E6%8E%A8%E8%8D%90MDN.png)
 
 5. 键盘事件同样可以连写<Badge text='不常用' type="error"/>===>`@keydown.ctrl.67`（Ctrl + C）
 
@@ -530,9 +530,9 @@ react、vue 中的 key 有什么作用？（key 的内部原理）
 
 5. 图示：
 
-![遍历列表时key的作用-index为key](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E9%81%8D%E5%8E%86%E5%88%97%E8%A1%A8%E6%97%B6key%E7%9A%84%E4%BD%9C%E7%94%A8-index%E4%B8%BAkey.png)
+![遍历列表时key的作用-index为key](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E9%81%8D%E5%8E%86%E5%88%97%E8%A1%A8%E6%97%B6key%E7%9A%84%E4%BD%9C%E7%94%A8-index%E4%B8%BAkey.png)
 
-![遍历列表时key的作用-id为key](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E9%81%8D%E5%8E%86%E5%88%97%E8%A1%A8%E6%97%B6key%E7%9A%84%E4%BD%9C%E7%94%A8-id%E4%B8%BAkey.png)
+![遍历列表时key的作用-id为key](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E9%81%8D%E5%8E%86%E5%88%97%E8%A1%A8%E6%97%B6key%E7%9A%84%E4%BD%9C%E7%94%A8-id%E4%B8%BAkey.png)
 
 ### 列表过滤
 
@@ -724,7 +724,7 @@ Object.defineProperty(obj2, 'x', {
 
 ### Vue 中的数据代理
 
-![数据代理图示](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86%E5%9B%BE%E7%A4%BA.jpg)
+![数据代理图示](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86%E5%9B%BE%E7%A4%BA.jpg)
 
 1. `Vue中的数据代理`：通过 vm 对象来代理 data 对象中属性的操作（读/写）
 
@@ -942,7 +942,7 @@ v-pre 指令是没有值的
 
 ## 生命周期
 
-![生命周期](https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-images/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
+![生命周期](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
 
 1. 是什么：`Vue` 在关键时刻帮我们调用的一些特殊名称的函数
 2. 生命周期函数中的 this 指向是`vm` 或 组件实例对象

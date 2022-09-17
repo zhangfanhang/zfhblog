@@ -14,7 +14,7 @@ module.exports = {
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
       config.output.publicPath =
-        'https://zfh-oss.oss-cn-shanghai.aliyuncs.com/blog-assets/'
+        'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-assets/'
     }
   },
   dest: './dist',
