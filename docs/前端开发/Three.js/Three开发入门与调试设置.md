@@ -52,6 +52,8 @@ renderer.render(scene, camera)
 
 ### 透视相机（PerspectiveCamera）示意图
 
+这一投影模式被用来模拟人眼所看到的景象，它是3D场景的渲染中使用得最普遍的投影模式。
+
 ![透视相机示意图](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E9%80%8F%E8%A7%86%E7%9B%B8%E6%9C%BA%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
 
 1. 摄像机视锥体垂直视野角度 也就是图中的**「a」**
@@ -162,6 +164,6 @@ function render() {
 
 ## 物体的缩放与旋转
 
-scale,缩放;rotation，旋转两者使用和位置差不多,通过`set`进行设置，当然也可以通过更改对象属性值更改物体的位置
+`scale`缩放;`rotation`旋转两者使用和位置差不多,通过`set`进行设置，当然也可以通过更改对象属性值更改物体的位置
 
 旋转有第四个参数代表表示旋转顺序的字符串，默认为`"XYZ"`
