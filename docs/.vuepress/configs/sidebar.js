@@ -28,6 +28,7 @@ module.exports = {
     'vue2如何实现界面刷新',
     'vue2实现滚动窗口同步滚动',
     'vue2中的css深度选择器',
+    'vue2虚拟列表实现',
     'vue2echarts数据报表项目学习心得',
     'v-modelSync修饰符使用和原理',
     'element-ui清除表单的奇怪现象',

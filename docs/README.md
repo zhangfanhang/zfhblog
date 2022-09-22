@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /code.gif
-heroText: ZFH's Blog:)
+heroText: ZFH's Blog
 tagline: 无他,惟手熟尔
 actionText: 小记 →
 actionLink: /小记/初来南京

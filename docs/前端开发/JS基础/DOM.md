@@ -6,15 +6,11 @@ title: DOM
 
 **"DOM 是 JS 操控 HTML 和 CSS 的桥梁"**
 
-// TODO 重新梳理
-
 ## DOM 简介
 
 - DOM（ Document Object Model，文档对象模型）是 JavaScript 操作 HTML 文档的接口，使文档操作变得非常优雅、简便
 
 - DOM 最大的特点就是将文档表示为节点树
-
-![dom节点树](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/dom%E8%8A%82%E7%82%B9%E6%A0%91.png)
 
 ![dom节点树2](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/dom%E8%8A%82%E7%82%B9%E6%A0%912.png)
 
@@ -28,14 +24,6 @@ title: DOM
 
 ## 访问元素节点
 
-### document 对象
-
-- document 对象是 DOM 中最重要的东西，几乎所有 DOM 的功能都封装在了 document 对象中
-
-- document 对象也表示整个 HTML 文档，它是 DOM 节点树的根
-
-- document.body 返回当前文档中的 body 元素
-
 ### 访问元素节点的常用方法
 
 ![访问元素节点方法](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E6%96%B9%E6%B3%95.png)
@@ -44,44 +32,29 @@ title: DOM
 
 document.getElementById()功能是通过**id**得到元素节点
 
-![getElementById()](<https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/getElementById().png>)
-
 - 如果页面上有相同 id 的元素，则只能得到第一个(一个页面一个 id 命名一般只能出现一次)
 - 括号里面**不要写#**
-- 通过 ID 获取元素的上下文**只能是 document**
-  > 原因：拿 div 举例子，div 是 HTMLDivElement 类的一个实例，document 是 HTMLDocument 的实例。
-  > 他们的继承关系：
-  > HTMLDivElement > HTMLElement > Element > Node > EventTarget;;;;;;;;
-  > HTMLDocument > Document > Node > EventTarget
-  > 我们都知道子类继承父类，子类就可以使用父类的属性和方法。
-  > 他们相同的继承关系是 Node 和 EventTarget，也就是说他们都可以使用 Node 和 EventTarget 上的方法。
-  > 如 Node 上的 nodeName、parentNode 等，和 EventTarget 上的 addEventListener 等。
-  > getElementById 只在 Document 类的原型上，HTMLDivElement 没有继承 Document 类，所以 div 不能使用 getElementById 方法。
+- 通过 ID 获取元素的上下文**只能是 document**，getElementById 只在 Document 类的原型上，HTMLDivElement 没有继承 Document 类，所以 div 不能使用 getElementById 方法
 
 #### getElementsByTagName()
 
 getElementsByTagName()方法的功能是通过标签名得到节点数组
 
-![getElementsByTagName()](<https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/getElementsByTagName().png>)
-
 - 数组方便遍历，从而可以批量操控元素节点
 - 即使页面上只有一个指定标签名的节点，也将得到长度为 1 的数组
-- 任何一个节点元素也可以调用 getElementsByTagName()方法，从而得到其内部的某种类的元素节点
+- 上下文可以是 document，也可以是一个元素
 
 #### getElementsByClassName()
 
 getElementsByClassName()方法的功能是通过类名得到节点数组
 
-![getElementsByClassName()](<https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/getElementsByClassName().png>)
-
 - 即使页面上只有一个指定类名的节点，也将得到长度为 1 的数组
-- 某个节点元素也可以调用 getElementsByClassName()方法，从而得到其内部的某类名的元素节点
+- **括号内不要写"."**
+- 上下文可以是 document，也可以是一个元素
 
 #### querySelector()
 
 querySelector()方法的功能是通过选择器得到元素
-
-![querySelector()](<https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/querySelector().png>)
 
 - querySelector()方法只能得到页面上一个元素，如果有多个元素符合条件，则只能得到第一个元素
 
@@ -96,8 +69,6 @@ querySelectorAll()方法的功能是通过选择器得到元素数组
 - 上下文可以是 document，也可以是一个元素
 
 ## 节点的关系
-
-![节点的关系](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%8A%82%E7%82%B9%E7%9A%84%E5%85%B3%E7%B3%BB.png)
 
 ![节点的关系2](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%8A%82%E7%82%B9%E7%9A%84%E5%85%B3%E7%B3%BB2.png)
 
@@ -233,21 +204,19 @@ querySelectorAll()方法的功能是通过选择器得到元素数组
 
 改变元素节点的 CSS 样式需要使用这样的语句
 
-![改变元素节点的css样式](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E7%9A%84css%E6%A0%B7%E5%BC%8F.png)
+```js
+box.style.backgroudColor='red'
+```
 
 ### 改变元素节点的 HTML 属性
 
-- 标准 W3C 属性，如 src、href 等等，只需要直接打点进行更改即可
+标准 W3C 属性，如 src、href 等等，只需要直接打点进行更改即可
 
 ```js
 oImg.src = 'images/2.png'
 ```
 
-#### class 属性
-
 class 属性需要通过 **className 属性** 获取和修改，而不是直接使用 el.class,修改该值将直接覆盖之前所有的类名
-
-#### classList 属性
 
 ```js
 document.getElementById('myDIV').classList.add('mystyle')
@@ -259,12 +228,12 @@ classList 属性返回元素的类名，作为 DOMTokenList 对象。
 
 classList 属性是**只读**的，但你可以使用 **add()** 和 **remove()** 方法修改它。
 
-- 不符合 W3C 标准的属性，要使用 setAttribute()和 getAttribute()来设置、读取
+不符合 W3C 标准的属性，要使用 setAttribute()和 getAttribute()来设置、读取
 
 ```js
 oBox.setAttribute(data - n, 10)
 var n = oBox.getAttribute(data - n)
-alert(n)
+alert(n) //10
 ```
 
 #### 自定义属性 data
@@ -373,83 +342,14 @@ alert(n)
 
 > 当然也可以使用 setAttribute()和 getAttribute()来设置、读取
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <style>
-      div {
-        width: 300px;
-        height: 200px;
-        display: none;
-        text-align: center;
-        border: 1px solid #ccc;
-      }
-      div.php {
-        background: red;
-      }
-      div.javascript {
-        background: blue;
-      }
-      div.html {
-        background: green;
-      }
-      div.linux {
-        background: yellow;
-      }
-    </style>
-    <script>
-      window.onload = function () {
-        var aInput = document.querySelectorAll('input')
-        var aDiv = document.querySelectorAll('div')
-        aInput.forEach(function (val, key) {
-          val.onclick = function () {
-            for (var i = 0, len = aInput.length; i < len; i++) {
-              aInput[i].style.background = ''
-              aDiv[i].style.display = 'none'
-            }
-            val.style.background = 'red'
-            // val.dataset.target 获取val元素的自定义target属性，因为自定属性里前有一个#号，所以去掉#，就变成了val.dataset.target.substring(1)
-            // 对应的div元素Id刚好是 val 的自定义索引data-target属性去掉# 号，所以可以按照如下方法获取元素，然后进行显示
-            document.getElementById(
-              val.dataset.target.substring(1)
-            ).style.display = 'block'
-          }
-        })
-      }
-    </script>
-  </head>
-  <body>
-    <input
-      type="button"
-      value="点击1"
-      data-index="1"
-      data-target="#php"
-      style="background:red;"
-    />
-    <input
-      type="button"
-      value="点击2"
-      data-index="2"
-      data-target="#javascript"
-    />
-    <input type="button" value="点击3" data-index="3" data-target="#html" />
-    <input type="button" value="点击4" data-index="4" data-target="#linux" />
-    <div id="php" style="display:block" class="php">
-      php 是一门强大的后端脚本语言
-    </div>
-    <div id="javascript" class="javascript">
-      javascript 是一门强大的前端脚本语言
-    </div>
-    <div id="html" class="html">html 是一门浏览器语言</div>
-    <div id="linux" class="linux">linux 是一门强大的服务器脚本语言</div>
-  </body>
-</html>
-```
+<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="poVwPVN" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/poVwPVN">
+  自定义属性demo</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+// TODO 9.2s
 
 ### 节点的创建
 
