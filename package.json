@@ -20,8 +20,6 @@
     "axios": "^0.27.2",
     "busuanzi.pure.js": "^1.0.3",
     "dayjs": "^1.11.3",
-    "nodejieba": "^2.6.0",
-    "three": "^0.143.0",
     "vuepress-plugin-reading-progress": "^1.0.10",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
     "vuepress-plugin-tags": "^1.0.2"
