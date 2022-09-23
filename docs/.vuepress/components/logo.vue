@@ -14,7 +14,7 @@ export default {
     // 初始化
     init() {
       const camera = new THREE.PerspectiveCamera(
-        40,
+        window.innerWidth <= 768 ? 100 : 50,
         window.innerWidth / window.innerHeight,
         1,
         10000

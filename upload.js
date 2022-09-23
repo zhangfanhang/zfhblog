@@ -8,8 +8,8 @@ new WebpackAliyunOss({
   from: './dist/assets',
   dist: 'blog-assets/',
   region: 'oss-cn-nanjing',
-  accessKeyId: 'LTAI5tG9FP7DXeJFj4krraLB',
-  accessKeySecret: 'G5ZzWfxAFpxqwn729nS3wfiRJVau4d',
+  accessKeyId: 'LTAI5tSHVrtRFSs8KU4vu4ZG',
+  accessKeySecret: '7EHmkGIGvQiZUmV3EBp6Jk62Ty4B0q',
   bucket: 'zfh-nanjing-bucket',
   setOssPath(filePath) {
     let index = filePath.lastIndexOf('dist')
