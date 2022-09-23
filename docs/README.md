@@ -1,8 +1,7 @@
 ---
 home: true
-heroImage: /code.gif
-heroText: ZFH's Blog
-tagline: 无他,惟手熟尔
+heroImage:
+heroText:
 actionText: 小记 →
 actionLink: /小记/初来南京
 features:
@@ -14,5 +13,7 @@ features:
     details: 笔记千锤百炼,努力成为一名合格的前端开发工程师;记录自己的成长和生活
 footer: Copyright © 2020-2022 FANHANG ZHANG
 ---
+
+<logo/>
 
 <busuanzi />
