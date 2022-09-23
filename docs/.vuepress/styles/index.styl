@@ -3,17 +3,6 @@
     box-shadow: 0 8px 20px -2px rgba(0,0,0,.06);
 }
 
-.description{
-    display:none;
-}
-#main-title{
-    display:none;
-}
- 
-.home .footer,.home .features{
-    border-top:0  !important;
-}
-
 .busuanzi{
     font-size:1rem;
     color: #4e6e8e;
@@ -22,4 +11,18 @@
 #busuanzi_value_site_pv,#busuanzi_value_site_uv{
 font-weight:bold
 }
- 
+
+.home .footer,.home .features{
+    border-top:0  !important;
+}
+
+@media screen and (max-width: 600px) { 
+    canvas{
+        display:none !important;
+    }
+}
+@media screen and (min-width: 900px) {
+   img,#main-title,.description{
+     display:none !important;
+  }
+}

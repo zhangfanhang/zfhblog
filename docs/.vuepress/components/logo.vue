@@ -15,12 +15,12 @@ export default {
     // 初始化
     init() {
       const camera = new THREE.PerspectiveCamera(
-        100,
+        40,
         window.innerWidth / window.innerHeight,
         1,
         10000
       )
-      camera.position.set(0, -400, 600)
+      camera.position.set(0, 0, 900)
       const scene = new THREE.Scene()
       const loader = new FontLoader()
       loader.load(
@@ -82,7 +82,9 @@ export default {
         )
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.target.set(0, 0, 0)
-      // controls.autoRotate = true
+      controls.enableDamping = true
+      controls.autoRotate = true
+      controls.autoRotateSpeed = 6
       // controls.enableRotate = false
       controls.enableZoom = false
       window.addEventListener('resize', onWindowResize)
