@@ -3,7 +3,6 @@
 </template>
 <script>
 import * as THREE from 'three'
-
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
 export default {
@@ -23,6 +22,7 @@ export default {
       camera.position.set(0, 0, 900)
       const scene = new THREE.Scene()
       const loader = new FontLoader()
+      const lineText = new THREE.Object3D()
       loader.load(
         'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/fonts/helvetiker_regular.typeface.json',
         function (font) {
@@ -58,7 +58,6 @@ export default {
             }
           }
           shapes.push.apply(shapes, holeShapes)
-          const lineText = new THREE.Object3D()
           for (let i = 0; i < shapes.length; i++) {
             const shape = shapes[i]
             const points = shape.getPoints()
@@ -75,18 +74,15 @@ export default {
       renderer.setPixelRatio(window.devicePixelRatio)
       renderer.setSize(window.innerWidth, window.innerHeight)
       document
-        .getElementsByClassName('theme-container')[0]
+        .getElementsByClassName('home')[0]
         .insertBefore(
           renderer.domElement,
-          document.getElementsByClassName('home')[0]
+          document.getElementsByClassName('hero')[0]
         )
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.target.set(0, 0, 0)
-      controls.enableDamping = true
-      controls.autoRotate = true
-      controls.autoRotateSpeed = 6
-      // controls.enableRotate = false
       controls.enableZoom = false
+      controls.enableDamping = true
       window.addEventListener('resize', onWindowResize)
       function onWindowResize() {
         camera.aspect = window.innerWidth / window.innerHeight
