@@ -82,6 +82,9 @@ export default {
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.target.set(0, 0, 0)
       controls.enableZoom = false
+      controls.autoRotate = true
+      controls.autoRotateSpeed = 10
+      controls.enableRotate = false
       controls.enableDamping = true
       window.addEventListener('resize', onWindowResize)
       function onWindowResize() {
