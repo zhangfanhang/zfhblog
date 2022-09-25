@@ -25,8 +25,6 @@ git commit -m "${msg}"
 git push -f $githubUrl master # 推送到github
 
 cd -
-# 部署成功提醒
-node pushDeer.js
 
 rm -rf ./dist
 
