@@ -11,12 +11,12 @@ module.exports = {
     ],
   ],
   // 静态资源从阿里云OSS加载
-  // configureWebpack: config => {
-  //   if (process.env.NODE_ENV === 'production') {
-  //     config.output.publicPath =
-  //       'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-assets/'
-  //   }
-  // },
+  configureWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      config.output.publicPath =
+        'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-assets/'
+    }
+  },
   dest: './dist',
   title: `ZFH's Blog`,
   description: '一个菜鸟前端的知识库博客',
