@@ -8,6 +8,7 @@
     color: #4e6e8e !important;
     text-shadow: 0 1px #fff;
 }
+
 #busuanzi_value_site_pv,#busuanzi_value_site_uv{
 font-weight:bold
 }
@@ -18,4 +19,32 @@ font-weight:bold
 
 .site-name{
     display:none !important;
+}
+
+.hero img{
+    border-radius: 10px;
+}
+
+/* 打字机效果 */
+.description { 
+  max-width:12rem  !important;
+  font-family: monospace;
+  overflow: hidden; 
+  border-right: .15em solid #6a8bad;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: 
+    typing 3s steps(70, end),
+    blink-caret .5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #6a8bad }
 }
