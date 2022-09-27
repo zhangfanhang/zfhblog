@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-b5edebfa\",\"path\":\"/%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/Vue/v-modelSync%E4%BF%AE%E9%A5%B0%E7%AC%A6%E4%BD%BF%E7%94%A8%E5%92%8C%E5%8E%9F%E7%90%86.html\",\"title\":\"v-model,Sync修饰符使用和原理\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"v-model,Sync修饰符使用和原理\",\"tags\":[\"2022/08/29 17:50:08\",\"v-model\",\".sync修饰符\"],\"summary\":\"v-model,Sync 修饰符使用和原理 v-model 原理 v-model是vue中常用的语法糖，它的本质其实是v-bind一个叫value的变量，利用v-on绑定原生input事件实现： v-model 作用在组件上的原理 在组件上使用v-model，实际上是给该组件传入了一个名为value的prop,并绑定了一个名为input的自定义事件。 pro\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://zfhblog.top/%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/Vue/v-modelSync%E4%BF%AE%E9%A5%B0%E7%AC%A6%E4%BD%BF%E7%94%A8%E5%92%8C%E5%8E%9F%E7%90%86.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"ZFH's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"v-model,Sync修饰符使用和原理\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"2022/08/29 17:50:08\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"v-model\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\".sync修饰符\"}]]},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"v-model 原理\",\"slug\":\"v-model-原理\",\"link\":\"#v-model-原理\",\"children\":[]},{\"level\":2,\"title\":\"v-model 作用在组件上的原理\",\"slug\":\"v-model-作用在组件上的原理\",\"link\":\"#v-model-作用在组件上的原理\",\"children\":[]},{\"level\":2,\"title\":\"sync 修饰符的原理\",\"slug\":\"sync-修饰符的原理\",\"link\":\"#sync-修饰符的原理\",\"children\":[]},{\"level\":2,\"title\":\"vue2 和 vue3 的差异\",\"slug\":\"vue2-和-vue3-的差异\",\"link\":\"#vue2-和-vue3-的差异\",\"children\":[]}],\"readingTime\":{\"minutes\":2.73,\"words\":818},\"filePathRelative\":\"开发记录/Vue/v-modelSync修饰符使用和原理.md\"}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

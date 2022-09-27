@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-130526ee\",\"path\":\"/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/CSS3/%E8%83%8C%E6%99%AF%E4%B8%8E%E6%B8%90%E5%8F%98.html\",\"title\":\"背景与渐变\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"背景与渐变\",\"summary\":\"背景 bgckground-color 表示背景颜色; 可以用十六进制，rgb(),rgba(); padding 区域是有背景颜色的; background-image 用来设置背景图片，图片路径要写到 ur1()圆括号中，可以是相对路径，也可以是 http://开头的绝对路径 background-repeat 用来设置背景的重复模式 repeat:x，\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://zfhblog.top/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/CSS3/%E8%83%8C%E6%99%AF%E4%B8%8E%E6%B8%90%E5%8F%98.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"ZFH's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"背景与渐变\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}]]},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"背景\",\"slug\":\"背景\",\"link\":\"#背景\",\"children\":[{\"level\":3,\"title\":\"bgckground-color\",\"slug\":\"bgckground-color\",\"link\":\"#bgckground-color\",\"children\":[]},{\"level\":3,\"title\":\"background-image\",\"slug\":\"background-image\",\"link\":\"#background-image\",\"children\":[]},{\"level\":3,\"title\":\"background-repeat\",\"slug\":\"background-repeat\",\"link\":\"#background-repeat\",\"children\":[]},{\"level\":3,\"title\":\"background-size\",\"slug\":\"background-size\",\"link\":\"#background-size\",\"children\":[]},{\"level\":3,\"title\":\"background-origin\",\"slug\":\"background-origin\",\"link\":\"#background-origin\",\"children\":[]},{\"level\":3,\"title\":\"background-clip\",\"slug\":\"background-clip\",\"link\":\"#background-clip\",\"children\":[]},{\"level\":3,\"title\":\"background-attachment\",\"slug\":\"background-attachment\",\"link\":\"#background-attachment\",\"children\":[]},{\"level\":3,\"title\":\"background-position\",\"slug\":\"background-position\",\"link\":\"#background-position\",\"children\":[]},{\"level\":3,\"title\":\"CSS 精灵\",\"slug\":\"css-精灵\",\"link\":\"#css-精灵\",\"children\":[]},{\"level\":3,\"title\":\"background 综合属性\",\"slug\":\"background-综合属性\",\"link\":\"#background-综合属性\",\"children\":[]}]},{\"level\":2,\"title\":\"渐变\",\"slug\":\"渐变\",\"link\":\"#渐变\",\"children\":[{\"level\":3,\"title\":\"线性渐变\",\"slug\":\"线性渐变\",\"link\":\"#线性渐变\",\"children\":[]},{\"level\":3,\"title\":\"径向渐变\",\"slug\":\"径向渐变\",\"link\":\"#径向渐变\",\"children\":[]}]}],\"readingTime\":{\"minutes\":3.18,\"words\":953},\"filePathRelative\":\"前端开发/CSS3/背景与渐变.md\"}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-99938d06\",\"path\":\"/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/React/React%E4%B8%ADaxios.html\",\"title\":\"React中axios\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"React中axios\",\"summary\":\"官方文档 React 系列十三 - axios 库的使用 为什么不是...? 1. Jquery-ajax:没什么好说的 2. Fetch API：Fetch 是一个 low-level（底层）的 API，没有帮助你封装好各种各样的功能 和实现 为什么是 Axios？ Vue 作者也是推荐在 vue 中使用 axios(尤大说好就是好 👌) Axios 的\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://zfhblog.top/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/React/React%E4%B8%ADaxios.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"ZFH's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"React中axios\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}]]},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"为什么不是...?\",\"slug\":\"为什么不是\",\"link\":\"#为什么不是\",\"children\":[]},{\"level\":2,\"title\":\"为什么是 Axios？\",\"slug\":\"为什么是-axios\",\"link\":\"#为什么是-axios\",\"children\":[]},{\"level\":2,\"title\":\"Axios 的基本使用\",\"slug\":\"axios-的基本使用\",\"link\":\"#axios-的基本使用\",\"children\":[{\"level\":3,\"title\":\"发送请求\",\"slug\":\"发送请求\",\"link\":\"#发送请求\",\"children\":[]},{\"level\":3,\"title\":\"配置信息\",\"slug\":\"配置信息\",\"link\":\"#配置信息\",\"children\":[]},{\"level\":3,\"title\":\"拦截器\",\"slug\":\"拦截器\",\"link\":\"#拦截器\",\"children\":[]}]},{\"level\":2,\"title\":\"axios 库的二次封装\",\"slug\":\"axios-库的二次封装\",\"link\":\"#axios-库的二次封装\",\"children\":[{\"level\":3,\"title\":\"为什么要封装？\",\"slug\":\"为什么要封装\",\"link\":\"#为什么要封装\",\"children\":[]},{\"level\":3,\"title\":\"axios 二次封装\",\"slug\":\"axios-二次封装\",\"link\":\"#axios-二次封装\",\"children\":[]}]}],\"readingTime\":{\"minutes\":3,\"words\":899},\"filePathRelative\":\"前端开发/React/React中axios.md\"}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

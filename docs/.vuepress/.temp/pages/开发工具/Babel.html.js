@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-44c8254e\",\"path\":\"/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Babel.html\",\"title\":\"Babel\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"Babel\",\"sidebar\":\"auto\",\"summary\":\"参考 【建议改成】读完这篇你还不懂 Babel 我给你寄口罩 Babel 中文文档 Babel 简介 Babel 是 JavaScript 的编译器，用来将 ES6 的代码，转换成 ES6 之前的代码 Babel 本身可以编译 ES6 的大部分语法，比如 let、const、箭头函数、类 但是对于 ES6 新增的 API，比如 Set、Map、Promise\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://zfhblog.top/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Babel.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"ZFH's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Babel\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}]]},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"Babel 简介\",\"slug\":\"babel-简介\",\"link\":\"#babel-简介\",\"children\":[]},{\"level\":2,\"title\":\"使用 Babel 前的准备工作\",\"slug\":\"使用-babel-前的准备工作\",\"link\":\"#使用-babel-前的准备工作\",\"children\":[]},{\"level\":2,\"title\":\"插件 plugins\",\"slug\":\"插件-plugins\",\"link\":\"#插件-plugins\",\"children\":[]},{\"level\":2,\"title\":\"Presets\",\"slug\":\"presets\",\"link\":\"#presets\",\"children\":[]},{\"level\":2,\"title\":\"babel.config.js 配置文件\",\"slug\":\"babel-config-js-配置文件\",\"link\":\"#babel-config-js-配置文件\",\"children\":[]},{\"level\":2,\"title\":\"Polyfill\",\"slug\":\"polyfill\",\"link\":\"#polyfill\",\"children\":[]}],\"readingTime\":{\"minutes\":4.34,\"words\":1302},\"filePathRelative\":\"开发工具/Babel.md\"}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

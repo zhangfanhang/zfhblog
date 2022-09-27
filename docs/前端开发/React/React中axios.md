@@ -1,6 +1,5 @@
 ---
 title: React中axios
-date: 2022/05/18 18:25:09
 ---
 
 [官方文档](https://www.axios-http.cn/)
@@ -29,47 +28,47 @@ import { PureComponent } from 'react'
 import axios from 'axios'
 
 export default class App extends PureComponent {
-    constructor() {
-        super()
-        this.state = {
-            res: {},
-        }
+  constructor() {
+    super()
+    this.state = {
+      res: {},
     }
-    render() {
-        return <div>url:{this.state.res.url}</div>
-    }
-    async componentDidMount() {
-        const res = await axios.get('https://httpbin.org/get')
-        this.setState({
-            res: res.data,
-        })
-    }
+  }
+  render() {
+    return <div>url:{this.state.res.url}</div>
+  }
+  async componentDidMount() {
+    const res = await axios.get('https://httpbin.org/get')
+    this.setState({
+      res: res.data,
+    })
+  }
 }
 ```
 
--   发送 get 请求
--   发送 post 请求
--   多个请求的合并
+- 发送 get 请求
+- 发送 post 请求
+- 多个请求的合并
 
 ```js
 const request1 = axios.get('https://httpbin.org/get', {
-    params: { name: 'why', age: 18 },
+  params: { name: 'why', age: 18 },
 })
 const request2 = axios.post('https://httpbin.org/post', {
-    name: 'kobe',
-    age: 40,
+  name: 'kobe',
+  age: 40,
 })
 axios
-    .all([request1, request2])
-    .then(([res1, res2]) => {
-        console.log(res1, res2)
-    })
-    .catch(err => {
-        console.log(err)
-    })
+  .all([request1, request2])
+  .then(([res1, res2]) => {
+    console.log(res1, res2)
+  })
+  .catch(err => {
+    console.log(err)
+  })
 ```
 
--   使用 async、await 发送请求
+- 使用 async、await 发送请求
 
 ```js
 async componentDidMount() {
@@ -85,9 +84,9 @@ async componentDidMount() {
 
 ### 配置信息
 
--   优先是请求的 config 参数配置
--   其次是实例的 default 中的配置
--   最后是创建实例时的配置
+- 优先是请求的 config 参数配置
+- 其次是实例的 default 中的配置
+- 最后是创建实例时的配置
 
 ### 拦截器
 
@@ -126,11 +125,11 @@ axios.interceptors.response.use(response => {
 
 为什么我们要对 axios 进行二次封装呢？
 
--   默认情况下我们是可以直接使用 axios 来进行开发的；
--   但是我们考虑一个问题，假如有 100 多处中都直接依赖 axios，突然间有一天 axios 出现了重大 bug，并且该库已经不再维护，这个时候你如何处理呢？
--   大多数情况下我们会寻找一个新的网络请求库或者自己进行二次封装；
--   但是有 100 多处都依赖了 axios，方便我们进行修改吗？我们所有依赖 axios 库的地方都需要进行修改
--   如果是自己进行了二次封装，并且暴露一套自己的 API:只需要重新封装另一个网络请求库(只需要修改一个 js 文件)
+- 默认情况下我们是可以直接使用 axios 来进行开发的；
+- 但是我们考虑一个问题，假如有 100 多处中都直接依赖 axios，突然间有一天 axios 出现了重大 bug，并且该库已经不再维护，这个时候你如何处理呢？
+- 大多数情况下我们会寻找一个新的网络请求库或者自己进行二次封装；
+- 但是有 100 多处都依赖了 axios，方便我们进行修改吗？我们所有依赖 axios 库的地方都需要进行修改
+- 如果是自己进行了二次封装，并且暴露一套自己的 API:只需要重新封装另一个网络请求库(只需要修改一个 js 文件)
 
 ### axios 二次封装
 
@@ -147,7 +146,7 @@ const devBaseURL = 'https://httpbin.org'
 const proBaseURL = 'https://production.org'
 console.log(process.env.NODE_ENV)
 export const baseURL =
-    process.env.NODE_ENV === 'development' ? devBaseURL : proBaseURL
+  process.env.NODE_ENV === 'development' ? devBaseURL : proBaseURL
 ```
 
 创建 request.js，用于封装请求对象：
@@ -158,41 +157,41 @@ import axios from 'axios'
 import { TIMEOUT, baseURL } from './config'
 
 const instance = axios.create({
-    timeout: TIMEOUT,
-    baseURL: baseURL,
+  timeout: TIMEOUT,
+  baseURL: baseURL,
 })
 
 axios.interceptors.request.use(
-    config => {
-        // 1.发送网络请求时，在页面中添加一个loading组件作为动画；
+  config => {
+    // 1.发送网络请求时，在页面中添加一个loading组件作为动画；
 
-        // 2.某些网络请求要求用户必须登录，可以在请求中判断是否携带了token，没有携带token直接跳转到login页面；
+    // 2.某些网络请求要求用户必须登录，可以在请求中判断是否携带了token，没有携带token直接跳转到login页面；
 
-        // 3.对某些请求参数进行序列化；
-        return config
-    },
-    err => {
-        return err
-    }
+    // 3.对某些请求参数进行序列化；
+    return config
+  },
+  err => {
+    return err
+  }
 )
 
 instance.interceptors.response.use(
-    response => {
-        return response.data
-    },
-    err => {
-        if (err && err.response) {
-            switch (err.response.status) {
-                case 400:
-                    err.message = '请求错误'
-                    break
-                case 401:
-                    err.message = '未授权访问'
-                    break
-            }
-        }
-        return err
+  response => {
+    return response.data
+  },
+  err => {
+    if (err && err.response) {
+      switch (err.response.status) {
+        case 400:
+          err.message = '请求错误'
+          break
+        case 401:
+          err.message = '未授权访问'
+          break
+      }
     }
+    return err
+  }
 )
 
 export default instance
@@ -202,23 +201,23 @@ export default instance
 
 ```js
 equest({
-    url: '/get',
-    params: {
-        name: 'why',
-        age: 18,
-    },
+  url: '/get',
+  params: {
+    name: 'why',
+    age: 18,
+  },
 })
-    .then(console.log)
-    .catch(console.error)
+  .then(console.log)
+  .catch(console.error)
 
 request({
-    url: '/post',
-    method: 'post',
-    data: {
-        name: 'kobe',
-        age: 40,
-    },
+  url: '/post',
+  method: 'post',
+  data: {
+    name: 'kobe',
+    age: 40,
+  },
 })
-    .then(console.log)
-    .catch(console.error)
+  .then(console.log)
+  .catch(console.error)
 ```

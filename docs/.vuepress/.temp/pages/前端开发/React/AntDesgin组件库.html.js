@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-81fc91b2\",\"path\":\"/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/React/AntDesgin%E7%BB%84%E4%BB%B6%E5%BA%93.html\",\"title\":\"AntDesgin组件库\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"AntDesgin组件库\",\"summary\":\"官方网站 国内镜像 AntDesign ，简称 antd 是基于 Ant Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。 中后台的产品 属于工具性产品，很多优秀的设计团队通过自身的探索和积累，形成了自己的设计体系。 AntDesign 的兼容性：现代浏览器和 IE11（需要 polyfills）,支持服务端渲染,Elect\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://zfhblog.top/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/React/AntDesgin%E7%BB%84%E4%BB%B6%E5%BA%93.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"ZFH's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"AntDesgin组件库\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}]]},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"AntDesign 的安装\",\"slug\":\"antdesign-的安装\",\"link\":\"#antdesign-的安装\",\"children\":[]},{\"level\":2,\"title\":\"craco\",\"slug\":\"craco\",\"link\":\"#craco\",\"children\":[{\"level\":3,\"title\":\"使用 craco\",\"slug\":\"使用-craco\",\"link\":\"#使用-craco\",\"children\":[]},{\"level\":3,\"title\":\"配置主题\",\"slug\":\"配置主题\",\"link\":\"#配置主题\",\"children\":[]},{\"level\":3,\"title\":\"配置别名\",\"slug\":\"配置别名\",\"link\":\"#配置别名\",\"children\":[]}]}],\"readingTime\":{\"minutes\":1.35,\"words\":404},\"filePathRelative\":\"前端开发/React/AntDesgin组件库.md\"}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

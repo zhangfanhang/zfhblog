@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-31f4b070\",\"path\":\"/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/node%E5%85%A5%E9%97%A8/node.js%E5%A4%84%E7%90%86HTTP.html\",\"title\":\"Node.js处理HTTP\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"Node.js处理HTTP\",\"summary\":\"监听 http 请求 node.js 启动 web 服务 使用 http 模块，启动服务 req 和 res 路由 路由-定义 get 路由和 post 路由 测试路由 GET 请求，直接拿浏览器访问; POST 请求，需要借助工具——postman; querystring 介绍和使用 http://xxx.com/index.html?keyword=1\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://zfhblog.top/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/node%E5%85%A5%E9%97%A8/node.js%E5%A4%84%E7%90%86HTTP.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"ZFH's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Node.js处理HTTP\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}]]},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"监听 http 请求\",\"slug\":\"监听-http-请求\",\"link\":\"#监听-http-请求\",\"children\":[{\"level\":3,\"title\":\"node.js 启动 web 服务\",\"slug\":\"node-js-启动-web-服务\",\"link\":\"#node-js-启动-web-服务\",\"children\":[]}]},{\"level\":2,\"title\":\"req 和 res\",\"slug\":\"req-和-res\",\"link\":\"#req-和-res\",\"children\":[]},{\"level\":2,\"title\":\"路由\",\"slug\":\"路由\",\"link\":\"#路由\",\"children\":[{\"level\":3,\"title\":\"路由-定义 get 路由和 post 路由\",\"slug\":\"路由-定义-get-路由和-post-路由\",\"link\":\"#路由-定义-get-路由和-post-路由\",\"children\":[]},{\"level\":3,\"title\":\"测试路由\",\"slug\":\"测试路由\",\"link\":\"#测试路由\",\"children\":[]}]},{\"level\":2,\"title\":\"querystring\",\"slug\":\"querystring\",\"link\":\"#querystring\",\"children\":[{\"level\":3,\"title\":\"介绍和使用\",\"slug\":\"介绍和使用\",\"link\":\"#介绍和使用\",\"children\":[]},{\"level\":3,\"title\":\"hash 不能传到服务端\",\"slug\":\"hash-不能传到服务端\",\"link\":\"#hash-不能传到服务端\",\"children\":[]},{\"level\":3,\"title\":\"结构化与非结构化\",\"slug\":\"结构化与非结构化\",\"link\":\"#结构化与非结构化\",\"children\":[]}]},{\"level\":2,\"title\":\"res 返回数据\",\"slug\":\"res-返回数据\",\"link\":\"#res-返回数据\",\"children\":[{\"level\":3,\"title\":\"返回 JSON 数据\",\"slug\":\"返回-json-数据\",\"link\":\"#返回-json-数据\",\"children\":[]},{\"level\":3,\"title\":\"返回 html\",\"slug\":\"返回-html\",\"link\":\"#返回-html\",\"children\":[]}]},{\"level\":2,\"title\":\"接收 request body\",\"slug\":\"接收-request-body\",\"link\":\"#接收-request-body\",\"children\":[{\"level\":3,\"title\":\"流\",\"slug\":\"流\",\"link\":\"#流\",\"children\":[]}]}],\"readingTime\":{\"minutes\":4.25,\"words\":1276},\"filePathRelative\":\"后端开发/node入门/node.js处理HTTP.md\"}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

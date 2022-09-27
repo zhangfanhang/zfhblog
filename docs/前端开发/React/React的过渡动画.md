@@ -1,6 +1,5 @@
 ---
 title: React的过渡动画
-date: 2022/05/20 22:27:43
 ---
 
 [React 系列十四 - React 过渡动画](https://mp.weixin.qq.com/s/14HneI7SpfrRHKtqgosIiA)
@@ -25,9 +24,9 @@ CSSTransition 执行过程中，有三个状态：appear、enter、exit；
 
 它们有三种状态，需要定义对应的 CSS 样式：
 
--   第一类,开始状态：对于的类是-appear、-enter、-exit；
--   第二类,执行动画：对应的类是-appear-active、-enter-active、-exit-active；
--   第三类,执行结束：对应的类是-appear-done、-enter-done、-exit-done；
+- 第一类,开始状态：对于的类是-appear、-enter、-exit；
+- 第二类,执行动画：对应的类是-appear-active、-enter-active、-exit-active；
+- 第三类,执行结束：对应的类是-appear-done、-enter-done、-exit-done；
 
 ### CSSTransition 常见属性
 
@@ -35,9 +34,9 @@ CSSTransition 执行过程中，有三个状态：appear、enter、exit；
 
 触发进入或者退出状态
 
--   如果添加了 `unmountOnExit`，那么该组件会在执行退出动画结束后被移除掉；
--   当 in 为 true 时，触发进入状态，会添加-enter、-enter-acitve 的 class 开始执行动画，当动画执行结束后，会移除两个 class，并且添加-enter-done 的 class；
--   当 in 为 false 时，触发退出状态，会添加-exit、-exit-active 的 class 开始执行动画，当动画执行结束后，会移除两个 class，并且添加-enter-done 的 class；
+- 如果添加了 `unmountOnExit`，那么该组件会在执行退出动画结束后被移除掉；
+- 当 in 为 true 时，触发进入状态，会添加-enter、-enter-acitve 的 class 开始执行动画，当动画执行结束后，会移除两个 class，并且添加-enter-done 的 class；
+- 当 in 为 false 时，触发退出状态，会添加-exit、-exit-active 的 class 开始执行动画，当动画执行结束后，会移除两个 class，并且添加-enter-done 的 class；
 
 ::: tip 比如说，一个 div 的显示/隐藏动画
 
@@ -48,13 +47,13 @@ CSSTransition 执行过程中，有三个状态：appear、enter、exit；
 
 #### classNames
 
-动画 class 的名称 
+动画 class 的名称
 
 决定了在编写 css 时，对应的 class 名称：比如 card-enter、card-enter-active、card-enter-done；
 
 #### timeout
 
-类添加删除的时间	
+类添加删除的时间
 
 #### appear
 
@@ -68,39 +67,43 @@ CSSTransition 执行过程中，有三个状态：appear、enter、exit；
 
 主要为了检测动画的执行过程，来完成一些 JavaScript 的操作
 
--   onEnter：在进入动画之前被触发(对应 onExit)
--   onEntering：在应用进入动画时被触发(对应 onExiting)
--   onEntered：在应用进入动画结束后被触发(对应 onEntered)
+- onEnter：在进入动画之前被触发(对应 onExit)
+- onEntering：在应用进入动画时被触发(对应 onExiting)
+- onEntered：在应用进入动画结束后被触发(对应 onEntered)
 
 ## SwitchTransition
 
 SwitchTransition 可以完成两个组件之间切换的炫酷动画：
 
--   比如我们有一个按钮需要在 on 和 off 之间切换，我们希望看到 on 先从左侧退出，off 再从右侧进入
--   这个动画在 vue 中被称之为 vue transition modes(过渡模式)
--   react-transition-group 中使用 SwitchTransition 来实现该动画
+- 比如我们有一个按钮需要在 on 和 off 之间切换，我们希望看到 on 先从左侧退出，off 再从右侧进入
+- 这个动画在 vue 中被称之为 vue transition modes(过渡模式)
+- react-transition-group 中使用 SwitchTransition 来实现该动画
 
 SwitchTransition 中主要有一个属性：mode，有两个值
 
--   in-out：表示新组件先进入，旧组件再移除
--   out-in：表示就组件先移除，新组建再进入
+- in-out：表示新组件先进入，旧组件再移除
+- out-in：表示就组件先移除，新组建再进入
 
 如何使用 SwitchTransition 呢？
 
--   SwitchTransition 组件里面要有 CSSTransition  组件，不能直接包裹你想要切换的组件
--   SwitchTransition 里面的 CSSTransition   组件不再像以前那样接受 in 属性来判断元素是何种状态，取而代之的是 key 属性
+- SwitchTransition 组件里面要有 CSSTransition 组件，不能直接包裹你想要切换的组件
+- SwitchTransition 里面的 CSSTransition 组件不再像以前那样接受 in 属性来判断元素是何种状态，取而代之的是 key 属性
 
 ::: details coolCode
 
 ```jsx
-import {PureComponent} from "react";
-import {CSSTransition, SwitchTransition} from "react-transition-group";
-import {Card, Avatar} from 'antd';
-import {EditOutlined, EllipsisOutlined, SettingOutlined} from '@ant-design/icons';
-import styled from "styled-components";
-import {Button} from 'antd';
+import { PureComponent } from 'react'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
+import { Card, Avatar } from 'antd'
+import {
+  EditOutlined,
+  EllipsisOutlined,
+  SettingOutlined,
+} from '@ant-design/icons'
+import styled from 'styled-components'
+import { Button } from 'antd'
 
-const {Meta} = Card;
+const { Meta } = Card
 
 const BtnWrapper = styled.div`
   text-align: center;
@@ -116,7 +119,7 @@ const CardWrapper = styled.div`
 
   .card-enter {
     opacity: 0;
-    transform: scale(.7);
+    transform: scale(0.7);
   }
 
   .card-enter-active {
@@ -132,7 +135,7 @@ const CardWrapper = styled.div`
 
   .card-exit-active {
     opacity: 0;
-    transform: scale(.7);
+    transform: scale(0.7);
     transition: all 300ms;
   }
 
@@ -149,7 +152,7 @@ const CardWrapper = styled.div`
 
   .btn-exit {
     opacity: 1;
-    transform: translateX(0)
+    transform: translateX(0);
   }
 
   .btn-exit-active {
@@ -157,69 +160,80 @@ const CardWrapper = styled.div`
     transform: translateX(-100%);
     transition: all 1000ms;
   }
-
-
-
 `
 
-
 export default class App extends PureComponent {
-    constructor() {
-        super();
-        this.state = {
-            isShow: false
-        }
+  constructor() {
+    super()
+    this.state = {
+      isShow: false,
     }
+  }
 
-    showControl() {
-        this.setState({
-            isShow: !(this.state.isShow),
-        })
-    }
+  showControl() {
+    this.setState({
+      isShow: !this.state.isShow,
+    })
+  }
 
-    render() {
-        return (
-            <CardWrapper>
-                <BtnWrapper>
-                    <SwitchTransition mode='out-in'>
-                        <CSSTransition key={this.state.isShow ? 'on' : 'off'} classNames='btn' timeout={1000}>
-                            <Button type="primary" style={{marginBottom: '20px'}}
-                                    onClick={this.showControl.bind(this)}>{this.state.isShow ? '隐藏' : '显示'}</Button>
-                        </CSSTransition>
-                    </SwitchTransition>
-                </BtnWrapper>
-                <CSSTransition in={this.state.isShow} classNames='card' timeout={300} unmountOnExit>
-                    <Card
-                        style={{width: 300}}
-                        cover={
-                            <img
-                                alt="example"
-                                src="https://www.runoob.com/wp-content/uploads/2013/07/js-logo.png"
-                            />
-                        }
-                        actions={[
-                            <SettingOutlined onClick={() => {
-                                console.log('打开设置')
-                            }}/>,
-                            <EditOutlined/>,
-                            <EllipsisOutlined/>,
-                        ]}
-                    >
-                        <Meta
-                            avatar={<Avatar
-                                src="https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqmVbQu2VMVVpfj2vg9PeXQNw1wy3tn3oZlWyD6O6nTSxkKZkEOX9aDyAMV2fWCm9Ce5GXho5HmsA/132?imageView2/1/w/80/h/80"/>}
-                            title="frank zhang"
-                            description="love fe,love life"
-                        />
-                    </Card>
-                </CSSTransition>
-            </CardWrapper>
-        );
-    }
+  render() {
+    return (
+      <CardWrapper>
+        <BtnWrapper>
+          <SwitchTransition mode="out-in">
+            <CSSTransition
+              key={this.state.isShow ? 'on' : 'off'}
+              classNames="btn"
+              timeout={1000}
+            >
+              <Button
+                type="primary"
+                style={{ marginBottom: '20px' }}
+                onClick={this.showControl.bind(this)}
+              >
+                {this.state.isShow ? '隐藏' : '显示'}
+              </Button>
+            </CSSTransition>
+          </SwitchTransition>
+        </BtnWrapper>
+        <CSSTransition
+          in={this.state.isShow}
+          classNames="card"
+          timeout={300}
+          unmountOnExit
+        >
+          <Card
+            style={{ width: 300 }}
+            cover={
+              <img
+                alt="example"
+                src="https://www.runoob.com/wp-content/uploads/2013/07/js-logo.png"
+              />
+            }
+            actions={[
+              <SettingOutlined
+                onClick={() => {
+                  console.log('打开设置')
+                }}
+              />,
+              <EditOutlined />,
+              <EllipsisOutlined />,
+            ]}
+          >
+            <Meta
+              avatar={
+                <Avatar src="https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqmVbQu2VMVVpfj2vg9PeXQNw1wy3tn3oZlWyD6O6nTSxkKZkEOX9aDyAMV2fWCm9Ce5GXho5HmsA/132?imageView2/1/w/80/h/80" />
+              }
+              title="frank zhang"
+              description="love fe,love life"
+            />
+          </Card>
+        </CSSTransition>
+      </CardWrapper>
+    )
+  }
 }
 ```
-
-
 
 :::
 

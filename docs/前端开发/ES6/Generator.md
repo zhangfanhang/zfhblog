@@ -1,6 +1,5 @@
 ---
 title: Generator
-date: 2022/06/03 22:59:51
 ---
 
 Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。
@@ -13,15 +12,15 @@ Generator 函数有多种理解角度。语法上，首先可以把它理解成�
 
 ```js
 function* helloWorldGenerator() {
-  yield 'hello';
-  yield 'world';
-  return 'ending';
+  yield 'hello'
+  yield 'world'
+  return 'ending'
 }
 
-var hw = helloWorldGenerator();
+var hw = helloWorldGenerator()
 ```
 
-::: warning ⚠️ 
+::: warning ⚠️
 
 待学习......
 

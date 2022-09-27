@@ -1,6 +1,5 @@
 ---
 title: Pinia
-date: 2022/08/23 16:23:41
 ---
 
 <center>

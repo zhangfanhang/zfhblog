@@ -1,6 +1,5 @@
 ---
 title: Redux
-date: 2022/05/26 22:26:52
 ---
 
 ## JavaScript 纯函数

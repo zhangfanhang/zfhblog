@@ -1,6 +1,5 @@
 ---
 title: React与TypeScript
-date: 2022/05/24 22:38:46
 ---
 
 ## 开发环境配置

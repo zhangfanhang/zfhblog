@@ -1,6 +1,6 @@
 ---
 title: MySQL
-date: 2022/04/15 14:02:17
+
 sidebar: auto
 ---
 
@@ -150,9 +150,8 @@ Success.
 All done!
 ```
 
-登录mysql进行测试:
+登录 mysql 进行测试:
 
 ```shell
 mysql -u root -p
 ```
-

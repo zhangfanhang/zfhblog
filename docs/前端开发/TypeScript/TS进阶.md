@@ -1,6 +1,5 @@
 ---
 title: TS进阶
-date: 2022/05/24 22:50:17
 ---
 
 ## 类型别名
@@ -12,11 +11,11 @@ type Name = string
 type NameResolver = () => string
 type NameOrResolver = Name | NameResolver
 function getName(n: NameOrResolver): Name {
-    if (typeof n === 'string') {
-        return n
-    } else {
-        return n()
-    }
+  if (typeof n === 'string') {
+    return n
+  } else {
+    return n()
+  }
 }
 ```
 
@@ -34,12 +33,12 @@ interface
 
 ```typescript
 interface User {
-    name: string
-    age: number
+  name: string
+  age: number
 }
 
 interface SetUser {
-    (name: string, age: number): void
+  (name: string, age: number): void
 }
 ```
 
@@ -47,8 +46,8 @@ type
 
 ```ts
 type User = {
-    name: string
-    age: number
+  name: string
+  age: number
 }
 
 type SetUser = (name: string, age: number) => void
@@ -62,10 +61,10 @@ interface extends interface
 
 ```ts
 interface Name {
-    name: string
+  name: string
 }
 interface User extends Name {
-    age: number
+  age: number
 }
 ```
 
@@ -73,7 +72,7 @@ type extends type
 
 ```ts
 type Name = {
-    name: string
+  name: string
 }
 type User = Name & { age: number }
 ```
@@ -82,10 +81,10 @@ interface extends type
 
 ```ts
 type Name = {
-    name: string
+  name: string
 }
 interface User extends Name {
-    age: number
+  age: number
 }
 ```
 
@@ -93,10 +92,10 @@ type extends interface
 
 ```ts
 interface Name {
-    name: string
+  name: string
 }
 type User = Name & {
-    age: number
+  age: number
 }
 ```
 
@@ -104,7 +103,7 @@ type User = Name & {
 
 type 可以而 interface 不行：
 
--   type 可以声明基本类型别名，联合类型，元组等类型
+- type 可以声明基本类型别名，联合类型，元组等类型
 
 ```ts
 // 基本类型别名
@@ -112,10 +111,10 @@ type Name = string
 
 // 联合类型
 interface Dog {
-    wong()
+  wong()
 }
 interface Cat {
-    miao()
+  miao()
 }
 
 type Pet = Dog | Cat
@@ -124,7 +123,7 @@ type Pet = Dog | Cat
 type PetList = [Dog, Pet]
 ```
 
--   type 语句中还可以使用 typeof 获取实例的 类型进行赋值
+- type 语句中还可以使用 typeof 获取实例的 类型进行赋值
 
 ```ts
 // 当你想获取一个变量的类型时，使用 typeof
@@ -138,12 +137,12 @@ interface 能够声明合并
 
 ```ts
 interface User {
-    name: string
-    age: number
+  name: string
+  age: number
 }
 
 interface User {
-    sex: string
+  sex: string
 }
 
 /*
@@ -165,26 +164,26 @@ is 是 TypeScript 中的一个关键字，一般用于函数返回值类型中�
 
 ```ts
 type Square = {
-    size: number
+  size: number
 }
 type Rectangle = {
-    width: number
-    height: number
+  width: number
+  height: number
 }
 
 function isSquare(shape: Shape): shape is Square {
-    return 'size' in shape
+  return 'size' in shape
 }
 
 function isRectangle(shape: Shape): shape is Rectangle {
-    return 'width' in shape
+  return 'width' in shape
 }
 
 type Shape = Square | Rectangle
 
 function area(shape: Shape) {
-    if (isSquare(shape)) return shape.size * shape.size
-    if (isRectangle(shape)) return shape.width * shape.height
+  if (isSquare(shape)) return shape.size * shape.size
+  if (isRectangle(shape)) return shape.width * shape.height
 }
 ```
 
@@ -200,11 +199,11 @@ function area(shape: Shape) {
 
 ```ts
 function reverse(x: number | string): number | string | void {
-    if (typeof x === 'number') {
-        return Number(x.toString().split('').reverse().join(''))
-    } else if (typeof x === 'string') {
-        return x.split('').reverse().join('')
-    }
+  if (typeof x === 'number') {
+    return Number(x.toString().split('').reverse().join(''))
+  } else if (typeof x === 'string') {
+    return x.split('').reverse().join('')
+  }
 }
 ```
 
@@ -215,12 +214,13 @@ function reverse(x: number | string): number | string | void {
 ```ts
 function reverse(x: number): number // 重载签名
 function reverse(x: string): string // 重载签名
-function reverse(x: number | string): number | string | void { // 实现签名
-    if (typeof x === 'number') {
-        return Number(x.toString().split('').reverse().join(''))
-    } else if (typeof x === 'string') {
-        return x.split('').reverse().join('')
-    }
+function reverse(x: number | string): number | string | void {
+  // 实现签名
+  if (typeof x === 'number') {
+    return Number(x.toString().split('').reverse().join(''))
+  } else if (typeof x === 'string') {
+    return x.split('').reverse().join('')
+  }
 }
 ```
 
@@ -234,37 +234,37 @@ function reverse(x: number | string): number | string | void { // 实现签名
 
 ```ts
 class ArrayList {
-    constructor(public element: object[]) {}
-    /**
-     * 获取某一个值
-     * @param index
-     * @returns
-     */
-    get(index: number) {
-        return this.element[index]
-    }
-    // 显示值
-    show() {
-        this.element.forEach(i => console.log(i))
-    }
+  constructor(public element: object[]) {}
+  /**
+   * 获取某一个值
+   * @param index
+   * @returns
+   */
+  get(index: number) {
+    return this.element[index]
+  }
+  // 显示值
+  show() {
+    this.element.forEach(i => console.log(i))
+  }
 
-    remove(val: number): number
-    remove(val: Object): Object // 实现删除方法重载
+  remove(val: number): number
+  remove(val: Object): Object // 实现删除方法重载
 
-    remove(val: number | Object) {
-        this.element = this.element.filter((e, index) => {
-            if (typeof val === 'number') {
-                return val !== index
-            } else {
-                return val !== e
-            }
-        })
-        return val
-    }
+  remove(val: number | Object) {
+    this.element = this.element.filter((e, index) => {
+      if (typeof val === 'number') {
+        return val !== index
+      } else {
+        return val !== e
+      }
+    })
+    return val
+  }
 }
 let a = { name: 'zixia', age: 12 },
-    b = { name: 'selfsummer', age: 88 },
-    c = { name: '自夏', age: 18 }
+  b = { name: 'selfsummer', age: 88 },
+  c = { name: '自夏', age: 18 }
 
 let newAr = new ArrayList([a, b, c])
 
@@ -278,25 +278,25 @@ console.log(newAr)
 ```ts
 // 类型别名
 type TypeWowen = {
-    name: string
-    age: number
+  name: string
+  age: number
 }
 
 class Wowen {
-    name: string
-    age: number
-    constructor(age: number, name?: string)
-    constructor(paramObj: TypeWowen)
-    constructor(paramObj: any, name = '未知') {
-        if (typeof paramObj === 'object') {
-            const { name, age } = paramObj
-            this.name = name
-            this.age = age
-        } else {
-            this.age = paramObj
-            this.name = name
-        }
+  name: string
+  age: number
+  constructor(age: number, name?: string)
+  constructor(paramObj: TypeWowen)
+  constructor(paramObj: any, name = '未知') {
+    if (typeof paramObj === 'object') {
+      const { name, age } = paramObj
+      this.name = name
+      this.age = age
+    } else {
+      this.age = paramObj
+      this.name = name
     }
+  }
 }
 const w1 = new Wowen({ name: 'frank', age: 123 })
 const w2 = new Wowen(123, 'frank')
@@ -315,11 +315,11 @@ console.log(w3)
 
 ```typescript
 function greeter(fn: (a: string) => void) {
-    fn('Hello, World')
+  fn('Hello, World')
 }
 
 function printToConsole(s: string) {
-    console.log(s)
+  console.log(s)
 }
 
 greeter(printToConsole)
@@ -334,7 +334,7 @@ greeter(printToConsole)
 ```typescript
 type GreetFunction = (a: string) => void
 function greeter(fn: GreetFunction) {
-    // ...
+  // ...
 }
 ```
 
@@ -342,17 +342,17 @@ function greeter(fn: GreetFunction) {
 
 ```typescript
 type DescribableFunction = {
-    description: string
-    (someArg: number): boolean
+  description: string
+  (someArg: number): boolean
 }
 const fn: DescribableFunction = someArg => {
-    return someArg > 0
+  return someArg > 0
 }
 
 fn.description = '是否大于0'
 
 function doSomething(fn: DescribableFunction) {
-    console.log(`${fn.description},returned:${fn(6)}`)
+  console.log(`${fn.description},returned:${fn(6)}`)
 }
 
 doSomething(fn)
@@ -366,10 +366,10 @@ JavaScript 函数也可以使用 `new` 操作符调用，当被调用的时候�
 
 ```ts
 type SomeConstructor = {
-    new (s: string): SomeObject
+  new (s: string): SomeObject
 }
 function fn(ctor: SomeConstructor) {
-    return new ctor('hello')
+  return new ctor('hello')
 }
 ```
 
@@ -381,7 +381,7 @@ function fn(ctor: SomeConstructor) {
 
 ```typescript
 interface StringArray {
-    [index: number]: string
+  [index: number]: string
 }
 
 const myArray: StringArray = getStringArray()
@@ -404,22 +404,22 @@ let x = '123' as any as number // x:number
 
 ```ts
 const frank = {
-    age: 22,
-    hobby: 'js',
+  age: 22,
+  hobby: 'js',
 } as const
 
 interface Isetting {
-    align: 'center' | 'left' | 'right'
-    padding: number
+  align: 'center' | 'left' | 'right'
+  padding: number
 }
 
 function layout(setting: Isetting) {
-    console.log('Layout', setting)
+  console.log('Layout', setting)
 }
 
 const paramer = {
-    align: 'left' as const,
-    padding: 0,
+  align: 'left' as const,
+  padding: 0,
 }
 layout(paramer)
 ```
@@ -481,14 +481,14 @@ type I3 = Person[AliveOrName]
 
 ```ts
 type Point2D = {
-    x: number
-    y: number
+  x: number
+  y: number
 }
 
 type Point3D = {
-    [key in keyof Point2D]: number
+  [key in keyof Point2D]: number
 } & {
-    z: number
+  z: number
 }
 
 let p2: Point3D = { x: 1, y: 2, z: 3 }
@@ -503,12 +503,12 @@ let p2: Point3D = { x: 1, y: 2, z: 3 }
 ```typescript
 // 删除属性中的只读属性
 type CreateMutable<Type> = {
-    -readonly [Property in keyof Type]: Type[Property]
+  -readonly [Property in keyof Type]: Type[Property]
 }
 
 type LockedAccount = {
-    readonly id: string
-    readonly name: string
+  readonly id: string
+  readonly name: string
 }
 
 type UnlockedAccount = CreateMutable<LockedAccount>
@@ -522,13 +522,13 @@ type UnlockedAccount = CreateMutable<LockedAccount>
 ```typescript
 // 删除属性中的可选属性
 type Concrete<Type> = {
-    [Property in keyof Type]-?: Type[Property]
+  [Property in keyof Type]-?: Type[Property]
 }
 
 type MaybeUser = {
-    id: string
-    name?: string
-    age?: number
+  id: string
+  name?: string
+  age?: number
 }
 
 type User = Concrete<MaybeUser>

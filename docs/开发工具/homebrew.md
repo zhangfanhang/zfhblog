@@ -1,7 +1,6 @@
 ---
 title: homebrew
 sidebar: auto
-date: 2022/06/03 00:16:41
 ---
 
 Homebrew 是一款 Mac OS 平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。例如 homebrew 可以快速安装 git,nvm,mysql,mongodb 等开发工具
@@ -10,7 +9,7 @@ Homebrew 是一款 Mac OS 平台下的软件包管理工具，拥有安装、卸
 
 `homebrew`使用脚本安装:
 
-1. 国内脚本：🈶️莫名其妙的BUG
+1. 国内脚本：🈶️ 莫名其妙的 BUG
 
 ```shell
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
@@ -22,13 +21,13 @@ Homebrew 是一款 Mac OS 平台下的软件包管理工具，拥有安装、卸
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-3. mac国内第三方卸载脚本：
+3. mac 国内第三方卸载脚本：
 
 ```shell
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/HomebrewUninstall.sh)"
 ```
 
-4. mac官方卸载脚本：
+4. mac 官方卸载脚本：
 
 ```shell
  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
@@ -36,7 +35,7 @@ Homebrew 是一款 Mac OS 平台下的软件包管理工具，拥有安装、卸
 
 ## 报错
 
-::: warning 
+::: warning
 
 使用国内脚本安装，可能会遇到此问题。使用官方脚本无此问题
 
@@ -64,9 +63,8 @@ git config --global --add safe.directory 你的 homebrew-cask 路径
 
 ## 目前在使用的软件包
 
--   `mysql`:[安装教程](https://blog.csdn.net/x123089/article/details/79729563)
--   `git`:`brew install git`
--   `nvm`: `brew install nvm`, `node` 版本管理工具,配置见**node 入门->node 基础**,如何[安装低版本 node](https://blog.csdn.net/longgege001/article/details/114067242)
--   `mongoDB`:[安装教程](https://www.jianshu.com/p/8db0b29a931d)
--   `fd`:检索文件工具，速度较快，比`everything`还是差一点,[github](https://github.com/sharkdp/fd)
-
+- `mysql`:[安装教程](https://blog.csdn.net/x123089/article/details/79729563)
+- `git`:`brew install git`
+- `nvm`: `brew install nvm`, `node` 版本管理工具,配置见**node 入门->node 基础**,如何[安装低版本 node](https://blog.csdn.net/longgege001/article/details/114067242)
+- `mongoDB`:[安装教程](https://www.jianshu.com/p/8db0b29a931d)
+- `fd`:检索文件工具，速度较快，比`everything`还是差一点,[github](https://github.com/sharkdp/fd)

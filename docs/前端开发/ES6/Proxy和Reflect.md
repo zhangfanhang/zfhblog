@@ -1,18 +1,17 @@
 ---
 title: Proxy和Reflect
-date: 2022/08/18 10:16:18
 ---
 
 ## Proxy
 
 `Proxy` 用于修改某些操作的默认行为，等同于在语言层面做出修改
 
-*`Proxy` 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。*
+_`Proxy` 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。_
 
 ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例。
 
 ```js
-const proxy=new Proxy(target,handler)
+const proxy = new Proxy(target, handler)
 ```
 
 `new Proxy()`表示生成一个`Proxy`实例，`target`参数表示所要拦截的目标对象，`handler`参数也是一个对象，用来定制拦截行为。
@@ -26,13 +25,16 @@ const proxy=new Proxy(target,handler)
 Proxy 实例也可以作为其他对象的原型对象。
 
 ```js
-var proxy = new Proxy({}, {
-  get: function(target, propKey) {
-    return 35;
+var proxy = new Proxy(
+  {},
+  {
+    get: function (target, propKey) {
+      return 35
+    },
   }
-});
+)
 
-let obj = Object.create(proxy);
+let obj = Object.create(proxy)
 obj.time // 35
 ```
 
@@ -100,68 +102,73 @@ let arr = createArray(2, 3, 4)
 console.log(arr[-2]) //3
 ```
 
- 下面的例子则是利用`get`拦截，实现一个生成各种 DOM 节点的通用函数`dom`。
+下面的例子则是利用`get`拦截，实现一个生成各种 DOM 节点的通用函数`dom`。
 
 ```js
-      const dom = new Proxy(
-        {},
-        {
-          get(target, propetry) {
-            return (attrs = {}, ...children) => {
-              // 创造元素
-              const el = document.createElement(propetry)
-              // 设置传递的属性
-              for (let prop of Object.keys(attrs)) {
-                el.setAttribute(prop, attrs[prop])
-              }
-              // 处理子元素
-              for (child of children) {
-                if (typeof child === 'string')
-                  child = document.createTextNode(child)
-                el.appendChild(child)
-              }
-              return el
-            }
-          },
+const dom = new Proxy(
+  {},
+  {
+    get(target, propetry) {
+      return (attrs = {}, ...children) => {
+        // 创造元素
+        const el = document.createElement(propetry)
+        // 设置传递的属性
+        for (let prop of Object.keys(attrs)) {
+          el.setAttribute(prop, attrs[prop])
         }
-      )
+        // 处理子元素
+        for (child of children) {
+          if (typeof child === 'string') child = document.createTextNode(child)
+          el.appendChild(child)
+        }
+        return el
+      }
+    },
+  }
+)
 
-      const el = dom.div(
-        { style: 'font-size:20px' },
-        'Hello, my name is ',
-        dom.a({ href: 'https://zfhblog.top' }, 'Frank'),
-        '. I like:',
-        dom.ul(
-          {},
-          dom.li({}, 'react'),
-          dom.li({}, 'vue'),
-          dom.li({}, "…actually that's it")
-        )
-      )
-      document.body.appendChild(el)
+const el = dom.div(
+  { style: 'font-size:20px' },
+  'Hello, my name is ',
+  dom.a({ href: 'https://zfhblog.top' }, 'Frank'),
+  '. I like:',
+  dom.ul(
+    {},
+    dom.li({}, 'react'),
+    dom.li({}, 'vue'),
+    dom.li({}, "…actually that's it")
+  )
+)
+document.body.appendChild(el)
 ```
 
 下面是一个`get`方法的第三个参数的例子，它总是指向原始的读操作所在的那个对象，一般情况下就是 Proxy 实例。
 
 ```javascript
-const proxy = new Proxy({}, {
-  get: function(target, key, receiver) {
-    return receiver;
+const proxy = new Proxy(
+  {},
+  {
+    get: function (target, key, receiver) {
+      return receiver
+    },
   }
-});
+)
 proxy.getReceiver === proxy // true
 ```
 
 上面代码中，`proxy`对象的`getReceiver`属性是由`proxy`对象提供的，所以`receiver`指向`proxy`对象。
 
 ```javascript
-const proxy = new Proxy({}, {
-  get: function(target, key, receiver) {
-    return receiver;
+const proxy = new Proxy(
+  {},
+  {
+    get: function (target, key, receiver) {
+      return receiver
+    },
   }
-});
+)
 
-const d = Object.create(proxy);
+const d = Object.create(proxy)
 d.a === d // true
 ```
 
@@ -170,21 +177,24 @@ d.a === d // true
 如果一个属性不可配置（configurable）且不可写（writable），则 Proxy 不能修改该属性，否则通过 Proxy 对象访问该属性会报错。
 
 ```js
-const target = Object.defineProperties({}, {
-  foo: {
-    value: 123,
-    writable: false,
-    configurable: false
-  },
-});
+const target = Object.defineProperties(
+  {},
+  {
+    foo: {
+      value: 123,
+      writable: false,
+      configurable: false,
+    },
+  }
+)
 
 const handler = {
   get(target, propKey) {
-    return 'abc';
-  }
-};
+    return 'abc'
+  },
+}
 
-const proxy = new Proxy(target, handler);
+const proxy = new Proxy(target, handler)
 
 proxy.foo
 // TypeError: Invariant check failed
@@ -192,36 +202,10 @@ proxy.foo
 
 ### set()
 
-// TODO 8.19日清
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// TODO 8.19 日清
 
 ::: tip 相关文章推荐
 
-- [为什么Proxy一定要配合Reflect使用](https://juejin.cn/post/7080916820353351688)
+- [为什么 Proxy 一定要配合 Reflect 使用](https://juejin.cn/post/7080916820353351688)
 
 :::

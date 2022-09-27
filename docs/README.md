@@ -1,18 +1,49 @@
 ---
 home: true
+icon: home
+title: 首页
 heroImage: /code.gif
 heroText: ZFH's Blog
-tagline: 无他,惟手熟尔
-actionText: 小记 →
-actionLink: /小记/初来南京
-features:
-- title: 🧑🏻‍💻关于我
-  details: 菜鸟前端,现阶段专注于前端开发的学习与工作
-- title: 🖥网站内容
-  details: 关于我接触、学习到的开发技术的笔记以及平时工作开发记录下来的问题;一些生活日常、工作总结
-- title: 🤔网站愿景
-  details: 笔记千锤百炼,努力成为一名合格的前端开发工程师;记录自己的成长和生活
-footer: Copyright © 2020-2022 FANHANG ZHANG
----
+tagline: 无他,唯手熟尔
+actions:
+  - text: 小记
+    link: /小记/初来南京.html
+    type: primary
 
-<busuanzi />
+  - text: 书签
+    link: /书签.html
+
+features:
+  - title: todoList
+    icon: vue
+    details: 一个使用vue2开发的简单待办事项
+    link: https://todo.zfhblog.top
+
+  - title: demoDisplay
+    icon: vue
+    details: 各种框架原生js demo合集
+    link: https://demo.zfhblog.top
+
+  - title: 生鲜到家
+    icon: vue
+    details: 使用vue3全家桶开发的外卖应用
+    link: https://v3admin.zfhblog.top
+
+  - title: 外卖大屏
+    icon: vue
+    details: 使用vue2+echarts开发的外卖大屏
+    link: https://datav.zfhblog.top
+
+  - title: V3Admin
+    icon: vue
+    details: 一个由Vue 3 + Vue-Router + Element-Plus + Pinia打造的后台管理系统
+    link: https://v3admin.zfhblog.top
+
+  - title: 泛家居
+    icon: javascript
+    details: 使用原生js开发，vite打包的家具公司首页
+    link: https://fanjiaju.zfhblog.top
+
+copyright: 本网站由Vercel提供托管服务 由阿里云提供域名解析服务
+footer: MIT Licensed | Copyright © 2020-present Frank
+---

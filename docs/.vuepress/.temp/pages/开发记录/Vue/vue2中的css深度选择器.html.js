@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-e27c6e90\",\"path\":\"/%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/Vue/vue2%E4%B8%AD%E7%9A%84css%E6%B7%B1%E5%BA%A6%E9%80%89%E6%8B%A9%E5%99%A8.html\",\"title\":\"vue2中的css深度选择器\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"vue2中的css深度选择器\",\"tags\":[\"2022/08/23 15:35:43\",\"css深度选择器\"],\"summary\":\"vue2 中的 css 深度选择器 当 标签有 scoped` 属性时，它的 CSS 只作用于当前组件中的元素，父组件的样式将不会渗透到子组件。 如果你希望 scoped 样式中的一个选择器能够作用得“更深”，例如影响子组件，你可以使用深度选择器。 使用较多的场景是去定制 elementUI 等组件库的样式 写法 像/deep/，>>>，::v-deep已被\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://zfhblog.top/%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/Vue/vue2%E4%B8%AD%E7%9A%84css%E6%B7%B1%E5%BA%A6%E9%80%89%E6%8B%A9%E5%99%A8.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"ZFH's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"vue2中的css深度选择器\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"2022/08/23 15:35:43\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"css深度选择器\"}]]},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"写法\",\"slug\":\"写法\",\"link\":\"#写法\",\"children\":[]}],\"readingTime\":{\"minutes\":0.57,\"words\":171},\"filePathRelative\":\"开发记录/Vue/vue2中的css深度选择器.md\"}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}
