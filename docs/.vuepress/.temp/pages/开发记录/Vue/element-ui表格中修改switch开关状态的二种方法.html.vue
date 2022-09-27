@@ -1,12 +1,10 @@
 <template><div><h1 id="element-ui-表格中修改-switch-开关状态的二种方法" tabindex="-1"><a class="header-anchor" href="#element-ui-表格中修改-switch-开关状态的二种方法" aria-hidden="true">#</a> element-ui 表格中修改 switch 开关状态的二种方法</h1>
 <p>Swich 默认是 boolean 类型，如果后台传值为 number 类型，这个时候我们想用 number 来取代 boolean 类型</p>
 <p>这里有个问题需要注意：当你点击修改状态时，弹出提示框，点击取消关闭时，switch 的状态依旧改变了:</p>
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="NWYLEJK" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/NWYLEJK">
-  element-ui-switch-demo</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/NWYLEJK"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <p>这是因为 v-model 双向绑定原理，点击开关时会实时改变状态，只需要把 v-model 改为:value=&quot;&quot;即可</p>
 <ul>
 <li>第一种：后台字段定义为 0 / 1（给后台传 0 / 1）</li>

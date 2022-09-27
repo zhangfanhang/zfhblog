@@ -72,30 +72,24 @@ Vue.component('v-chart', VueECharts)
 
 :::
 
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="html,result" data-slug-hash="MWrqmeg" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/MWrqmeg">
-  vue-echarts折线图</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/MWrqmeg"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 ### 柱状图
 
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="html,result" data-slug-hash="popxjXr" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/popxjXr">
-  vue-echarts柱状图</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/popxjXr"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 ### 饼状图
 
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="html,result" data-slug-hash="ZEvmzMz" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/ZEvmzMz">
-  v-charts饼状图</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/ZEvmzMz"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 ## v-charts
 
@@ -115,12 +109,10 @@ Vue.component('v-chart', VueECharts)
 
 ### 表格数据分页功能
 
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="html,result" data-slug-hash="ExoOYzy" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/ExoOYzy">
-  element-ui表格分页</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+link="https://codepen.io/zhangfanhang/pen/ExoOYzy"
+:theme="$isDarkMode? 'dark': 'light'"
+/>
 
 ## vue2 相关
 

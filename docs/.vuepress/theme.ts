@@ -32,6 +32,7 @@ export default hopeTheme({
     },
   },
   plugins: {
+    components: ['Badge', 'CodePen'],
     // Disable features you don't want here
     mdEnhance: {
       align: true,

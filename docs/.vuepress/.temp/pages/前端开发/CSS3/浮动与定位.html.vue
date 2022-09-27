@@ -18,12 +18,10 @@
 <h3 id="bfc-规范和浏览器差异" tabindex="-1"><a class="header-anchor" href="#bfc-规范和浏览器差异" aria-hidden="true">#</a> BFC 规范和浏览器差异</h3>
 <p><code v-pre>BFC</code>（ <code v-pre>Box Formatting Context</code>，块级格式化上下文）是页面上的一个<strong>隔离的独立容器</strong>，容器里面的子元素不会影响到外面的元素，反之亦然</p>
 <p>一个盒子不设置 <code v-pre>height</code>，当内容子元素都浮动时，无法撑起自身我们就说这个盒子<strong>没有形成 <code v-pre>BFC</code></strong></p>
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="qBpVryw" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/qBpVryw">
-  Untitled</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/qBpVryw"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h4 id="如何创建-bfc" tabindex="-1"><a class="header-anchor" href="#如何创建-bfc" aria-hidden="true">#</a> 如何创建 BFC</h4>
 <ol>
 <li><code v-pre>float</code> 的值不是 <code v-pre>none</code></li>
@@ -169,12 +167,10 @@
 <li>粘性元素根据滚动位置在相对<code v-pre>relative</code>和固定<code v-pre>fixed</code>之间切换。起先它会被相对定位，直到在视口中遇到给定的偏移位置为止 - 然后将其“粘贴”在适当的位置</li>
 <li>粘性定位元素不会脱离文档流，依然占据文档流的指定位置</li>
 </ul>
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="GRyOWyJ" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/GRyOWyJ">
-  粘性定位小demo-1</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/GRyOWyJ"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 </div></template>
 
 

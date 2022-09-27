@@ -159,23 +159,19 @@
 <p>css 中，min-width 是用来限制元素的最小宽度，max-width 用来限制元素的最大宽度，也就是说当元素的 width 大于 max-width,或者小于 min-width。就被它们的值所代替，尤其适用于网站的自适应。</p>
 <p><a href="https://www.cnblogs.com/ypppt/p/13111087.html" target="_blank" rel="noopener noreferrer">理解 css 中 min-width 和 max-width，width 与它们之间的区别联系<ExternalLinkIcon/></a></p>
 </div>
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="WNdXamY" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/WNdXamY">
-  圣杯布局</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/WNdXamY"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h3 id="双飞翼布局" tabindex="-1"><a class="header-anchor" href="#双飞翼布局" aria-hidden="true">#</a> 双飞翼布局</h3>
 <div class="custom-container warning">
 <p class="custom-container-title">注意</p>
 <p>由于双飞翼布局没有用到 position:relative 进行定位，所以最小页面宽度应该为 200+150=350px。但是当页面宽度缩小到 350px 附近时，会挤占中间栏的宽度，使得其内容被右侧栏覆盖，因此在设置最小页面宽度时，应该适当增加一些宽度以供中间栏使用</p>
 </div>
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="mdpqvqW" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/mdpqvqW">
-  双飞翼布局</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/mdpqvqW"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h3 id="两者区别" tabindex="-1"><a class="header-anchor" href="#两者区别" aria-hidden="true">#</a> 两者区别</h3>
 <p>双飞翼布局比圣杯布局多创建了一个 div，但不用相对布局了,终究还是 flex 布局舒服！（<strong>flex 实现,代码见 flex 布局</strong>）</p>
 <h2 id="float-布局-手写-clearfix" tabindex="-1"><a class="header-anchor" href="#float-布局-手写-clearfix" aria-hidden="true">#</a> float 布局：手写 clearfix</h2>
@@ -190,12 +186,10 @@
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="flex-布局" tabindex="-1"><a class="header-anchor" href="#flex-布局" aria-hidden="true">#</a> flex 布局</h2>
 <h3 id="实现一个三点的色子" tabindex="-1"><a class="header-anchor" href="#实现一个三点的色子" aria-hidden="true">#</a> 实现一个三点的色子</h3>
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="JjMOxmG" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/JjMOxmG">
-  flex-三点的色子</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/JjMOxmG"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h2 id="display-none、visibility-hidden-和-opacity-0-之间的区别" tabindex="-1"><a class="header-anchor" href="#display-none、visibility-hidden-和-opacity-0-之间的区别" aria-hidden="true">#</a> display:none、visibility:hidden 和 opacity:0 之间的区别？</h2>
 <p><img src="https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/dis区别.png" alt="dis区别" loading="lazy"></p>
 <div class="custom-container tip">

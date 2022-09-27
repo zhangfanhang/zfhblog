@@ -142,12 +142,10 @@ componentDidUpdate(prevProps) {
 
 </center>
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="qBpQegw" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/qBpQegw">
-  React Components</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/qBpQegw"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 ## 组件间的通信
 
@@ -1193,12 +1191,10 @@ ref 的值根据节点的类型而有所不同：
 - 当 ref 属性用于自定义 class 组件时，ref 对象接收组件的挂载实例作为其 current 属性
 - 你不能在函数组件上使用 ref 属性，因为他们没有实例。
 
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="KKZrOev" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/KKZrOev">
-  react-ref</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/KKZrOev"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 ### ref 的转发
 
@@ -1384,12 +1380,10 @@ export default class App extends PureComponent {
 
 这个时候，我们就可以使用高阶组件来完成鉴权操作：
 
- <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="mdXEpdr" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/mdXEpdr">
-  react-demo</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/mdXEpdr"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 ### 应用 3:生命周期劫持
 

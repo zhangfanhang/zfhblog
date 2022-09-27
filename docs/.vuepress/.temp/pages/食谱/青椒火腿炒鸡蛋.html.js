@@ -1,14 +1,1 @@
-export const data = JSON.parse("{\"key\":\"v-05df0763\",\"path\":\"/%E9%A3%9F%E8%B0%B1/%E9%9D%92%E6%A4%92%E7%81%AB%E8%85%BF%E7%82%92%E9%B8%A1%E8%9B%8B.html\",\"title\":\"青椒火腿炒鸡蛋\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"青椒火腿炒鸡蛋\",\"tags\":[\"2022/09/18 20:09:48\"],\"summary\":\"青椒火腿炒鸡蛋 食材 青椒、鸡蛋、火腿肠、生抽、蚝油 步骤 1. 准备好食材，锅中油烧热，鸡蛋炒熟后盛出。 2. 锅中油烧热，倒入青椒和火腿肠，翻炒片刻后倒入鸡蛋，依次倒入一勺生抽、一勺蚝油。 3. 翻炒片刻即可出锅\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://zfhblog.top/%E9%A3%9F%E8%B0%B1/%E9%9D%92%E6%A4%92%E7%81%AB%E8%85%BF%E7%82%92%E9%B8%A1%E8%9B%8B.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"ZFH's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"青椒火腿炒鸡蛋\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"2022/09/18 20:09:48\"}]]},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"食材\",\"slug\":\"食材\",\"link\":\"#食材\",\"children\":[]},{\"level\":2,\"title\":\"步骤\",\"slug\":\"步骤\",\"link\":\"#步骤\",\"children\":[]}],\"readingTime\":{\"minutes\":0.33,\"words\":99},\"filePathRelative\":\"食谱/青椒火腿炒鸡蛋.md\"}")
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}
+export const data = JSON.parse("{\"key\":\"v-05df0763\",\"path\":\"/%E9%A3%9F%E8%B0%B1/%E9%9D%92%E6%A4%92%E7%81%AB%E8%85%BF%E7%82%92%E9%B8%A1%E8%9B%8B.html\",\"title\":\"青椒火腿炒鸡蛋\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"青椒火腿炒鸡蛋\",\"tags\":[\"2022/09/18 20:09:48\"],\"summary\":\"青椒火腿炒鸡蛋 食材 青椒、鸡蛋、火腿肠、生抽、蚝油 步骤 1. 准备好食材，锅中油烧热，鸡蛋炒熟后盛出。 2. 锅中油烧热，倒入青椒和火腿肠，翻炒片刻后倒入鸡蛋，依次倒入一勺生抽、一勺蚝油。 3. 翻炒片刻即可出锅\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://zfhblog.top/%E9%A3%9F%E8%B0%B1/%E9%9D%92%E6%A4%92%E7%81%AB%E8%85%BF%E7%82%92%E9%B8%A1%E8%9B%8B.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"ZFH's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"青椒火腿炒鸡蛋\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2022-09-18T15:13:06.000Z\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"2022/09/18 20:09:48\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2022-09-18T15:13:06.000Z\"}]]},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"食材\",\"slug\":\"食材\",\"link\":\"#食材\",\"children\":[]},{\"level\":2,\"title\":\"步骤\",\"slug\":\"步骤\",\"link\":\"#步骤\",\"children\":[]}],\"git\":{\"createdTime\":1663513986000,\"updatedTime\":1663513986000,\"contributors\":[{\"name\":\"zhangfanhang\",\"email\":\"543629463@qq.com\",\"commits\":1}]},\"readingTime\":{\"minutes\":0.33,\"words\":99},\"filePathRelative\":\"食谱/青椒火腿炒鸡蛋.md\",\"localizedDate\":\"2022年9月18日\"}")

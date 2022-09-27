@@ -188,7 +188,7 @@
 </ul>
 <h3 id="改变元素节点的-css-样式" tabindex="-1"><a class="header-anchor" href="#改变元素节点的-css-样式" aria-hidden="true">#</a> 改变元素节点的 css 样式</h3>
 <p>改变元素节点的 CSS 样式需要使用这样的语句</p>
-<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>box<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroudColor<span class="token operator">=</span><span class="token string">'red'</span>
+<div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>box<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroudColor <span class="token operator">=</span> <span class="token string">'red'</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="改变元素节点的-html-属性" tabindex="-1"><a class="header-anchor" href="#改变元素节点的-html-属性" aria-hidden="true">#</a> 改变元素节点的 HTML 属性</h3>
 <p>标准 W3C 属性，如 src、href 等等，只需要直接打点进行更改即可</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>oImg<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'images/2.png'</span>
@@ -289,13 +289,11 @@
 <blockquote>
 <p>当然也可以使用 setAttribute()和 getAttribute()来设置、读取</p>
 </blockquote>
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="poVwPVN" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/poVwPVN">
-  自定义属性demo</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-<p>// TODO 9.2s</p>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/poVwPVN"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
+// TODO 9.2s
 <h3 id="节点的创建" tabindex="-1"><a class="header-anchor" href="#节点的创建" aria-hidden="true">#</a> 节点的创建</h3>
 <p>document.createElement()方法用于创建一个指定 tagName 的 HTML 元素</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token keyword">var</span> oDiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span>

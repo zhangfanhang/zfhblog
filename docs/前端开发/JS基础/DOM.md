@@ -205,7 +205,7 @@ querySelectorAll()方法的功能是通过选择器得到元素数组
 改变元素节点的 CSS 样式需要使用这样的语句
 
 ```js
-box.style.backgroudColor='red'
+box.style.backgroudColor = 'red'
 ```
 
 ### 改变元素节点的 HTML 属性
@@ -342,13 +342,10 @@ alert(n) //10
 
 > 当然也可以使用 setAttribute()和 getAttribute()来设置、读取
 
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="poVwPVN" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/poVwPVN">
-  自定义属性demo</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/poVwPVN"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 // TODO 9.2s
 
 ### 节点的创建

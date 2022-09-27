@@ -16,12 +16,10 @@
   field<span class="token punctuation">.</span>selectionEnd <span class="token operator">=</span> startPos <span class="token operator">+</span> value<span class="token punctuation">.</span>length
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="示例" tabindex="-1"><a class="header-anchor" href="#示例" aria-hidden="true">#</a> 示例</h2>
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="QWrydNK" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/QWrydNK">
-  js实现在输入框的光标处插入内容</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+link="https://codepen.io/zhangfanhang/pen/QWrydNK"
+:theme="$isDarkMode? 'dark': 'light'"
+/>
 <h2 id="说明" tabindex="-1"><a class="header-anchor" href="#说明" aria-hidden="true">#</a> 说明</h2>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLTextAreaElement" target="_blank" rel="noopener noreferrer">HTMLTextAreaElement<ExternalLinkIcon/></a></p>
 <ul>

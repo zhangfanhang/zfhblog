@@ -195,12 +195,10 @@
 <li>该属性可能取 6 个值，除了 <code v-pre>auto</code>，其他都与 <code v-pre>align-items</code> 属性完全一致。</li>
 </ul>
 <h2 id="flex-实现圣杯布局" tabindex="-1"><a class="header-anchor" href="#flex-实现圣杯布局" aria-hidden="true">#</a> flex 实现圣杯布局</h2>
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="XWVzOLJ" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/XWVzOLJ">
-  flex 实现圣杯布局</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/XWVzOLJ"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 </div></template>
 
 

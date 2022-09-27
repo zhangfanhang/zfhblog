@@ -250,12 +250,10 @@
 <li>计算属性最终会出现在 vm 上，在模板中<strong>直接读取</strong>使用即可。</li>
 <li>如果计算属性要被修改，那必须写 set 函数去响应修改，且 set 中要引起计算时依赖的数据发生改变。</li>
 </ul>
- <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="rNJyRKe" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/rNJyRKe">
-  vue2-姓名案例_计算属性实现</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/rNJyRKe"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <ol start="6">
 <li>计算属性的简写（计算属性只读不改的前提下）：</li>
 </ol>
@@ -277,12 +275,10 @@
 </li>
 </ol>
 <p>(1)new Vue 时传入 watch 配置</p>
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="MWQpZJp" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/MWQpZJp">
-  vue2-watch案例</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/MWQpZJp"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <p>(2)通过 <code v-pre>vm.$watch</code> 监视</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>vm<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span><span class="token string">'isHot'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
   <span class="token literal-property property">immediate</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
@@ -436,26 +432,20 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h3 id="列表过滤" tabindex="-1"><a class="header-anchor" href="#列表过滤" aria-hidden="true">#</a> 列表过滤</h3>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="noopener noreferrer">Array.prototype.filter()<ExternalLinkIcon/></a></p>
 <h4 id="watch-实现" tabindex="-1"><a class="header-anchor" href="#watch-实现" aria-hidden="true">#</a> watch 实现</h4>
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="xxYqBmr" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/xxYqBmr">
-  vue2-列表过滤-computed实现</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+link="https://codepen.io/zhangfanhang/pen/xxYqBmr"
+:theme="$isDarkMode? 'dark': 'light'"
+/>
 <h4 id="computed-实现" tabindex="-1"><a class="header-anchor" href="#computed-实现" aria-hidden="true">#</a> computed 实现</h4>
- <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="gOvmEQQ" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/gOvmEQQ">
-  vue2-姓名案例_计算属性实现</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/gOvmEQQ"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h3 id="列表排序" tabindex="-1"><a class="header-anchor" href="#列表排序" aria-hidden="true">#</a> 列表排序</h3>
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="ExQWMrW" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/ExQWMrW">
-  vue2-列表排序</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/ExQWMrW"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h2 id="vue-监测数据变化的原理" tabindex="-1"><a class="header-anchor" href="#vue-监测数据变化的原理" aria-hidden="true">#</a> Vue 监测数据变化的原理</h2>
 <h3 id="对于对象" tabindex="-1"><a class="header-anchor" href="#对于对象" aria-hidden="true">#</a> 对于对象</h3>
 <p><strong>通过 setter 实现监视</strong>，data 数据一改变，就会引起 vue 重新解析模板。且要在 new Vue 时就传入要监测的数据</p>
@@ -604,12 +594,10 @@ Object<span class="token punctuation">.</span><span class="token function">defin
 </li>
 </ol>
 <p>若 input type=&quot;select&quot;：绑定到字符串(option 的 value 值)</p>
- <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="qBxrGgO" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/qBxrGgO">
-  vue2-数据监视总结</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/qBxrGgO"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <div class="custom-container tip">
 <p class="custom-container-title">v-model 的修饰符</p>
 <p>lazy：失去焦点再收集数据</p>

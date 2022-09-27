@@ -289,12 +289,10 @@ Vue.config.keyCodes.huiche = 13 //定义了一个别名按键
 - 计算属性最终会出现在 vm 上，在模板中**直接读取**使用即可。
 - 如果计算属性要被修改，那必须写 set 函数去响应修改，且 set 中要引起计算时依赖的数据发生改变。
 
- <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="rNJyRKe" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/rNJyRKe">
-  vue2-姓名案例_计算属性实现</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/rNJyRKe"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 6. 计算属性的简写（计算属性只读不改的前提下）：
 
@@ -315,12 +313,10 @@ Vue.config.keyCodes.huiche = 13 //定义了一个别名按键
 
 (1)new Vue 时传入 watch 配置
 
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="MWQpZJp" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/MWQpZJp">
-  vue2-watch案例</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/MWQpZJp"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 (2)通过 `vm.$watch` 监视
 
@@ -540,30 +536,24 @@ react、vue 中的 key 有什么作用？（key 的内部原理）
 
 #### watch 实现
 
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="xxYqBmr" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/xxYqBmr">
-  vue2-列表过滤-computed实现</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+link="https://codepen.io/zhangfanhang/pen/xxYqBmr"
+:theme="$isDarkMode? 'dark': 'light'"
+/>
 
 #### computed 实现
 
- <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="gOvmEQQ" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/gOvmEQQ">
-  vue2-姓名案例_计算属性实现</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/gOvmEQQ"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 ### 列表排序
 
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="ExQWMrW" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/ExQWMrW">
-  vue2-列表排序</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/ExQWMrW"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 ## Vue 监测数据变化的原理
 
@@ -750,12 +740,10 @@ Object.defineProperty(obj2, 'x', {
 
 若 input type="select"：绑定到字符串(option 的 value 值)
 
- <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="qBxrGgO" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/qBxrGgO">
-  vue2-数据监视总结</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/qBxrGgO"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 ::: tip v-model 的修饰符
 

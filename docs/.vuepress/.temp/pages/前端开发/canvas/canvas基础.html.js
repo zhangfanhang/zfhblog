@@ -1,14 +1,1 @@
-export const data = JSON.parse("{\"key\":\"v-9489de4c\",\"path\":\"/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/canvas/canvas%E5%9F%BA%E7%A1%80.html\",\"title\":\"Canvas基础\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"Canvas基础\",\"summary\":\"参考 MDN; 慕课网:炫丽的倒计时效果 Canvas 绘图与动画基础; 创建 canvas 通过 DOM 指定宽度高度 渲染上下文 Canvas 公开了一个或多个渲染上下文，其可以用来绘制和处理要展示的内容。我们将会将注意力放在 2D 渲染上下文中。js 要找到渲染上下文，然后在它的上面绘制。getContext是用来获得渲染上下文和它的绘画功能。 检查支\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://zfhblog.top/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/canvas/canvas%E5%9F%BA%E7%A1%80.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"ZFH's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Canvas基础\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}]]},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"创建 canvas\",\"slug\":\"创建-canvas\",\"link\":\"#创建-canvas\",\"children\":[{\"level\":3,\"title\":\"渲染上下文\",\"slug\":\"渲染上下文\",\"link\":\"#渲染上下文\",\"children\":[]},{\"level\":3,\"title\":\"检查支持性\",\"slug\":\"检查支持性\",\"link\":\"#检查支持性\",\"children\":[]}]}],\"readingTime\":{\"minutes\":0.64,\"words\":191},\"filePathRelative\":\"前端开发/canvas/canvas基础.md\"}")
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}
+export const data = JSON.parse("{\"key\":\"v-9489de4c\",\"path\":\"/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/canvas/canvas%E5%9F%BA%E7%A1%80.html\",\"title\":\"Canvas基础\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"Canvas基础\",\"summary\":\"参考 MDN; 慕课网:炫丽的倒计时效果 Canvas 绘图与动画基础; 创建 canvas 通过 DOM 指定宽度高度 渲染上下文 Canvas 公开了一个或多个渲染上下文，其可以用来绘制和处理要展示的内容。我们将会将注意力放在 2D 渲染上下文中。js 要找到渲染上下文，然后在它的上面绘制。getContext是用来获得渲染上下文和它的绘画功能。 检查支\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://zfhblog.top/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/canvas/canvas%E5%9F%BA%E7%A1%80.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"ZFH's Blog\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Canvas基础\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2022-09-27T11:45:18.000Z\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2022-09-27T11:45:18.000Z\"}]]},\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"创建 canvas\",\"slug\":\"创建-canvas\",\"link\":\"#创建-canvas\",\"children\":[{\"level\":3,\"title\":\"渲染上下文\",\"slug\":\"渲染上下文\",\"link\":\"#渲染上下文\",\"children\":[]},{\"level\":3,\"title\":\"检查支持性\",\"slug\":\"检查支持性\",\"link\":\"#检查支持性\",\"children\":[]}]}],\"git\":{\"createdTime\":1662132960000,\"updatedTime\":1664279118000,\"contributors\":[{\"name\":\"zhangfanhang\",\"email\":\"543629463@qq.com\",\"commits\":2}]},\"readingTime\":{\"minutes\":0.64,\"words\":191},\"filePathRelative\":\"前端开发/canvas/canvas基础.md\",\"localizedDate\":\"2022年9月2日\"}")

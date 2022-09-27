@@ -12,17 +12,15 @@ tags:
 
 这是实现效果：
 
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="html,result" data-slug-hash="KKRdZJj" data-user="zhangfanhang" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/KKRdZJj">
-  element-ui-tree-demo-自动定位已选项</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/KKRdZJj"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 
 虽然`demo`中是表格但是实现起来是一样的，其实主要是通过`ref`属性来操控两个`div`的`scrollTop`属性
 
-因为对两个div都添加了`scroll`方法，一个区域滚动会改变另外一个区域的`scrollTop`,但是同时触发了另外一个区域自己的`scroll`方法，又会进行改变，这样就形成了两个`scroll`的无限回调。
+因为对两个 div 都添加了`scroll`方法，一个区域滚动会改变另外一个区域的`scrollTop`,但是同时触发了另外一个区域自己的`scroll`方法，又会进行改变，这样就形成了两个`scroll`的无限回调。
 
-解决思路：大致思路是添加一个`flag`属性，两个scroll事件分别传入不同的值，再根据这个值去判断是否设置`scrollTop`属性，这样就不会造成无线回调,这里的`flag`属性需要在`scroll`事件之前传入，所以这里通过`mouserover`事件传入该属性。
+解决思路：大致思路是添加一个`flag`属性，两个 scroll 事件分别传入不同的值，再根据这个值去判断是否设置`scrollTop`属性，这样就不会造成无线回调,这里的`flag`属性需要在`scroll`事件之前传入，所以这里通过`mouserover`事件传入该属性。
 
 还要注意的是如果直接给`el`组件绑定原生时间需要加`native`修饰符。

@@ -1,4 +1,4 @@
-<template><div><h2 id="css-3d空间坐标轴" tabindex="-1"><a class="header-anchor" href="#css-3d空间坐标轴" aria-hidden="true">#</a> css 3d空间坐标轴</h2>
+<template><div><h2 id="css-3d-空间坐标轴" tabindex="-1"><a class="header-anchor" href="#css-3d-空间坐标轴" aria-hidden="true">#</a> css 3d 空间坐标轴</h2>
 <p><img src="https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/css3d空间坐标轴.png" alt="css3d空间坐标轴" loading="lazy"></p>
 <h2 id="_2d-变形" tabindex="-1"><a class="header-anchor" href="#_2d-变形" aria-hidden="true">#</a> 2d 变形</h2>
 <h3 id="旋转变形" tabindex="-1"><a class="header-anchor" href="#旋转变形" aria-hidden="true">#</a> 旋转变形</h3>
@@ -21,7 +21,7 @@
 <p>将 transform 属性的值设置为 skew()，即可实现斜切变形</p>
 <div class="language-css ext-css line-numbers-mode"><pre v-pre class="language-css"><code><span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">skew</span><span class="token punctuation">(</span>10deg<span class="token punctuation">,</span> 20deg<span class="token punctuation">)</span> &lt;!---- 第一个值是x斜切角度。第二个值为y斜切角度><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3 id="位移变形" tabindex="-1"><a class="header-anchor" href="#位移变形" aria-hidden="true">#</a> 位移变形</h3>
-<p>// TODO 看下  <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform" target="_blank" rel="noopener noreferrer">https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform<ExternalLinkIcon/></a></p>
+<p>// TODO 看下 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform" target="_blank" rel="noopener noreferrer">https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform<ExternalLinkIcon/></a></p>
 <p>将 transform 属性的值设置为 translate()，即可实现位移变形（以自己为参考点 ）</p>
 <div class="language-css ext-css line-numbers-mode"><pre v-pre class="language-css"><code>&lt;!--  <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span>-50%<span class="token punctuation">)</span> 作用是，往上（y轴）<span class="token punctuation">,</span>左（x轴）移动自身长宽的 50%，以使其居于中心位置。 -->
 <span class="token property">transform</span><span class="token punctuation">:</span><span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span>-50%<span class="token punctuation">)</span>
@@ -32,9 +32,9 @@
 <h3 id="perspective-属性" tabindex="-1"><a class="header-anchor" href="#perspective-属性" aria-hidden="true">#</a> perspective 属性</h3>
 <p>perspective 属性用来定义透视强度，可以理解为“人眼到舞台的距离”，单位是 px</p>
 <div class="language-html ext-html line-numbers-mode"><pre v-pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    => 舞台 必须设置perspective属性
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-    => 设置transform属性
+  => 舞台 必须设置perspective属性
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  => 设置transform属性
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="空间移动" tabindex="-1"><a class="header-anchor" href="#空间移动" aria-hidden="true">#</a> 空间移动</h2>
 <ul>
@@ -46,12 +46,10 @@
 </li>
 </ul>
 <h3 id="制作一个正方体" tabindex="-1"><a class="header-anchor" href="#制作一个正方体" aria-hidden="true">#</a> 制作一个正方体</h3>
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="YzYExrm" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/YzYExrm">
-  制作一个正方体</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/YzYExrm"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 </div></template>
 
 

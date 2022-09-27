@@ -111,12 +111,10 @@
 <center>
 <p><img src="https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/组件的嵌套.png" alt="组件的嵌套" loading="lazy"></p>
 </center>
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="qBpQegw" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/qBpQegw">
-  React Components</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/qBpQegw"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h2 id="组件间的通信" tabindex="-1"><a class="header-anchor" href="#组件间的通信" aria-hidden="true">#</a> 组件间的通信</h2>
 <h3 id="父组件传递子组件" tabindex="-1"><a class="header-anchor" href="#父组件传递子组件" aria-hidden="true">#</a> 父组件传递子组件</h3>
 <div class="custom-container tip">
@@ -1013,12 +1011,10 @@ MainBanner、MainProductList 组件没有使用 memo 进行包裹，为什么也
 <p>你不能在函数组件上使用 ref 属性，因为他们没有实例。</p>
 </li>
 </ul>
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="KKZrOev" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/KKZrOev">
-  react-ref</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/KKZrOev"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h3 id="ref-的转发" tabindex="-1"><a class="header-anchor" href="#ref-的转发" aria-hidden="true">#</a> ref 的转发</h3>
 <p>如果要在函数组件中使用 <code v-pre>ref</code>，你可以使用 <a href="https://zh-hans.reactjs.org/docs/forwarding-refs.html" target="_blank" rel="noopener noreferrer"><code v-pre>forwardRef</code><ExternalLinkIcon/></a>来转发<code v-pre>ref</code></p>
 <p>不管怎样，你可以<strong>在函数组件内部使用 <code v-pre>ref</code> 属性</strong>，只要它指向一个 DOM 元素或 class 组件：</p>
@@ -1178,12 +1174,10 @@ MainBanner、MainProductList 组件没有使用 memo 进行包裹，为什么也
 <li>如果用户没有登录成功，那么直接跳转到登录页面；</li>
 </ul>
 <p>这个时候，我们就可以使用高阶组件来完成鉴权操作：</p>
- <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="mdXEpdr" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/mdXEpdr">
-  react-demo</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/mdXEpdr"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h3 id="应用-3-生命周期劫持" tabindex="-1"><a class="header-anchor" href="#应用-3-生命周期劫持" aria-hidden="true">#</a> 应用 3:生命周期劫持</h3>
 <p>利用高阶函数来劫持生命周期，在生命周期中完成自己的逻辑：</p>
 <details class="custom-container details"><summary>code</summary>

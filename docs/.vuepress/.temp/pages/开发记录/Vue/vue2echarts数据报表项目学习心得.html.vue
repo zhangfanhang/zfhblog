@@ -43,26 +43,20 @@ chart<span class="token punctuation">.</span><span class="token function">setOpt
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">// 注册组件后即可使用</span>
 Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'v-chart'</span><span class="token punctuation">,</span> VueECharts<span class="token punctuation">)</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></div>
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="html,result" data-slug-hash="MWrqmeg" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/MWrqmeg">
-  vue-echarts折线图</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/MWrqmeg"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h3 id="柱状图" tabindex="-1"><a class="header-anchor" href="#柱状图" aria-hidden="true">#</a> 柱状图</h3>
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="html,result" data-slug-hash="popxjXr" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/popxjXr">
-  vue-echarts柱状图</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/popxjXr"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h3 id="饼状图" tabindex="-1"><a class="header-anchor" href="#饼状图" aria-hidden="true">#</a> 饼状图</h3>
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="html,result" data-slug-hash="ZEvmzMz" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/ZEvmzMz">
-  v-charts饼状图</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/ZEvmzMz"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <h2 id="v-charts" tabindex="-1"><a class="header-anchor" href="#v-charts" aria-hidden="true">#</a> v-charts</h2>
 <p>在使用 echarts 生成图表时，经常需要做繁琐的数据类型转化、修改复杂的配置项，v-charts 的出现正是为了解决这个痛点。基于 Vue2.0 和 echarts 封装的 v-charts 图表组件，只需要统一提供一种对前后端都友好的数据格式设置简单的配置项，便可轻松生成常见的图表。</p>
 <p><a href="https://v-charts.js.org/#/" target="_blank" rel="noopener noreferrer">文档<ExternalLinkIcon/></a></p>
@@ -72,12 +66,10 @@ Vue<span class="token punctuation">.</span><span class="token function">componen
 <p>通过基础的 24 分栏，迅速简便地创建布局</p>
 <p><a href="https://element.eleme.cn/#/zh-CN/component/layout" target="_blank" rel="noopener noreferrer">more<ExternalLinkIcon/></a></p>
 <h3 id="表格数据分页功能" tabindex="-1"><a class="header-anchor" href="#表格数据分页功能" aria-hidden="true">#</a> 表格数据分页功能</h3>
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="html,result" data-slug-hash="ExoOYzy" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/ExoOYzy">
-  element-ui表格分页</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+link="https://codepen.io/zhangfanhang/pen/ExoOYzy"
+:theme="$isDarkMode? 'dark': 'light'"
+/>
 <h2 id="vue2-相关" tabindex="-1"><a class="header-anchor" href="#vue2-相关" aria-hidden="true">#</a> vue2 相关</h2>
 <h3 id="mixin-的实际运用" tabindex="-1"><a class="header-anchor" href="#mixin-的实际运用" aria-hidden="true">#</a> mixin 的实际运用</h3>
 <p>// TODO 这周末查</p>

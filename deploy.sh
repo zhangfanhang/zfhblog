@@ -3,11 +3,7 @@
 set -e
 # 生成静态文件
 npm run build 
-# 上传静态资源到阿里云OSS
-node upload.js 
-# 部署到服务器
-# node deploy.js 
-# 进入生成的文件夹s
+# 进入生成的文件夹
 cd ./dist 
 # deploy to github
 if [ -z "$GITHUB_TOKEN" ]; then

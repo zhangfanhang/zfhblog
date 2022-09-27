@@ -6,12 +6,10 @@
 <p>那么现在我们只需要知道当前选择项是哪一个 DOM 元素，接着调用这个方法就好，省去了繁琐的高度计算环节。</p>
 <p>因为树中的每个数据项都有一个独一无二的 id，所以我们可以使用自定义节点，给每个数据项加上以数据项中的 id 为值的 ID 属性，这样我们通过当前选择项的 id 就可以获得当前对应的 DO M 元素。</p>
 <h2 id="实现-demo" tabindex="-1"><a class="header-anchor" href="#实现-demo" aria-hidden="true">#</a> 实现 demo</h2>
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="eYMwpBg" data-user="zhangfanhang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/zhangfanhang/pen/eYMwpBg">
-  element-ui-tree-demo-自动定位已选项</a> by zhangfanhang (<a href="https://codepen.io/zhangfanhang">@zhangfanhang</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<CodePen
+  link="https://codepen.io/zhangfanhang/pen/eYMwpBg"
+  :theme="$isDarkMode? 'dark': 'light'"
+/>
 <div class="custom-container tip">
 <p class="custom-container-title">说明</p>
 <p>方法来自<a href="https://blog.csdn.net/qq_14993591/article/details/125223004" target="_blank" rel="noopener noreferrer">[element-ui] el-tree 滚动到指定选中的位置<ExternalLinkIcon/></a></p>
