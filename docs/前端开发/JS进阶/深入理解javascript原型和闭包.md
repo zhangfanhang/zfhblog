@@ -1,5 +1,7 @@
 ---
 title: 深入理解javascript原型和闭包
+author: 王福朋
+ 
 ---
 
 ## 一切都是对象
