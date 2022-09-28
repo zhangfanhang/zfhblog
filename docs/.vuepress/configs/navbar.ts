@@ -279,7 +279,7 @@ export default navbar([
    */
   {
     text: '开发笔记',
-    icon: 'jilu',
+    icon: 'biji',
     children: [
       {
         text: 'CSS',
