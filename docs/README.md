@@ -46,6 +46,6 @@ projects:
     desc: 使用原生js开发，vite打包的家具公司首页
     link: https://fanjiaju.zfhblog.top
 
-copyright: 本网站由Vercel提供托管服务 由阿里云提供域名解析服务
+copyright: 本网站由Vercel提供托管服务 由阿里云提供域名解析服务,OSS存储服务
 footer: MIT Licensed | Copyright © 2020-present Frank
 ---

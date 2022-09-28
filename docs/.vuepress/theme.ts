@@ -3,13 +3,14 @@ import Navbar from './configs/navbar.js'
 import Sidebar from './configs/sidebar.js'
 export default hopeTheme({
   hostname: 'https://zfhblog.top',
+  contributors: false,
   editLink: false,
   author: {
     name: 'Frank',
     url: 'https://zfhblog.top',
   },
   repoDisplay: false,
-  iconAssets: 'iconfont',
+  iconAssets: '//at.alicdn.com/t/c/font_3677319_nbsf014648b.css',
   logo: '/logo.jpg',
   // 文章信息展示项目
   //https://vuepress-theme-hope.github.io/v2/zh/config/frontmatter/layout.html#pageinfo
@@ -21,11 +22,11 @@ export default hopeTheme({
     'Tag',
     'ReadingTime',
     'Word',
+    'PageView',
   ],
   navbar: Navbar,
   sidebar: Sidebar,
-  footer: '做难而正确的事',
-  displayFooter: true,
+  displayFooter: false,
   encrypt: {
     config: {
       '/小记/二一年八月总结.html': ['1234'],
@@ -43,6 +44,11 @@ export default hopeTheme({
   },
   plugins: {
     blog: true,
+    comment: {
+      dark: 'auto',
+      provider: 'Waline',
+      serverURL: 'https://waline.zfhblog.top',
+    },
     components: ['Badge', 'CodePen'],
     // Disable features you don't want here
     mdEnhance: {
