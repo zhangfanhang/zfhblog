@@ -37,7 +37,7 @@ export default hopeTheme({
       'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/avatar.jpg',
     description: '菜鸟前端，目前在南京工作',
     medias: {
-      Email: 'zhangfanhang@znv.com',
+      Email: 'mailto:zhangfanhang@znv.com',
       Github: 'https://github.com/zhangfanhang',
     },
   },

@@ -6,7 +6,7 @@ heroFullScreen: true
 title: 首页
 heroText: ZFH's Blog
 tagline: 一个菜鸟前端的知识库博客
-bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg1.jpg'
+bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg3.jpg'
 actions:
   - text: 小记
     link: /小记/初来南京.html
