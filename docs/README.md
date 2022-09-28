@@ -1,10 +1,12 @@
 ---
 home: true
 icon: home
+layout: Blog
+heroFullScreen: true
 title: 首页
-heroImage: /code.gif
 heroText: ZFH's Blog
-tagline: 无他,唯手熟尔
+tagline: 一个菜鸟前端的知识库博客
+bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg1.jpg'
 actions:
   - text: 小记
     link: /小记/初来南京.html
@@ -13,35 +15,35 @@ actions:
   - text: 书签
     link: /书签.html
 
-features:
-  - title: todoList
+projects:
+  - name: todoList
     icon: vue
-    details: 一个使用vue2开发的简单待办事项
+    desc: 一个使用vue2开发的简单待办事项
     link: https://todo.zfhblog.top
 
-  - title: demoDisplay
+  - name: demoDisplay
     icon: vue
-    details: 各种框架原生js demo合集
+    desc: 各种框架原生js demo合集
     link: https://demo.zfhblog.top
 
-  - title: 生鲜到家
+  - name: 生鲜到家
     icon: vue
-    details: 使用vue3全家桶开发的外卖应用
+    desc: 使用vue3全家桶开发的外卖应用
     link: https://v3admin.zfhblog.top
 
-  - title: 外卖大屏
+  - name: 外卖大屏
     icon: vue
-    details: 使用vue2+echarts开发的外卖大屏
+    desc: 使用vue2+echarts开发的外卖大屏
     link: https://datav.zfhblog.top
 
-  - title: V3Admin
+  - name: V3Admin
     icon: vue
-    details: 一个由Vue 3 + Vue-Router + Element-Plus + Pinia打造的后台管理系统
+    desc: 一个由Vue 3 + Vue-Router + Element-Plus + Pinia打造的后台管理系统
     link: https://v3admin.zfhblog.top
 
-  - title: 泛家居
+  - name: 泛家居
     icon: javascript
-    details: 使用原生js开发，vite打包的家具公司首页
+    desc: 使用原生js开发，vite打包的家具公司首页
     link: https://fanjiaju.zfhblog.top
 
 copyright: 本网站由Vercel提供托管服务 由阿里云提供域名解析服务

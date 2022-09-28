@@ -31,7 +31,18 @@ export default hopeTheme({
       '/小记/二一年八月总结.html': ['1234'],
     },
   },
+  blog: {
+    roundAvatar: true,
+    avatar:
+      'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/avatar.jpg',
+    intro: '菜鸟前端，目前在南京工作',
+    medias: {
+      Email: 'zhangfanhang@znv.com',
+      Github: 'https://github.com/zhangfanhang',
+    },
+  },
   plugins: {
+    blog: true,
     components: ['Badge', 'CodePen'],
     // Disable features you don't want here
     mdEnhance: {
