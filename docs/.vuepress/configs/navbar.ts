@@ -20,7 +20,7 @@ export default navbar([
         text: '前端基础',
         children: [
           {
-            text: 'HTML5cs',
+            text: 'HTML5',
             icon: 'html',
             link: '/前端开发/HTML5',
           },
@@ -208,8 +208,16 @@ export default navbar([
     text: '前端面试',
     icon: 'mianshi',
     children: [
-      { text: '面试题总结', link: '/前端面试/面试题总结/html面试题' },
-      { text: '面试复盘', link: '/前端面试/面试复盘/21.9.14一面复盘' },
+      {
+        text: '面试题总结',
+        icon: 'zongjie',
+        link: '/前端面试/面试题总结/html面试题',
+      },
+      {
+        text: '面试复盘',
+        icon: 'fupan',
+        link: '/前端面试/面试复盘/21.9.14一面复盘',
+      },
     ],
   },
   /**
@@ -267,31 +275,36 @@ export default navbar([
     ],
   },
   /**
-   * 开发记录
+   * 开发笔记
    */
   {
-    text: '开发记录',
+    text: '开发笔记',
     icon: 'jilu',
     children: [
       {
         text: 'CSS',
-        link: '/开发记录/CSS/CSS文本溢出处理方式',
+        icon: 'css',
+        link: '/开发笔记/CSS/CSS文本溢出处理方式',
       },
       {
         text: 'JS',
-        link: '/开发记录/JS/数组对象对比找出差异项',
+        icon: 'javascript',
+        link: '/开发笔记/JS/数组对象对比找出差异项',
       },
       {
         text: 'Node',
-        link: '/开发记录/Node/在Vuekoa项目中如何解决跨域和cookie问题',
+        icon: 'node',
+        link: '/开发笔记/Node/在Vuekoa项目中如何解决跨域和cookie问题',
       },
       {
         text: 'Vue',
-        link: '/开发记录/Vue/vue2如何实现界面刷新',
+        icon: 'vue',
+        link: '/开发笔记/Vue/vue2如何实现界面刷新',
       },
       {
         text: 'React',
-        link: '/开发记录/React/开发流程管理平台学习心得',
+        icon: 'react',
+        link: '/开发笔记/React/开发流程管理平台学习心得',
       },
     ],
   },

@@ -1,9 +1,9 @@
 ---
 title: vue2+echarts数据报表项目学习心得
-tags:
-  - 2022/09/07 16:50:11
+tag:
   - echarts
-  - 数据报表
+  - vue2
+category: 开发记录
 ---
 
 # vue2+echarts 数据报表项目学习心得

@@ -1,9 +1,8 @@
 ---
 title: element-ui表格中修改switch开关状态的二种方法
-tags:
-  - 2022/08/15 09:13:46
-  - element-ui
-  - switch
+tag:
+  - elementUI
+category: 开发记录
 ---
 
 # element-ui 表格中修改 switch 开关状态的二种方法

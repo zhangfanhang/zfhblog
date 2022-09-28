@@ -1,8 +1,8 @@
 ---
 title: vue2中的css深度选择器
-tags:
-  - 2022/08/23 15:35:43
-  - css深度选择器
+tag:
+  - vue2
+category: 开发记录
 ---
 
 # vue2 中的 css 深度选择器

@@ -1,9 +1,9 @@
 ---
 title: vue3+vite3.0项目支持路径别名
-tags:
-  - 2022/08/15 20:28:55
+tag:
   - vite3
-  - 路径别名
+  - vue3
+category: 开发记录
 ---
 
 # vue3+vite3.0 项目支持路径别名

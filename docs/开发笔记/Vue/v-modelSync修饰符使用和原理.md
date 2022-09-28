@@ -1,9 +1,10 @@
 ---
 title: v-model,Sync修饰符使用和原理
-tags:
-  - 2022/08/29 17:50:08
-  - v-model
-  - .sync修饰符
+tag:
+  - vue2
+  - vue3
+  - 原理
+category: 原理
 ---
 
 # v-model,Sync 修饰符使用和原理

@@ -1,9 +1,8 @@
 ---
 title: element-ui清除表单的奇怪现象
-tags:
-  - 2022/08/15 14:58:06
+tag:
   - elementUI
-  - 表单
+category: 开发记录
 ---
 
 # element-ui 清除表单的奇怪现象

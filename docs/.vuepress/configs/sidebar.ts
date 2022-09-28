@@ -6,10 +6,10 @@ export default sidebar({
    */
   '/小记/': ['初来南京', '二一年八月总结'],
   /**
-   * 开发记录
+   * 开发笔记
    */
-  '/开发记录/CSS/': ['calc函数', 'CSS文本溢出处理方式'],
-  '/开发记录/JS/': [
+  '/开发笔记/CSS/': ['calc函数', 'CSS文本溢出处理方式'],
+  '/开发笔记/JS/': [
     '数组对象对比找出差异项',
     '关于async和await',
     '理解js事件循环',
@@ -20,12 +20,12 @@ export default sidebar({
     'Array.prototype.slice.call()&Array.from()的应用和理解',
     'js的严格模式',
   ],
-  '/开发记录/Node/': [
+  '/开发笔记/Node/': [
     '在Vuekoa项目中如何解决跨域和cookie问题',
     '记一次koa2项目部署过程',
     'm1如何安装低版本node',
   ],
-  '/开发记录/Vue/': [
+  '/开发笔记/Vue/': [
     'vue2如何实现界面刷新',
     'vue2实现滚动窗口同步滚动',
     'vue2中的css深度选择器',
@@ -38,8 +38,9 @@ export default sidebar({
     'vue3vite3.0项目支持路径别名',
     'vue3+ElementPlus+Koa2全栈开发后台系统学习记录',
     'elementPlus公共表格封装',
+    '利用tooltip实现文本超出提示',
   ],
-  '/开发记录/React/': [
+  '/开发笔记/React/': [
     '开发流程管理平台学习心得',
     'Hook对比HOC和renderProps',
     'React中引入图片',

@@ -10,10 +10,8 @@ export default hopeTheme({
     url: 'https://zfhblog.top',
   },
   repoDisplay: false,
-  iconAssets: '//at.alicdn.com/t/c/font_3677319_nbsf014648b.css',
+  iconAssets: '//at.alicdn.com/t/c/font_3677319_n6lt2ssj6h.css',
   logo: '/logo.jpg',
-  // 文章信息展示项目
-  //https://vuepress-theme-hope.github.io/v2/zh/config/frontmatter/layout.html#pageinfo
   pageInfo: [
     'Author',
     'Original',
@@ -32,6 +30,7 @@ export default hopeTheme({
       '/小记/二一年八月总结.html': ['1234'],
     },
   },
+  breadcrumb: false,
   blog: {
     roundAvatar: true,
     avatar:

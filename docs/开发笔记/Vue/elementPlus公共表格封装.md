@@ -1,9 +1,8 @@
 ---
 title: elementPlus公共表格封装
-tags:
-  - 2022/09/07 16:48:13
+tag:
   - elementPlus
-  - 表格封装
+category: 开发记录
 ---
 
 # elementPlus 公共表格封装

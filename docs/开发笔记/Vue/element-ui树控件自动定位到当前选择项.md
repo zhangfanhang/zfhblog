@@ -1,9 +1,8 @@
 ---
 title: element-ui树控件自动定位到当前选择项
-tags:
-  - 2022/08/27 15:15:24
-  - element-ui
-  - 树
+tag:
+  - elementUI
+category: 开发记录
 ---
 
 # element-ui 树控件自动定位到当前选择项

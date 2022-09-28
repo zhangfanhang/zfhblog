@@ -1,11 +1,10 @@
 ---
 title: vue3+ElementPlusKoa2全栈开发后台系统学习记录
-tags:
-  - 2022/09/07 16:36:19
+tag:
   - vue3
   - ElementPlus
   - Koa2
-  - 后台
+category: 开发记录
 ---
 
 # vue3+ElementPlus+Koa2 全栈开发后台系统学习记录
