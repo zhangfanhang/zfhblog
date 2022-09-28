@@ -35,7 +35,7 @@ export default hopeTheme({
     roundAvatar: true,
     avatar:
       'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/avatar.jpg',
-    intro: '菜鸟前端，目前在南京工作',
+    description: '菜鸟前端，目前在南京工作',
     medias: {
       Email: 'zhangfanhang@znv.com',
       Github: 'https://github.com/zhangfanhang',
