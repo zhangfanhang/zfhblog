@@ -10,7 +10,7 @@ export default hopeTheme({
     url: 'https://zfhblog.top',
   },
   repoDisplay: false,
-  iconAssets: '//at.alicdn.com/t/c/font_3677319_vhzq3bktlss.css',
+  iconAssets: '//at.alicdn.com/t/c/font_3677319_r86uf3i3em.css',
   logo: '/logo.jpg',
   pageInfo: [
     'Author',

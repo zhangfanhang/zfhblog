@@ -1,7 +1,9 @@
 ---
 title: 深入理解javascript原型和闭包
 author: 王福朋
- 
+tag: 
+  - javascript原理
+category: javascript
 ---
 
 ## 一切都是对象
