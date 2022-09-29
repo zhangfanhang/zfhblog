@@ -1,8 +1,9 @@
 ---
 title: vue2中的css深度选择器
+isOriginal: true
 tag:
   - vue2
-category: 开发记录
+category: 开发笔记
 ---
 
 # vue2 中的 css 深度选择器

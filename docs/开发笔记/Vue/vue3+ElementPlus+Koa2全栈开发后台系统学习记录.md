@@ -1,10 +1,10 @@
 ---
-title: vue3+ElementPlusKoa2全栈开发后台系统学习记录
+title: vue3ElementPlusKoa2全栈开发后台系统学习记录
 tag:
   - vue3
   - ElementPlus
   - Koa2
-category: 开发记录
+category: 开发笔记
 ---
 
 # vue3+ElementPlus+Koa2 全栈开发后台系统学习记录

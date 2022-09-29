@@ -1,8 +1,10 @@
 ---
 title: 利用tooltip实现文本超出提示
+isOriginal: true
 tag:
   - elementUI
-category: 开发记录
+  - vue2
+category: 开发笔记
 ---
 
 # 利用 tooltip 实现文本超出提示

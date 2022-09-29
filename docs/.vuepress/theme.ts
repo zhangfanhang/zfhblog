@@ -10,7 +10,7 @@ export default hopeTheme({
     url: 'https://zfhblog.top',
   },
   repoDisplay: false,
-  iconAssets: '//at.alicdn.com/t/c/font_3677319_r86uf3i3em.css',
+  iconAssets: '//at.alicdn.com/t/c/font_3677319_iu880nfhpml.css',
   logo: '/logo.jpg',
   pageInfo: [
     'Author',
@@ -27,7 +27,7 @@ export default hopeTheme({
   displayFooter: false,
   encrypt: {
     config: {
-      '/小记/二一年八月总结.html': ['1234'],
+      '/小记/二一年八月总结.html': ['0049003914'],
     },
   },
   breadcrumb: false,
@@ -39,6 +39,7 @@ export default hopeTheme({
     medias: {
       Email: 'mailto:zhangfanhang@znv.com',
       Github: 'https://github.com/zhangfanhang',
+      zhuhu: '',
     },
   },
   plugins: {
@@ -48,7 +49,7 @@ export default hopeTheme({
       provider: 'Waline',
       serverURL: 'https://waline.zfhblog.top',
     },
-    components: ['Badge', 'CodePen'],
+    components: ['Badge', 'CodePen', 'PDF'],
     // Disable features you don't want here
     mdEnhance: {
       align: true,

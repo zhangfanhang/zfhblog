@@ -1,9 +1,10 @@
 ---
 title: vue2+echarts数据报表项目学习心得
+isOriginal: true
 tag:
   - echarts
   - vue2
-category: 开发记录
+category: 开发笔记
 ---
 
 # vue2+echarts 数据报表项目学习心得

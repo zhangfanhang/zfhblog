@@ -1,7 +1,8 @@
 ---
 title: PBR材质纹理
-tags:
-  - 2022/09/19 19:47:00
+tag:
+ - Threejs
+category: 前端图形
 ---
 
 # PBR 材质纹理

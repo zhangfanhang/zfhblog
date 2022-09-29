@@ -1,8 +1,10 @@
 ---
 title: element-ui树控件自动定位到当前选择项
+isOriginal: true
 tag:
   - elementUI
-category: 开发记录
+  - vue2
+category: 开发笔记
 ---
 
 # element-ui 树控件自动定位到当前选择项

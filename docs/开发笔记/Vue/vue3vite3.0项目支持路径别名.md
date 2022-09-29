@@ -1,9 +1,10 @@
 ---
 title: vue3+vite3.0项目支持路径别名
+isOriginal: true
 tag:
   - vite3
   - vue3
-category: 开发记录
+category: 开发笔记
 ---
 
 # vue3+vite3.0 项目支持路径别名

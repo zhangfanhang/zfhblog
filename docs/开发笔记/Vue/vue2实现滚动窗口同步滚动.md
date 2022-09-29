@@ -1,8 +1,9 @@
 ---
 title: vue2实现滚动窗口同步滚动
+isOriginal: true
 tag:
   - vue2
-category: 开发记录
+category: 开发笔记
 ---
 
 # vue2 实现滚动窗口同步滚动

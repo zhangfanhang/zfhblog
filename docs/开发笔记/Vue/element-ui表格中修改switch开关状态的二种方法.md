@@ -1,8 +1,10 @@
 ---
 title: element-ui表格中修改switch开关状态的二种方法
+isOriginal: true
 tag:
   - elementUI
-category: 开发记录
+  - vue2
+category: 开发笔记
 ---
 
 # element-ui 表格中修改 switch 开关状态的二种方法

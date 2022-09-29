@@ -1,9 +1,8 @@
 ---
 title: Three开发入门与调试设置
-tags:
-  - 2022/09/13 17:29:19
-  - Three入门
-  - 调试
+tag:
+ - Threejs
+category: 前端图形
 ---
 
 # Three 开发入门与调试设置

@@ -1,8 +1,10 @@
 ---
 title: elementPlus公共表格封装
+isOriginal: true
 tag:
   - elementPlus
-category: 开发记录
+  - vue3
+category: 开发笔记
 ---
 
 # elementPlus 公共表格封装

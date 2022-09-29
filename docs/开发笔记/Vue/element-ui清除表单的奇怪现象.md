@@ -1,8 +1,10 @@
 ---
 title: element-ui清除表单的奇怪现象
+isOriginal: true
 tag:
   - elementUI
-category: 开发记录
+  - vue2
+category: 开发笔记
 ---
 
 # element-ui 清除表单的奇怪现象
