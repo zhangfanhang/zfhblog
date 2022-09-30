@@ -1,5 +1,10 @@
 ---
 title: 理解js事件循环
+tag:
+  - JS
+category:
+  - 开发笔记
+  - JS
 ---
 
 - [这一次，彻底弄懂 JavaScript 执行机制](https://juejin.cn/post/6844903512845860872)

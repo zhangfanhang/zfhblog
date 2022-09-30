@@ -2,10 +2,12 @@
 title: v-model,Sync修饰符使用和原理
 isOriginal: true
 tag:
- - vue2
- - vue3
- - 原理
-category: 开发笔记
+  - vue2
+  - vue3
+  - 原理
+category:
+  - 开发笔记
+  - Vue
 ---
 
 # v-model,Sync 修饰符使用和原理

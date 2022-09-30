@@ -1,7 +1,13 @@
 ---
 title: HTML5
-sidebar: auto
+tag:
+  - html5
+category: 前端基础
 ---
+
+## 修订进度
+
+- [ ] 2021.9.30 `meta`的具体功能
 
 ## html5 骨架
 

@@ -1,5 +1,10 @@
 ---
 title: Array.prototype.slice.call()&Array.from()的应用和理解
+tag:
+  - JS
+category:
+  - 开发笔记
+  - JS
 ---
 
 Array.prototype.slice.call() 可将类数组(arguments,NodeList)，字符串(String)转换成数组。

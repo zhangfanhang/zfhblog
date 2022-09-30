@@ -1,5 +1,10 @@
 ---
 title: 数组delete元素
+tag:
+  - JS
+category:
+  - 开发笔记
+  - JS
 ---
 
 ```js
@@ -15,6 +20,6 @@ alert(arr.length) // 3
 
 使用 delete 删除指定索引号的数组元素后会发生什么？
 
--   数组元素值消失
--   通过索引号访问，得到 undefined
--   数组长度不变
+- 数组元素值消失
+- 通过索引号访问，得到 undefined
+- 数组长度不变

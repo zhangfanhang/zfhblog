@@ -4,7 +4,9 @@ isOriginal: true
 tag:
   - elementUI
   - vue2
-category: 开发笔记
+category:
+  - 开发笔记
+  - Vue
 ---
 
 # element-ui 清除表单的奇怪现象

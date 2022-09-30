@@ -4,7 +4,9 @@ isOriginal: true
 tag:
   - echarts
   - vue2
-category: 开发笔记
+category:
+  - 开发笔记
+  - Vue
 ---
 
 # vue2+echarts 数据报表项目学习心得

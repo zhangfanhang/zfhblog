@@ -4,7 +4,9 @@ tag:
   - vue3
   - ElementPlus
   - Koa2
-category: 开发笔记
+category:
+  - 开发笔记
+  - Vue
 ---
 
 # vue3+ElementPlus+Koa2 全栈开发后台系统学习记录

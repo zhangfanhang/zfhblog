@@ -314,7 +314,7 @@ export default navbar([
   {
     text: '算法',
     icon: 'suanfa',
-    link: '/算法/时间空间复杂度',
+    link: '/算法/',
   },
   /**
    * 杂记

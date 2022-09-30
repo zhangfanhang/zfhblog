@@ -1,5 +1,10 @@
 ---
 title: js的严格模式
+tag:
+  - JS
+category:
+  - 开发笔记
+  - JS
 ---
 
 JavaScript 中除了正常运行模式（非严格模式），还有一种严格模式（strict mode），顾名思义，这种模式使得 JavaScript 在更严格的模式下运行
@@ -28,15 +33,15 @@ num = 1 //Uncaught ReferenceError: num is not defined
 
 ```js
 function fn() {
-    console.log(this) // window
+  console.log(this) // window
 }
 fn()
 ```
 
 ```js
 function fn() {
-    'use strict'
-    console.log(this) // undefined
+  'use strict'
+  console.log(this) // undefined
 }
 fn()
 ```
@@ -45,14 +50,14 @@ fn()
 
 ```js
 function sum(a, a, c) {
-    return a + a + c
+  return a + a + c
 }
 ```
 
 ```js
 'use strict'
 function sum(a, a, c) {
-    // !!! 语法错误
-    return a + a + c // 代码运行到这里会出错
+  // !!! 语法错误
+  return a + a + c // 代码运行到这里会出错
 }
 ```

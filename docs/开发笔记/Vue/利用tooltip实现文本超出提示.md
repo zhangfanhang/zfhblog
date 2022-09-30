@@ -4,7 +4,9 @@ isOriginal: true
 tag:
   - elementUI
   - vue2
-category: 开发笔记
+category:
+  - 开发笔记
+  - Vue
 ---
 
 # 利用 tooltip 实现文本超出提示

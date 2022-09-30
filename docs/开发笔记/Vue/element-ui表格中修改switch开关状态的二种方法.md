@@ -4,7 +4,9 @@ isOriginal: true
 tag:
   - elementUI
   - vue2
-category: 开发笔记
+category:
+  - 开发笔记
+  - Vue
 ---
 
 # element-ui 表格中修改 switch 开关状态的二种方法

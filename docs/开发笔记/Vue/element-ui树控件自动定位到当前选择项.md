@@ -4,7 +4,9 @@ isOriginal: true
 tag:
   - elementUI
   - vue2
-category: 开发笔记
+category:
+  - 开发笔记
+  - Vue
 ---
 
 # element-ui 树控件自动定位到当前选择项

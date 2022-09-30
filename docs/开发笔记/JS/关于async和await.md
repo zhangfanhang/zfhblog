@@ -1,5 +1,10 @@
 ---
 title: 关于async和await
+tag:
+  - JS
+category:
+  - 开发笔记
+  - JS
 ---
 
 ## 发现问题

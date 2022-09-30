@@ -10,7 +10,7 @@ export default hopeTheme({
     url: 'https://zfhblog.top',
   },
   repoDisplay: false,
-  iconAssets: '//at.alicdn.com/t/c/font_3677319_iu880nfhpml.css',
+  iconAssets: '//at.alicdn.com/t/c/font_3677319_evxr1rochlf.css',
   logo: '/logo.jpg',
   pageInfo: [
     'Author',
@@ -25,11 +25,6 @@ export default hopeTheme({
   navbar: Navbar,
   sidebar: Sidebar,
   displayFooter: false,
-  encrypt: {
-    config: {
-      '/小记/二一年八月总结.html': ['0049003914'],
-    },
-  },
   breadcrumb: false,
   blog: {
     roundAvatar: true,
@@ -39,7 +34,16 @@ export default hopeTheme({
     medias: {
       Email: 'mailto:zhangfanhang@znv.com',
       Github: 'https://github.com/zhangfanhang',
-      zhuhu: '',
+      Zhihu: 'https://www.zhihu.com/people/zhang-Fan-Hang',
+      Gitee: 'https://gitee.com/zhangfanhang',
+      Steam: 'https://steamcommunity.com/profiles/76561198815093167/',
+      Weibo: 'https://weibo.com/u/6568313173',
+      Wechat: '微信',
+    },
+  },
+  encrypt: {
+    config: {
+      '/xiaoji/SummaryOfAugust21.html': '0049003914',
     },
   },
   plugins: {
@@ -50,7 +54,6 @@ export default hopeTheme({
       serverURL: 'https://waline.zfhblog.top',
     },
     components: ['Badge', 'CodePen', 'PDF'],
-    // Disable features you don't want here
     mdEnhance: {
       align: true,
       attrs: true,

@@ -4,7 +4,9 @@ isOriginal: true
 tag:
   - vite3
   - vue3
-category: 开发笔记
+category:
+  - 开发笔记
+  - Vue
 ---
 
 # vue3+vite3.0 项目支持路径别名

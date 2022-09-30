@@ -4,7 +4,9 @@ isOriginal: true
 tag:
   - elementPlus
   - vue3
-category: 开发笔记
+category:
+  - 开发笔记
+  - Vue
 ---
 
 # elementPlus 公共表格封装
