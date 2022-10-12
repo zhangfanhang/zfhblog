@@ -138,6 +138,11 @@ export default navbar([
             icon: 'node',
             link: '/后端开发/Koa2',
           },
+          {
+            text: 'nest',
+            icon: 'nest',
+            link: '/后端开发/nest',
+          },
         ],
       },
       {

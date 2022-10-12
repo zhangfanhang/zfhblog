@@ -13,10 +13,10 @@ category:
 
 ```js
 import * as THREE from 'three'
-// 1、创建场景
+// 创建场景
 const scene = new THREE.Scene()
 
-// 2、创建相机
+// 创建相机
 const camera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
@@ -26,11 +26,12 @@ const camera = new THREE.PerspectiveCamera(
 
 // 设置相机位置
 camera.position.set(0, 0, 10)
+// 将相机添加到场景中
 scene.add(camera)
 
-// 添加物体
 // 创建几何体
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
+// 设置物体材质
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 })
 // 根据几何体和材质创建物体
 const cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
@@ -79,10 +80,10 @@ const camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000)
 ```js
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-// 1、创建场景
+// 创建场景
 const scene = new THREE.Scene()
 
-// 2、创建相机
+// 创建相机
 const camera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
@@ -92,11 +93,12 @@ const camera = new THREE.PerspectiveCamera(
 
 // 设置相机位置
 camera.position.set(0, 0, 10)
+// 将相机添加到场景中
 scene.add(camera)
 
-// 添加物体
 // 创建几何体
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
+// 设置物体材质
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 })
 // 根据几何体和材质创建物体
 const cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
@@ -107,7 +109,6 @@ scene.add(cube)
 const renderer = new THREE.WebGLRenderer()
 // 设置渲染的尺寸大小
 renderer.setSize(window.innerWidth, window.innerHeight)
-// console.log(renderer);
 
 // 将webgl渲染的canvas内容添加到body
 document.body.appendChild(renderer.domElement)
@@ -132,7 +133,7 @@ WebGL 和 Three.js 使用的坐标系是右手坐标系，即右手伸开，拇�
 
 ## requestAnimationFrame
 
-[`window.requestAnimationFrame()`](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame)告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。该方法需要传入一个回调函数作为参数，该回调函数会在浏览器下一次重绘之前执行。在大多数遵循 W3C 建议的浏览器中，回调函数执行次数通常与浏览器屏幕刷新次数相匹配。
+[`window.requestAnimationFrame()`](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame)告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。该方法需要传入一个回调函数作为参数，该回调函数会在浏览器下一次重绘之前执行。在大多数遵循 W3C 建议的浏览器中，回调函数执行次数通常与浏览器屏幕刷新次数相匹配
 
 ## 添加坐标轴辅助器
 

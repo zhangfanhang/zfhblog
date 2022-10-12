@@ -10,7 +10,7 @@ export default hopeTheme({
     url: 'https://zfhblog.top',
   },
   repoDisplay: false,
-  iconAssets: '//at.alicdn.com/t/c/font_3677319_evxr1rochlf.css',
+  iconAssets: '//at.alicdn.com/t/c/font_3677319_rxhh7rwhip.css',
   logo: '/logo.jpg',
   pageInfo: [
     'Author',
@@ -43,7 +43,8 @@ export default hopeTheme({
   },
   encrypt: {
     config: {
-      '/xiaoji/SummaryOfAugust21.html': '0049003914',
+      '/小记/二二年八月总结.html': '0049003914',
+      '/小记/二二年九月总结.html': '0049003914',
     },
   },
   plugins: {

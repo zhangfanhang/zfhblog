@@ -4,7 +4,7 @@ export default sidebar({
   /**
    * 小记
    */
-  '/xiaoji/': ['初来南京', 'SummaryOfAugust21'],
+  '/小记/': ['初来南京', '二二年八月总结', '二二年九月总结'],
   /**
    * 开发笔记
    */
