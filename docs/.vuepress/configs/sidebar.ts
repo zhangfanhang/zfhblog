@@ -122,6 +122,7 @@ export default sidebar({
     '开发环境搭建',
     'Three开发入门与调试设置',
     'Threejs物体',
+    '材质与纹理',
   ],
   '/前端开发/TypeScript/': ['TS基础', 'TS面向对象', 'TS进阶'],
   '/前端开发/Vue/': [
