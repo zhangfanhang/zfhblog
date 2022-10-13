@@ -31,7 +31,7 @@ export default hopeTheme({
     avatar:
       'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/avatar.jpg',
     description:
-      '菜鸟前端，目前在南京工作。本人天生愚钝，所做的东西也很垃圾，仅仅是一点点兴趣和为了吃饱饭，所以网络上的大牛们如果觉得我做的东西很拉，看我笑话就好。',
+      '菜鸟前端，目前在南京工作。本人天生愚钝，所做的东西也很垃圾，仅仅是一点点兴趣和为了吃饱饭，所以各位前端的大牛们如果觉得我做的东西很拉，看我笑话就好。',
     medias: {
       Email: 'mailto:zhangfanhang@znv.com',
       Github: 'https://github.com/zhangfanhang',

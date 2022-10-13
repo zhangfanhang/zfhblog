@@ -2,7 +2,6 @@
 home: true
 icon: home
 layout: Blog
-heroFullScreen: true
 title: 首页
 heroText: ZFH's Blog
 tagline: 一个菜鸟前端的知识库博客
@@ -31,6 +30,11 @@ projects:
     desc: 使用vue3全家桶开发的外卖应用
     link: https://v3admin.zfhblog.top
 
+  - name: 泛家居
+    icon: javascript
+    desc: 使用原生js开发，vite打包的家具公司首页
+    link: https://fanjiaju.zfhblog.top
+
   - name: 外卖数据展示大屏
     icon: nuxt
     desc: 使用vue2+echarts开发的外卖数据展示(现阶段正在使用nuxt重构)
@@ -41,15 +45,10 @@ projects:
     desc: 一个由Vue 3 + Vue-Router + Element-Plus + Pinia打造的后台管理系统
     link: https://v3admin.zfhblog.top
 
-  - name: 泛家居
-    icon: javascript
-    desc: 使用原生js开发，vite打包的家具公司首页
-    link: https://fanjiaju.zfhblog.top
-
-  - name: ZFH的音乐🎵
-    icon: vue
-    desc: 使用网易云api的在线音乐网站
-    link: https://music.zfhblog.top
+  - name: 去哪里
+    icon: react
+    desc: 一个基于 React18 + TSX + Vite + AntDesign 的仿去哪儿首页
+    link: https://qunal.zfhblog.top
 
   - name: 天汉旅行
     icon: xiaochengxu
@@ -66,10 +65,10 @@ projects:
     desc: 不到一百行代码实现贪吃蛇
     link: https://snake.zfhblog.top
 
-  - name: 去哪里
-    icon: react
-    desc: 一个基于React18+TSX+Vite+AntDesign的仿去哪儿首页
-    link: https://qunal.zfhblog.top
+  - name: ZFH的音乐🎵
+    icon: vue
+    desc: 使用网易云api的在线音乐网站
+    link: https://music.zfhblog.top
 
   - name: koa2-message-board
     icon: node
