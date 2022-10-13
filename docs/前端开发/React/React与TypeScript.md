@@ -10,4 +10,9 @@ title: React与TypeScript
 npx create-react-app my-app --template typescript
 ```
 
-## tsconfig.json
+### 使用vite创建react+ts项目
+
+```js
+npm create vite@latest my-vue-app -- --template react-ts
+```
+

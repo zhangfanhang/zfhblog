@@ -12,6 +12,10 @@ category:
   <img  style='width:200px;height:100px' src='https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/VListLogo.PNG'/>
 </center>
 
+::: tip 官方文档
+[v-list](https://vlist.zfhblog.top)
+:::
+
 # vue2 虚拟列表实现
 
 ## 分析
