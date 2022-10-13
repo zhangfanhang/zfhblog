@@ -105,7 +105,7 @@ export default {
 
 ## sync 修饰符的原理
 
-和 v-model 类似也是实现父子之间数据的双向绑定。
+和 v-model 类似也是实现父子之间数据的双向绑定
 
 其本质是：给子组件绑定了一个名为`update:你通过v-bind绑定的变量名称`的自定义事件
 
@@ -113,7 +113,10 @@ export default {
 <template>
   <div>
     <h1>sync修饰符</h1>
-    <my-sync :title="title" @update:title="titleChange" />
+    
+   <!-- <my-sync :title="title" @update:title="titleChange" /> :-->
+    <!-- 使用 sync 修饰符 :-->
+    <my-sync :title.sync="title" />
     <h2>title:{{ title }}</h2>
   </div>
 </template>
@@ -137,12 +140,6 @@ export default {
   },
 }
 </script>
-```
-
-使用 sync 修饰符：
-
-```html
-<my-sync :title.sync="title" />
 ```
 
 在子组件中触发该自定义事件：
@@ -170,7 +167,7 @@ export default {
 
 `vue3`已将`v-bind`的`sync`修饰符<span style='color:red'>废弃</span>
 
-`vue2`中， 使用`v-model`，`sync`可以实现父子组件之间的数据双向绑定。但是`v-model`只能使用一次，如果多个数据需要双向绑定，那就得使用`sync`修饰符。vue3 将 v-model 进行了升级
+`vue2`中， 使用`v-model`，`sync`可以实现父子组件之间的数据双向绑定。但是`v-model`只能使用一次，如果多个数据需要双向绑定，那就得使用`sync`修饰符。`vue3` 将` v-model` 进行了升级
 
 看代码，子组件中：
 

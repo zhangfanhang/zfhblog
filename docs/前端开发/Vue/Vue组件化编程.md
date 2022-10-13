@@ -351,30 +351,65 @@ Vue.extend = function (extendOptions) {
 ## props 配置项
 
 1.  功能：让组件接收外部传过来的数据
-
 2.  传递数据：`<Demo name="xxx"/>`
 
-3.  接收数据：
+::: warning 注意
+props 是只读的，Vue 底层会监测你对 props 的修改，如果进行了修改，就会发出警告，若业务需求确实需要修改，那么请复制 props 的内容到 data 中一份，然后去修改 data 中的数据。
+:::
 
-        1. 第一种方式（只接收）：```props:['name'] ```
+1. 接收数据：
 
-        2. 第二种方式（限制类型）：```props:{name:String}```
+   - 第一种方式（只接收）：`props:['name'] `
+   - 第二种方式（限制类型）：`props:{name:String}`
+   - 第三种方式（限制类型、限制必要性、指定默认值）：
 
-        3. 第三种方式（限制类型、限制必要性、指定默认值）：
+       ```js
+       props:{
+       	name:{
+       	type:String, //类型
+       	required:true, //必要性
+       	default:'老王' //默认值
+       	}
+       }
+       ```
 
-            ```js
-            props:{
-            	name:{
-            	type:String, //类型
-            	required:true, //必要性
-            	default:'老王' //默认值
-            	}
-            }
-            ```
+更多🚫限制：
 
-    ::: warning 注意
-    props 是只读的，Vue 底层会监测你对 props 的修改，如果进行了修改，就会发出警告，若业务需求确实需要修改，那么请复制 props 的内容到 data 中一份，然后去修改 data 中的数据。
-    :::
+```js
+ props: {
+    // 基础的类型检查 (`null` 和 `undefined` 会通过任何类型验证)
+    propA: Number,
+    // 多个可能的类型
+    propB: [String, Number],
+    // 必填的字符串
+    propC: {
+      type: String,
+      required: true
+    },
+    // 带有默认值的数字
+    propD: {
+      type: Number,
+      default: 100
+    },
+    // 带有默认值的对象
+    propE: {
+      type: Object,
+      // 对象或数组默认值必须从一个工厂函数获取
+      default: function () {
+        return { message: 'hello' }
+      }
+    },
+    // 自定义验证函数
+    propF: {
+      validator: function (value) {
+        // 这个值必须匹配下列字符串中的一个
+        return ['success', 'warning', 'danger'].includes(value)
+      }
+    }
+  }
+```
+
+
 
 ## mixin 混入
 
@@ -441,7 +476,7 @@ Vue.extend = function (extendOptions) {
 (2).实现动态组件：考虑好数据的存放位置，数据是一个组件在用，还是一些组件在用：
 
     1).一个组件在用：放在组件自身即可。
-
+    
     ​2). 一些组件在用：放在他们共同的父组件上（这种行为被称为状态提升）
 
 (3).实现交互：从绑定事件开始。
