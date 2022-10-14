@@ -67,7 +67,7 @@ export default navbar([
           {
             text: 'TypeScript',
             icon: 'typescript',
-            link: '/前端开发/TypeScript/TS基础',
+            link: '/前端开发/TypeScript/是否真的需要TS',
           },
           {
             text: 'ES6',

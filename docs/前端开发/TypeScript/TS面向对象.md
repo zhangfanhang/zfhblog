@@ -1,5 +1,10 @@
 ---
 title: TS面向对象
+tags:
+  - TypeScript
+category:
+  - 前端开发
+  - TypeScript
 ---
 
 ## Object
@@ -8,16 +13,16 @@ title: TS面向对象
 
 ```ts
 const person: {
-    name: string
-    age: number
+  name: string
+  age: number
 } = {
-    name: 'frank',
-    age: 14,
+  name: 'frank',
+  age: 14,
 }
 // 上面的定义等价于：
 const person2 = {
-    name: 'zhang',
-    age: 13,
+  name: 'zhang',
+  age: 13,
 }
 ```
 
@@ -25,18 +30,18 @@ const person2 = {
 
 在 TypeScript 中，我们使用接口（Interfaces）来定义对象的类型
 
- 在面向对象语言中，接口（Interfaces）是一个很重要的概念，它是对行为的抽象，而具体如何行动需要由类（classes）去实现（implement）
+在面向对象语言中，接口（Interfaces）是一个很重要的概念，它是对行为的抽象，而具体如何行动需要由类（classes）去实现（implement）
 
 TypeScript 中的接口是一个非常灵活的概念，除了可用于[对类的一部分行为进行抽象](https://ts.xcatliu.com/advanced/class-and-interfaces.html#类实现接口)以外，也常用于对「对象的形状（Shape）」进行描述:
 
 ```ts
 interface IPoint {
-    X: number
-    Y: number
+  X: number
+  Y: number
 }
 const p1: IPoint = {
-    X: 1,
-    Y: 2,
+  X: 1,
+  Y: 2,
 }
 ```
 
@@ -48,33 +53,33 @@ const p1: IPoint = {
 
 ```ts
 interface Person {
-    name: string;
-    age?: number;
+  name: string
+  age?: number
 }
 
 let tom: Person = {
-    name: 'Tom'
-};
+  name: 'Tom',
+}
 ```
 
 可选属性的含义是该属性可以不存在。这时**仍然不允许添加未定义的属性**
 
-###  任意属性
+### 任意属性
 
 有时候我们希望一个接口允许有任意的属性，可以使用如下方式：
 
 ```ts
 interface Person {
-    name: string;
-    age?: number;
+  name: string
+  age?: number
   // 索引签名
-    [propName: string]: any;
+  [propName: string]: any
 }
 
 let tom: Person = {
-    name: 'Tom',
-    gender: 'male'
-};
+  name: 'Tom',
+  gender: 'male',
+}
 ```
 
 使用 `[propName: string]` 定义了任意属性取 `string` 类型的值。
@@ -83,16 +88,16 @@ let tom: Person = {
 
 ```ts
 interface Person {
-    name: string;
-    age?: number;
-    [propName: string]: string;
+  name: string
+  age?: number
+  [propName: string]: string
 }
 
 let tom: Person = {
-    name: 'Tom',
-    age: 25,
-    gender: 'male'
-};
+  name: 'Tom',
+  age: 25,
+  gender: 'male',
+}
 
 // index.ts(3,5): error TS2411: Property 'age' of type 'number' is not assignable to string index type 'string'.
 // index.ts(7,5): error TS2322: Type '{ [x: string]: string | number; name: string; age: number; gender: string; }' is not assignable to type 'Person'.
@@ -105,17 +110,16 @@ let tom: Person = {
 
 ```ts
 interface Person {
-    name: string;
-    age?: number;
-    [propName: string]: string | number;
+  name: string
+  age?: number
+  [propName: string]: string | number
 }
 
 let tom: Person = {
-    name: 'Tom',
-    age: 25,
-    gender: 'male'
-};
-
+  name: 'Tom',
+  age: 25,
+  gender: 'male',
+}
 ```
 
 ### 只读属性
@@ -123,21 +127,20 @@ let tom: Person = {
 有时候我们希望对象中的一些字段只能在创建的时候被赋值，那么可以用 `readonly` 定义只读属性：
 
 ```ts
-
 interface Person {
-    readonly id: number;
-    name: string;
-    age?: number;
-    [propName: string]: any;
+  readonly id: number
+  name: string
+  age?: number
+  [propName: string]: any
 }
 
 let tom: Person = {
-    id: 89757,
-    name: 'Tom',
-    gender: 'male'
-};
+  id: 89757,
+  name: 'Tom',
+  gender: 'male',
+}
 
-tom.id = 9527;
+tom.id = 9527
 // index.ts(14,5): error TS2540: Cannot assign to 'id' because it is a constant or a read-only property.
 ```
 
@@ -158,7 +161,6 @@ tom.id = 9527;
 - 抽象类（Abstract Class）：抽象类是供其他类继承的基类，抽象类不允许被实例化。抽象类中的抽象方法必须在子类中被实现
 - 接口（Interfaces）：不同类之间公有的属性或方法，可以抽象成一个接口。接口可以被类实现（implements）。一个类只能继承自另一个类，但是可以实现多个接口
 
-
 ### Access Modifiers
 
 TypeScript 可以使用三种访问修饰符（Access Modifiers），分别是 `public`、`private` 和 `protected`。
@@ -169,55 +171,54 @@ TypeScript 可以使用三种访问修饰符（Access Modifiers），分别是 `
 
 ```ts
 interface IPoint {
-    X: number
-    Y: number
-    drawPoint: () => void
-    getDistances: (p: IPoint) => number
+  X: number
+  Y: number
+  drawPoint: () => void
+  getDistances: (p: IPoint) => number
 }
 class Point implements IPoint {
-    constructor(private _x: number, private _y: number) {}
-    drawPoint() {
-        console.log('x：' + this._x, 'y:' + this._y)
-    }
-    getDistances(p: IPoint) {
-        return Math.sqrt((p.X - this._x) ** 2 + (p.Y - this._y) ** 2)
-    }
-    get X() {
-        return this._x
-    }
-    set X(value: number) {
-        if (value < 0) throw new Error('x不能小于0')
-        this._x = value
-    }
-    get Y() {
-        return this._y
-    }
-    set Y(value: number) {
-        if (value < 0) throw new Error('y不能小于0')
-        this._y = value
-    }
+  constructor(private _x: number, private _y: number) {}
+  drawPoint() {
+    console.log('x：' + this._x, 'y:' + this._y)
+  }
+  getDistances(p: IPoint) {
+    return Math.sqrt((p.X - this._x) ** 2 + (p.Y - this._y) ** 2)
+  }
+  get X() {
+    return this._x
+  }
+  set X(value: number) {
+    if (value < 0) throw new Error('x不能小于0')
+    this._x = value
+  }
+  get Y() {
+    return this._y
+  }
+  set Y(value: number) {
+    if (value < 0) throw new Error('y不能小于0')
+    this._y = value
+  }
 }
 
 const p1 = new Point(0, -1)
 const p2 = new Point(0, 2)
-
 ```
 
 ### readonly
 
-readonly 只读属性关键字 
+readonly 只读属性关键字
 
 ```ts
 class Animal {
-  readonly name;
+  readonly name
   constructor(name) {
-    this.name = name;
+    this.name = name
   }
 }
 
-let a = new Animal('Jack');
-console.log(a.name); // Jack
-a.name = 'Tom';
+let a = new Animal('Jack')
+console.log(a.name) // Jack
+a.name = 'Tom'
 
 // index.ts(10,3): TS2540: Cannot assign to 'name' because it is a read-only property.
 ```
@@ -226,8 +227,8 @@ a.name = 'Tom';
 
 ```ts
 class Animal {
-   constructor(public readonly name) {
-    this.name = name;
+  constructor(public readonly name) {
+    this.name = name
   }
 }
 ```
@@ -260,18 +261,18 @@ let a = new Animal('Jack');
 ```ts
 abstract class Animal {
   constructor(public name) {
-    this.name = name;
+    this.name = name
   }
-   abstract sayHi();
+  abstract sayHi()
 }
 
 class Cat extends Animal {
   eat() {
-    console.log(`${this.name} is eating.`);
+    console.log(`${this.name} is eating.`)
   }
 }
 
-let cat = new Cat('Tom');
+let cat = new Cat('Tom')
 
 // index.ts(9,7): error TS2515: Non-abstract class 'Cat' does not implement inherited abstract member 'sayHi' from class 'Animal'.
 ```
@@ -282,20 +283,20 @@ let cat = new Cat('Tom');
 
 ```ts
 abstract class Animal {
-  public name;
+  public name
   public constructor(name) {
-    this.name = name;
+    this.name = name
   }
-  public abstract sayHi();
+  public abstract sayHi()
 }
 
 class Cat extends Animal {
   public sayHi() {
-    console.log(`Meow, My name is ${this.name}`);
+    console.log(`Meow, My name is ${this.name}`)
   }
 }
 
-let cat = new Cat('Tom');
+let cat = new Cat('Tom')
 ```
 
 ## 类的类型
@@ -304,17 +305,17 @@ let cat = new Cat('Tom');
 
 ```ts
 class Animal {
-  name: string;
+  name: string
   constructor(name: string) {
-    this.name = name;
+    this.name = name
   }
   sayHi(): string {
-    return `My name is ${this.name}`;
+    return `My name is ${this.name}`
   }
 }
 
-let a: Animal = new Animal('Jack');
-console.log(a.sayHi()); // My name is Jack
+let a: Animal = new Animal('Jack')
+console.log(a.sayHi()) // My name is Jack
 ```
 
 ### 类实现接口
@@ -325,66 +326,67 @@ console.log(a.sayHi()); // My name is Jack
 
 ```ts
 interface Alarm {
-    alert(): void;
+  alert(): void
 }
 
-class Door {
-}
+class Door {}
 
 class SecurityDoor extends Door implements Alarm {
-    alert() {
-        console.log('SecurityDoor alert');
-    }
+  alert() {
+    console.log('SecurityDoor alert')
+  }
 }
 
 class Car implements Alarm {
-    alert() {
-        console.log('Car alert');
-    }
+  alert() {
+    console.log('Car alert')
+  }
 }
 ```
+
 一个类可以实现多个接口：
+
 ```ts
 interface Alarm {
-    alert(): void;
+  alert(): void
 }
 
 interface Light {
-    lightOn(): void;
-    lightOff(): void;
+  lightOn(): void
+  lightOff(): void
 }
 
 class Car implements Alarm, Light {
-    alert() {
-        console.log('Car alert');
-    }
-    lightOn() {
-        console.log('Car light on');
-    }
-    lightOff() {
-        console.log('Car light off');
-    }
+  alert() {
+    console.log('Car alert')
+  }
+  lightOn() {
+    console.log('Car light on')
+  }
+  lightOff() {
+    console.log('Car light off')
+  }
 }
 ```
 
-## **Generics** 
+## **Generics**
 
 泛型（Generics）是指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定类型的一种特性。
 
-###  简单的例子 
+### 简单的例子
 
 首先，我们来实现一个函数 `createArray`，它可以创建一个指定长度的数组，同时将每一项都填充一个默认值：
 
 ```ts
 function createArray(length: number, value: any): Array<any> {
-    let result = [];
-    for (let i = 0; i < length; i++) {
-        result[i] = value;
-    }
-    return result;
+  let result = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
 }
 
-createArray(3, 'x'); // ['x', 'x', 'x']
+createArray(3, 'x') // ['x', 'x', 'x']
 ```
 
 上例中，我们使用了数组泛型来定义返回值的类型。
@@ -397,14 +399,14 @@ createArray(3, 'x'); // ['x', 'x', 'x']
 
 ```ts
 function createArray<T>(length: number, value: T): Array<T> {
-    let result: T[] = [];
-    for (let i = 0; i < length; i++) {
-        result[i] = value;
-    }
-    return result;
+  let result: T[] = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
 }
 
-createArray<string>(3, 'x'); // ['x', 'x', 'x']
+createArray<string>(3, 'x') // ['x', 'x', 'x']
 ```
 
 上例中，我们在函数名后添加了 `<T>`，其中 `T` 用来指代任意输入的类型，在后面的输入 `value: T` 和输出 `Array<T>` 中即可使用了。
@@ -413,38 +415,38 @@ createArray<string>(3, 'x'); // ['x', 'x', 'x']
 
 ```ts
 function createArray<T>(length: number, value: T): Array<T> {
-    let result: T[] = [];
-    for (let i = 0; i < length; i++) {
-        result[i] = value;
-    }
-    return result;
+  let result: T[] = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
 }
 
-createArray(3, 'x'); // ['x', 'x', 'x']
+createArray(3, 'x') // ['x', 'x', 'x']
 ```
 
-## 多个类型参 
+## 多个类型参
 
 定义泛型的时候，可以一次定义多个类型参数：
 
 ```ts
 function swap<T, U>(tuple: [T, U]): [U, T] {
-    return [tuple[1], tuple[0]];
+  return [tuple[1], tuple[0]]
 }
 
-swap([7, 'seven']); // ['seven', 7]
+swap([7, 'seven']) // ['seven', 7]
 ```
 
 上例中，我们定义了一个 `swap` 函数，用来交换输入的元组。
 
-## 泛型约束 
+## 泛型约束
 
 在函数内部使用泛型变量的时候，由于事先不知道它是哪种类型，所以不能随意的操作它的属性或方法：
 
 ```ts
 function loggingIdentity<T>(arg: T): T {
-    console.log(arg.length);
-    return arg;
+  console.log(arg.length)
+  return arg
 }
 
 // index.ts(2,19): error TS2339: Property 'length' does not exist on type 'T'.
@@ -456,12 +458,12 @@ function loggingIdentity<T>(arg: T): T {
 
 ```ts
 interface Lengthwise {
-    length: number;
+  length: number
 }
 
 function loggingIdentity<T extends Lengthwise>(arg: T): T {
-    console.log(arg.length);
-    return arg;
+  console.log(arg.length)
+  return arg
 }
 ```
 
@@ -471,15 +473,15 @@ function loggingIdentity<T extends Lengthwise>(arg: T): T {
 
 ```ts
 interface Lengthwise {
-    length: number;
+  length: number
 }
 
 function loggingIdentity<T extends Lengthwise>(arg: T): T {
-    console.log(arg.length);
-    return arg;
+  console.log(arg.length)
+  return arg
 }
 
-loggingIdentity(7);
+loggingIdentity(7)
 
 // index.ts(10,17): error TS2345: Argument of type '7' is not assignable to parameter of type 'Lengthwise'.
 ```
@@ -488,33 +490,31 @@ loggingIdentity(7);
 
 ```ts
 function copyFields<T extends U, U>(target: T, source: U): T {
-    for (let id in source) {
-        target[id] = (<T>source)[id];
-    }
-    return target;
+  for (let id in source) {
+    target[id] = (<T>source)[id]
+  }
+  return target
 }
 
-let x = { a: 1, b: 2, c: 3, d: 4 };
+let x = { a: 1, b: 2, c: 3, d: 4 }
 
-copyFields(x, { b: 10, d: 20 });
+copyFields(x, { b: 10, d: 20 })
 ```
 
 上例中，我们使用了两个类型参数，其中要求 `T` 继承 `U`，这样就保证了 `U` 上不会出现 `T` 中不存在的字段。
 
+## 泛型接口
 
-
-## 泛型接口 
-
- 可以使用接口的方式来定义一个函数需要符合的形状：
+可以使用接口的方式来定义一个函数需要符合的形状：
 
 ```ts
 interface SearchFunc {
-  (source: string, subString: string): boolean;
+  (source: string, subString: string): boolean
 }
 
-let mySearch: SearchFunc;
-mySearch = function(source: string, subString: string) {
-    return source.search(subString) !== -1;
+let mySearch: SearchFunc
+mySearch = function (source: string, subString: string) {
+  return source.search(subString) !== -1
 }
 ```
 
@@ -522,67 +522,69 @@ mySearch = function(source: string, subString: string) {
 
 ```ts
 interface CreateArrayFunc {
-    <T>(length: number, value: T): Array<T>;
+  <T>(length: number, value: T): Array<T>
 }
 
-let createArray: CreateArrayFunc;
-createArray = function<T>(length: number, value: T): Array<T> {
-    let result: T[] = [];
-    for (let i = 0; i < length; i++) {
-        result[i] = value;
-    }
-    return result;
+let createArray: CreateArrayFunc
+createArray = function <T>(length: number, value: T): Array<T> {
+  let result: T[] = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
 }
 
-createArray(3, 'x'); // ['x', 'x', 'x']
+createArray(3, 'x') // ['x', 'x', 'x']
 ```
 
 进一步，我们可以把泛型参数提前到接口名上：
 
 ```ts
 interface CreateArrayFunc<T> {
-    (length: number, value: T): Array<T>;
+  (length: number, value: T): Array<T>
 }
 
-let createArray: CreateArrayFunc<any>;
-createArray = function<T>(length: number, value: T): Array<T> {
-    let result: T[] = [];
-    for (let i = 0; i < length; i++) {
-        result[i] = value;
-    }
-    return result;
+let createArray: CreateArrayFunc<any>
+createArray = function <T>(length: number, value: T): Array<T> {
+  let result: T[] = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
 }
 
-createArray(3, 'x'); // ['x', 'x', 'x']
+createArray(3, 'x') // ['x', 'x', 'x']
 ```
 
 注意，此时在使用泛型接口的时候，需要定义泛型的类型。
 
-## 泛型类 
+## 泛型类
 
 与泛型接口类似，泛型也可以用于类的类型定义中：
 
 ```ts
 class GenericNumber<T> {
-    zeroValue: T;
-    add: (x: T, y: T) => T;
+  zeroValue: T
+  add: (x: T, y: T) => T
 }
 
-let myGenericNumber = new GenericNumber<number>();
-myGenericNumber.zeroValue = 0;
-myGenericNumber.add = function(x, y) { return x + y; };
+let myGenericNumber = new GenericNumber<number>()
+myGenericNumber.zeroValue = 0
+myGenericNumber.add = function (x, y) {
+  return x + y
+}
 ```
 
-## 泛型参数的默认类型 
+## 泛型参数的默认类型
 
 在 TypeScript 2.3 以后，我们可以为泛型中的类型参数指定默认类型。当使用泛型时没有在代码中直接指定类型参数，从实际值参数中也无法推测出时，这个默认类型就会起作用。
 
 ```ts
 function createArray<T = string>(length: number, value: T): Array<T> {
-    let result: T[] = [];
-    for (let i = 0; i < length; i++) {
-        result[i] = value;
-    }
-    return result;
+  let result: T[] = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
 }
 ```

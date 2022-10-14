@@ -1,6 +1,6 @@
 import { hopeTheme } from 'vuepress-theme-hope'
 import Navbar from './configs/navbar.js'
-import Sidebar from './configs/sidebar.js'
+import Sidebar from './configs/sidebar'
 export default hopeTheme({
   hostname: 'https://zfhblog.top',
   contributors: false,

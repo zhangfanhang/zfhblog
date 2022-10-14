@@ -1,5 +1,10 @@
 ---
 title: TS进阶
+tags:
+  - TypeScript
+category:
+  - 前端开发
+  - TypeScript
 ---
 
 ## 类型别名

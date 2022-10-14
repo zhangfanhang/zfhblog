@@ -1,5 +1,10 @@
 ---
 title: TS基础
+tags:
+  - TypeScript
+category:
+  - 前端开发
+  - TypeScript
 ---
 
 <center>
@@ -14,9 +19,9 @@ title: TS基础
 
 2. 直接使用 `ts-node` 运行 ts 文件:
 
-    - `npm i ts-node -g`
-    - `npm i typescript -g`
-    - `ts-node xxx.ts`
+   - `npm i ts-node -g`
+   - `npm i typescript -g`
+   - `ts-node xxx.ts`
 
 ## TypeScript type
 
@@ -107,22 +112,22 @@ nums = 4 // 报错 nums只能是 1,2,3 中的其中一个
 
 ```ts
 enum Color {
-    red,
-    green,
-    blue,
+  red,
+  green,
+  blue,
 }
 console.log(Color.red) // 2
 // 给枚举项手动赋值
 enum Color2 {
-    red = 5,
-    green,
-    blue,
+  red = 5,
+  green,
+  blue,
 }
 console.log(Color2.red) // 7
 enum Color3 {
-    red = 'red',
-    green = 'green',
-    blue = 'blue',
+  red = 'red',
+  green = 'green',
+  blue = 'blue',
 }
 console.log(Color3.red) // 'red'
 ```
@@ -132,25 +137,25 @@ console.log(Color3.red) // 'red'
 ```ts
 // 使用枚举
 enum Sex {
-    MALE,
-    FEMALE,
-    UNKNOWN,
+  MALE,
+  FEMALE,
+  UNKNOWN,
 }
 
 let member_sex: number = Sex.FEMALE
 
 switch (member_sex) {
-    case Sex.MALE:
-        console.log('男')
-        break
-    case Sex.FEMALE:
-        console.log('女')
-        break
-    case Sex.UNKNOWN:
-        console.log('未知')
-        break
-    default:
-        break
+  case Sex.MALE:
+    console.log('男')
+    break
+  case Sex.FEMALE:
+    console.log('女')
+    break
+  case Sex.UNKNOWN:
+    console.log('未知')
+    break
+  default:
+    break
 }
 ```
 
@@ -172,14 +177,14 @@ result = false
 ```ts
 let res: unknown = 123
 res = function () {
-    console.log('res')
+  console.log('res')
 }
 if (typeof res === 'function') {
-    res()
+  res()
 }
 res = 123
 if (typeof res === 'number') {
-    console.log(res++)
+  console.log(res++)
 }
 ```
 
@@ -193,12 +198,12 @@ if (typeof res === 'number') {
 
 ```js
 function printRes(): void {
-    console.log('string')
+  console.log('string')
 }
 
 function printRes2(): undefined {
-    console.log('string')
-    return
+  console.log('string')
+  return
 }
 ```
 
@@ -208,17 +213,17 @@ function printRes2(): undefined {
 
 ```js
 function throwErr(mes: string, errCode: number): never {
-    throw {
-        mes,
-        errCode,
-    }
+  throw {
+    mes,
+    errCode,
+  }
 }
 console.log(throwErr('not fonund', 404))
 
 function whileLoop(): never {
-    while (true) {
-        console.log('1')
-    }
+  while (true) {
+    console.log('1')
+  }
 }
 ```
 
@@ -228,28 +233,28 @@ function whileLoop(): never {
 
 ::: warning 注意
 
--   默认参数和可选参数无法同时使用
+- 默认参数和可选参数无法同时使用
 
--   三种参数都应定义在参数列表的末尾
+- 三种参数都应定义在参数列表的末尾
 
 :::
 
 ```ts
 // 可选参数
 function fun(a: number, b?: number) {
-    console.log(a, b) // 1 undefined
+  console.log(a, b) // 1 undefined
 }
 
 fun(1)
 // 默认参数
 function fun2(a: number = 1, b: number = 2) {
-    console.log(a + b) //3
+  console.log(a + b) //3
 }
 
 fun2(1)
 // 剩余参数
 function fun3(a: number, b: number, ...c: number[]) {
-    console.log(a + b + c.reduce((pre, cur) => pre + cur)) //16
+  console.log(a + b + c.reduce((pre, cur) => pre + cur)) //16
 }
 
 fun3(1, 2, 3, 4, 6)
