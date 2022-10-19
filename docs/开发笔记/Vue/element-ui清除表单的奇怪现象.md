@@ -46,4 +46,6 @@ this.$nextTick(() => {
 })
 ```
 
-使用`this.$refs.xxx.resetFields()`会将所有的表单信息清楚，如果你只想清除验证消息：` this.$refs.xxx.clearValidate()`
+使用`this.$refs.xxx.resetFields()`会将所有的表单信息清除，如果你只想清除验证消息：` this.$refs.xxx.clearValidate()`
+
+还有一点需要注意，如果这个表单`form`此时DOM还未渲染，例如`form`嵌套在`el-dialog`中，**第一次**打开`dialog`时，`resetFields()`也无法正常调用，须置于`nextTick`中调用。
