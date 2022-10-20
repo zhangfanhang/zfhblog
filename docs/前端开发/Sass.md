@@ -1,6 +1,7 @@
 ---
 title: Sass
-sidebar: auto
+tag: Sass
+category: 前端开发
 ---
 
 ::: warning 注意

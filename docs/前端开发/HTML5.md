@@ -1,8 +1,7 @@
 ---
 title: HTML5
-tag:
-  - html5
-category: 前端基础
+tag: HTML5
+category: 前端开发
 ---
 
 ## 修订进度

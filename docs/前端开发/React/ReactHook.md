@@ -1,5 +1,9 @@
 ---
 title: React Hook
+tag: Hook
+category:
+  - 前端开发
+  - React
 ---
 
 ## Class 组件存在的问题

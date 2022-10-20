@@ -1,5 +1,9 @@
 ---
 title: Generator
+tag: Generator
+category:
+  - 前端开发
+  - ES6
 ---
 
 Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。

@@ -1,5 +1,11 @@
 ---
 title: React-router
+tag: 
+  - 路由
+  - React-router
+category:
+  - 前端开发
+  - React
 ---
 
 ## 路由的由来

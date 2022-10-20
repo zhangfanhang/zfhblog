@@ -1,5 +1,12 @@
 ---
 title: React组件化开发
+tag:
+  - 组件化
+  - 函数组件
+  - 类组件
+category:
+  - 前端开发
+  - React
 ---
 
 ## React 的组件化

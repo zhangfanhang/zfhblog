@@ -1,5 +1,9 @@
 ---
 title: JSX核心语法
+tag: JSX
+category:
+  - 前端开发
+  - React
 ---
 
 ```jsx
@@ -15,22 +19,22 @@ title: JSX核心语法
 
 这段 element 变量的声明右侧赋值的标签语法是什么呢？
 
--   它不是一段字符串（因为没有使用引号包裹），它看起来是一段 `HTML `原生，但是我们能在 `js `中直接给一个变量赋值` html` 吗？其实是不可以的，如果我们将 `type="text/babel"` 去除掉，那么就会出现语法错误
--   它到底是什么呢？其实它是一段`jsx`的语法
+- 它不是一段字符串（因为没有使用引号包裹），它看起来是一段 `HTML `原生，但是我们能在 `js `中直接给一个变量赋值` html` 吗？其实是不可以的，如果我们将 `type="text/babel"` 去除掉，那么就会出现语法错误
+- 它到底是什么呢？其实它是一段`jsx`的语法
 
 ## 认识 JSX
 
--   `JSX`是一种`JavaScript`的语法扩展`extension`，也在很多地方称之为 `JavaScript XML`，因为看起就是一段` XML` 语法
--   它用于描述我们的 `UI `界面，并且其完全可以和 `JavaScript `融合在一起使用
--   它不同于 `Vue `中的模块语法，你不需要专门学习模板语法中的一些指令（比如 v-for、v-if、v-else、v-bind）
+- `JSX`是一种`JavaScript`的语法扩展`extension`，也在很多地方称之为 `JavaScript XML`，因为看起就是一段` XML` 语法
+- 它用于描述我们的 `UI `界面，并且其完全可以和 `JavaScript `融合在一起使用
+- 它不同于 `Vue `中的模块语法，你不需要专门学习模板语法中的一些指令（比如 v-for、v-if、v-else、v-bind）
 
 **在这里，我们只需要知道，`JSX` 其实是嵌入到`JavaScript`中的一种结构语法**
 
 ## JSX 的书写规范
 
--   `JSX `的顶层只能有一个根元素，所以我们很多时候会在外层包裹一个 `div` 原生
+- `JSX `的顶层只能有一个根元素，所以我们很多时候会在外层包裹一个 `div` 原生
 
--   为了方便阅读，我们通常在 `jsx `的外层包裹一个小括号()，这样可以方便阅读，并且 `jsx `**可以进行换行书写**
+- 为了方便阅读，我们通常在 `jsx `的外层包裹一个小括号()，这样可以方便阅读，并且 `jsx `**可以进行换行书写**
 
 ```jsx
             render(){
@@ -40,19 +44,19 @@ title: JSX核心语法
             }
 ```
 
--   JSX 中的标签可以是单标签，也可以是双标签(注意：如果是单标签，必须以`/>`结尾)
+- JSX 中的标签可以是单标签，也可以是双标签(注意：如果是单标签，必须以`/>`结尾)
 
 ## JSX 中的注释
 
 ```jsx
 {
-    /*我是一段注释*/
+  /*我是一段注释*/
 }
 ```
 
 ## JSX 嵌入变量
 
--   情况一：当变量是`Number`、`String`、`Array`类型时，可以直接显示
+- 情况一：当变量是`Number`、`String`、`Array`类型时，可以直接显示
 
 ```jsx
 render(){
@@ -64,48 +68,48 @@ render(){
 }
 ```
 
--   情况二：当变量是`null`、`undefined`、`Boolean`类型时，内容为空；
+- 情况二：当变量是`null`、`undefined`、`Boolean`类型时，内容为空；
 
-    -   如果希望可以显示 `null`、`undefined`、`Boolean`，那么需要转成字符串；
-    -   转换的方式有很多，比如`toString` 方法、和空字符串拼接，`String(变量)`等方式
+  - 如果希望可以显示 `null`、`undefined`、`Boolean`，那么需要转成字符串；
+  - 转换的方式有很多，比如`toString` 方法、和空字符串拼接，`String(变量)`等方式
 
 情况三：对象类型不能显示(**Objects are not valid as a React child**)
 
 ## JSX 嵌入表达式
 
--   运算表达式
--   三元运算符
--   执行一个函数
+- 运算表达式
+- 三元运算符
+- 执行一个函数
 
 ```js
 class App extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            xing: 'zhang',
-            ming: 'fanhang',
-        }
+  constructor() {
+    super()
+    this.state = {
+      xing: 'zhang',
+      ming: 'fanhang',
     }
-    render() {
-        return <div>{this.getFullName()}</div> /*执行一个函数*/
-    }
-    getFullName() {
-        return this.state.xing + this.state.ming
-    }
+  }
+  render() {
+    return <div>{this.getFullName()}</div> /*执行一个函数*/
+  }
+  getFullName() {
+    return this.state.xing + this.state.ming
+  }
 }
 ```
 
 ## JSX 绑定属性
 
--   比如元素都会有 `title` 属性
+- 比如元素都会有 `title` 属性
 
 ```jsx
 <div title={this.state.title}></div>
 ```
 
--   比如 `img `元素会有 `src `属性(有坑注意 ⚠️)
--   比如 `a` 元素会有 `href` 属性
--   比如元素可能需要绑定 `class`
+- 比如 `img `元素会有 `src `属性(有坑注意 ⚠️)
+- 比如 `a` 元素会有 `href` 属性
+- 比如元素可能需要绑定 `class`
 
 ::: warning 注意
 这里必须写`className`,不能写`class`
@@ -136,39 +140,38 @@ class App extends React.Component {
 
 <div  className={'fz30 ' + (this.state.active?'active':'')}>'hello,world'</div>
 ```
-React在JSX给了我们开发者足够多的灵活性，你可以像编写JavaScript代码一样，通过一些逻辑来决定是否添加某些class
+
+React 在 JSX 给了我们开发者足够多的灵活性，你可以像编写 JavaScript 代码一样，通过一些逻辑来决定是否添加某些 class
 
 这个时候我们可以借助于一个第三方的库：`classnames` 很明显，这是一个用于动态添加[classnames](https://github.com/JedWatson/classnames)的一个库
 
 ```jsx
-classNames('foo', 'bar'); // => 'foo bar'
-classNames('foo', { bar: true }); // => 'foo bar'
-classNames({ 'foo-bar': true }); // => 'foo-bar'
-classNames({ 'foo-bar': false }); // => ''
-classNames({ foo: true }, { bar: true }); // => 'foo bar'
-classNames({ foo: true, bar: true }); // => 'foo bar'
+classNames('foo', 'bar') // => 'foo bar'
+classNames('foo', { bar: true }) // => 'foo bar'
+classNames({ 'foo-bar': true }) // => 'foo-bar'
+classNames({ 'foo-bar': false }) // => ''
+classNames({ foo: true }, { bar: true }) // => 'foo bar'
+classNames({ foo: true, bar: true }) // => 'foo bar'
 
 // lots of arguments of various types
-classNames('foo', { bar: true, duck: false }, 'baz', { quux: true }); // => 'foo bar baz quux'
+classNames('foo', { bar: true, duck: false }, 'baz', { quux: true }) // => 'foo bar baz quux'
 
 // other falsy values are just ignored
-classNames(null, false, 'bar', undefined, 0, 1, { baz: null }, ''); // => 'bar 1'
+classNames(null, false, 'bar', undefined, 0, 1, { baz: null }, '') // => 'bar 1'
 
 // Arrays will be recursively flattened (扁平化) as per the rules above:
-var arr = ['b', { c: true, d: false }];
-classNames('a', arr); // => 'a b c'
+var arr = ['b', { c: true, d: false }]
+classNames('a', arr) // => 'a b c'
 
 // If you're in an environment that supports computed (计算) keys (available in ES2015 and Babel) you can use dynamic class names
-let buttonType = 'primary';
-classNames({ [`btn-${buttonType}`]: true });
+let buttonType = 'primary'
+classNames({ [`btn-${buttonType}`]: true })
 ```
 
-
-
--   比如原生使用内联样式`style`
-    ::: warning 注意
-    在 `jsx `中书写` css` 属性时，必须使用小驼峰：`font-size` 必须写为 `fontSize`，且必须为**JavaScript 样式对象**
-    :::
+- 比如原生使用内联样式`style`
+  ::: warning 注意
+  在 `jsx `中书写` css` 属性时，必须使用小驼峰：`font-size` 必须写为 `fontSize`，且必须为**JavaScript 样式对象**
+  :::
 
 ```jsx
 <img style={{ width: '140px', height: '140px' }} />
@@ -215,11 +218,11 @@ classNames({ [`btn-${buttonType}`]: true });
 ```js
 // this 为上一层render() 函数的this
 <button
-    onClick={() => {
-        this.btnClick()
-    }}
+  onClick={() => {
+    this.btnClick()
+  }}
 >
-    Click
+  Click
 </button>
 ```
 
@@ -231,9 +234,9 @@ classNames({ [`btn-${buttonType}`]: true });
 
 情况一：获取 `event` 对象
 
--   很多时候我们需要拿到 `event` 对象来做一些事情（比如阻止默认行为）
+- 很多时候我们需要拿到 `event` 对象来做一些事情（比如阻止默认行为）
 
--   假如我们**用不到`this`**，那么直接传入函数就可以获取到 `event` 对象
+- 假如我们**用不到`this`**，那么直接传入函数就可以获取到 `event` 对象
 
 ```jsx
             render() {
@@ -254,11 +257,11 @@ classNames({ [`btn-${buttonType}`]: true });
 
 ```jsx
 <button
-    onClick={event => {
-        this.btnClick(item, index, event)
-    }}
+  onClick={event => {
+    this.btnClick(item, index, event)
+  }}
 >
-    Click
+  Click
 </button>
 ```
 
@@ -272,8 +275,8 @@ classNames({ [`btn-${buttonType}`]: true });
 
 某些情况下，界面的内容会根据不同的情况显示不同的内容，或者决定是否渲染某部分内容：
 
--   在 `vue `中，我们会通过指令来控制：比如` v-if`、`v-show`
--   在 `React` 中，所有的条件判断都和普通的 `JavaScript` 代码一致
+- 在 `vue `中，我们会通过指令来控制：比如` v-if`、`v-show`
+- 在 `React` 中，所有的条件判断都和普通的 `JavaScript` 代码一致
 
 常见的条件渲染的方式有哪些呢？
 
@@ -282,9 +285,9 @@ classNames({ [`btn-${buttonType}`]: true });
 ```js
 let welcome = null
 if (this.state.isLogin) {
-    welcome = '欢迎回来'
+  welcome = '欢迎回来'
 } else {
-    welcome = '马上登录'
+  welcome = '马上登录'
 }
 return <div>{welcome}</div>
 ```
@@ -300,16 +303,16 @@ return <div>{this.state.isLogin ? '欢迎回来' : '马上登录'}</div>
 ```jsx
 // ...
 class App extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            login: true,
-        }
+  constructor() {
+    super()
+    this.state = {
+      login: true,
     }
-    render() {
-        const login = this.state.login
-        return <div>{login && <IsLogin />}</div>
-    }
+  }
+  render() {
+    const login = this.state.login
+    return <div>{login && <IsLogin />}</div>
+  }
 }
 ```
 
@@ -327,23 +330,23 @@ class App extends React.Component {
 
 ```jsx
 class App extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            movie: ['流浪地球', '长津湖', '信条', '肖生客的救赎'],
-        }
+  constructor(props) {
+    super(props)
+    this.state = {
+      movie: ['流浪地球', '长津湖', '信条', '肖生客的救赎'],
     }
-    render() {
-        return (
-            <div>
-                <ul>
-                    {this.state.movie.map(item => {
-                        return <li>{item}</li>
-                    })}
-                </ul>
-            </div>
-        )
-    }
+  }
+  render() {
+    return (
+      <div>
+        <ul>
+          {this.state.movie.map(item => {
+            return <li>{item}</li>
+          })}
+        </ul>
+      </div>
+    )
+  }
 }
 ReactDOM.render(<App />, document.getElementById('app'))
 ```

@@ -1,5 +1,11 @@
 ---
 title: let和const
+tag:
+  - let
+  - const
+category:
+  - 前端开发
+  - ES6
 ---
 
 ::: tip ES6 圣经
@@ -12,27 +18,27 @@ title: let和const
 
 ```js
 {
-    var username = 'Frank'
-    let age = 18
-    const sex = 'male'
+  var username = 'Frank'
+  let age = 18
+  const sex = 'male'
 }
 console.log(username) //  Frank
 console.log(age) // 报错
 console.log(sex) // 报错
 ```
 
--   `var`,`let` 声明的是变量，变量一旦初始化以后，还可以重新赋值。
--   `const`声明的是常量，常量一旦初始化，就不能重新赋值了，否则会报错。
--   `let`,`const`所声明的变量/常量，只在自身所在的代码块内有效。
+- `var`,`let` 声明的是变量，变量一旦初始化以后，还可以重新赋值。
+- `const`声明的是常量，常量一旦初始化，就不能重新赋值了，否则会报错。
+- `let`,`const`所声明的变量/常量，只在自身所在的代码块内有效。
 
 ::: tip for 循环的计数器，就很适合使用 let 命令
 
 ```js
 var a = []
 for (let i = 0; i < 10; i++) {
-    a[i] = function() {
-        console.log(i)
-    }
+  a[i] = function () {
+    console.log(i)
+  }
 }
 a[6]() // 6
 ```
@@ -45,8 +51,8 @@ a[6]() // 6
 
 ```js
 for (let i = 0; i < 3; i++) {
-    let i = 'abc'
-    console.log(i)
+  let i = 'abc'
+  console.log(i)
 }
 // abc
 // abc
@@ -79,13 +85,13 @@ person.username = 'zhang'
 
 ```js
 const constantize = obj => {
-    Object.freeze(obj)
-    Object.keys(obj).forEach(key => {
-        if (typeof obj[key] === 'object') {
-            Object.freeze(obj[key])
-            console.log(i)
-        }
-    })
+  Object.freeze(obj)
+  Object.keys(obj).forEach(key => {
+    if (typeof obj[key] === 'object') {
+      Object.freeze(obj[key])
+      console.log(i)
+    }
+  })
 }
 ```
 
@@ -134,8 +140,8 @@ const 声明一个只读的常量。一旦声明，常量的值就不能改变�
 const a = 100
 
 function fun() {
-    console.log(a) // 报错Cannot access 'a' before initialization（在初始化之前无法访问“a”）
-    const a = 1
+  console.log(a) // 报错Cannot access 'a' before initialization（在初始化之前无法访问“a”）
+  const a = 1
 }
 fun()
 ```
@@ -161,10 +167,10 @@ var tmp = new Date()
 
 function f() {
   // 由于var存在变量声明提升 导致tmp的声明提升到f 函数的顶部，此时tmp的值为undefined
-    console.log(tmp)
-    if (false) {
-        var tmp = 'hello world'
-    }
+  console.log(tmp)
+  if (false) {
+    var tmp = 'hello world'
+  }
 }
 
 f() // undefined
@@ -174,7 +180,7 @@ f() // undefined
 
 ```js
 for (var i = 0; i < 3; i++) {
-    console.log(i) // 0,1,2
+  console.log(i) // 0,1,2
 }
 console.log(i) // 3
 ```
@@ -201,60 +207,60 @@ es6 之前(利用闭包解决)：
 ```html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>let 和 const 的应用</title>
-        <style>
-            body {
-                padding: 50px 0 0 150px;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>let 和 const 的应用</title>
+    <style>
+      body {
+        padding: 50px 0 0 150px;
+      }
 
-            .btn {
-                width: 100px;
-                height: 100px;
-                margin-right: 20px;
-                font-size: 80px;
-                cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
-        <button class="btn">0</button>
-        <button class="btn">1</button>
-        <button class="btn">2</button>
+      .btn {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+        font-size: 80px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">0</button>
+    <button class="btn">1</button>
+    <button class="btn">2</button>
 
-        <script>
-            // var
-            // var btns = document.querySelectorAll('.btn');
+    <script>
+      // var
+      // var btns = document.querySelectorAll('.btn');
 
-            // for (var i = 0; i < btns.length; i++) {
-            //   btns[i].addEventListener(
-            //     'click',
-            //     function () {
-            //       console.log(i); // 永远都是3！
-            //     },
-            //     false
-            //   );
-            // }
+      // for (var i = 0; i < btns.length; i++) {
+      //   btns[i].addEventListener(
+      //     'click',
+      //     function () {
+      //       console.log(i); // 永远都是3！
+      //     },
+      //     false
+      //   );
+      // }
 
-            // 利用闭包解决
-            var btns = document.querySelectorAll('.btn')
+      // 利用闭包解决
+      var btns = document.querySelectorAll('.btn')
 
-            for (var i = 0; i < btns.length; i++) {
-                ;(function(index) {
-                    btns[index].addEventListener(
-                        'click',
-                        function() {
-                            console.log(index)
-                        },
-                        false
-                    )
-                })(i)
-            }
-        </script>
-    </body>
+      for (var i = 0; i < btns.length; i++) {
+        ;(function (index) {
+          btns[index].addEventListener(
+            'click',
+            function () {
+              console.log(index)
+            },
+            false
+          )
+        })(i)
+      }
+    </script>
+  </body>
 </html>
 ```
 
@@ -263,43 +269,43 @@ es6 写法：
 ```html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>let 和 const 的应用</title>
-        <style>
-            body {
-                padding: 50px 0 0 150px;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>let 和 const 的应用</title>
+    <style>
+      body {
+        padding: 50px 0 0 150px;
+      }
 
-            .btn {
-                width: 100px;
-                height: 100px;
-                margin-right: 20px;
-                font-size: 80px;
-                cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
-        <button class="btn">0</button>
-        <button class="btn">1</button>
-        <button class="btn">2</button>
+      .btn {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+        font-size: 80px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">0</button>
+    <button class="btn">1</button>
+    <button class="btn">2</button>
 
-        <script>
-            let btns = document.querySelectorAll('.btn')
+    <script>
+      let btns = document.querySelectorAll('.btn')
 
-            for (let i = 0; i < btns.length; i++) {
-                btns[i].addEventListener(
-                    'click',
-                    function() {
-                        console.log(i)
-                    },
-                    false
-                )
-            }
-        </script>
-    </body>
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener(
+          'click',
+          function () {
+            console.log(i)
+          },
+          false
+        )
+      }
+    </script>
+  </body>
 </html>
 ```

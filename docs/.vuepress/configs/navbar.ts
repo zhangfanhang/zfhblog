@@ -122,7 +122,7 @@ export default navbar([
           {
             text: 'Webpack',
             icon: 'webpack',
-            link: '/前端开发/Webpack',
+            link: '/前端开发/前端工程化/Webpack',
           },
         ],
       },

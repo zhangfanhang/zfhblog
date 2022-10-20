@@ -1,5 +1,9 @@
 ---
 title: Redux
+tag: Redux
+category:
+  - 前端开发
+  - React
 ---
 
 ## JavaScript 纯函数

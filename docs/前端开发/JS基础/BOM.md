@@ -1,5 +1,9 @@
 ---
 title: BOM
+tag: BOM
+category:
+  - 前端开发
+  - JS基础
 ---
 
 ## 简介

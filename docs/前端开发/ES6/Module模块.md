@@ -1,13 +1,20 @@
 ---
 title: Module模块
+tag:
+  - Module
+  - export
+  - export default
+category:
+  - 前端开发
+  - ES6
 ---
 
 [details](https://es6.ruanyifeng.com/#docs/module)
 
 ## Module 模块介绍
 
--   `Module`模块:一个一个的局部作用域的代码块
--   `Module` 解决的问题：
+- `Module`模块:一个一个的局部作用域的代码块
+- `Module` 解决的问题：
 
 (1) 模块化的问题
 
@@ -19,9 +26,9 @@ title: Module模块
 
 ```html
 <script src="./xxx.js" type="module"></script>
- <!--以下写法和👆的写法等价-->
+<!--以下写法和👆的写法等价-->
 <script type="module">
-import "xxx.js"
+  import 'xxx.js'
 </script>
 ```
 
@@ -31,7 +38,7 @@ import "xxx.js"
 
 ```html
 <script type="module">
-import "xxx.js"
+  import 'xxx.js'
 </script>
 ```
 
@@ -41,7 +48,7 @@ import "xxx.js"
 
 本质上，`export default`就是输出一个叫做`default`的变量或方法，然后系统允许你为它取任意名字,正是因为`export default`命令其实只是输出一个叫做`default`的变量，所以它后面不能跟变量声明语句
 
-一个模块只能有**一个** **`export default`** 
+一个模块只能有**一个** **`export default`**
 
 ```js
 // 导出

@@ -1,5 +1,9 @@
 ---
 title: Canvas基础
+tag: Canvas基础
+category:
+  - 前端开发
+  - Canvas
 ---
 
 :::tip 参考

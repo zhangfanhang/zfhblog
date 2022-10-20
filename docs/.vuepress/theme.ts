@@ -30,13 +30,12 @@ export default hopeTheme({
     roundAvatar: true,
     avatar:
       'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/avatar.jpg',
-    description:
-      '菜鸟前端，目前在南京工作。本人天生愚钝，所做的东西也很垃圾，仅仅是一点点兴趣和为了吃饱饭，所以各位前端的大牛们如果觉得我做的东西很拉，看我笑话就好。',
+    description: '菜鸟前端，目前在南京工作。',
     medias: {
       Email: 'mailto:zhangfanhang@znv.com',
       Github: 'https://github.com/zhangfanhang',
-      Zhihu: 'https://www.zhihu.com/people/zhang-Fan-Hang',
       Gitee: 'https://gitee.com/zhangfanhang',
+      Zhihu: 'https://www.zhihu.com/people/zhang-Fan-Hang',
       Steam: 'https://steamcommunity.com/profiles/76561198815093167/',
       Weibo: 'https://weibo.com/u/6568313173',
       Wechat: '微信',

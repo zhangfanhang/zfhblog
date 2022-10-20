@@ -1,5 +1,11 @@
 ---
 title: Promise
+tag:
+  - Promise
+  - 异步
+category:
+  - 前端开发
+  - ES6
 ---
 
 ## 初识 Promise

@@ -1,5 +1,11 @@
 ---
 title: 遍历器与for...of循环
+tag:
+  - 遍历器
+  - forof
+category:
+  - 前端开发
+  - ES6
 ---
 
 ## Iterator 是什么

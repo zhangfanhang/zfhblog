@@ -1,7 +1,12 @@
 ---
 title: React中axios
+tag: axios
+category:
+  - 前端开发
+  - React
 ---
 
+// TODO： 待整理
 [官方文档](https://www.axios-http.cn/)
 
 [React 系列十三 - axios 库的使用](https://mp.weixin.qq.com/s/MTj0Or-QFmv9a7BugO6--A)

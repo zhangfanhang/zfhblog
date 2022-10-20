@@ -1,5 +1,9 @@
 ---
 title: React的过渡动画
+tag: 过渡动画
+category:
+  - 前端开发
+  - React
 ---
 
 [React 系列十四 - React 过渡动画](https://mp.weixin.qq.com/s/14HneI7SpfrRHKtqgosIiA)

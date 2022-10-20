@@ -1,5 +1,9 @@
 ---
 title: React脚手架
+tag: 脚手架
+category:
+  - 前端开发
+  - React
 ---
 
 ## 安装脚手架

@@ -2,6 +2,7 @@
 title: TS面向对象
 tags:
   - TypeScript
+  - 面向对象
 category:
   - 前端开发
   - TypeScript

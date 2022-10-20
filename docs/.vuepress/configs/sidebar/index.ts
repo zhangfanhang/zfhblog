@@ -67,7 +67,6 @@ export default sidebar({
     '正则表达式',
   ],
   '/前端开发/JS进阶/': ['深入理解javascript原型和闭包'],
-  '/前端开发/JS设计模式/': ['面向对象'],
   '/前端开发/React/': qdkfreact,
   '/前端开发/Three.js/': [
     '开发环境搭建',

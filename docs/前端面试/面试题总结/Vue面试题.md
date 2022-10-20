@@ -1,5 +1,9 @@
 ---
 title: Vue面试题
+tag: Vue
+category:
+  - 前端面试
+  - 面试复盘
 ---
 
 [最全的 Vue 面试题+详解答案](https://juejin.cn/post/6961222829979697165)

@@ -2,6 +2,7 @@
 title: Threejs物体
 tag:
   - Threejs
+  - 物体
 category:
   - 前端开发
   - 前端图形
@@ -113,6 +114,6 @@ render()
 
 `BoxGeometry` 和 `BoxBufferGeometry` 均是缓冲几何体
 
-[BufferGeometry和Geometry有什么不同](https://blog.csdn.net/u014291990/article/details/91954333)
+[BufferGeometry 和 Geometry 有什么不同](https://blog.csdn.net/u014291990/article/details/91954333)
 
 新版` three` 估计进行了合并，查看了源码这两是一个东西

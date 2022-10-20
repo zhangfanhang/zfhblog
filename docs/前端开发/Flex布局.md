@@ -1,6 +1,7 @@
 ---
 title: flex布局
-sidebar: auto
+tags: Flex
+category: 前端开发
 ---
 
 ## 基础概念

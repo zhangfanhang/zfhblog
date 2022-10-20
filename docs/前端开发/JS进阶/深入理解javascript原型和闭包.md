@@ -1,9 +1,16 @@
 ---
 title: 深入理解javascript原型和闭包
 author: 王福朋
-tag: 
-  - JS原理
-category: JS进阶
+tag:
+  - 原型
+  - 对象
+  - this
+  - 闭包
+  - prototype
+  - 执行上下文
+category:
+  - 前端开发
+  - JS进阶
 ---
 
 ## 一切都是对象

@@ -10,6 +10,5 @@ export default [
   'React-router',
   'ReactHook',
   'React与TypeScript',
-  'React的SSR',
   'React好用的库',
 ]

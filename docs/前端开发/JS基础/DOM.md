@@ -1,5 +1,9 @@
 ---
 title: DOM
+tag: DOM
+category:
+  - 前端开发
+  - JS基础
 ---
 
 [DOM 接口](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model)
