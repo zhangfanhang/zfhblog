@@ -59,6 +59,11 @@ export default navbar([
             icon: 'mobile',
             link: '/前端开发/移动开发/移动Web开发入门',
           },
+          {
+            text: '微信小程序',
+            icon: 'xiaochengxu',
+            link: '/前端开发/微信小程序',
+          },
         ],
       },
       {
@@ -111,6 +116,16 @@ export default navbar([
           },
         ],
       },
+      {
+        text: '前端进阶-前端工程化',
+        children: [
+          {
+            text: 'Webpack',
+            icon: 'webpack',
+            link: '/前端开发/Webpack',
+          },
+        ],
+      },
     ],
   },
   /**
@@ -138,11 +153,11 @@ export default navbar([
             icon: 'node',
             link: '/后端开发/Koa2',
           },
-          {
-            text: 'nest',
-            icon: 'nest',
-            link: '/后端开发/nest',
-          },
+          // {
+          //   text: 'nest',
+          //   icon: 'nest',
+          //   link: '/后端开发/nest',
+          // },
         ],
       },
       {
@@ -152,11 +167,6 @@ export default navbar([
             text: 'MySQL',
             icon: 'mysql',
             link: '/后端开发/数据库/MySQL',
-          },
-          {
-            text: 'mongoDB',
-            icon: 'MongoDB',
-            link: '/后端开发/数据库/mongoDB',
           },
         ],
       },
@@ -193,14 +203,9 @@ export default navbar([
             link: '/基础知识/本地存储',
           },
           {
-            text: '前后端数据交互与HTTP协议',
+            text: '前后端数据交互',
             icon: 'http',
-            link: '/基础知识/前后端数据交互与HTTP协议',
-          },
-          {
-            text: 'Ajax&Fetch与跨域请求',
-            icon: 'ajax',
-            link: '/基础知识/Ajax&Fetch与跨域请求',
+            link: '/基础知识/前后端数据交互',
           },
         ],
       },
@@ -233,49 +238,24 @@ export default navbar([
     icon: 'gongju',
     children: [
       {
-        text: '前端工具',
-        children: [
-          {
-            text: 'Babel',
-            icon: 'babel',
-            link: '/开发工具/Babel',
-          },
-          {
-            text: 'Mock.js',
-            icon: 'javascript',
-            link: '/开发工具/Mock.js',
-          },
-          {
-            text: 'Webpack',
-            icon: 'webpack',
-            link: '/开发工具/Webpack',
-          },
-        ],
+        text: 'git',
+        icon: 'git',
+        link: '/开发工具/git',
       },
       {
-        text: '其他工具',
-        children: [
-          {
-            text: 'git',
-            icon: 'git',
-            link: '/开发工具/git',
-          },
-          {
-            text: 'homebrew',
-            icon: 'gongju',
-            link: '/开发工具/homebrew',
-          },
-          {
-            text: 'Docker',
-            icon: 'docker',
-            link: '/开发工具/Docker',
-          },
-          {
-            text: 'iterm2',
-            icon: 'gongju',
-            link: '/开发工具/iterm2',
-          },
-        ],
+        text: 'homebrew',
+        icon: 'gongju',
+        link: '/开发工具/homebrew',
+      },
+      {
+        text: 'Docker',
+        icon: 'docker',
+        link: '/开发工具/Docker',
+      },
+      {
+        text: 'iterm2',
+        icon: 'gongju',
+        link: '/开发工具/iterm2',
       },
     ],
   },

@@ -1,11 +1,9 @@
 ---
 title: iterm2
-sidebar: auto
 tags:
-  - 2022/09/05 08:36:15
-    - iterm2
-    - 终端插件
-    - ohmyzsh
+  - iterm2
+  - 终端插件
+  - ohmyzsh
 ---
 
 `iterm2` 替换 `mac` 系统自带终端配合[ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) 打造个性终端
