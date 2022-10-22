@@ -8,6 +8,8 @@ category:
 
 [DOM 接口](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model)
 
+// TODO: 2022.10.23 改。
+
 **"DOM 是 JS 操控 HTML 和 CSS 的桥梁"**
 
 ## DOM 简介
@@ -761,7 +763,9 @@ clearTimeout()函数可以清除延时器
 
 [7 分钟理解 JS 的节流、防抖及使用场景](https://juejin.cn/post/6844903669389885453)
 
-节流的意思是让函数有节制地执行，而不是毫无节制的触发一次就执行一次。什么叫有节制呢？第一次执行之后，在设定的时间之后才执行第二次。
+节流的意思是让函数有节制地执行，而不是毫无节制的触发一次就执行一次。什么叫有节制呢？第一次执行之后，在设定的时间之后才执行第二次
+
+// TODO： 改 2022.10.23
 
 ![函数节流](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81.png)
 
@@ -1137,3 +1141,5 @@ clearTimeout()函数可以清除延时器
   </body>
 </html>
 ```
+
+// 使用纯css实现轮播图 2022.10.23

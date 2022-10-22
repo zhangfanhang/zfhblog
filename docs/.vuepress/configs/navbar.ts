@@ -10,11 +10,11 @@ export default navbar([
     icon: 'home',
   },
   /**
-   * 前端开发
+   * 前端知识库
    */
   {
-    text: '前端开发',
-    icon: 'html',
+    text: '前端知识库',
+    icon: 'zhishiku',
     children: [
       {
         text: '前端基础',
@@ -22,17 +22,17 @@ export default navbar([
           {
             text: 'HTML5',
             icon: 'html',
-            link: '/前端开发/HTML5',
+            link: '/前端知识库/HTML5',
           },
           {
             text: 'CSS3',
             icon: 'css',
-            link: '/前端开发/CSS3/基础与盒模型',
+            link: '/前端知识库/CSS3/基础与盒模型',
           },
           {
             text: 'JS基础',
             icon: 'javascript',
-            link: '/前端开发/JS基础/变量与数据类型',
+            link: '/前端知识库/JS基础/变量与数据类型',
           },
         ],
       },
@@ -42,12 +42,12 @@ export default navbar([
           {
             text: 'Vue',
             icon: 'vue',
-            link: '/前端开发/Vue/Vue核心',
+            link: '/前端知识库/Vue/Vue核心',
           },
           {
             text: 'React',
             icon: 'react',
-            link: '/前端开发/React/JSX核心语法',
+            link: '/前端知识库/React/JSX核心语法',
           },
         ],
       },
@@ -56,13 +56,13 @@ export default navbar([
         children: [
           {
             text: '移动开发',
-            icon: 'mobile',
-            link: '/前端开发/移动开发/移动Web开发入门',
+            icon: 'shouji',
+            link: '/前端知识库/移动开发/移动Web开发入门',
           },
           {
             text: '微信小程序',
             icon: 'xiaochengxu',
-            link: '/前端开发/微信小程序',
+            link: '/前端知识库/微信小程序',
           },
         ],
       },
@@ -72,17 +72,17 @@ export default navbar([
           {
             text: 'TypeScript',
             icon: 'typescript',
-            link: '/前端开发/TypeScript/是否真的需要TS',
+            link: '/前端知识库/TypeScript/是否真的需要TS',
           },
           {
             text: 'ES6',
             icon: 'six',
-            link: '/前端开发/ES6/let和const',
+            link: '/前端知识库/ES6/let和const',
           },
           {
             text: 'JS进阶',
             icon: 'javascript',
-            link: '/前端开发/JS进阶/深入理解javascript原型和闭包',
+            link: '/前端知识库/JS进阶/深入理解javascript原型和闭包',
           },
         ],
       },
@@ -92,27 +92,27 @@ export default navbar([
           {
             text: 'Flex布局',
             icon: 'flex',
-            link: '/前端开发/Flex布局',
+            link: '/前端知识库/Flex布局',
           },
           {
             text: 'Sass',
             icon: 'sass',
-            link: '/前端开发/Sass',
+            link: '/前端知识库/Sass',
           },
           {
             text: 'Canvas',
             icon: 'canvas',
-            link: '/前端开发/canvas/Canvas基础',
+            link: '/前端知识库/canvas/Canvas基础',
           },
           {
             text: 'Three.js',
             icon: 'three',
-            link: '/前端开发/Three.js/开发环境搭建',
+            link: '/前端知识库/Three.js/开发环境搭建',
           },
           {
             text: '玩转CSS艺术之美',
             icon: 'css',
-            link: '/前端开发/玩转CSS艺术之美/浏览器',
+            link: '/前端知识库/玩转CSS艺术之美/浏览器',
           },
         ],
       },
@@ -122,51 +122,7 @@ export default navbar([
           {
             text: 'Webpack',
             icon: 'webpack',
-            link: '/前端开发/前端工程化/Webpack',
-          },
-        ],
-      },
-    ],
-  },
-  /**
-   * 后端开发
-   */
-  {
-    text: '后端开发',
-    icon: 'be',
-    children: [
-      {
-        text: 'node.js',
-        children: [
-          {
-            text: 'node入门',
-            icon: 'node',
-            link: '/后端开发/node入门/node.js基础',
-          },
-          {
-            text: '深入node',
-            icon: 'node',
-            link: '/后端开发/深入node/邂逅node',
-          },
-          {
-            text: 'koa2',
-            icon: 'node',
-            link: '/后端开发/Koa2',
-          },
-          // {
-          //   text: 'nest',
-          //   icon: 'nest',
-          //   link: '/后端开发/nest',
-          // },
-        ],
-      },
-      {
-        text: '数据库',
-        children: [
-          {
-            text: 'MySQL',
-            icon: 'mysql',
-            link: '/后端开发/数据库/MySQL',
+            link: '/前端知识库/前端工程化/Webpack',
           },
         ],
       },
@@ -257,6 +213,11 @@ export default navbar([
         icon: 'gongju',
         link: '/开发工具/iterm2',
       },
+      {
+        text: 'node&包管理工具',
+        icon: 'node',
+        link: '/开发工具/node&包管理工具',
+      },
     ],
   },
   /**
@@ -275,11 +236,6 @@ export default navbar([
         text: 'JS',
         icon: 'javascript',
         link: '/开发笔记/JS/数组对象对比找出差异项',
-      },
-      {
-        text: 'Node',
-        icon: 'node',
-        link: '/开发笔记/Node/在Vuekoa项目中如何解决跨域和cookie问题',
       },
       {
         text: 'Vue',

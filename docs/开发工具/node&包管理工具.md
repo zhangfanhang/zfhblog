@@ -1,5 +1,13 @@
 ---
-title: node.js基础
+title: node&包管理工具
+tag:
+  - npm
+  - yarn
+  - commonJs
+  - nrm
+  - nvm
+  - node
+category: 前端开发
 ---
 
 ## node.js 介绍
@@ -8,9 +16,9 @@ title: node.js基础
 
 ### chrome v8 引擎
 
--   `chrome `是一个浏览器，它可以执行 `js` 代码
--   `V8` 就是 `chrome` 的 `js `引擎，以速度著称
--   `nodejs` 也是基于 `js` 语法的，因此也可以借用 `∨8` 引擎
+- `chrome `是一个浏览器，它可以执行 `js` 代码
+- `V8` 就是 `chrome` 的 `js `引擎，以速度著称
+- `nodejs` 也是基于 `js` 语法的，因此也可以借用 `∨8` 引擎
 
 ## nvm
 
@@ -33,13 +41,13 @@ npm_mirror: https://npmmirror.com/mirrors/npm/
 
 `nvm` 基本命令有：
 
--   安装 node:`nvm install <version>`
+- 安装 node:`nvm install <version>`
 
--   切换版本:`nvm use [version] `
+- 切换版本:`nvm use [version] `
 
--   列出已安装的版本:`nvm list`
+- 列出已安装的版本:`nvm list`
 
--   卸载 node：`nvm uninstall <version>`
+- 卸载 node：`nvm uninstall <version>`
 
 ### macOS 下安装
 
@@ -47,6 +55,8 @@ npm_mirror: https://npmmirror.com/mirrors/npm/
 当在 `arm`架构下的 `macos` 上，通过 `nvm` 安装 `v16` 以下版本 `node` 时,必须在 `Rosetta 2`的模式下打开终端，再执行安装命令
 
 [具体操作](https://blog.csdn.net/longgege001/article/details/114067242)
+
+// TODO m1 安装低版本 node
 
 :::
 
@@ -92,9 +102,9 @@ nvm ls
 
 三种方式的区分在于，项目通过 npm install 重新下载依赖包时，对于所下载的版本号的区别：
 
--   ^16.8.0’ 表示安装 16.x.x 的最新版本，安装时不改变大版本号。
--   ‘~16.8.0’ 表示安装 16.8.x 的最新版本，安装时不改变大版本号和次要版本号。
--   ‘16.8.0’ 表示安装指定的版本号，也就是安装 16.8.0 版本。
+- ^16.8.0’ 表示安装 16.x.x 的最新版本，安装时不改变大版本号。
+- ‘~16.8.0’ 表示安装 16.8.x 的最新版本，安装时不改变大版本号和次要版本号。
+- ‘16.8.0’ 表示安装指定的版本号，也就是安装 16.8.0 版本。
 
 :::
 
@@ -102,29 +112,29 @@ nvm ls
 
 ### npm 的常用命令
 
--   安装所有依赖：`npm install`
--   查看全局的包：`npm list -g --depth 0`
--   查看全局包的安装位置：`npm root -g`
--   查看 bin 目录位置:`npm bin -g`
--   安装全局的包：`npm installl -g`
--   安装生产依赖：`npm intall module_name`
--   安装开发依赖： `npm install module_name -D`
--   移除依赖：`npm uninstall module_name`,全局加上`-g`
--   设置淘宝镜像源：npm config set registry=https://registry.npmmirror.com
+- 安装所有依赖：`npm install`
+- 查看全局的包：`npm list -g --depth 0`
+- 查看全局包的安装位置：`npm root -g`
+- 查看 bin 目录位置:`npm bin -g`
+- 安装全局的包：`npm installl -g`
+- 安装生产依赖：`npm intall module_name`
+- 安装开发依赖： `npm install module_name -D`
+- 移除依赖：`npm uninstall module_name`,全局加上`-g`
+- 设置淘宝镜像源：npm config set registry=https://registry.npmmirror.com
 
 ## nrm
 
-nrm是npm的源管理工具
+nrm 是 npm 的源管理工具
 
 安装：`npm install -g @adams549659584/nrm`
 
-Mac M1芯片电脑可能无法正确获取当前正在使用的源使用此包可解决问题,解决方法来自抖音前端博主：[后盾人](https://www.douyin.com/user/MS4wLjABAAAAz0TXiTnI3HAmxDEfBrHItlViAwC6rsxJL6_GIHFA2Ho)，感谢！
+Mac M1 芯片电脑可能无法正确获取当前正在使用的源使用此包可解决问题,解决方法来自抖音前端博主：[后盾人](https://www.douyin.com/user/MS4wLjABAAAAz0TXiTnI3HAmxDEfBrHItlViAwC6rsxJL6_GIHFA2Ho)，感谢！
 
 ### 常用命令
 
 - nrm ls:显示源列表
 - nrm test：测试延迟
-- nrm use xxxx:使用xxxx源
+- nrm use xxxx:使用 xxxx 源
 
 ## Yarn
 
@@ -149,24 +159,22 @@ export PATH="$PATH:`yarn global bin`"
 
 :::
 
--   安装所有依赖：`yarn`
--   查看全局的包：`yarn global list`
--   查看全局包的安装位置：`yarn global dir`
--   查看 bin 目录位置:`yarn global bin`
--   安装全局的包:`yarn global add <packageName>`
--   安装生产依赖：`yarn add <packageName>`
--   安装开发依赖： `yarn add <packageName> -D`
--   移除依赖：`yarn <global> remove <packageName>`
+- 安装所有依赖：`yarn`
+- 查看全局的包：`yarn global list`
+- 查看全局包的安装位置：`yarn global dir`
+- 查看 bin 目录位置:`yarn global bin`
+- 安装全局的包:`yarn global add <packageName>`
+- 安装生产依赖：`yarn add <packageName>`
+- 安装开发依赖： `yarn add <packageName> -D`
+- 移除依赖：`yarn <global> remove <packageName>`
 
 ## common.js 模块化
 
-[回顾 ES6 模块化](https://ffe.link/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/JavaScript/ES6/Module%E6%A8%A1%E5%9D%97.html)
-
 ### commonjs 语法介绍
 
--   `module.exports` 导出
--   `require`(…)导入
--   主要用于 `node.js` 开发
+- `module.exports` 导出
+- `require`(…)导入
+- 主要用于 `node.js` 开发
 
 ### 实例
 
@@ -185,19 +193,19 @@ message()
 
 ```js
 function add(a, b) {
-    console.log(a + b)
+  console.log(a + b)
 }
 function message() {
-    console.log('common.js')
+  console.log('common.js')
 }
 
 module.exports = {
-    add,
-    message,
+  add,
+  message,
 }
 ```
 
 ### commonjs 和 ES6 Module 的区别
 
--   `commonJs` 是执行时引入 ，动态的,**程序执行到 `require `才会引入**
--   `ES6 Module `是打包时引入，静态的,**代码执行之前就要把所有东西引入进来**
+- `commonJs` 是执行时引入 ，动态的,**程序执行到 `require `才会引入**
+- `ES6 Module `是打包时引入，静态的,**代码执行之前就要把所有东西引入进来**
