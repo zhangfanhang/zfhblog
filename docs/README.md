@@ -50,30 +50,20 @@ projects:
     desc: 一个基于 React18 + TSX + Vite + AntDesign 的仿去哪儿首页
     link: https://qunal.zfhblog.top
 
-  - name: 天汉旅行
-    icon: xiaochengxu
-    desc: 毕业设计作品,一个基于微信云开发的汉中旅游信息平台;鉴于腾讯云的计费模式更改,所以本项目不在维护,后期将使用 uni-app(云开发)重构
-    link: https://github.com/zhangfanhang/tianhanTravel
-
   - name: v-list
     icon: vue
     desc: 一个基于vue的虚拟列表组件
     link: https://vlist.zfhblog.top
 
-  # - name: 贪吃蛇
-  #   icon: javascript
-  #   desc: 不到一百行代码实现贪吃蛇
-  #   link: https://snake.zfhblog.top
+  - name: 贪吃蛇
+    icon: javascript
+    desc: 不到一百行代码实现贪吃蛇
+    link: https://snake.zfhblog.top
 
   - name: ZFH的音乐🎵
     icon: vue
     desc: 使用网易云api的在线音乐网站
     link: https://music.zfhblog.top
-
-  - name: 留言板
-    icon: node
-    desc: 本人后端启蒙项目，基于elementUI+koa2+mongoDB的留言板
-    link: https://github.com/zhangfanhang/koa2-message-board
 
   - name: 全国疫情数据大屏
     icon: vue
