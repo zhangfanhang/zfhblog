@@ -204,11 +204,6 @@ export default navbar([
         link: '/开发工具/homebrew',
       },
       {
-        text: 'Docker',
-        icon: 'docker',
-        link: '/开发工具/Docker',
-      },
-      {
         text: 'iterm2',
         icon: 'gongju',
         link: '/开发工具/iterm2',
