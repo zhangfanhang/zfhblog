@@ -1,17 +1,16 @@
 ---
-title: vue3ElementPlusKoa2全栈开发后台系统学习记录
+title: vue3开发后台管理系统
 tag:
   - vue3
+  - Pinia
   - ElementPlus
-  - Koa2
+  - vite
+  - Vue-Router
+  - 后台管理系统
 category:
   - 开发笔记
   - Vue
 ---
-
-# vue3+ElementPlus+Koa2 全栈开发后台系统学习记录
-
-## 前端部分
 
 ## vite 环境变量
 
@@ -122,21 +121,6 @@ const res = await login({ ...userInfo })
 router.push('/')
 // 存储用户信息
 userStore.saveUserInfo(res)
-```
-
-## proxy 代理配置
-
-// TODO: 看尚硅谷
-
-```js
-server: {
-    proxy: {
-        "/api": {
-            target: "http://api-manager.marsview.cc/",
-            changeOrigin: true
-        }
-    }
-}
 ```
 
 ## storage 二次封装
@@ -292,6 +276,6 @@ const props = defineProps(['menuList', 'isCollapse'])
 
 // TODO 24 号早上 check
 
-## 公共表格封装
+## 造轮子:公共表格封装
 
 [查看](/开发记录/Vue/elementPlus公共表格封装)

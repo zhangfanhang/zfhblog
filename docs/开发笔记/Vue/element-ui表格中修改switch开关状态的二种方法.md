@@ -9,8 +9,6 @@ category:
   - Vue
 ---
 
-# element-ui 表格中修改 switch 开关状态的二种方法
-
 Swich 默认是 boolean 类型，如果后台传值为 number 类型，这个时候我们想用 number 来取代 boolean 类型
 
 这里有个问题需要注意：当你点击修改状态时，弹出提示框，点击取消关闭时，switch 的状态依旧改变了:

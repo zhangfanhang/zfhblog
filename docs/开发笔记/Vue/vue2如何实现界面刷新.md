@@ -5,10 +5,8 @@ tag:
   - vue2
 category:
   - 开发笔记
-  - Vue
+  - Vue2
 ---
-
-# vue2 如何实现界面刷新
 
 1. 原始方法： `location.reload()`;
 2. vue 自带的路由跳转: `this.$router.go(0)`;

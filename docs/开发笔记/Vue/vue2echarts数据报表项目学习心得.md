@@ -9,8 +9,6 @@ category:
   - Vue
 ---
 
-# vue2+echarts 数据报表项目学习心得
-
 ::: tip 项目演示地址
 [演示地址](https://datav.zfhblog.top/)
 :::

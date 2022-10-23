@@ -39,13 +39,6 @@ rm -rf fonts
 
 然后可以删除其他字体,在用户文件下的`Fonts`文件夹保留你要使用的字体，删除其他你不需要使用的字体
 
-或者你可以运行`powerline`自带的删除脚本,在此之前请保留你正在使用的字体
-
-```shell
-# powerline fonts
-sudo chmod 777 ./uninstall.sh
-```
-
 原来的`.zshrc`将重命名为`.zshrc .pre-oh-my-zsh `。在安装之后，你可以将你原来的终端配置移到新的`.zshrc`中
 
 ## 效果图

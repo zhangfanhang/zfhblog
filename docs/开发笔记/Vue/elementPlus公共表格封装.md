@@ -9,8 +9,6 @@ category:
   - Vue
 ---
 
-# elementPlus 公共表格封装
-
 ::: tip 环境参数
 
 ![](https://img.shields.io/badge/vue-3.2.37-4FC08D?logo=Vue.js&?style=flat-square)

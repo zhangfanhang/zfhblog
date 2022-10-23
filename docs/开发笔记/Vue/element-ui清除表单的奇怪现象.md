@@ -9,8 +9,6 @@ category:
   - Vue
 ---
 
-# element-ui 清除表单的奇怪现象
-
 `element-ui `中` form` 中有个清空表单的方法，即假如给表单一个 `ref='form'`, 则清空表单的方法为 `this.$refs.form.resetFields()`
 
 可当在 `dialog` 组件中用这个方法的时候，这就出现问题了，居然清空不了

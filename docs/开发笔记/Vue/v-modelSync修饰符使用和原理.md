@@ -10,8 +10,6 @@ category:
   - Vue
 ---
 
-# v-model,Sync 修饰符使用和原理
-
 ## v-model 原理
 
 `v-model`是`vue`中常用的语法糖，它的本质其实是`v-bind`一个叫`value`的变量，利用`v-on`绑定原生`input`事件实现：

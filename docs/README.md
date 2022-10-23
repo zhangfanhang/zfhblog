@@ -1,19 +1,10 @@
 ---
 home: true
-icon: home
 layout: Blog
 title: 首页
 heroText: ZFH's Blog
-tagline: 一个菜鸟前端的知识库博客
+tagline: console.log("love FE, love LIFE!")
 bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg.jpg'
-actions:
-  - text: 小记
-    link: /小记/初来南京.html
-    type: primary
-
-  - text: 书签
-    link: /书签.html
-
 projects:
   - name: todoList
     icon: vue
