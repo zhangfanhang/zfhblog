@@ -11,11 +11,9 @@ category:
 <center>
   <img  style='width:200px;height:100px' src='https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/VListLogo.PNG'/>
 </center>
-::: tip 官方文档
+::: tips 官方文档
 [v-list](https://vlist.zfhblog.top)
 :::
-
-// TODO 1024写 梳理 结合 25号的汇报内容
 
 ## 分析
 

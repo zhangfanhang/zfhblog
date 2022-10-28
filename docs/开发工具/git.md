@@ -1,6 +1,6 @@
 ---
 title: git
-sidebar: auto
+category: 开发工具
 ---
 
 ## 安装

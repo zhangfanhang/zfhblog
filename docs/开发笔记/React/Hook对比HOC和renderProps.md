@@ -1,5 +1,8 @@
 ---
 title: Hook对比HOC和renderProps
+category:
+  - 开发笔记
+  - React
 ---
 
 在 React 开发中，Hook，HOC 和 renderProps 它们均可以完成组件状态逻辑的复用

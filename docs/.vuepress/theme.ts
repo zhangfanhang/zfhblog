@@ -10,7 +10,7 @@ export default hopeTheme({
     url: 'https://zfhblog.top',
   },
   repoDisplay: false,
-  iconAssets: '//at.alicdn.com/t/c/font_3677319_yiv19nyxape.css',
+  iconAssets: '//at.alicdn.com/t/c/font_3677319_5ih0z8knkic.css',
   logo: '/logo.jpg',
   pageInfo: [
     'Author',
@@ -30,7 +30,7 @@ export default hopeTheme({
     roundAvatar: true,
     avatar:
       'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/avatar.jpg',
-    description: '菜鸟前端，目前在南京工作。',
+    description: '练习时长2.1年的前端菜🐔一枚，目前在南京工作。',
     medias: {
       Email: 'mailto:zhangfanhang@znv.com',
       Github: 'https://github.com/zhangfanhang',

@@ -3,7 +3,7 @@ home: true
 layout: Blog
 title: 首页
 heroText: ZFH's Blog
-tagline: console.log("love FE, love LIFE!")
+tagline: 一个专注于前端开发的个人知识库博客
 bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg.jpg'
 projects:
   - name: todoList

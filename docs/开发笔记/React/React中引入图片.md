@@ -1,13 +1,11 @@
 ---
 title: React中引入图片
-
-tags:
-  - 2022/09/14 11:19:45
+category:
+  - 开发笔记
   - React
-  - 图片
 ---
 
-# import
+## img
 
 ```jsx
 import { Component } from 'react'
@@ -24,18 +22,14 @@ export default class Login extends Component {
 }
 ```
 
-# require
+ 
 
-::: danger
-
-测试 react+vite 环境不可用
-
-webpack 应该可以
-
-:::
+## background
 
 ```jsx
-<img src={require('../../assets/2.png').default} alt="" style={imgStyle} />
+import logo from './asset/logo.jpg'
+
+// ....
+background-image:url(${logo});
 ```
 
-可以使用此方法插入动态图片,require 中不能有纯粹的代表图片地址的变量，但是可以通过变量和字符串拼接的方式来使用此方法。
