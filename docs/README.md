@@ -47,7 +47,7 @@ projects:
     link: https://vlist.zfhblog.top
 
   - name: 贪吃蛇
-    icon: javascript
+    icon: react
     desc: 原始js实现贪吃蛇
     link: https://snake.zfhblog.top
 

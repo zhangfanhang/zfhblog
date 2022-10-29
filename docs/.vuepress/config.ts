@@ -12,10 +12,10 @@ export default defineUserConfig({
       appId: "HDTORBOLNJ",
       apiKey: "5cc292fcb4b413686f662fc008a02ffa",
       indexName: "zfhtop",
-      placeholder: "搜索",
+      placeholder: "搜点什么呢...?",
       translations: {
         button: {
-          buttonText: "🔍",
+          buttonText: "搜索文档",
         },
         modal: {
           searchBox: {
@@ -49,7 +49,7 @@ export default defineUserConfig({
           },
           noResultsScreen: {
             noResultsText: "无法找到相关结果",
-            suggestedQueryText: "你也可以尝试查询:",
+            suggestedQueryText: "你也可以尝试查询",
             reportMissingResultsText:
               "Believe this query should return results?",
             reportMissingResultsLinkText: "Let us know.",

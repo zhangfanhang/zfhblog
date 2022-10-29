@@ -245,7 +245,7 @@ export default navbar([
    *  算法
    */
   {
-    text: '数据结构与算法',
+    text: '算法',
     icon: 'suanfa',
     link: '/算法/',
   },

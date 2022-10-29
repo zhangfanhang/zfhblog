@@ -181,10 +181,10 @@ export PATH="$PATH:`yarn global bin`"
 #### index.js
 
 ```js
-const { add, message } = require("./tool");
+const { add, message } = require('./tool')
 
-add(1, 2);
-message();
+add(1, 2)
+message()
 
 // node index.js
 ```
@@ -193,16 +193,16 @@ message();
 
 ```js
 function add(a, b) {
-  console.log(a + b);
+  console.log(a + b)
 }
 function message() {
-  console.log("common.js");
+  console.log('common.js')
 }
 
 module.exports = {
   add,
   message,
-};
+}
 ```
 
 ### commonjs 和 ES6 Module 的区别
