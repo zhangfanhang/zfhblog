@@ -41,6 +41,8 @@ rm -rf fonts
 
 ## 其他插件
 
+均使用`homebrew`安装
+
 
 - [autojump](https://github.com/wting/autojump),快速跳转目录(只能跳转已经 cd 过的目录)
 
