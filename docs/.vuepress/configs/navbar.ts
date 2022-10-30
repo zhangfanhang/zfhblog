@@ -84,6 +84,11 @@ export default navbar([
         icon: 'css',
         link: '/前端图形/玩转CSS艺术之美/浏览器',
       },
+      {
+        text: 'CSS世界阅读笔记',
+        icon: 'css',
+        link: '/前端图形/CSS世界阅读笔记/概述',
+      },
     ],
   },
   /**
