@@ -1,6 +1,6 @@
 import { hopeTheme } from 'vuepress-theme-hope'
-import Navbar from './configs/navbar.js'
-import Sidebar from './configs/sidebar'
+import Navbar from './bar/Navbar'
+import Sidebar from './bar/Sidebar'
 export default hopeTheme({
   hostname: 'https://zfhblog.top',
   contributors: false,
@@ -10,7 +10,7 @@ export default hopeTheme({
     url: 'https://zfhblog.top',
   },
   repoDisplay: false,
-  iconAssets: '//at.alicdn.com/t/c/font_3677319_5ih0z8knkic.css',
+  iconAssets: '//at.alicdn.com/t/c/font_3677319_tmmkzuptpps.css',
   logo: '/logo.jpg',
   pageInfo: [
     'Author',

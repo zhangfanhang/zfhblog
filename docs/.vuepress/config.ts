@@ -6,7 +6,7 @@ export default defineUserConfig({
   dest: './dist',
   lang: 'zh-CN',
   title: "ZFH's Blog",
-  description: '一个菜鸟前端的知识库博客',
+  description: '一个专注于编程开发技术的个人知识库博客',
   plugins: [
     docsearchPlugin({
       appId: 'HDTORBOLNJ',

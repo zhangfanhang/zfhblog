@@ -1,8 +1,4 @@
 import { sidebar } from 'vuepress-theme-hope'
-import kfbjVue from './kfbj/Vue'
-import kfbjjs from './kfbj/js'
-import qdkfes6 from './qdkj/es6'
-import qdkfreact from './qdkj/react'
 export default sidebar({
   /**
    * 小记
@@ -12,17 +8,43 @@ export default sidebar({
    * 开发笔记
    */
   '/开发笔记/CSS/': ['calc函数', 'CSS文本溢出处理方式'],
-  '/开发笔记/JS/': kfbjjs,
-  '/开发笔记/Vue/': kfbjVue,
+  '/开发笔记/JS/': [
+    '动态修改favicon网站图标地址',
+    '数组对象对比找出差异项',
+    '关于async和await',
+    '理解js事件循环',
+    '数组对象根据对象中指定的属性去重',
+    '数组对象根据数据项状态属性如何筛选数据',
+    '重新理解闭包',
+    '在输入框的光标处插入内容',
+    'Array.prototype.slice.call()&Array.from()的应用和理解',
+    'js的严格模式',
+  ],
+  '/开发笔记/Vue/': [
+    'vue2如何实现界面刷新',
+    'vue2实现滚动窗口同步滚动',
+    'vue2中的css深度选择器',
+    'vue2虚拟列表实现',
+    'vue2中使用lodash实现节流防抖',
+    'vue2echarts数据报表项目学习心得',
+    'v-modelSync修饰符使用和原理',
+    'element-ui清除表单的奇怪现象',
+    'element-ui树控件自动定位到当前选择项',
+    'element-ui表格中修改switch开关状态的二种方法',
+    'vue3vite3.0项目支持路径别名',
+    'vue3开发后台管理系统',
+    'elementPlus公共表格封装',
+    '利用tooltip实现文本超出提示',
+  ],
   '/开发笔记/React/': [
     '开发流程管理平台学习心得',
     'Hook对比HOC和renderProps',
     'React中引入图片',
   ],
   /**
-   *  算法
+   *  数据结构算法(js)
    */
-  '/算法/': [
+  '/数据结构算法/': [
     '',
     '时间空间复杂度',
     '栈',
@@ -34,7 +56,7 @@ export default sidebar({
     '图',
   ],
   /**
-   * 前端基石
+   * 前端开发
    */
   '/前端基石/CSS3/': [
     '基础与盒模型',
@@ -55,9 +77,6 @@ export default sidebar({
     '面向对象',
     '正则表达式',
   ],
-  /**
-   * 前端图形
-   */
   '/前端图形/canvas/': ['canvas基础'],
   '/前端图形/玩转CSS艺术之美/': ['浏览器', '回流重绘'],
   '/前端图形/Three.js/': [
@@ -67,9 +86,6 @@ export default sidebar({
     '材质与纹理',
   ],
   '/前端图形/CSS世界阅读笔记/': ['概述'],
-  /**
-   * 前端框架
-   */
   '/前端框架/Vue/': [
     'Vue核心',
     'Vue组件化编程',
@@ -78,23 +94,38 @@ export default sidebar({
     'Vue3',
     'Pinia',
   ],
-  '/前端框架/React/': qdkfreact,
-  /**
-   * 前端进阶
-   */
-  '/前端进阶/ES6/': qdkfes6,
+  '/前端框架/React/': [
+    'JSX核心语法',
+    'React脚手架',
+    'React组件化开发',
+    'React中的CSS',
+    'AntDesgin组件库',
+    'React中axios',
+    'React的过渡动画',
+    'Redux',
+    'React-router',
+    'ReactHook',
+    'React与TypeScript',
+    'React好用的库',
+  ],
+  '/前端进阶/ES6/': [
+    'let和const',
+    '模板字符串与箭头函数',
+    '解构赋值',
+    '对象字面量的增强与函数参数的默认值',
+    '剩余参数与展开运算符',
+    'Set和Map数据结构',
+    '遍历器与for...of循环',
+    'ES6的新增方法',
+    'Promise',
+    'Class类',
+    'Module模块',
+    'Generator',
+  ],
   '/前端进阶/移动开发/': ['移动Web开发入门'],
   '/前端进阶/重学前端/': ['JavaScript'],
   '/前端进阶/JS进阶/': ['深入理解javascript原型和闭包'],
   '/前端进阶/TypeScript/': ['是否真的需要TS', 'TS基础', 'TS面向对象', 'TS进阶'],
-  /**
-   * 基础知识
-   */
-  '/基础知识/计算机网络/': ['概述篇'],
-  '/基础知识/浏览器工作原理与实践/': ['思维导图', '01'],
-  /**
-   * 前端面试
-   */
   '/前端面试/面试题总结/': [
     'html面试题',
     'CSS面试题',
@@ -110,7 +141,12 @@ export default sidebar({
     '21.10.21技术面复盘',
   ],
   /**
-   * 食谱
+   * 基础知识
    */
-  '/食谱/': ['青椒火腿炒鸡蛋', '泡面的神仙吃法'],
+  '/基础知识/计算机网络/': ['概述篇'],
+  '/基础知识/浏览器工作原理与实践/': ['思维导图', '01'],
+  /**
+   * Java
+   */
+  '/Java/javase': ['基础语法'],
 })
