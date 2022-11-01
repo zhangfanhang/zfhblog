@@ -1,5 +1,5 @@
 ---
-title: node&npm
+title: node基础知识&工具
 tag:
   - npm
   - yarn
@@ -7,7 +7,7 @@ tag:
   - nrm
   - nvm
   - node
-category: 开发工具
+category: node技术栈
 ---
 
 ## node.js 介绍
@@ -53,10 +53,6 @@ npm_mirror: https://npmmirror.com/mirrors/npm/
 
 ::: warning 注意
 当在 `arm`架构下的 `macos` 上，通过 `nvm` 安装 `v16` 以下版本 `node` 时,必须在 `Rosetta 2`的模式下打开终端，再执行安装命令
-
-[具体操作](https://blog.csdn.net/longgege001/article/details/114067242)
-
-// TODO m1 安装低版本 node
 
 :::
 

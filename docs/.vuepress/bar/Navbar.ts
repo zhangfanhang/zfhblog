@@ -141,16 +141,31 @@ export default navbar([
     ],
   },
   /**
-   * Java开发
+   * 后端开发
    */
   {
-    text: 'java开发',
-    icon: 'java',
+    text: '后端开发',
+    icon: 'node',
     children: [
       {
-        text: 'javase',
-        icon: 'java',
-        link: '/java/javase/基础语法',
+        text: 'node技术栈',
+        children: [
+          {
+            text: 'node基础知识&工具',
+            icon: 'node',
+            link: '/node技术栈/node基础知识&工具',
+          },
+          {
+            text: 'koa2',
+            icon: 'node',
+            link: '/node技术栈/Koa2',
+          },
+          {
+            text: 'Nest',
+            icon: 'nest',
+            link: '/node技术栈/nest/1',
+          },
+        ],
       },
     ],
   },
@@ -218,11 +233,6 @@ export default navbar([
         text: 'ohmyzsh',
         icon: 'gongju',
         link: '/开发工具/ohmyzsh',
-      },
-      {
-        text: 'node&npm',
-        icon: 'node',
-        link: '/开发工具/node&npm',
       },
     ],
   },
