@@ -61,7 +61,7 @@ git config --global --add safe.directory 你的 homebrew-cask 路径
 
 :::
 
-## mac 安装 mysql
+## mysql
 
 [安装教程](https://blog.csdn.net/x123089/article/details/79729563)
 
@@ -213,24 +213,17 @@ All done!
 mysql -u root -p
 ```
 
-## `git`:brew install git
-
+## git
+```shell
+brew install git
+```
 ## nvm
 
-`brew install nvm`
-
-### mac 无法安装 node-sass 的解决办法
-
-1. M1 芯片终端切换到 Rosetta 模式，再安装低版本 node（如 12.16.1）
-2. npm 配置文件写入,设置淘宝镜像
+[更多细节](/node技术栈/node基础知识&工具#nvm)
 
 ```shell
-sass_binary_site=https://npmmirror.com/mirrors/node-sass/
+brew install nvm
 ```
-
-### 安装低版本node
-
-如何[安装低版本 node](https://blog.csdn.net/longgege001/article/details/114067242)
 
 ## mongodb
 
@@ -246,3 +239,19 @@ sass_binary_site=https://npmmirror.com/mirrors/node-sass/
 ## fd
 
 检索文件工具，速度较快，比`everything`还是差一点,[github](https://github.com/sharkdp/fd)
+
+##  autojump
+ [autojump](https://github.com/wting/autojump),快速跳转目录(只能跳转已经 cd 过的目录)
+
+```shell
+# .zshrc
+ [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+fpath=($fpath "/Users/frank/.zfunctions")
+```
+## zsh-syntax-highlighting
+[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting):高亮终端的代码
+
+```shell
+# .zshrc
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+```

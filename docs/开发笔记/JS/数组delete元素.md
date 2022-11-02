@@ -1,7 +1,5 @@
 ---
 title: 数组delete元素
-tag:
-  - JS
 category:
   - 开发笔记
   - JS

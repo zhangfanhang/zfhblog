@@ -1,14 +1,17 @@
 ---
 title: CSS文本溢出处理方式
+category:
+  - 开发笔记
+  - CSS
 ---
 
 ## 单行文本溢出省略号效果
 
 ```css
 .ellipsis {
-    　　overflow: hidden;
-    　　white-space: nowrap;
-    　　text-overflow: ellipsis;
+  　　overflow: hidden;
+  　　white-space: nowrap;
+  　　text-overflow: ellipsis;
 }
 ```
 
@@ -18,10 +21,10 @@ title: CSS文本溢出处理方式
 
 ```css
 ellipsis_four {
-    　　display: -webkit-box;
-    　　-webkit-line-clamp: 4;
-    　　-webkit-box-orient: vertical;
-    　　overflow: hidden;
+  　　display: -webkit-box;
+  　　-webkit-line-clamp: 4;
+  　　-webkit-box-orient: vertical;
+  　　overflow: hidden;
 }
 ```
 

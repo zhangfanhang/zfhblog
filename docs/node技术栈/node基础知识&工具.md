@@ -24,36 +24,8 @@ category: node技术栈
 
 `nvm` 是 `node.js` 的版本管理工具
 
-### windows 下安装
-
-下载地址：`https://github.com/coreybutler/nvm-windows/releases`
-
-安装完成后，找到 `nvm` 的安装目录，有一个 `settings.txt` 文件，打开之后把下面的代码复制进去：
-
-```
-root: C:\Users\Frank\AppData\Roaming\nvm
-path: C:\Program Files\nodejs
-arch: 64
-proxy: none
-node_mirror: https://npmmirror.com/mirrors/node/
-npm_mirror: https://npmmirror.com/mirrors/npm/
-```
-
-`nvm` 基本命令有：
-
-- 安装 node:`nvm install <version>`
-
-- 切换版本:`nvm use [version] `
-
-- 列出已安装的版本:`nvm list`
-
-- 卸载 node：`nvm uninstall <version>`
-
-### macOS 下安装
-
 ::: warning 注意
 当在 `arm`架构下的 `macos` 上，通过 `nvm` 安装 `v16` 以下版本 `node` 时,必须在 `Rosetta 2`的模式下打开终端，再执行安装命令
-
 :::
 
 建议使用 `homebrew`，安装`nvm`:
@@ -79,8 +51,23 @@ export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
 nvm install xxx
 nvm uninstall xxx
 nvm alias default xxx //设置新终端的默认node版本
-nvm ls
+nvm ls  // 列出已安装的版本
 ```
+
+### mac 无法安装 node-sass 的解决办法
+
+1. M1 芯片终端切换到 Rosetta 模式，再安装低版本 node（如 12.16.1）
+2. npm 配置文件写入,设置淘宝镜像
+
+```shell
+sass_binary_site=https://npmmirror.com/mirrors/node-sass/
+```
+
+### 安装低版本node
+
+如何[安装低版本 node](https://blog.csdn.net/longgege001/article/details/114067242)
+
+在 `Rosetta 2`的模式下打开终端，再执行安装命令
 
 ## npm
 

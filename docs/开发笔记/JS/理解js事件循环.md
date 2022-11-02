@@ -1,7 +1,5 @@
 ---
 title: 理解js事件循环
-tag:
-  - JS
 category:
   - 开发笔记
   - JS

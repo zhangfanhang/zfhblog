@@ -1,7 +1,5 @@
 ---
 title: 关于async和await
-tag:
-  - JS
 category:
   - 开发笔记
   - JS
@@ -39,7 +37,7 @@ console.log(data)
 当调用`getData()`的时候，遇到了`await`那么就会暂停在这一行，等待后面的`Promise`返回结果，`getData()`会先返回，此时返回的肯定是一个`Promise`，**_而且是等待状态的_**。接着执行调用`getData()`之后（`async `函数调用不会造成阻塞，它内部所有的阻塞都被封装在一个` Promise` 对象中异步执行）的代码，那么这行代码`console.log(data)`便会紧跟着执行,此时打印的结果肯定是一个`处于等待状态的Promise`。
 
 ```js
-data.then(res => console.log(res)) // I made it!
+data.then((res) => console.log(res)) // I made it!
 ```
 
 这段代码可能也会让人困惑：
@@ -51,7 +49,7 @@ async function getData() {
 }
 const data = getData()
 console.log(data)
-const c = data.then(res => {
+const c = data.then((res) => {
   console.log(res)
 })
 console.log(c) // 这里也打印的是一个等待状态的Promise

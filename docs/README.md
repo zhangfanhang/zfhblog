@@ -3,7 +3,7 @@ home: true
 layout: Blog
 title: 首页
 heroText: ZFH's Blog
-tagline: 一个专注于编程开发技术的个人知识库博客
+tagline: 无他，惟手熟尔
 bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg.jpg'
 projects:
   # - name: todoList
@@ -65,6 +65,6 @@ projects:
   #   icon: xiaochengxu
   #   desc: 一个基于uni-app的上下班提醒，大小周提醒的小程序应用(原型设计阶段)
   #   link: https://snake.zfhblog.top
-copyright: false
-footer: Copyright © 2020-present Frank Zhang
+copyright: Copyright © 2020-present Frank Zhang
+footer: 本网站由vuepress-theme-hope vite waline algolia vercel alibabacloud驱动
 ---

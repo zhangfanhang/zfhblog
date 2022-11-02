@@ -1,7 +1,5 @@
 ---
 title: 动态修改favicon网站图标地址
-tag:
-  - JS
 category:
   - 开发笔记
   - JS

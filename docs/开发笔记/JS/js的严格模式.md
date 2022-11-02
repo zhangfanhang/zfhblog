@@ -1,7 +1,7 @@
 ---
 title: js的严格模式
 tag:
-  - JS
+  - 严格模式
 category:
   - 开发笔记
   - JS
