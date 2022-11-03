@@ -277,19 +277,11 @@ export default navbar([
     link: '/书签',
   },
   /**
-   * 小记
-   */
-  {
-    text: '小记',
-    icon: 'note',
-    link: '/小记/初来南京',
-  },
-  /**
    * 杂记
    */
   {
     text: '杂记',
-    icon: 'zhishiku',
-    link: '/杂记',
+    icon: 'note',
+    link: '/杂记/初来南京',
   },
 ])
