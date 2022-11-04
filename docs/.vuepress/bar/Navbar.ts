@@ -153,17 +153,17 @@ export default navbar([
           {
             text: 'node基础知识&工具',
             icon: 'node',
-            link: '/node技术栈/node基础知识&工具',
+            link: '/no de/node基础知识&工具',
           },
           {
             text: 'koa',
             icon: 'node',
-            link: '/node技术栈/Koa',
+            link: '/x/Koa',
           },
           {
             text: 'Nest',
             icon: 'nest',
-            link: '/node技术栈/nest/开发环境搭建',
+            link: '/node/nest/开发环境搭建',
           },
         ],
       },

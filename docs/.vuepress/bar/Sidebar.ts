@@ -39,7 +39,11 @@ export default sidebar({
   '/基础知识/计算机网络/': 'structure',
   '/基础知识/浏览器工作原理与实践/': 'structure',
   /**
-   * node技术栈
+   * node
    */
-  '/node技术栈/nest': 'structure',
+  '/node/nest': 'structure',
+  /**
+   * python
+   */
+  '/python/': 'structure',
 })
