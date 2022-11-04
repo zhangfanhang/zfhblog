@@ -1,9 +1,11 @@
 ---
 home: true
+heroFullScreen: true
 layout: Blog
 title: 首页
 heroText: ZFH's Blog
-tagline: 无他，惟手熟尔
+heroImage: /logo.jpg
+tagline: ''
 bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg.jpg'
 projects:
   # - name: todoList
