@@ -3,6 +3,7 @@ title: CSS文本溢出处理方式
 category:
   - 开发笔记
   - CSS
+order: 1
 ---
 
 ## 单行文本溢出省略号效果

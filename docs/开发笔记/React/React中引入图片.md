@@ -3,6 +3,7 @@ title: React中引入图片
 category:
   - 开发笔记
   - React
+order: 1
 ---
 
 ## img
@@ -22,8 +23,6 @@ export default class Login extends Component {
 }
 ```
 
- 
-
 ## background
 
 ```jsx
@@ -32,4 +31,3 @@ import logo from './asset/logo.jpg'
 // ....
 background-image:url(${logo});
 ```
-

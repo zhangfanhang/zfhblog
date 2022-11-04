@@ -153,12 +153,12 @@ export default navbar([
           {
             text: 'node基础知识&工具',
             icon: 'node',
-            link: '/no de/node基础知识&工具',
+            link: '/node/node基础知识&工具',
           },
           {
             text: 'koa',
             icon: 'node',
-            link: '/x/Koa',
+            link: '/node/Koa',
           },
           {
             text: 'Nest',
@@ -252,7 +252,7 @@ export default navbar([
       {
         text: 'React',
         icon: 'react',
-        link: '/开发笔记/React/开发流程管理平台学习心得',
+        link: '/开发笔记/React/React中引入图片',
       },
     ],
   },
