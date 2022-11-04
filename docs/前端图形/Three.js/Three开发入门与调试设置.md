@@ -70,6 +70,13 @@ renderer.render(scene, camera)
 const camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000)
 ```
 
+参数依次位：
+
+`fov `— 摄像机视锥体垂直视野角度
+`aspect `— 摄像机视锥体长宽比
+`near` — 摄像机视锥体近端面
+`far` — 摄像机视锥体远端面
+
 ## 轨道控制器查看物体
 
 轨道控制器：`new OrbitControls( object : Camera, domElement : HTMLDOMElement )`

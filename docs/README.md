@@ -65,6 +65,8 @@ projects:
   #   icon: xiaochengxu
   #   desc: 一个基于uni-app的上下班提醒，大小周提醒的小程序应用(原型设计阶段)
   #   link: https://snake.zfhblog.top
-copyright: Copyright © 2020-present Frank Zhang
-footer: 本网站由vuepress-theme-hope vite waline algolia vercel alibabacloud驱动
+copyright: false
+footer: Copyright © 2020-present Fanhang Zhang
 ---
+
+<Busuanzi />

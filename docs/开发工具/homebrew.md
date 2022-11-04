@@ -236,9 +236,9 @@ brew install nvm
 
 [github](https://github.com/mongodb/homebrew-brew)
 
-## fd
+## ~~fd~~
 
-检索文件工具，速度较快，比`everything`还是差一点,[github](https://github.com/sharkdp/fd)
+~~检索文件工具，速度较快，比`everything`还是差一点,[github](https://github.com/sharkdp/fd)~~
 
 ##  autojump
  [autojump](https://github.com/wting/autojump),快速跳转目录(只能跳转已经 cd 过的目录)

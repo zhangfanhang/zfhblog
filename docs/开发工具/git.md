@@ -47,45 +47,9 @@ ssh-add ~/.ssh/github_id_rsa
 
 ## 墙内自救指南
 
-git push`,`git clone`加速`github
+使用`clash X Pro` 增强模式可以实现全局代理，它将接管系统流量，无需设置
 
-### HTTP 设置
-
-`.gitconfig` 配置文件写入：
-
-```bash
-[http "https://github.com"]
-	proxy = socks5://127.0.0.1:7890
-[https "https://github.com"]
-	proxy = socks5://127.0.0.1:7890
-```
-
-或者终端执行：
-
-```bash
-git config --global http.https://github.com.proxy socks5://127.0.0.1:7890
-git config --global https.https://github.com.proxy socks5://127.0.0.1:7890
-```
-
-### SSH 设置
-
-`~/.ssh/config`（config 前面没有点） 配置文件写入：
-
-```bash
-# gitee
-Host gitee.com
-HostName gitee.com
-PreferredAuthentications publickey
-IdentityFile ~/.ssh/gitee_id_rsa
-# github
-Host github.com
-HostName github.com
-PreferredAuthentications publickey
-IdentityFile ~/.ssh/github_id_rsa
-ProxyCommand nc -v -x 127.0.0.1:7890 %h %p
-```
-
-[macOS 给 Git(Github) 设置代理（HTTP/SSH）](https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1)
+~~[macOS 给 Git(Github) 设置代理（HTTP/SSH）](https://gist.github.com/chuyik/02d0d37a49edc162546441092efae6a1)~~
 
 ## 使用
 
