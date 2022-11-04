@@ -5,6 +5,7 @@ tag:
 category:
   - 前端图形
   - Three.js
+order: 2
 ---
 
 ## 创建第一个场景
@@ -291,15 +292,15 @@ GUI.add(cube.position, 'x')
   .min(0)
   .max(10)
   .name('移动x轴')
-  .onChange(val => {
+  .onChange((val) => {
     console.log(`x轴移动到了${val}`)
   })
-  .onFinishChange(val => {
+  .onFinishChange((val) => {
     console.log('完全停下来', val)
   })
 // 设置颜色
 GUI.addColor(params, 'color')
-  .onChange(val => {
+  .onChange((val) => {
     cube.material.color.set(val)
   })
   .name('颜色设置')

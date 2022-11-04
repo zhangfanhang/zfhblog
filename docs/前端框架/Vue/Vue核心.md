@@ -3,6 +3,7 @@ title: Vue核心
 category:
   - 前端框架
   - Vue
+order: 1
 ---
 
 ## vue 简介
@@ -258,11 +259,11 @@ v-on:xxx
 
 (2).配合`keydown`使用：正常触发事件
 
-::: warning KeyCode已废弃
+::: warning KeyCode 已废弃
 
 **已弃用:** 不再推荐使用该特性。虽然一些浏览器仍然支持它，但也许已从相关的 web 标准中移除，也许正准备移除或出于兼容性而保留。请尽量不要使用该特性，并更新现有的代码。
 
-::: 
+:::
 
 4. 也可以使用`keyCode`去指定具体的按键 <Badge text='不推荐' type="error"/>
 
@@ -284,13 +285,13 @@ Vue.config.keyCodes.huiche = 13 //定义了一个别名按键
 
 ::: danger 坑点
 
- 不要在`computed`中使用`localStorage`,如果可以请使用`vuex`
+不要在`computed`中使用`localStorage`,如果可以请使用`vuex`
 
 ```js
 computed: {
 	image() {
 	// bad computed中无法监听localStorage
-		return localStorage.getItem('imgUrl') 
+		return localStorage.getItem('imgUrl')
 	},
 	pic() {
 		// good
@@ -632,7 +633,7 @@ vue 中可以通过 vm.name 直接获取到 name 的值，是因为这里做了*
         //汇总对象中所有的属性形成一个数组
         const keys = Object.keys(obj)
         //遍历
-        keys.forEach(k => {
+        keys.forEach((k) => {
           Object.defineProperty(this, k, {
             get() {
               return obj[k]

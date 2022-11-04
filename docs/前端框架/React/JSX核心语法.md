@@ -4,6 +4,7 @@ tag: JSX
 category:
   - 前端框架
   - React
+order: 1
 ---
 
 ```jsx
@@ -257,7 +258,7 @@ classNames({ [`btn-${buttonType}`]: true })
 
 ```jsx
 <button
-  onClick={event => {
+  onClick={(event) => {
     this.btnClick(item, index, event)
   }}
 >
@@ -340,7 +341,7 @@ class App extends React.Component {
     return (
       <div>
         <ul>
-          {this.state.movie.map(item => {
+          {this.state.movie.map((item) => {
             return <li>{item}</li>
           })}
         </ul>

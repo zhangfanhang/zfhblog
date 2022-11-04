@@ -6,15 +6,16 @@ tag:
 category:
   - 前端图形
   - Three.js
+order: 5
 ---
 
-## PBR物理渲染
+## PBR 物理渲染
 
-### 什么是PBR？
+### 什么是 PBR？
 
 ::: tip 参考
 
-[什么是PBR？](https://zhuanlan.zhihu.com/p/342484575)
+[什么是 PBR？](https://zhuanlan.zhihu.com/p/342484575)
 
 :::
 
@@ -34,34 +35,48 @@ category:
 
 ```js
 import * as THREE from 'three'
-import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 //  创建场景
 const scene = new THREE.Scene()
 // 创建相机
-const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000)
+const camera = new THREE.PerspectiveCamera(
+  45,
+  window.innerWidth / window.innerHeight,
+  1,
+  1000
+)
 // 设置相机位置
 camera.position.set(1, 1, 1)
 // 将相机添加到场景中
 scene.add(camera)
 // 加载纹理
-const doorTexture = new THREE.TextureLoader().load('/src/assets/textures/door/color.jpg')
+const doorTexture = new THREE.TextureLoader().load(
+  '/src/assets/textures/door/color.jpg'
+)
 // 透明贴图
-const alphaTexture= new THREE.TextureLoader().load('/src/assets/textures/door/alpha.jpg')
+const alphaTexture = new THREE.TextureLoader().load(
+  '/src/assets/textures/door/alpha.jpg'
+)
 // 环境遮挡纹理贴图
-const aoTexture=new THREE.TextureLoader().load('./src/assets/textures/door/ambientOcclusion.jpg')
+const aoTexture = new THREE.TextureLoader().load(
+  './src/assets/textures/door/ambientOcclusion.jpg'
+)
 // 创建平面几何体
 const PlaneGeometry = new THREE.PlaneGeometry()
 // aoMap必须设置第二组uv
-PlaneGeometry.setAttribute('uv2',new THREE.BufferAttribute(PlaneGeometry.attributes.uv.array,2))
+PlaneGeometry.setAttribute(
+  'uv2',
+  new THREE.BufferAttribute(PlaneGeometry.attributes.uv.array, 2)
+)
 // 创建材质
 const material = new THREE.MeshStandardMaterial({
-    map: doorTexture,
-    alphaMap:alphaTexture,
-    // 必须添加 选择一个alpha通道
-    transparent: true,
-    side: THREE.DoubleSide,
-    aoMap:aoTexture,
-    aoMapIntensity:1,
+  map: doorTexture,
+  alphaMap: alphaTexture,
+  // 必须添加 选择一个alpha通道
+  transparent: true,
+  side: THREE.DoubleSide,
+  aoMap: aoTexture,
+  aoMapIntensity: 1,
 })
 // 创建物体
 const plane = new THREE.Mesh(PlaneGeometry, material)
@@ -78,17 +93,17 @@ const controls = new OrbitControls(camera, renderer2.domElement)
 // 阻尼效果
 controls.enableDamping = true
 // 环境光
-const light = new THREE.AmbientLight(0x404040); // soft white light
-scene.add(light);
+const light = new THREE.AmbientLight(0x404040) // soft white light
+scene.add(light)
 // 平行光
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-scene.add(directionalLight);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5)
+scene.add(directionalLight)
 directionalLight.position.set(3, 3, 3)
 // 渲染函数
 function render() {
-    renderer2.render(scene, camera)
-    //   渲染下一帧的时候就会调用render函数
-    requestAnimationFrame(render)
+  renderer2.render(scene, camera)
+  //   渲染下一帧的时候就会调用render函数
+  requestAnimationFrame(render)
 }
 render()
 ```

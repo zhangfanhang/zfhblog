@@ -5,7 +5,8 @@ tag:
   - 物体
 category:
   - 前端图形
-  - Three.js
+  - Three.js'
+order: 3
 ---
 
 ## 几何体顶点
