@@ -21,6 +21,5 @@ git commit -m "${msg}"
 git push -f $githubUrl master # 推送到github
 
 cd -
-
 rm -rf ./dist
 
