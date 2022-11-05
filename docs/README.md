@@ -5,7 +5,7 @@ layout: Blog
 title: 首页
 heroText: ZFH's Blog
 heroImage: /logo.jpg
-tagline: ''
+tagline: '在接受 在改变 在成长。'
 bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg.jpg'
 projects:
   - name: todoList

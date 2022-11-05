@@ -1,24 +1,30 @@
 // place your custom styles here
-/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
-/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
-@font-face {
-  font-family: '阿里妈妈数黑体 Bold';
-  font-weight: 700;
-  src: url('//at.alicdn.com/wf/webfont/VC1Yli9geX4i/Qu7V_obLMfI14ufR8rvo7.woff2')
-      format('woff2'),
-    url('//at.alicdn.com/wf/webfont/VC1Yli9geX4i/8PQEEqcYhrtF0azHBGhWK.woff')
-      format('woff');
-  font-display: swap;
+@mixin typing($count: 0, $duration: 0, $delay: 0) {
+  overflow: hidden;
+  border-right: 1px solid transparent;
+  width: #{$count + 1}ch;
+  white-space: nowrap;
+  animation: typing #{$duration}s steps($count + 1) #{$delay}s infinite
+      backwards,
+    caret 500ms steps(1) #{$delay}s infinite forwards;
 }
-.blog-hero h1,
 .description {
-  font-family: '阿里妈妈数黑体 Bold';
   font-weight: bold;
-  font-size: 30px !important;
-  position: relative;
-  top: 20px;
+  font-size: 30px;
+  @include typing(20, 3);
+}
+@keyframes caret {
+  50% {
+    border-right-color: currentColor;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
 }
 
-.site-name.hide-in-pad {
-  font-family: '阿里妈妈数黑体 Bold';
+.hero-image,
+.logo {
+  border-radius: 5px;
 }

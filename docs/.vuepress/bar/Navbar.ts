@@ -141,31 +141,26 @@ export default navbar([
     ],
   },
   /**
-   * 后端开发
+   * node开发
    */
   {
-    text: '后端开发',
+    text: 'node开发',
     icon: 'node',
     children: [
       {
-        text: 'node技术栈',
-        children: [
-          {
-            text: 'node基础知识&工具',
-            icon: 'node',
-            link: '/node/node基础知识&工具',
-          },
-          {
-            text: 'koa',
-            icon: 'node',
-            link: '/node/Koa',
-          },
-          {
-            text: 'Nest',
-            icon: 'nest',
-            link: '/node/nest/开发环境搭建',
-          },
-        ],
+        text: 'node基础知识&工具',
+        icon: 'node',
+        link: '/node/node基础知识&工具',
+      },
+      {
+        text: 'koa',
+        icon: 'node',
+        link: '/node/Koa',
+      },
+      {
+        text: 'Nest',
+        icon: 'nest',
+        link: '/node/nest/开发环境搭建',
       },
     ],
   },

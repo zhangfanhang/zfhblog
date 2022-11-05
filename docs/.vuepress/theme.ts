@@ -30,7 +30,7 @@ export default hopeTheme({
     roundAvatar: true,
     avatar:
       'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/avatar.jpg',
-    description: '练习时长2.1年的前端菜🐔一枚，目前在南京工作。',
+    description: '前端菜鸡,目前在南京工作。',
     medias: {
       Email: 'mailto:zhangfanhang@znv.com',
       Github: 'https://github.com/zhangfanhang',
@@ -43,8 +43,8 @@ export default hopeTheme({
   },
   encrypt: {
     config: {
-      '/小记/二二年八月总结.html': '0049003914',
-      '/小记/二二年九月总结.html': '0049003914',
+      '/杂记/二二年八月总结.html': '0049003914',
+      '/杂记/二二年九月总结.html': '0049003914',
     },
   },
   plugins: {
