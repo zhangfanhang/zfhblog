@@ -123,21 +123,21 @@ export default navbar([
           },
         ],
       },
-      {
-        text: '前端面试',
-        children: [
-          {
-            text: '面试题总结',
-            icon: 'zongjie',
-            link: '/前端面试/面试题总结/html面试题',
-          },
-          {
-            text: '面试复盘',
-            icon: 'fupan',
-            link: '/前端面试/面试复盘/21.9.14一面复盘',
-          },
-        ],
-      },
+      // {
+      //   text: '前端面试',
+      //   children: [
+      //     {
+      //       text: '面试题总结',
+      //       icon: 'zongjie',
+      //       link: '/前端面试/面试题总结/html面试题',
+      //     },
+      //     {
+      //       text: '面试复盘',
+      //       icon: 'fupan',
+      //       link: '/前端面试/面试复盘/21.9.14一面复盘',
+      //     },
+      //   ],
+      // },
     ],
   },
   /**

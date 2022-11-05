@@ -31,8 +31,8 @@ export default sidebar({
   '/前端进阶/重学前端/': 'structure',
   '/前端进阶/JS进阶/': 'structure',
   '/前端进阶/TypeScript/': 'structure',
-  '/前端面试/面试题总结/': 'structure',
-  '/前端面试/面试复盘/': 'structure',
+  // '/前端面试/面试题总结/': 'structure',
+  // '/前端面试/面试复盘/': 'structure',
   /**
    * 基础知识
    */
