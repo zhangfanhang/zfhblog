@@ -5,6 +5,7 @@ tags:
 category:
   - 前端进阶
   - TypeScript
+order: 1
 ---
 
 <center>
