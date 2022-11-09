@@ -477,7 +477,7 @@ props 是只读的，Vue 底层会监测你对 props 的修改，如果进行了
 (2).实现动态组件：考虑好数据的存放位置，数据是一个组件在用，还是一些组件在用：
 
     1).一个组件在用：放在组件自身即可。
-
+    
     ​2). 一些组件在用：放在他们共同的父组件上（这种行为被称为状态提升）
 
 (3).实现交互：从绑定事件开始。
@@ -748,14 +748,12 @@ this.$nextTick(function () {
 
 **一个栗子:**
 
-```js
+```vue
 <transition-group
   appear
-  // 必须
-  name="animate__animated animate__bounce"
-  // 自定义过渡类名
-  enter-active-class="animate__swing"
-  leave-active-class="animate__backOutUp"
+  // 必须 添加 animate__animated
+  enter-active-class="animate__animated animate__swing"
+  leave-active-class="animate__animated animate__backOutUp"
 >
   <h1 v-show="!isShow" key="1">
     你好啊！

@@ -272,9 +272,35 @@ const props = defineProps(['menuList', 'isCollapse'])
 
 // TODO 24 号早上 check
 
-## 重置 element 颜色主题
+## 重置 elementPlus 颜色主题
 
-// TODO 24 号早上 check
+新建一个scss文件：
+
+```scss
+/*
+* element样式重置
+*/
+// 修改主题色
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': #00CF74,
+    ),
+  ),
+);
+
+// 导入所有样式
+@import "element-plus/theme-chalk/src/index.scss";
+```
+
+然后在`main.js`文件中引入：
+
+```js
+import "./style/elementReset.scss"
+// import "element-plus/dist/index.css"
+```
+
+
 
 ## 造轮子:公共表格封装
 

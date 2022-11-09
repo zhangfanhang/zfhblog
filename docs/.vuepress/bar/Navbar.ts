@@ -123,6 +123,11 @@ export default navbar([
           },
         ],
       },
+      {
+        text: '前端知识体系',
+        icon: 'm-siweidaotu',
+        link: '/前端知识体系',
+      },
       // {
       //   text: '前端面试',
       //   children: [

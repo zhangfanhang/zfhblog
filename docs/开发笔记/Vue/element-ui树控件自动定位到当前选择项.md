@@ -28,6 +28,14 @@ category:
   :theme="$isDarkMode? 'dark': 'light'"
 />
 
+## 总结一下
+
+`clientWidth`，`offsetWidth`，`scrollWidth` 这几个概念自己有时候还是会弄混，所以在此总结一下。
+
+- `scrollWidth`包括元素的宽度（width），内边距（padding），但不包括边框（border）、外边距（margin）和垂直滚动条
+- `clientWidth `包括元素的宽度（width），内边距（padding），但不包括边框（border）、外边距（margin）和垂直滚动条
+- `offsetWidth `对象整体的实际宽度，包含滚动条，会随对象显示大小的变化而改变。
+
 ::: tip 说明
 
 方法来自[[element-ui] el-tree 滚动到指定选中的位置](https://blog.csdn.net/qq_14993591/article/details/125223004)
