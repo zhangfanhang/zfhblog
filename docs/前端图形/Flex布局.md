@@ -134,6 +134,7 @@ category: 前端图形
 如果项目只有一根主轴线 ，**该属性不起作用**
 
 - `stretch`(默认值) 主轴线平分 Flex 容器交叉轴方向上的空间
+- 和`align-item`一样，如果Flex 项目未设置交叉轴方向的大小或设为 auto，将占满整个容器交叉轴方向的大小
 
 ![align-content-stretch](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/align-content-stretch.png)
 

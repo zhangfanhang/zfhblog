@@ -34,6 +34,8 @@ title: mac软件
 - `爱思助手`:有时候很有用的 iphone 管理软件,[下载](https://www.i4.cn/)
 - `Blender`:3D 建模软件,[下载](https://www.blender.org/download/)
 - `iterm`:比 mac 自带终端更好用的终端,推荐搭配[ohmyzsh](https://iterm2.com/downloads.html),[下载](https://github.com/ohmyzsh/ohmyzsh)
+- `docker`:容器化技术学习中，[下载](https://www.docker.com/)
+- `IDEA`:终究没有逃过java的魔爪，[下载](https://www.jetbrains.com/zh-cn/idea/download/#section=mac)
 
 ## icloud 云盘（破解软件）
 
