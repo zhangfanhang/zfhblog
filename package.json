@@ -19,8 +19,6 @@
     "vuepress-theme-hope": "2.0.0-beta.120"
   },
   "dependencies": {
-    "atropos": "^1.0.2",
-    "busuanzi.pure.js": "1.0.3",
-    "jquery": "^3.6.1"
+    "busuanzi.pure.js": "1.0.3"
   }
 }
