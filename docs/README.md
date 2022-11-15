@@ -73,7 +73,7 @@ footer: Copyright © 2020-present Fanhang Zhang
 
 <Busuanzi />
 
-<span style='font-size:14px;display:flex;'>生涯编码时长
-[![wakatime](https://wakatime.com/badge/user/b94342d7-a3b1-41c3-8455-342d836a7152.svg)](https://wakatime.com/@b94342d7-a3b1-41c3-8455-342d836a7152)</span>
+<span style='font-size:14px;display:flex;'>自 2021 年 10 月 16 日写了
+[![wakatime](https://wakatime.com/badge/user/b94342d7-a3b1-41c3-8455-342d836a7152.svg)](https://wakatime.com/@b94342d7-a3b1-41c3-8455-342d836a7152)的代码</span>
 
 <HoverImg />
