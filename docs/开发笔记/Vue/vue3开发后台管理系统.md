@@ -1,12 +1,12 @@
 ---
-title: vue3开发后台管理系统
+title: vue3开发RABC权限管理系统
 tag:
   - vue3
   - Pinia
   - ElementPlus
   - vite
   - Vue-Router
-  - 后台管理系统
+  - RABC后台管理系统
 category:
   - 开发笔记
   - Vue
@@ -41,7 +41,7 @@ const service = axios.create({
 })
 
 // 请求拦截
-service.interceptors.request.use(req => {
+service.interceptors.request.use((req) => {
   // JWT
   if (storage.getItem('userInfo') !== undefined) {
     const { token } = storage.getItem('userInfo')
@@ -52,7 +52,7 @@ service.interceptors.request.use(req => {
 })
 
 // 响应拦截
-service.interceptors.response.use(res => {
+service.interceptors.response.use((res) => {
   const { code, data, msg } = res.data
   // 状态码判断
   if (code === 200) {
@@ -270,11 +270,11 @@ const props = defineProps(['menuList', 'isCollapse'])
 
 ## 面包屑导航
 
-// TODO 24 号早上 check
+// TODO 17 号早上 check
 
 ## 重置 elementPlus 颜色主题
 
-新建一个scss文件：
+新建一个 scss 文件：
 
 ```scss
 /*
@@ -284,23 +284,21 @@ const props = defineProps(['menuList', 'isCollapse'])
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   $colors: (
     'primary': (
-      'base': #00CF74,
+      'base': #00cf74,
     ),
-  ),
+  )
 );
 
 // 导入所有样式
-@import "element-plus/theme-chalk/src/index.scss";
+@import 'element-plus/theme-chalk/src/index.scss';
 ```
 
 然后在`main.js`文件中引入：
 
 ```js
-import "./style/elementReset.scss"
+import './style/elementReset.scss'
 // import "element-plus/dist/index.css"
 ```
-
-
 
 ## 造轮子:公共表格封装
 

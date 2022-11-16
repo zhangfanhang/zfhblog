@@ -94,7 +94,7 @@ export default navbar([
           {
             text: 'TypeScript',
             icon: 'typescript',
-            link: '/前端进阶/TypeScript/是否真的需要TS',
+            link: '/前端进阶/TypeScript/TS基础',
           },
           {
             text: 'ES6',
@@ -150,6 +150,7 @@ export default navbar([
    */
   {
     text: '后端开发',
+    icon: 'be',
     children: [
       {
         text: 'node技术栈',

@@ -41,9 +41,5 @@ export default sidebar({
   /**
    * node
    */
-  '/node/nest': 'structure',
-  /**
-   * python
-   */
-  '/python/': 'structure',
+  '/node/nest/': 'structure',
 })

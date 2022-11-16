@@ -1,11 +1,236 @@
 ---
 title: TS进阶
-tags:
-  - TypeScript
 category:
   - 前端进阶
   - TypeScript
+order: 3
 ---
+
+::: warning 开始之前...
+
+本文不包含所有ts高级特性
+
+:::
+
+## Generics泛型
+
+泛型`Generics`是指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定类型的一种特性。
+
+### 简单的例子
+
+首先，我们来实现一个函数 `createArray`，它可以创建一个指定长度的数组，同时将每一项都填充一个默认值：
+
+```ts
+function createArray(length: number, value: any): Array<any> {
+  let result = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
+}
+
+createArray(3, 'x') // ['x', 'x', 'x']
+```
+
+上例中，我们使用了数组泛型来定义返回值的类型。
+
+这段代码编译不会报错，但是一个显而易见的缺陷是，它并没有准确的定义返回值的类型：
+
+`Array<any>` 允许数组的每一项都为任意类型。但是我们预期的是，数组中每一项都应该是输入的 `value` 的类型。
+
+这时候，泛型就派上用场了：
+
+```ts
+function createArray<T>(length: number, value: T): Array<T> {
+  let result: T[] = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
+}
+
+createArray<string>(3, 'x') // ['x', 'x', 'x']
+```
+
+上例中，我们在函数名后添加了 `<T>`，其中 `T` 用来指代任意输入的类型，在后面的输入 `value: T` 和输出 `Array<T>` 中即可使用了。
+
+接着在调用的时候，可以指定它具体的类型为 `string`。当然，也可以不手动指定，而让类型推论自动推算出来：
+
+```ts
+function createArray<T>(length: number, value: T): Array<T> {
+  let result: T[] = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
+}
+
+createArray(3, 'x') // ['x', 'x', 'x']
+```
+
+## 多个类型参
+
+定义泛型的时候，可以一次定义多个类型参数：
+
+```ts
+function swap<T, U>(tuple: [T, U]): [U, T] {
+  return [tuple[1], tuple[0]]
+}
+
+swap([7, 'seven']) // ['seven', 7]
+```
+
+上例中，我们定义了一个 `swap` 函数，用来交换输入的元组。
+
+## 泛型约束
+
+在函数内部使用泛型变量的时候，由于事先不知道它是哪种类型，所以不能随意的操作它的属性或方法：
+
+```ts
+function loggingIdentity<T>(arg: T): T {
+  console.log(arg.length)
+  return arg
+}
+
+// index.ts(2,19): error TS2339: Property 'length' does not exist on type 'T'.
+```
+
+上例中，泛型 `T` 不一定包含属性 `length`，所以编译的时候报错了。
+
+这时，我们可以对泛型进行约束，只允许这个函数传入那些包含 `length` 属性的变量。这就是泛型约束：
+
+```ts
+interface Lengthwise {
+  length: number
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+  console.log(arg.length)
+  return arg
+}
+```
+
+上例中，我们使用了 `extends` 约束了泛型 `T` 必须符合接口 `Lengthwise` 的形状，也就是必须包含 `length` 属性。
+
+此时如果调用 `loggingIdentity` 的时候，传入的 `arg` 不包含 `length`，那么在编译阶段就会报错了：
+
+```ts
+interface Lengthwise {
+  length: number
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+  console.log(arg.length)
+  return arg
+}
+
+loggingIdentity(7)
+
+// index.ts(10,17): error TS2345: Argument of type '7' is not assignable to parameter of type 'Lengthwise'.
+```
+
+多个类型参数之间也可以互相约束：
+
+```ts
+function copyFields<T extends U, U>(target: T, source: U): T {
+  for (let id in source) {
+    target[id] = (<T>source)[id]
+  }
+  return target
+}
+
+let x = { a: 1, b: 2, c: 3, d: 4 }
+
+copyFields(x, { b: 10, d: 20 })
+```
+
+上例中，我们使用了两个类型参数，其中要求 `T` 继承 `U`，这样就保证了 `U` 上不会出现 `T` 中不存在的字段。
+
+## 泛型接口
+
+可以使用接口的方式来定义一个函数需要符合的形状：
+
+```ts
+interface SearchFunc {
+  (source: string, subString: string): boolean
+}
+
+let mySearch: SearchFunc
+mySearch = function (source: string, subString: string) {
+  return source.search(subString) !== -1
+}
+```
+
+当然也可以使用含有泛型的接口来定义函数的形状：
+
+```ts
+interface CreateArrayFunc {
+  <T>(length: number, value: T): Array<T>
+}
+
+let createArray: CreateArrayFunc
+createArray = function <T>(length: number, value: T): Array<T> {
+  let result: T[] = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
+}
+
+createArray(3, 'x') // ['x', 'x', 'x']
+```
+
+进一步，我们可以把泛型参数提前到接口名上：
+
+```ts
+interface CreateArrayFunc<T> {
+  (length: number, value: T): Array<T>
+}
+
+let createArray: CreateArrayFunc<any>
+createArray = function <T>(length: number, value: T): Array<T> {
+  let result: T[] = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
+}
+
+createArray(3, 'x') // ['x', 'x', 'x']
+```
+
+注意，此时在使用泛型接口的时候，需要定义泛型的类型。
+
+## 泛型类
+
+与泛型接口类似，泛型也可以用于类的类型定义中：
+
+```ts
+class GenericNumber<T> {
+  zeroValue: T
+  add: (x: T, y: T) => T
+}
+
+let myGenericNumber = new GenericNumber<number>()
+myGenericNumber.zeroValue = 0
+myGenericNumber.add = function (x, y) {
+  return x + y
+}
+```
+
+## 泛型参数的默认类型
+
+在 TypeScript 2.3 以后，我们可以为泛型中的类型参数指定默认类型。当使用泛型时没有在代码中直接指定类型参数，从实际值参数中也无法推测出时，这个默认类型就会起作用。
+
+```ts
+function createArray<T = string>(length: number, value: T): Array<T> {
+  let result: T[] = []
+  for (let i = 0; i < length; i++) {
+    result[i] = value
+  }
+  return result
+}
+```
 
 ## 类型别名
 
@@ -24,11 +249,17 @@ function getName(n: NameOrResolver): Name {
 }
 ```
 
-上例中，我们使用 `type` 创建类型别名。
+上例中，我们使用 `type` 创建类型别名
 
-类型别名常用于联合类型。
+类型别名常用于联合类型
 
 ### 类型别名与接口的区别
+
+::: tip 最佳实践
+
+用 interface 描述**数据结构**，用 type 描述**类型**
+
+:::
 
 #### 相同点
 
@@ -159,42 +390,23 @@ User 接口为 {
 */
 ```
 
-用 interface 描述**数据结构**，用 type 描述**类型关系**
-
 ## 类型保护
 
 [typescript-typeguard](https://www.wenjiangs.com/doc/typescript-typeguard)
 
-is 是 TypeScript 中的一个关键字，一般用于函数返回值类型中，判断参数是否属于某一类型，并根据结果返回对应的布尔类型
+## 重载
 
-```ts
-type Square = {
-  size: number
-}
-type Rectangle = {
-  width: number
-  height: number
-}
+重载是定义相同的方法名,参数不同;重写是子类重写父类的方法
 
-function isSquare(shape: Shape): shape is Square {
-  return 'size' in shape
-}
+### 函数重载
 
-function isRectangle(shape: Shape): shape is Rectangle {
-  return 'width' in shape
-}
-
-type Shape = Square | Rectangle
-
-function area(shape: Shape) {
-  if (isSquare(shape)) return shape.size * shape.size
-  if (isRectangle(shape)) return shape.width * shape.height
-}
-```
-
-## 函数重载
+::: tip 参考文章
 
 [TS 中几种函数重载](https://www.jianshu.com/p/98a4291d7ff4)
+
+[TS中的方法重载,函数重载,构造器重载](https://blog.csdn.net/qq_39970857/article/details/120949349)
+
+:::
 
 重载允许一个函数接受不同数量或类型的参数时，作出不同的处理。
 
@@ -229,11 +441,9 @@ function reverse(x: number | string): number | string | void {
 }
 ```
 
-上例中，我们重复定义了多次函数 `reverse`，前几次都是函数定义，最后一次是函数实现。在编辑器的代码提示中，可以正确的看到前两个提示。
+上例中，我们重复定义了多次函数 `reverse`，前几次都是函数定义，最后一次是函数实现
 
-注意，TypeScript 会优先从最前面的函数定义开始匹配，所以多个函数定义如果有包含关系，需要优先把精确的定义写在前面。
-
-## 方法重载
+### 方法重载
 
 下面来实现一个方法重载 以 ArrayList 为例,可以查看数据,可以删除数据,删除可以通过 id 或者对象删除可以获取数据
 
@@ -278,7 +488,7 @@ newAr.remove(c)
 console.log(newAr)
 ```
 
-## 构造器重载
+### 构造器重载
 
 ```ts
 // 类型别名
@@ -312,32 +522,10 @@ console.log(w2)
 console.log(w3)
 ```
 
-## 调用签名
-
-### 函数类型表达式
-
-最简单描述一个函数的方式是使用**函数类型表达式（function type expression）。**它的写法有点类似于箭头函数：
+ 
 
 ```typescript
-function greeter(fn: (a: string) => void) {
-  fn('Hello, World')
-}
-
-function printToConsole(s: string) {
-  console.log(s)
-}
-
-greeter(printToConsole)
-```
-
-语法 `(a: string) => void` 表示一个函数有一个名为 `a` ，类型是字符串的参数，这个函数并没有返回任何值。
-
-如果一个函数参数的类型并没有明确给出，它会被隐式设置为 `any`。
-
-当然了，我们也可以使用类型别名 定义一个函数类型：
-
-```typescript
-type GreetFunction = (a: string) => void
+ type GreetFunction = (a: string) => void
 function greeter(fn: GreetFunction) {
   // ...
 }
@@ -367,7 +555,7 @@ doSomething(fn)
 
 ## 构造签名
 
-JavaScript 函数也可以使用 `new` 操作符调用，当被调用的时候，TypeScript 会认为这是一个构造函数( constructors (构造函数) )，因为他们会产生一个新对象。你可以写一个构造签名，方法是在调用签名前面加一个 `new` 关键词：
+`JavaScript` 函数也可以使用 `new` 操作符调用，当被调用的时候，`TypeScript` 会认为这是一个构造函数( constructors (构造函数) )，因为他们会产生一个新对象。你可以写一个构造签名，方法是在调用签名前面加一个 `new` 关键词：
 
 ```ts
 type SomeConstructor = {
@@ -380,30 +568,87 @@ function fn(ctor: SomeConstructor) {
 
 ## 索引签名
 
-有的时候，你不能提前知道一个类型里的所有属性的名字，但是你知道这些值的特征。
+索引:对象或数组的对应位置的名字
 
-这种情况，你就可以用一个索引签名 (index signature) 来描述可能的值的类型，举个例子：
+数组的索引就是 number 类型的 0,1,2,3...
+
+对象的索引就是 string 类型的属性名
+
+有的时候，你不能提前知道一个类型里的所有属性的名字，但是你知道这些值的特征
+
+这种情况，你就可以用一个索引签名`index signature` 来描述可能的值的类型
+
+一个索引签名的属性类型必须是 `string` 或者是 `number`
+
+#### 数字索引签名:通过定义接口用来约束数组
 
 ```typescript
-interface StringArray {
-  [index: number]: string
+type numberIndex{
+    [index:number]:string
 }
-
-const myArray: StringArray = getStringArray()
-const secondItem = myArray[1] // const secondItem: string
+const testArray:numberIndex = ["1","2",3]// 不能将类型“number”分配给类型“string”。ts(2322) 所需类型来自此索引签名
 ```
 
-这样，我们就有了一个具有索引签名的接口 `StringArray`，这个索引签名表示当一个 `StringArray` 类型的值使用 `number` 类型的值进行索引的时候，会返回一个 `string`类型的值。
+ ::: tip
 
-## 双重断言
+索引签名的名称如`[index:number]:string`里的`index`除了可读性外,并无任何意义.但有利于下一个开发者理解你的代码
 
-利用双重断言可以完成一些不可能的类型转换，虽然没什么卵用
+:::
+
+### 字符串索引签名:用于约束对象
 
 ```ts
-let x = '123' as any as number // x:number
+type objectType{
+    [propName:string]:number
+}
+const testObj:objectType = {
+    "name":100,
+    "age":"200" // 不能将类型“string”分配给类型“number”。ts(2322) 所需类型来自此索引签名。
+}
 ```
 
+### 注意事项
+
+- 一旦定义了索引签名,那么确定属性和可选属性的类型都必须是它的类型的子集
+
+```ts
+type attentionType{
+    name: string; // Ok
+    age?: number; // 类型“number | undefined”的属性“age”不能赋给“string”索引类型“string”。ts(2411)
+    sex?: undefined; // OK
+    [propName: string]: string | undefined;
+}
+```
+
+- 虽然 TypeScript 可以同时支持 `string` 和 `number` 类型，但数字索引的返回类型一定要是字符索引返回类型的子类型。这是因为当使用一个数字进行索引的时候，JavaScript 实际上把它转成了一个字符串。这就意味着使用数字 100 进行索引跟使用字符串 100 索引，是一样的。
+
+```ts
+interface Animal {
+  name: string;
+}
+interface Dog extends Animal {
+  breed: string;
+}
+
+interface NotOkay {
+  [x: string]: Dog;
+  [x: number]: Animal; // Error
+}
+
+interface Okay {
+  [x: string]: Animal;
+  [x: number]: Dog; // OK
+}
+```
+
+
 ## 常量断言
+
+::: tip 参考文章
+
+[TypeScript 夜点心：常量断言](https://zhuanlan.zhihu.com/p/121558249)
+
+::: 
 
 常量断言，可以用于断言任何一个类型：
 
@@ -429,22 +674,6 @@ const paramer = {
 layout(paramer)
 ```
 
-在大部分的代码中，元组只是被创建，使用完后也不会被修改，所以尽可能的将元组设置为 `readonly` 是一个好习惯。
-
-```ts
-let t1: readonly [string, number] = ['123', 123]
-```
-
-## typeof 操作符
-
-TypeScript 添加的 `typeof` 方法可以在类型上下文（type context）中使用，用于获取一个变量或者属性的类型
-
-```typescript
-let s = 'hello'
-let n: typeof s
-// let n: string
-```
-
 ## keyof 操作符
 
 对一个对象类型使用 `keyof` 操作符，会返回该对象属性名组成的一个字符串或者数字字面量的联合。这个例子中的类型 P 就等同于 "x" | "y"：
@@ -452,32 +681,6 @@ let n: typeof s
 ```typescript
 type Point = { x: number; y: number }
 type P = keyof Point
-```
-
-## 类型查找
-
-我们可以使用**类型查找** 查找另外一个类型上的特定属性：
-
-```typescript
-type Person = { age: number; name: string; alive: boolean }
-type Age = Person['age']
-// type Age = number
-```
-
-复制代码
-
-因为索引名本身就是一个类型，所以我们也可以使用联合、`keyof` 或者其他类型：
-
-```typescript
-type I1 = Person['age' | 'name']
-// type I1 = string | number
-
-type I2 = Person[keyof Person]
-// type I2 = string | number | boolean
-
-type AliveOrName = 'alive' | 'name'
-type I3 = Person[AliveOrName]
-// type I3 = string | boolean
 ```
 
 ## 类型映射

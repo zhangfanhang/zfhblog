@@ -8,15 +8,11 @@ category:
   - ES6
 ---
 
-// TODO
-
 ## Proxy
-
-`Proxy` 用于修改某些操作的默认行为，等同于在语言层面做出修改
 
 _`Proxy` 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。_
 
-ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例。
+ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例
 
 ```js
 const proxy = new Proxy(target, handler)
@@ -24,37 +20,30 @@ const proxy = new Proxy(target, handler)
 
 `new Proxy()`表示生成一个`Proxy`实例，`target`参数表示所要拦截的目标对象，`handler`参数也是一个对象，用来定制拦截行为。
 
-::: warning 注意
-
-要使得`Proxy`起作用，必须针对`Proxy`实例（上例是`proxy`对象）进行操作，而不是针对目标对象（上例是空对象）**进行操作**
-
-:::
-
-Proxy 实例也可以作为其他对象的原型对象。
-
 ```js
-var proxy = new Proxy(
+const obj = new Proxy(
   {},
   {
     get: function (target, propKey) {
-      return 35
+      return 199
     },
   }
 )
+console.log(obj.name) // 119
 
-let obj = Object.create(proxy)
-obj.time // 35
 ```
 
-上面代码中，`proxy`对象是`obj`对象的原型，`obj`对象本身并没有`time`属性，所以根据原型链，会在`proxy`对象上读取该属性，导致被拦截。
+::: warning 注意
 
-同一个拦截器，可以设置拦截多个操作。对于可以设置、但没有设置拦截的操作，则直接落在目标对象上，按照原先的方式产生结果。
+要使得`Proxy`起作用，必须针对`Proxy`实例进行操作(上例是obj)，而不是针对目标对象（上例是空对象）**进行操作**
+
+:::
 
 下面是拦截器支持的主要操作：
 
 ### get()
 
-`get`方法用于拦截某个属性的读取操作，可以接受三个参数，依次为目标对象、属性名和 proxy 实例本身（严格地说，是操作行为所针对的对象），其中最后一个参数可选
+`get`方法用于拦截某个属性的读取操作，可以接受三个参数，依次为目标对象、属性名和 proxy 实例本身，其中最后一个参数可选
 
 ```js
 const proxy = new Proxy(person, {
@@ -91,7 +80,7 @@ console.log(obj.foo) // "getfoo"
 
 上面代码表示，拦截操作定义在`proto`上面，所以如果读取`obj`对象继承的属性时，拦截会生效。
 
-下面的例子使用`get`拦截，实现数组读取负数的索引。
+下面的例子使用`get`拦截，实现数组读取负数的索引
 
 ```js
 const createArray = (...elements) => {
@@ -210,7 +199,38 @@ proxy.foo
 
 ### set()
 
-// TODO 8.19 日清
+`set`方法用来拦截某个属性的赋值操作，可以接受四个参数，依次为目标对象、属性名、属性值和 Proxy 实例本身，其中最后一个参数可选。
+
+假定`Person`对象有一个`age`属性，该属性应该是一个不大于 200 的整数，那么可以使用`Proxy`保证`age`的属性值符合要求。 
+
+```js
+let validator = {
+  set: function(obj, prop, value) {
+    if (prop === 'age') {
+      if (!Number.isInteger(value)) {
+        throw new TypeError('The age is not an integer');
+      }
+      if (value > 200) {
+        throw new RangeError('The age seems invalid');
+      }
+    }
+
+    // 对于满足条件的 age 属性以及其他属性，直接保存
+    obj[prop] = value;
+    return true;
+  }
+};
+
+let person = new Proxy({}, validator);
+
+person.age = 100;
+
+person.age // 100
+person.age = 'young' // 报错
+person.age = 300 // 报错
+```
+
+ 
 
 ::: tip 相关文章推荐
 
