@@ -8,7 +8,7 @@ order: 3
 
 ::: warning 开始之前...
 
-本文不包含所有ts高级特性
+本文不包含所有`TypeScript`高级特性
 
 :::
 

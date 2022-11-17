@@ -94,7 +94,7 @@ export default navbar([
           {
             text: 'TypeScript',
             icon: 'typescript',
-            link: '/前端进阶/TypeScript/TS基础',
+            link: '/前端进阶/TypeScript/',
           },
           {
             text: 'ES6',

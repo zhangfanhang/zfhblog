@@ -5,14 +5,9 @@ tags:
 category:
   - 前端进阶
   - TypeScript
-order: 1
+order: 2
 ---
 
-<center>
-
-![ts](https://www.runoob.com/wp-content/uploads/2019/01/typescript-logo.jpg)
-
-</center>
 
 ## TypeScript Environment
 

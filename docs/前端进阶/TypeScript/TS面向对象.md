@@ -3,7 +3,7 @@ title: TS面向对象
 category:
   - 前端进阶
   - TypeScript
-order: 2
+order: 4
 ---
 
 ## Object
