@@ -63,15 +63,11 @@ projects:
     desc: 目前实现了简单的时钟功能，待完善
     link: https://tab.zfhblog.top
 
-  # - name: 全国疫情数据大屏
-  #   icon: react
-  #   desc: 基于React + DataV + Vite + 网易疫情数据接口实现
-  #   link: https://snake.zfhblog.top
+  - name: 全国疫情数据大屏
+    icon: react
+    desc: 基于React + DataV + Vite + 网易疫情数据接口实现
+    link: https://zfhblog.top
 
-  - name: 是否上班
-    icon: xiaochengxu
-    desc: 一个基于uni-app的上下班提醒，大小周提醒的小程序应用(原型设计阶段)
-    link: https://tab.zfhblog.top
 copyright: false
 footer: Copyright © 2020-present Fanhang Zhang
 ---

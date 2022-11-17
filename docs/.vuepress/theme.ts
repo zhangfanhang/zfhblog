@@ -36,8 +36,10 @@ export default hopeTheme({
     <a href='https://wakatime.com/@b94342d7-a3b1-41c3-8455-342d836a7152'><img src='https://wakatime.com/badge/user/b94342d7-a3b1-41c3-8455-342d836a7152.svg'>的代码</a><br>
     <hr>
     💻开发工具:<br>
-    <img src='https://img.shields.io/badge/-MacBookPro2020-000?style=flat-square&logo=Apple&logoColor=white'/>
+    <img src='https://img.shields.io/badge/-MacBookPro,2020,M1-000?style=flat-square&logo=Apple&logoColor=white'/>
     <img src='https://img.shields.io/badge/-WebStorm-000?style=flat-square&logo=WebStorm&logoColor=white'/>
+    <img src='https://img.shields.io/badge/-IntelliJ IDEA-000?style=flat-square&logo=IntelliJ IDEA&logoColor=white'/>
+    <img src='https://img.shields.io/badge/-Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white'/>
     <br>
     <hr>
     👌正在使用:<br>
@@ -46,6 +48,7 @@ export default hopeTheme({
     <img src='https://img.shields.io/badge/-Vue-4FC08D?style=flat-square&logo=Vue.js&logoColor=white'/>
     <img src='https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=React&logoColor=white'/>
     <img src='https://img.shields.io/badge/-Markdown-000?style=flat-square&logo=Markdown&logoColor=white'/>
+    <img src='https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=Sass&logoColor=white'/>
     <br>
     <hr>
     💪正在学习:<br>
@@ -53,7 +56,7 @@ export default hopeTheme({
     <img src='https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white'/>
     <img src='https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=Docker&logoColor=white'/>
     <img src='https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=Git&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-Java-yellow?style=flat-square'/>
+    <img src='https://img.shields.io/badge/-Java-yellow?style=flat-square&logo=Java&logoColor=white'/>
     <hr>
     `,
     medias: {
