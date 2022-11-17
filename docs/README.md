@@ -5,8 +5,8 @@ layout: Blog
 title: 首页
 heroText: ZFH's Blog
 heroImage: /logo.jpg
-tagline: '成事在人,谋事在天。'
-bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg.jpg'
+tagline: '想要成为前端的神。'
+bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg2.jpg'
 projects:
   - name: todoList
     icon: vue
