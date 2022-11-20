@@ -300,6 +300,14 @@ import './style/elementReset.scss'
 // import "element-plus/dist/index.css"
 ```
 
+## 实现全局标签页
+
+
+
 ## 造轮子:公共表格封装
 
 [查看](/开发记录/Vue/elementPlus公共表格封装)
+
+## 造轮子:输出一个Vue管理后台模板 
+
+公共组件：公共表哥、公共搜索组件、公共表单组件

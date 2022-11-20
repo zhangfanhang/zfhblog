@@ -53,11 +53,9 @@ ssh-add ~/.ssh/github_id_rsa
 
 ## 使用
 
-### 生成版本
+![git本地版本控制](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/git%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.png)
 
-- `git init`:在项目中初始化 Git，让 Git 管理当前项目
-- ` git status`:检查当前文件状态，需要经常使用 -` git add <file1> <file2>` ...:将工作区的指定内容添加到暂存区
-- `git add .` :将工作区的内容一起添加到暂存区
+### 生成版本
 
 ::: tip git add
 
@@ -69,7 +67,10 @@ ssh-add ~/.ssh/github_id_rsa
 
 :::
 
-- `git commit -m '描述消息'`：将暂存区的内容提交到本地仓库，生成版本
+- `git init`:在项目中初始化 Git，让 Git 管理当前项目
+- ` git status`:检查当前文件状态 
+- ` git add <file1> <file2>` ...:将工作区的指定内容添加到暂存区
+- `git add .` :将工作区的内容一起添加到暂存区
 
 ::: tip git commit
 
@@ -79,22 +80,22 @@ ssh-add ~/.ssh/github_id_rsa
 
 :::
 
+- `git commit -m '描述消息'`：将暂存区的内容提交到本地仓库，生成版本
+
 - `git log` ：查看提交内容
 - ` git log --oneline`：以一行的方式查看提交记录
-
-![git本地版本控制](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/git%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.png)
 
 ### 重置版本
 
 - `git reset --soft 版本号`：仅重置本地仓库
 - `git reset --mixed 版本号`：重置本地仓库和暂存区，默认行为
-- `git reset --hard 版本号`：重置本地仓库、暂存区和工作目录
+- `git reset --hard 版本号`：重置本地仓库、暂存区和工作区
   `--hard` 危险，会覆盖正在开发的代码
 
 - `git reflog`:可以查看所有记录，包括被"丢弃"的版本
 - `git log`:查看提交记录，不包括被"丢弃"的版本
 
-### git 忽略文件---.gitignore
+### git 忽略文件.gitignore
 
 - `#`：注释
 - `test.html`:忽略指定文件，不让 Git 管理
@@ -114,7 +115,7 @@ checkout=>**签出**操作(webstrom)
 :::
 
 - `git branch`:查看分支
-- `git branch-v`:查看分支（展示的信息多一些）
+- `git branch -v`:查看分支（展示的信息多一些）
 - `git branch 分支名`：在当前分支的节点上创建新的分支
 - `git checkout 分支名`：切换分支，兼容性好
 - `git switch 分支名`：切换分支，v2.23.0 版及以后可用

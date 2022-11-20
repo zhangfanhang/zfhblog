@@ -8,12 +8,11 @@ category:
 <center>
   <img src='https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/pinia_logo.svg' style='width:200px;height:200px'>
 </center>
+[Pinia](https://pinia.vuejs.org/zh/) 是` Vue` 的存储库，它允许您跨组件/页面共享状态。它被认为是`vuex 5.0`
 
-[Pinia](https://pinia.web3doc.top/) 是 Vue 的存储库，它允许您跨组件/页面共享状态。它被认为是`vuex 5.0`
+[Pinia](https://pinia.vuejs.org/zh/) 同时支持`Vue 2` 和 `Vue 3`
 
-[Pinia](https://pinia.vuejs.org/) 同时支持`Vue 2` 和 `Vue 3`
-
-本文使用 vue3 和组合式 api
+本文示例使用 `vue3` 和组合式 `api`
 
 ## 安装
 
@@ -57,6 +56,43 @@ const { name } = storeToRefs(userStore)
 </script>
 ```
 
+### actions
+
+可以把`actions`视为组件中的方法：
+
+```js
+export const useCounterStore = defineStore('count', {
+  state: () => ({
+    counter: 0,
+  }),
+  actions: {
+    increment() {
+      this.counter++
+    },
+  },
+})
+```
+
+### 使用actions
+
+```js
+import { useCounterStore } from '../stores/counterStore'
+
+// setup
+ const counterStore = useCounterStore()
+ const incrementAndPrint= ()=>{
+      counterStore.increment()
+    }
+```
+
+### state
+
+有时我们可能需要使state在模板中保持响应式，此时应该使用计算属性：
+
+```js
+let tabs = computed(() => tabsStore.tabs)
+```
+
 ## 热更新
 
 当你更改 store 中的代码时，可能项目无法正常工作
@@ -82,4 +118,3 @@ if (import.meta.hot) {
 }
 ```
 
-webpack 未做测试，且配置和 vite 不同

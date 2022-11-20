@@ -74,10 +74,6 @@ export default hopeTheme({
       Email: 'mailto:zhangfanhang@znv.com',
       Github: 'https://github.com/zhangfanhang',
       Gitee: 'https://gitee.com/zhangfanhang',
-      Zhihu: 'https://www.zhihu.com/people/zhang-Fan-Hang',
-      Steam: 'https://steamcommunity.com/profiles/76561198815093167/',
-      Weibo: 'https://weibo.com/u/6568313173',
-      Wechat: '微信',
     },
   },
   encrypt: {

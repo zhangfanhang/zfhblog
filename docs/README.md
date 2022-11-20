@@ -5,7 +5,7 @@ layout: Blog
 title: 首页
 heroText: ZFH's Blog
 heroImage: /logo.jpg
-tagline: '想要成为前端的神。'
+tagline: '于无声处听惊雷'
 bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg2.jpg'
 projects:
   - name: todoList
