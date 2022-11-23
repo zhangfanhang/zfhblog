@@ -3,6 +3,16 @@ title: git
 category: 开发工具
 ---
 
+:::  tip 参考文章
+
+[常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
+
+[如何将一个项目同时提交到GitHub和Gitee(码云)两个仓库](https://blog.csdn.net/yilovexing/article/details/107226141)
+
+[git忽略已经提交的文件，管用！](https://blog.csdn.net/m0_37897396/article/details/125992705)
+
+:::
+
 ## 安装
 
 ### mac
@@ -89,13 +99,24 @@ ssh-add ~/.ssh/github_id_rsa
 
 - `git reset --soft 版本号`：仅重置本地仓库
 - `git reset --mixed 版本号`：重置本地仓库和暂存区，默认行为
-- `git reset --hard 版本号`：重置本地仓库、暂存区和工作区
-  `--hard` 危险，会覆盖正在开发的代码
-
+- `git reset --hard 版本号`：重置本地仓库、暂存区和工作区(危险，会覆盖正在开发的代码)
+  
 - `git reflog`:可以查看所有记录，包括被"丢弃"的版本
 - `git log`:查看提交记录，不包括被"丢弃"的版本
 
 ### git 忽略文件.gitignore
+
+::: .gitignore只对从来没有commit过的文件起作用
+
+项目中的某个文件（比如stupid.txt)已经被commit，并push到server了，这时发现stupid.txt不应该被git管理，
+同步到团队每个开发人员那里，这时在.gitignore文件里面添加"stupid.txt"已经不起作用了。
+因为.gitignore只对从来没有commit过的文件起作用。这时可以
+
+1. 文件夹：`git rm -r --cached directory_name`
+2. 文件：`git rm --cached stupid.txt`
+3. 在.gitignore中添加要忽略的文件
+
+:::
 
 - `#`：注释
 - `test.html`:忽略指定文件，不让 Git 管理
@@ -104,9 +125,9 @@ ssh-add ~/.ssh/github_id_rsa
 - `node_modules/`:忽略`node_modules`目录下的所有文件
 - git 管理的是文件，空目录会自动忽略
 
-## git 分支
+### git 分支
 
-### 创建和切换分支
+#### 创建和切换分支
 
 ::: tip checkout
 
@@ -120,4 +141,26 @@ checkout=>**签出**操作(webstrom)
 - `git checkout 分支名`：切换分支，兼容性好
 - `git switch 分支名`：切换分支，v2.23.0 版及以后可用
 
-### 合并和删除分支
+#### 合并和删除分支
+
+`git merge 要合并的分支名`：将指定的分支合并到当前分支
+
+`git branch -d 分支名`：删除分支
+
+`git log --oneline --graph`:以一行、图形化的方式查看提交记录
+
+合并分支时，先切换到最终要合并的分支，再合并
+
+合并分支时可能产生冲突：在两个不同的分支中，对同一个文件的同一部分进行了不同的修改；产生了冲突，需要人为解决后再提交一次
+
+### 远程仓库
+
+推送本地仓库到远程仓库：`git push` (-f:强行推送当前分支到远程仓库，即使有冲突;-all:推送所有分支到远程仓库)
+
+克隆远程仓库到本地：`git clone `
+
+拉取远程仓库的最新代码到本地：`git pull` 
+
+
+
+ 

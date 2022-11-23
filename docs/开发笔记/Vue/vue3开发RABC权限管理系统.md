@@ -1,5 +1,6 @@
 ---
 title: vue3开发RABC权限管理系统
+isOriginal: true
 tag:
   - vue3
   - Pinia
@@ -95,7 +96,7 @@ export default request
 
 ### 组件中使用
 
-不同页面的 api 请求放在不同的 js 文件中，如登陆相关的接口放在`/api/login.js`下,引入我们定义好的 axios 实例
+不同页面的 `api` 请求放在不同的` js` 文件中，如登陆相关的接口放在`/api/login.js`下,引入我们定义好的` axios` 实例
 
 ```js
 import request from '../utils/request.js'
@@ -125,7 +126,7 @@ userStore.saveUserInfo(res)
 
 ## storage 二次封装
 
-cookie，localStorage，sessionStorage 的区别？
+`cookie`，`localStorage`，`sessionStorage` 的区别？
 
 ```js
 /**
@@ -223,8 +224,9 @@ const props = defineProps(['menuList', 'isCollapse'])
 
 `<component is='string | Component'>`
 
-- 当 `is` 是字符串，它既可以是 HTML 标签名也可以是组件的注册名
-- 或者，`is` 也可以直接绑定到组件的定义
+- 当 `is` 是字符串，它既可以是 `HTML` 标签名也可以是组件的注册名
+  - 或者，`is` 也可以直接绑定到组件的定义
+
 
 ## 递归组件
 
@@ -270,7 +272,30 @@ const props = defineProps(['menuList', 'isCollapse'])
 
 ## 面包屑导航
 
-// TODO 17 号早上 check
+利用vue router的`match`路由匹配数组和路由元数据`title`进行渲染:
+
+```vue
+<template>
+  <el-breadcrumb :separator-icon="ArrowRight">
+    <el-breadcrumb-item v-for="(item,index) in matched" >
+      <router-link to="/welcome" v-if='index===0' style="color:#fff !important;">{{ item.meta.title }}</router-link>
+      <span v-else style="color:#fff">{{ item.meta.title }}</span>
+    </el-breadcrumb-item>
+  </el-breadcrumb>
+</template>
+<script setup>
+import {useRoute} from "vue-router"
+import {ArrowRight} from "@element-plus/icons-vue"
+import {computed} from "vue"
+
+const router = useRoute()
+const matched = computed(() => {
+  return router.matched
+})
+</script>
+```
+
+
 
 ## 重置 elementPlus 颜色主题
 
@@ -300,14 +325,293 @@ import './style/elementReset.scss'
 // import "element-plus/dist/index.css"
 ```
 
+##  路由切换动画踩坑
+
+ 想要给菜单切换(路由切换)时加一个动画，坑点很多记录下
+
+vue-router官网已经有示范代码：
+
+```vue
+<router-view v-slot="{ Component }">
+  <Transition name="fade">
+    <component :is="Component" />
+  </Transition>
+</router-view>
+```
+
+::: danger 特别注意
+
+路由组件下必须只能有一个根节点，否则切换就会不正常，虽然vue3支持多个根节点的写法。
+
+:::
+
+这里结合`animate.css`实现过渡动画：
+
+```vue
+          <router-view v-slot="{Component}">
+            <Transition
+                mode="out-in"
+                enter-active-class="animate__animated animate__flipX animate__faster"
+                leave-active-class="animate__animated animate__flipOutX animate__faster"
+            >
+              <KeepAlive>
+                <component :is="Component"/>
+              </KeepAlive>
+            </Transition>
+          </router-view>
+```
+
+`mode`参数确保先执行离开动画，然后在其完成**之后**再执行元素的进入动画，这样使得切换显得更“正常”
+
+![vue3admin-路由切换动画](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/vue3admin-%E8%B7%AF%E7%94%B1%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB.gif "路由切换动画")
+
+
+
+## 按钮权限控制实现
+
+::: tip 前置知识
+
+[自定义指令](https://cn.vuejs.org/guide/reusability/custom-directives.html)
+
+:::
+
+```js
+// main.js
+// 按钮权限判断自定义指令
+app.directive('permission', {
+    // 在元素被插入到 DOM 前调用
+    beforeMount(el, binding) {
+        let userAction = storage.getItem('userAction')
+        if (!userAction.includes(binding.value)) {
+            // 隐藏元素
+            el.style.display = 'none'
+            // 变成宏任务 防止元素未插入 DOM 删除元素报错
+            setTimeout(() => {
+                el.parentNode.removeChild(el)
+            }, 0)
+        }
+    }
+})
+```
+
+## 404页面开发
+
+:::  tip 前置知识
+
+[导航守卫](https://router.vuejs.org/zh/guide/advanced/navigation-guards.html)
+
+`Vue Router 3` 和` Vue Router 4`的处理逻辑稍有[不同](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0037-router-return-guards.md#motivation)。指的是`next`
+
+:::
+
+现在不使用`next`，只需要判断不符合条件的情况
+
+```js
+// router/index.js
+// 全局前置守卫
+// 判断访问路径是否正确 不正确跳转404页面
+// vue-router 4 建议不使用`next`写法
+// router 4 哲学仅判断不符合条件的情况
+router.beforeEach((to, from) => {
+    let hasPermission = router.getRoutes().filter(route => route.path === to.path).length > 0
+    if (!hasPermission) return {name: '404'}
+})
+```
+
+## 动态路由
+
+
+
 ## 实现全局标签页
 
+![vue3-admin-全局标签页](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/vue3-admin-%E5%85%A8%E5%B1%80%E6%A0%87%E7%AD%BE%E9%A1%B5.gif "全局标签页效果图") 
 
+监听路由变化，利用`Pinia`存储当前路由路径和页面标题
 
-## 造轮子:公共表格封装
+```js
+// 监听路由变化
+watch(
+    [() => route.path,()=>route.meta.title],
+    async newValue => {
+      tabsStore.changeTab(newValue[0])
+      tabsStore.saveTab({path:newValue[0],title:newValue[1]})
+    }
+)
+```
 
-[查看](/开发记录/Vue/elementPlus公共表格封装)
+路由变化时，改变当前路径，保存当前路数组(需要过滤，防止路径数组存在重复的路径)：
 
-## 造轮子:输出一个Vue管理后台模板 
+```js
+// store/tabs.js
+/**
+ * 路由tab信息
+ */
 
-公共组件：公共表哥、公共搜索组件、公共表单组件
+import {defineStore, acceptHMRUpdate} from "pinia"
+
+// 第一个参数是应用程序中 store 的唯一 id
+export const useTabsStore = defineStore("tabs", {
+    state: () => {
+        return {
+            tabs: [],
+            currentTab: '',
+            number:1,
+        }
+    },
+    actions: {
+        clearTabs(){
+          this.tabs=[]
+        },
+        changeTab(tab) {
+            this.currentTab = tab
+        },
+        //保存
+        saveTab(tab) {
+            const uniqueFunc = (arr, uniId) => {
+                const res = new Map()
+                return arr.filter((item) => !res.has(item[uniId]) && res.set(item[uniId], 1))
+            }
+            if (tab.path !== '/login') this.tabs.push(tab)
+            this.tabs = uniqueFunc(this.tabs, 'path')
+        },
+        //  删除
+        removeTab(tabPath) {
+            this.tabs.forEach((item, index) => {
+                if (tabPath === item.path) {
+                    this.tabs.splice(index, 1)
+                }
+            })
+        }
+    }
+})
+// 热更新支持
+if (import.meta.hot) {
+    import.meta.hot.accept(acceptHMRUpdate(useTabsStore, import.meta.hot))
+}
+```
+
+利用`elementUI`的`el-tabs`组件完成标签页组件：
+
+```vue
+<template>
+  <el-tabs
+      v-model="editableTabsValue"
+      type="card"
+      closable
+      class="demo-tabs"
+      @tab-remove="removeTab"
+      @tab-click="clickTab"
+  >
+    <el-tab-pane
+        v-for="item in tabs"
+        class="tab-pane"
+        :key="item.path"
+        :label="item.title"
+        :name="item.path"
+    >
+    </el-tab-pane>
+  </el-tabs>
+</template>
+<!--路由tab切换组件-->
+<script setup>
+import Sortable from "sortablejs"
+import {useTabsStore} from "@/store/tabs.js";
+import {computed, onMounted} from "vue";
+import {useRouter} from "vue-router";
+
+const tabsStore = useTabsStore()
+const router = useRouter()
+let editableTabsValue = computed(() => tabsStore.currentTab)
+let tabs = computed(() => tabsStore.tabs)
+// 实现拖拽
+const rowDrop = async () => {
+  const el = document.querySelector('.el-tabs__nav')
+  Sortable.create(el, {
+    onEnd({newIndex, oldIndex}) {                             //oldIIndex拖放前的位置， newIndex拖放后的位置
+      const currRow = tabsStore.tabs.splice(oldIndex, 1)[0]   //鼠标拖拽当前的el-tabs-pane
+      tabsStore.tabs.splice(newIndex, 0, currRow)           //tableData 是存放所以el-tabs-pane的数组
+    }
+  })
+}
+onMounted(() => {
+  rowDrop()
+})
+const removeTab = (targetName) => {
+  if (targetName === '/welcome' && tabsStore.tabs.length === 1) return
+  tabsStore.tabs.forEach((item, index) => {
+    if (item.path === targetName && tabsStore.tabs[index - 1] && tabsStore.currentTab === targetName) {
+      router.push(tabsStore.tabs[index - 1].path)
+    }
+  })
+  tabsStore.removeTab(targetName)
+  if (tabsStore.tabs.length === 0) router.push('/welcome')
+
+}
+const clickTab = (v) => {
+  router.push(v.props.name)
+}
+</script>
+
+<style scoped lang="scss">
+.demo-tabs{
+  height:40px;
+}
+
+</style>
+```
+
+给`el-tab`绑定当前路径，点击标签🏷️进行路径跳转。
+
+删除需要进行判断：
+
+::: tip 提示
+
+这部分的逻辑和浏览器的标签页是一样的。
+
+:::
+
+- 如果删除的是欢迎页且当前的路径数组的长度1，那么不允许删除
+
+- 不符合第一个条件，遍历当前路径数组，当遍历到要删除的数组时候进行判断：如果要删除的路径与当前路径相同且路径数组中它的上一个元素存在，
+
+  删除当前路径，并跳转到它的上一个路径
+
+- 如果路径数组的长度为0，跳转到欢迎页
+
+利用`sortablejs`实现标签页的位置调换功能。这部分需求是第一次做所以还是有瑕疵的，动画比较僵硬，拖拽的时候标签是透明的，好在完成了功能。开始使用`vuedraggable`没有实现，后面看看有没有其他拖拽库
+
+## 造轮子: vue3-admin-tempate
+
+![V3adminLogo](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/V3adminLogo.PNG)
+
+[点我立即体验](https://v3admin.zfhblog.top)
+
+`react18-admin-template`计划开发中
+
+这是一个 `vue3 `开发的后台管理系统模板
+
+致敬 🫡[vue-admin-tempate](https://panjiachen.github.io/vue-admin-template/#/dashboard)，本项目是对它的拙劣模仿
+
+- 公共组件：公共大表哥、公共搜索组件、公共表单组件
+
+### 公共组件：公共大表哥
+
+#### props
+
+| 参数        | 含义       | 默认值 |
+| ----------- | ---------- | ------ |
+| tableData   | 表格数据   |        |
+| columnData  | 表头数据   |        |
+| loading     | 加载状态   | false  |
+| pagination  | 是否分页   | false  |
+| checkedData | 当前勾选项 |        |
+| selectable  | 复选框     | true   |
+| total       | 数据个数   |        |
+| rowKey      | 列唯一 key | 'id'   |
+|             |            |        |
+
+#### columnData
+
+#### 分页
+
+#### 组件源码
