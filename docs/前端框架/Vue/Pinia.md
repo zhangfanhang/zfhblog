@@ -95,7 +95,7 @@ let tabs = computed(() => tabsStore.tabs)
 
 ## 热更新
 
-当你更改 store 中的代码时，可能项目无法正常工作
+当你更改` store `中的代码时，可能项目无法正常工作
 
 这时你需要加入热更新支持,如果你有多个 store,那么每个 store 都需要添加
 

@@ -160,11 +160,11 @@ export default navbar([
             icon: 'node',
             link: '/node/node基础知识&工具',
           },
-          {
-            text: 'koa',
-            icon: 'node',
-            link: '/node/Koa',
-          },
+          // {
+          //   text: 'koa',
+          //   icon: 'node',
+          //   link: '/node/Koa',
+          // },
           {
             text: 'Nest',
             icon: 'nest',

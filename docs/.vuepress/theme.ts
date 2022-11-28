@@ -48,17 +48,6 @@ export default hopeTheme({
     <img src='https://img.shields.io/badge/-Vue-4FC08D?style=flat-square&logo=Vue.js&logoColor=white'/>
     <img src='https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=React&logoColor=white'/>
     <img src='https://img.shields.io/badge/-Markdown-000?style=flat-square&logo=Markdown&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=Sass&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-Webpack-8DD6F9?style=flat-square&logo=Webpack&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-Vite-646CFF?style=flat-square&logo=Vite&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-Koa-33333D?style=flat-square&logo=Koa&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=Node.js&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-Redux-764ABC?style=flat-square&logo=Redux&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-iTerm2-000?style=flat-square&logo=iTerm2&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-React Router-CA4245?style=flat-square&logo=React Router&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-ElementUI-3F9EFF?style=flat-square&logo=/e/&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-Ant Design-0170FE?style=flat-square&logo=Ant Design&logoColor=white'/>
     <br>
     <hr>
     💪正在学习:<br>
@@ -68,6 +57,7 @@ export default hopeTheme({
     <img src='https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=Docker&logoColor=white'/>
     <img src='https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=Git&logoColor=white'/>
     <img src='https://img.shields.io/badge/-Redis-DC382D?style=flat-square&logo=Redis&logoColor=white'/>
+    <img src='https://img.shields.io/badge/-Java-blue?style=flat-square&logo=Java&logoColor=white'/>
     <hr>
     `,
     medias: {

@@ -168,9 +168,9 @@ export default {
 
 ## $响应式语法糖
 
-一般的我们通过 ref 声明响应式数据，在 js 中访问需要加.value
+一般的我们通过 `ref` 声明响应式数据，在 js 中访问需要加`.value`
 
-通过响应式语法糖，我们可以省去 value
+通过响应式语法糖，我们可以省去 `value`
 
 通过配置开启：
 
@@ -411,7 +411,6 @@ app.directive('permission', {
 // 全局前置守卫
 // 判断访问路径是否正确 不正确跳转404页面
 // vue-router 4 建议不使用`next`写法
-// router 4 哲学仅判断不符合条件的情况
 router.beforeEach((to, from) => {
     let hasPermission = router.getRoutes().filter(route => route.path === to.path).length > 0
     if (!hasPermission) return {name: '404'}
@@ -420,7 +419,102 @@ router.beforeEach((to, from) => {
 
 ## 动态路由
 
+动态路由的实现释放了前端路由，根据后端返回的菜单列表动态加载路由列表。
 
+1. 根据接口返回的菜单列表生成路由表
+
+```js
+/**
+ * @description 生成动态路由
+ * @param list
+ * @returns {*[]}
+ */
+export function generateRoute(list) {
+    const routes = []
+    const deep = (list) => {
+        list.forEach(item => {
+            if (item.action) {
+                routes.push({
+                    name: item.component,
+                    path: item.path,
+                    component: item.component,
+                    meta: {
+                        title: item.menuName
+                    }
+                })
+            }else if(item.children&&!item.action){
+                deep(item.children)
+            }
+        })
+    }
+    deep(list)
+    return routes
+```
+
+2. 在全局前置守卫中加载路由(不同于`webpack`,`vite`使用[Glob]((https://cn.vitejs.dev/guide/features.html#glob-import))进行导入)
+
+```js
+
+import storage from "@/utils/storage.js";
+import {getPermissionList} from "@/api/home.js";
+import {generateRoute} from "@/utils/generateRoute.js";
+import router from "@/router/index.js";
+
+/**
+ *
+ * @returns {Promise<void>}
+ * @description 加载路由
+ */
+export const loadAsyncRouter = async () => {
+    const userInfo = storage.getItem('userInfo') || {}
+    if (userInfo.token) {
+        const {menuList} = await getPermissionList()
+        const routes = generateRoute(menuList)
+        const modules = import.meta.glob('../views/*.vue')
+        routes.forEach(route => {
+            let url = `../views/${route.name}.vue`
+            route.component = modules[url];
+            router.addRoute("home", route);
+        })
+    }
+}
+```
+
+```js
+// route/index.js
+/**
+ *  全局前置守卫
+ *  vue-router 4 建议不使用`next`写法
+ */
+router.beforeEach(async (to, from) => {
+    console.log('全局前置守卫被触发!')
+    // 判断访问路径是否正确 不正确跳转404页面
+    // let hasPermission = router.getRoutes().filter(route => route.path === to.path).length > 0
+    // if (!hasPermission) return {name: '404'}
+    // 用户状态判断逻辑
+    // 检查用户是否已登录 ❗️避免无限重定向
+    if (!storage.getItem('isLogin') && to.name !== 'login') {
+        return {name: 'login'}
+        // 登录状态不允许访问login
+    } else if (storage.getItem('isLogin') && to.name === 'login') {
+        return {name: from.name}
+    }
+//    页面标题
+    if (router.hasRoute(to.name)) {
+        document.title = `${to.meta.title}|HangFan-Vue`
+    } else {
+        await loadAsyncRouter()
+        let curRoute = router.getRoutes().filter(item => item.path === to.path)
+        if (curRoute?.length) {
+            return {name: curRoute[0].name}
+        } else {
+            return {name: '404'}
+        }
+    }
+})
+```
+
+那为什么要在这里加载路由呢？全局前置守卫在每一次路由切换的时候都会被调用；当我们进行路由第一次切换(除了登录页、欢迎页)从线上进行菜单列表的拉取，那第二次就不需要从接口拉取了。还有一种特殊情况就是刷新页面，不加载路由就会找不到页面，因为我们的路由是动态生成的，所以必须要在全局前置守卫里加载路由。
 
 ## 实现全局标签页
 
@@ -564,19 +658,9 @@ const clickTab = (v) => {
 
 删除需要进行判断：
 
-::: tip 提示
+- 欢迎页(首页)不允许删除
+- 不符合第一个条件，遍历当前路径数组，当遍历到要删除的数组时候进行判断：如果要删除的路径与当前路径相同且路径数组中它的上一个元素存在，删除当前路径，并跳转到它的上一个路径
 
-这部分的逻辑和浏览器的标签页是一样的。
-
-:::
-
-- 如果删除的是欢迎页且当前的路径数组的长度1，那么不允许删除
-
-- 不符合第一个条件，遍历当前路径数组，当遍历到要删除的数组时候进行判断：如果要删除的路径与当前路径相同且路径数组中它的上一个元素存在，
-
-  删除当前路径，并跳转到它的上一个路径
-
-- 如果路径数组的长度为0，跳转到欢迎页
 
 利用`sortablejs`实现标签页的位置调换功能。这部分需求是第一次做所以还是有瑕疵的，动画比较僵硬，拖拽的时候标签是透明的，好在完成了功能。开始使用`vuedraggable`没有实现，后面看看有没有其他拖拽库
 
