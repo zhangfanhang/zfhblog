@@ -11,6 +11,8 @@ title: mac软件
 - 网易云音乐
 - 企业微信
 - 哔哩哔哩
+- `Xcode`
+- `devCleaner`
 
 ## 官网
 
@@ -29,7 +31,7 @@ title: mac软件
 - `IINA`:视频播放器,[下载](https://github.com/iina/iina)
 - `rectangle`:开源的屏幕窗口管理器,[下载](https://github.com/rxhanson/Rectangle)
 - `WebStrom`:可能是地球上最好的 JavaScript IDE,[下载，mac 目前我已知破解版本 2021.3](https://www.jetbrains.com/zh-cn/webstorm/download/other.html)
-- ~~`牛蛙助手`:ios 系统签名软件，[下载](https://ios222.com/)~~
+- `牛蛙助手`:ios 系统签名软件，[下载](https://ios222.com/)
 - `AltTab`:抛弃原有 macos 屎一样的应用切换，获得新生，[下载](https://github.com/lwouis/alt-tab-macos)
 - `爱思助手`:有时候很有用的 iphone 管理软件,[下载](https://www.i4.cn/)
 - `Blender`:3D 建模软件,[下载](https://www.blender.org/download/)
@@ -50,3 +52,6 @@ title: mac软件
 - `TG pro`:风扇管理工具，看看和`macs control`那个好用
 - `bartender`:状态栏管理工具
 - `Ternius`:服务器管理工具
+- `jellyfin`:本地影视管理工具
+- `sourceTree`:git可视化
+- `slidepad`:快速浏览器

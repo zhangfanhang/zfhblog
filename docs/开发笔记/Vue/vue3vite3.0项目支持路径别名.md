@@ -9,8 +9,6 @@ category:
   - Vue
 ---
 
-# vue3+vite3.0 项目支持路径别名
-
 ## 让编辑器认识@
 
 修改 jsconfig.json

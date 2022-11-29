@@ -206,7 +206,7 @@ let leftNavWidth = $ref("220px")
 
 ## 路径别名
 
-[vite3.0 支持路径别名](https://notes.zfhblog.top/%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/Vue/vite3.0%E6%94%AF%E6%8C%81%E8%B7%AF%E5%BE%84%E5%88%AB%E5%90%8D.html)
+[vite3.0 支持路径别名](https://zfhblog.top/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/Vue/vue3vite3.0%E9%A1%B9%E7%9B%AE%E6%94%AF%E6%8C%81%E8%B7%AF%E5%BE%84%E5%88%AB%E5%90%8D.html)
 
 ## props
 
@@ -664,19 +664,20 @@ const clickTab = (v) => {
 
 利用`sortablejs`实现标签页的位置调换功能。这部分需求是第一次做所以还是有瑕疵的，动画比较僵硬，拖拽的时候标签是透明的，好在完成了功能。开始使用`vuedraggable`没有实现，后面看看有没有其他拖拽库
 
-## 造轮子: vue3-admin-tempate
+## 造轮子: Hangfan-Vue-Template
 
-![V3adminLogo](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/V3adminLogo.PNG)
+<center>
+<img src='https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/hangfan-logo.png'/>
+</center>
 
-[点我立即体验](https://v3admin.zfhblog.top)
 
-`react18-admin-template`计划开发中
+[点我立即体验](https://hangfan-vue-template..zfhblog.top)
 
-这是一个 `vue3 `开发的后台管理系统模板
+[说明文档](https://hangfan-vue-docs.zfhblog.top)
+
+这是一个 `vue3`开发的后台管理系统模板
 
 致敬 🫡[vue-admin-tempate](https://panjiachen.github.io/vue-admin-template/#/dashboard)，本项目是对它的拙劣模仿
-
-- 公共组件：公共大表哥、公共搜索组件、公共表单组件
 
 ### 公共组件：公共大表哥
 
@@ -699,3 +700,6 @@ const clickTab = (v) => {
 #### 分页
 
 #### 组件源码
+
+### 脚手架开发
+

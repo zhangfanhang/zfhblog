@@ -43,9 +43,9 @@ projects:
     desc: 使用vue2 + echarts开发的外卖数据展示
     link: https://datav.zfhblog.top
 
-  - name: HangFan-Admin-Template
-    icon: vue
-    desc: 一个由Vue 3 + Vue-Router + Element-Plus + Pinia打造的后台管理系统模版
+  - name: HangFan-Vue
+    icon: sailboat
+    desc: 一个由Vue 3 + Vue-Router + Element-Plus + Pinia打造的后台管理系统生态
     link: https://hangfan-vue-docs.zfhblog.top
 
   - name: 去哪里
