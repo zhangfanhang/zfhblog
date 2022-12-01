@@ -671,7 +671,7 @@ const clickTab = (v) => {
 </center>
 
 
-[点我立即体验](https://hangfan-vue-template..zfhblog.top)
+[点我立即体验](https://hangfan-vue-template.zfhblog.top)
 
 [说明文档](https://hangfan-vue-docs.zfhblog.top)
 

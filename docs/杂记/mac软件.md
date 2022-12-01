@@ -10,7 +10,6 @@ title: mac软件
 - `WPSOffice`
 - 网易云音乐
 - 企业微信
-- 哔哩哔哩
 - `Xcode`
 - `devCleaner`
 
@@ -38,6 +37,7 @@ title: mac软件
 - `iterm`:比 mac 自带终端更好用的终端,推荐搭配[ohmyzsh](https://iterm2.com/downloads.html),[下载](https://github.com/ohmyzsh/ohmyzsh)
 - `docker`:容器化技术学习中，[下载](https://www.docker.com/)
 - `IDEA`:终究没有逃过java的魔爪，[下载](https://www.jetbrains.com/zh-cn/idea/download/#section=mac)
+- 哔哩哔哩：[下载](https://app.bilibili.com/)
 
 ## icloud 云盘（破解软件）
 
