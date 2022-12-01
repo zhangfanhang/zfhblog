@@ -11,7 +11,7 @@
 .description {
   font-weight: bold;
   font-size: 30px;
-  @include typing(24, 3);
+  @include typing(15, 3);
 }
 @keyframes caret {
   50% {
@@ -32,10 +32,4 @@
 div.blog-hero h1 {
   font-weight: bold;
   font-style: italic;
-}
-// 首页灰色
-.page.blog,
-.navbar {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-  -webkit-filter: grayscale(100%);
 }
