@@ -127,9 +127,7 @@ class App extends React.Component {
 <div  className={'fz30 ' + (this.state.active?'active':'')}>'hello,world'</div>
 ```
 
-React 在 JSX 给了我们开发者足够多的灵活性，你可以像编写 JavaScript 代码一样，通过一些逻辑来决定是否添加某些 class
-
-这个时候我们可以借助于一个第三方的库：`classnames` 很明显，这是一个用于动态添加[classnames](https://github.com/JedWatson/classnames)的一个库
+动态类名可以使用这个第三方的库： [classnames](https://github.com/JedWatson/classnames) 
 
 ```jsx
 classNames('foo', 'bar') // => 'foo bar'
@@ -175,21 +173,19 @@ classNames({ [`btn-${buttonType}`]: true })
 
 我们来实现一下 `React `中的事件监听，这里主要有两点不同
 
-`React `事件的命名采用小驼峰式`camelCase`，而不是纯小写
+`React `事件的命名采用小驼峰式`camelCase`，而不是纯小写=>`onClick`
 
 我们需要通过`{}`传入一个事件处理函数，这个函数会在事件发生时被执行
 
 ### this 的绑定问题
 
-在事件执行后，我们可能需要获取当前类的对象中相关的属性，这个时候需要用到`this`
+在`button`点击事件执行后，我们可能需要获取当前类的对象中相关的属性，这个时候需要用到`this`
 
 如果我们这里直接打印` this`，也会发现它是一个 `undefined`
 
 **为什么是 `undefined` 呢？**
 
-原因是 `btnClick `函数并不是我们主动调用的，而且当 `button `发生改变时，`React `内部调用了 `btnClick` 函数
-
-而它内部调用时，并不知道要如何绑定正确的 `this`
+原因是`button`点击事件处理函数并不是我们主动调用的，而且当点击事件发生改变时，`React `内部调用了该事件处理函数，而它内部调用时，并不知道要如何绑定正确的 `this`
 
 **如何解决 `this` 的问题呢？**
 
