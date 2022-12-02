@@ -169,9 +169,7 @@ classNames({ [`btn-${buttonType}`]: true })
 
 方式二：在 `HTML `原生中，直接绑定 `onclick`:`<element onclick="SomeJavaScriptCode" />`
 
-在 `React `中是如何操作呢？
-
-我们来实现一下 `React `中的事件监听，这里主要有两点不同
+`React `中的事件监听与原生`DOM`主要有两点不同
 
 `React `事件的命名采用小驼峰式`camelCase`，而不是纯小写=>`onClick`
 

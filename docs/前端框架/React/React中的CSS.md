@@ -1,12 +1,9 @@
 ---
 title: React中的CSS
-tag:
-  - CssinJS
-  - cssModule
-  - styled-components
 category:
   - 前端框架
   - React
+order: 3
 ---
 
 目前来看，整个前端已经是组件化的天下。而`css`的设计就不是为组件化而生的，所以在目前组件化的框架中都在需要一种合适的`css`解决方案 	

@@ -1,30 +1,12 @@
 ---
 title: React组件化开发
-tag:
-  - 组件化
-  - 函数组件
-  - 类组件
 category:
   - 前端框架
   - React
+order: 2
 ---
 
 ## React 的组件化
-
-::: tip render 函数的返回值
-当 `render` 被调用时，它会检查 `this.props` 和 `this.state` 的变化并返回以下类型之一:
-
-- **`React `元素**：
-  - 通常通过 `JSX` 创建
-  - 例如，`<div />` 会被 `React` 渲染为 `DOM` 节点，`<MyComponent />`会被 `React` 渲染为自定义组件
-  - 无论是 `<div />` 还是 `<MyComponent />` 均为 `React` 元素
-- **数组或 `fragments`**: 使得 `render` 方法可以返回多个元素
-- **`Portals`**：可以渲染子节点到不同的 DOM 子树中
-- **字符串或数值类型**：它们在 DOM 中会被渲染为文本节点
-- **布尔类型或 `null`**:什么都不渲染
-- 从 react17 开始 render 禁止返回 undefined
-
-:::
 
 ### 类组件
 
@@ -410,7 +392,7 @@ export default class App extends Component {
 
 `children`(即：标签(组件)内的内容)被默认添加到`props`上，可以通过`this.props.children`访问，如果存在多个`children`，那么被添加到`props`上的是一个`children`数组
 
-App.js
+App.jsx：
 
 ```jsx
 import { Component } from 'react'
@@ -823,7 +805,7 @@ export default class App extends Component {
 
 :::
 
-## setState
+## setState <Badge text='存在于类组件，拥抱Hook可忽略'/>
 
 [setState API](https://zh-hans.reactjs.org/docs/react-component.html#setstate)
 
@@ -941,7 +923,7 @@ Object.assign({}, { name: 'zhang', age: 23 }, { age: 24 })
 
 ### 多个 state 的合并
 
-如下代码，`count`并不会累加,后调用的 `setState()` 将覆盖同一周期内先调用 `setState` 的值,因此`count`只增加 1
+如下代码，`count`并不会累加,后调用的 `setState()` 将覆盖同一周期内先调用 `setState` 的值,因此`count`只增加 1。
 
 ```jsx
 this.setState({
