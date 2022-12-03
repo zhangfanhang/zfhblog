@@ -47,7 +47,6 @@ export default hopeTheme({
     <img src='https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white'/>
     <img src='https://img.shields.io/badge/-Vue-4FC08D?style=flat-square&logo=Vue.js&logoColor=white'/>
     <img src='https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=React&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-Markdown-000?style=flat-square&logo=Markdown&logoColor=white'/>
     <br>
     <hr>
     💪正在学习:<br>
@@ -55,7 +54,6 @@ export default hopeTheme({
     <img src='https://img.shields.io/badge/-NestJS-E0234E?style=flat-square&logo=NestJS&logoColor=white'/>
     <img src='https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white'/>
     <img src='https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=Docker&logoColor=white'/>
-    <img src='https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=Git&logoColor=white'/>
     <img src='https://img.shields.io/badge/-Redis-DC382D?style=flat-square&logo=Redis&logoColor=white'/>
     <img src='https://img.shields.io/badge/-Java-blue?style=flat-square&logo=Java&logoColor=white'/>
     <hr>

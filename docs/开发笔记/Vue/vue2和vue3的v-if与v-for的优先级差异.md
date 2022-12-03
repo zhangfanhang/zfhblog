@@ -5,7 +5,7 @@ category:
   - Vue
 ---
 
-最近在写一个公共表格组件，操作列需要利用`v-if`判断是否渲染这个操作按钮。居然提示：属性 `button` 此时没有在该实例上定义。和`vue2`一样的写法：
+最近在使用`vue3`写一个公共表格组件，操作列需要利用`v-if`判断是否渲染这个操作按钮。居然提示：属性 `button` 此时没有在该实例上定义。这是原本的代码：
 
 ```vue
 <template slot-scope="scope">
@@ -18,8 +18,9 @@ category:
                  @click="button.func(scope.row)" 
                  v-if="button.show ? button.show(scope.row, button.buttonCode) : true">
                   <i :class="button.icon"></i>
-       </el-button>
-  </template></template>
+      </el-button>
+  </template>
+</template>
 ```
 
 查了`vue2`和`vue3`的文档发现了一个问题：
@@ -50,7 +51,7 @@ category:
 
 那么在`vue3`中，这种问题怎么处理呢？
 
-在外新包装一层 `<template>` 再在其上使用 `v-for` 可以解决这个问题
+在外新包装一层 `<template>` 再在其上使用 `v-for` 可以解决这个问题：
 
 ```vue
 <template v-for="todo in todos">
@@ -58,6 +59,5 @@ category:
     {{ todo.name }}
   </li>
 </template>
-
 ```
 

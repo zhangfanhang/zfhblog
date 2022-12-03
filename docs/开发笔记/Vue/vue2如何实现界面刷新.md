@@ -2,8 +2,6 @@
 title: vue2如何实现界面刷新
 isOriginal: true
 order: 1
-tag:
-  - vue2
 category:
   - 开发笔记
   - Vue2
