@@ -11,7 +11,7 @@ title: mac软件
 - 网易云音乐
 - 企业微信
 - `Xcode`
-- `devCleaner`
+- `devCleaner`：Xcode清理软件
 
 ## 官网
 
@@ -55,3 +55,4 @@ title: mac软件
 - `jellyfin`:本地影视管理工具
 - `sourceTree`:git可视化
 - `slidepad`:快速浏览器
+- `Moivst Pro`:mac最强播放器，iina有时播放4k视频卡顿，用这个
