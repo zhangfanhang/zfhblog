@@ -54,20 +54,22 @@ nvm alias default xxx //设置新终端的默认node版本
 nvm ls  // 列出已安装的版本
 ```
 
+### 安装低版本 node
+
+如何[安装低版本 node](https://blog.csdn.net/longgege001/article/details/114067242)
+
+在 `Rosetta `的模式下打开终端，再执行`nvm`安装命令
+
 ### mac 无法安装 node-sass 的解决办法
 
-1. M1 芯片终端切换到 Rosetta 模式，再安装低版本 node（如 12.16.1）
-2. npm 配置文件写入,设置淘宝镜像
+这个问题是当前 `node` 版本太高，而 `node-sass` 并不支持 `arm` 架构导致
+
+1. 安装低版本 `node`（如 12.16.1)
+2. `npm` 配置文件写入,设置淘宝镜像
 
 ```shell
 sass_binary_site=https://npmmirror.com/mirrors/node-sass/
 ```
-
-### 安装低版本node
-
-如何[安装低版本 node](https://blog.csdn.net/longgege001/article/details/114067242)
-
-在 `Rosetta 2`的模式下打开终端，再执行安装命令
 
 ## npm
 
