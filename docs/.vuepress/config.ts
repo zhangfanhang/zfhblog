@@ -22,5 +22,8 @@ export default defineUserConfig({
   ],
   theme,
   shouldPrefetch: false,
-  head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/logo.jpg' }],
+    ['script', { src: '/changeBg.js' }],
+  ],
 })
