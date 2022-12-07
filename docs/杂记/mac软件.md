@@ -29,12 +29,10 @@ category: 杂记
 - `WebStrom`:可能是地球上最好的 JavaScript IDE,[下载，mac 目前我已知破解版本 2021.3](https://www.jetbrains.com/zh-cn/webstorm/download/other.html)
 - `牛蛙助手`:ios 系统签名软件，[下载](https://ios222.com/)
 - `AltTab`:抛弃原有 macos 屎一样的应用切换，获得新生，[下载](https://github.com/lwouis/alt-tab-macos)
-- `爱思助手`:有时候很有用的 iphone 管理软件,[下载](https://www.i4.cn/)
 - `iterm`:比 mac 自带终端更好用的终端,推荐搭配[ohmyzsh](https://github.com/ohmyzsh/ohmyzsh),[下载](https://iterm2.com/downloads.html)
-- `IDEA`:终究没有逃过 java 的魔爪，[下载](https://www.jetbrains.com/zh-cn/idea/download/#section=mac)
 - 哔哩哔哩：[下载](https://app.bilibili.com/)
-- `Blender`:3D 建模软件,[下载](https://www.blender.org/download/)
-- `docker`:容器化技术学习中，[下载](https://www.docker.com/)
+- ~~`Blender`:3D 建模软件,[下载](https://www.blender.org/download/)~~
+- ~~`docker`:容器化技术学习中，[下载](https://www.docker.com/)~~
 
 ## icloud 云盘（破解软件）
 
@@ -49,7 +47,6 @@ category: 杂记
 - `TG pro`:风扇温度管理工具
 - `bartender`:状态栏管理工具
 - `Ternius`:服务器管理工具
-- `jellyfin`:本地影视管理工具
 - `sourceTree`:git 可视化
 - `Moivst Pro`:mac 最强播放器，`iina` 有时播放 4k 视频卡顿，用这个
 - `Easy Connect`:公司内网 VPN 工具
