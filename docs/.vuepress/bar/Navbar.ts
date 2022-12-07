@@ -172,16 +172,6 @@ export default navbar([
           },
         ],
       },
-      {
-        text: 'java技术栈',
-        children: [
-          {
-            text: 'javase',
-            icon: 'java',
-            link: '/java/javase/',
-          },
-        ],
-      },
     ],
   },
   /**

@@ -16,6 +16,9 @@ order: 3
 
 以下介绍几种 `React` 中的 `CSS` 解决方案
 
+
+http://reactcommunity.org/react-transition-group/css-transition
+
 ## 内联样式
 
 内联样式是官方推荐的一种 `css` 样式的写法：
@@ -59,7 +62,46 @@ order: 3
 
 - 引用的类名，不能使用连接符`(.home-title)`，在`JavaScript`中是不识别的
 - 所有的`className`都必须使用`{style.className} `的形式来编写
-- 不方便动态来修改某些样式，依然需要使用内联样式的方式
+
+
+// TODO: 看下why当时怎么讲的
+- ~~不方便动态来修改某些样式，依然需要使用内联样式的方式~~
+
+::: tip css modules 动态控制classNames
+
+🌟使用函数抽离（适合多条件判断）
+
+```jsx
+    const buttonClassChange=()=>{
+        if(cart.totalAmount>0){
+            return style.button
+        }else{
+            return style.noMealButton
+        }
+    }
+    // ------------
+  <div className={buttonClassChange()}>我是一个按钮</div>
+```
+
+🌟三元运算符
+
+```jsx
+ <div className={cart.totalAmount>0?style.button:style.noMealButton}>{props.buttonText}</div>
+```
+
+🌟运算符判断
+
+```jsx
+ <div className={(cart.totalAmount>0&&style.button)||style.noMealButton}>{props.buttonText}</div>
+```
+
+🌟模板字符串拼接
+
+```jsx
+<div className={`${style.button} ${cart.totalAmount===0?style.noMealButton:''}`}>{props.buttonText}</div>
+```
+
+:::
 
 如果你觉得上面的缺陷还算 OK，那么你在开发中完全可以选择使用`css modules`来编写，并且也是在 React 中很受欢迎的一种方式
 

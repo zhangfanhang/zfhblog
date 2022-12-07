@@ -9,7 +9,7 @@ category:
   - ES6
 ---
 
-[details](https://es6.ruanyifeng.com/#docs/module)
+[ES6 入门教程:Module 的语法](https://es6.ruanyifeng.com/#docs/module)
 
 ## Module 模块介绍
 
@@ -42,6 +42,14 @@ category:
 </script>
 ```
 
+::: tip 提示
+
+使用`export default`时，对应的`import`语句不需要使用大括号；第二组是不使用`export default`时，对应的`import`语句需要使用大括号。
+
+`export default`命令用于指定模块的默认输出。显然，一个模块只能有一个默认输出，因此`export default`命令只能使用一次。所以，`import`命令后面才不用加大括号，因为只可能唯一对应`export default`命令。
+
+:::
+
 ### export default 和对应的 import
 
 为了给用户提供方便，让他们不用阅读文档就能加载模块，就要用到`export default`命令，为模块指定默认输出。
@@ -64,6 +72,9 @@ export default ()=>{
 	console.log('123')
 }
 // 导出具名函数，在模块外部是无效的。加载的时候，视同匿名函数加载
+export default function foo() {
+  console.log('foo');
+}
 ```
 
 ### export 和对应的 import
@@ -71,12 +82,12 @@ export default ()=>{
 1. 单个导出
 
 ```js
-// 两种导出
 // 第一种
 export const age = 18
 // 第二种
 const age = 18
 export { age }
+// ------------
 // 导入
 import { age } from './module.js'
 ```
@@ -86,6 +97,7 @@ import { age } from './module.js'
 ```js
 // 导出
 export { Person, age }
+// ------------
 // 导入
 import { Person, age } from './module.js'
 ```
@@ -95,6 +107,7 @@ import { Person, age } from './module.js'
 ```js
 // 导出
 export { Person as ren, age }
+// ------------
 // 导入
 import { ren, age as sui } from './module.js'
 ```

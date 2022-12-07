@@ -255,3 +255,72 @@ fpath=($fpath "/Users/frank/.zfunctions")
 # .zshrc
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
+
+## neofetch
+
+终端显示设备信息
+
+配置中文：
+
+```shell
+~/.config/neofetch/config.conf
+```
+
+```shell
+# 复制下面内容到上面的配置文件中
+print_info() {
+    info title
+    info underline
+	#OS
+    info "操作系统" distro
+    #Host
+    info "型　　号" model
+    #Kernel
+    info "内核版本" kernel
+    #Uptime
+    info "开机时间" uptime
+
+    prin "当前时间" "$(date +%Y年%m月%d"日 "%H时%M分%S秒)"
+    #Packages
+    #info "Packages" packages
+    info "S h e ll" shell
+    #Resolution
+    info "分  辨  率" resolution
+    #info "DE" de
+    #info "WM" wm
+    #WM Theme
+    info "主　　题" wm_theme
+    info "Theme" theme
+    info "Icons" icons
+    #Terminal
+    info "终　　端" term
+    #Terminal Font
+    info "终端字体" term_font
+    #CPU
+    info "处  理  器" cpu
+    #GPU
+    info "显卡设备" gpu
+    #Memory
+    info "内　　存" memory
+    #info "GPU Driver" gpu_driver  # Linux/macOS only
+    # CPU Usage
+    info "CPU 已用" cpu_usage
+    #info "Disk" disk
+    #Battery
+    info "剩余电量" battery
+    # info "Font" font
+    # info "Song" song
+    # [[ "$player" ]] && prin "Music Player" "$player"
+    # 本地IP
+    info "内  网  IP" local_ip
+    #Public IP
+    info "公  网  IP" public_ip
+    #Users
+    #info "用户" users
+    #Locale
+    info "语　　言" locale  # This only works on glibc systems.
+    #info cols
+}
+```
+
+![neofetch](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/neofetch.png "neofetch效果图")

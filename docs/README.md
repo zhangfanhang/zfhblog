@@ -5,13 +5,18 @@ layout: Blog
 title: 首页
 heroText: ZFH's Blog
 heroImage: /logo.jpg
-tagline: 'be a good JSer'
-bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg2.jpg'
+tagline: '尽人事 听天命'
+bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg5.jpg'
 projects:
   - name: todoList
     icon: vue
     desc: 一个使用 vue2 开发的简单待办事项
     link: https://todo.zfhblog.top
+
+  - name: nnHamburg Cart
+    icon: react
+    desc: 一个移动端简易购物车
+    link: https://cart.zfhblog.top
 
   - name: 前端面试宝典
     icon: shujuzidian

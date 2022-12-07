@@ -473,7 +473,7 @@ export default class NavBar extends Component {
 非父子组件数据的共享：
 
 - 在开发中，比较常见的数据传递方式是通过 `props`属性自上而下（由父到子）进行传递
-- 但是对于有一些场景：比如一些数据需要在多个组件中进行共享（地区偏好、UI 主题、用户登录状态、用户信息等）
+- 但是对于有一些场景：比如一些数据需要在多个组件中进行共享
 - 如果我们在顶层的 `App` 中定义这些信息，之后一层层传递下去，那么对于一些中间层不需要数据的组件来说，是一种冗余的操作
 
 但是，如果层级更多的话，一层层传递是非常麻烦，并且代码是非常冗余的：
@@ -487,7 +487,7 @@ export default class NavBar extends Component {
 **`React.createContext`**
 
 - 创建一个需要共享的 `Context` 对象
-- 当 `React` 渲染一个订阅了这个 `Context` 对象的组件，这个组件会从离自身最近的那个匹配的 `Provider` 中读取到当前的 `context` 值
+- 当 `React` 渲染一个订阅了这个 `Context` 对象的组件，这个组件会从离自身最近的那个匹配的 `Provider` 中读取到当前的 `context` 值 
 - 当组件没有匹配到 `Provider` 时，其 `defaultValue` 参数才会生效（只要匹配到就不会生效，即使不传递 value）
 
 ```js
@@ -619,12 +619,12 @@ class UserInfo extends Component {
 }
 ```
 
-**`Context.Consumer`**
+**`Context.Consumer`** <Badge text='现在建议使用useContext进行消费' type='warning'/>
 
 ::: tip 什么时候使用 Context.Consumer 呢？
 
-- 当使用 value 的组件是一个函数式组件时
-- 或者当组件中需要使用多个 Context 时
+- 当使用 `value` 的组件是一个函数式组件时
+- 或者当组件中需要使用多个` Context `时
 
 :::
 
