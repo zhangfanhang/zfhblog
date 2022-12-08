@@ -6,16 +6,23 @@ category:
   - React
 ---
 
-## 开发环境配置
+## 创建react-ts项目
 
-### 使用 create-react-app 创建 react+ts 项目
+::: code-tabs
 
-```shell
+@tab create-react-app
+
+```bash
 npx create-react-app my-app --template typescript
 ```
 
-### 使用 vite 创建 react+ts 项目
+@tab vite
 
-```js
+```bash
 npm create vite@latest my-vue-app -- --template react-ts
 ```
+
+:::
+
+
+

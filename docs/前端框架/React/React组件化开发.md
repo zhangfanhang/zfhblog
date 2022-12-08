@@ -16,6 +16,15 @@ order: 2
 - 类组件需要继承自 `React.Component`
 - 类组件必须实现 `render` 函数
 
+::: tip super(props),super()以及不写 super 的区别
+
+- 如果用到了 `constructor` 就必须写 `super()`,是用来初始化 `this` 的
+- 如果你在 `constructor` 中要使用 `this.props`,就必须给 `super` 加参数：`super(props)`
+- **无论有没有 `constructor`，在 `render` 中 `this.props` 都是可以使用的，这是 React 默认实现的**
+- 如果没用到 `constructor`,是可以不写的；React 会默认添加一个空的 `constructor`。
+
+:::
+
 使用 `class` 定义一个组件：
 
 - `constructor` 是可选的，我们通常在 `constructor` 中初始化一些数据
@@ -40,9 +49,9 @@ export default class App extends Component {
 
 ### 函数组件
 
-函数组件是使用 `function` 来进行定义的函数，**只是这个函数会返回和类组件中 render 函数返回一样的内容**。
+函数组件是使用 `function` 来进行定义的函数，**只是这个函数会返回和类组件中` render `函数返回一样的内容**
 
-函数组件有自己的特点（当然，`hooks`，就不一样了）：
+特点：
 
 - 没有生命周期，也会被更新并挂载，但是没有生命周期函数
 - 没有 `this`(组件实例)
@@ -58,28 +67,20 @@ export default function App() {
 
 ## 生命周期
 
-生命周期是一个抽象的概念，在生命周期的整个过程，分成了很多个阶段:
-
-- 比如装载阶段`Mount`，组件第一次在 DOM 树中被渲染的过程
-- 比如更新过程`Update`，组件状态发生变化，重新更新渲染的过程
-- 比如卸载过程`Unmount`，组件从 DOM 树中被移除的过程
-
 `React` 内部为了告诉我们当前处于哪些阶段，会对我们组件内部实现的某些函数进行回调，这些函数就是生命周期函数：
 
-- 比如实现 `componentDidMount` 函数：组件已经挂载到 `DOM `上时，就会回调
-- 比如实现`componentDidUpdate`函数：组件已经发生了更新时，就会回调
-- 比如实现 `componentWillUnmount` 函数：组件即将被移除时，就会回调
+-  `componentDidMount` 函数：组件已经挂载到 `DOM `上时，就会回调
+- `componentDidUpdate`函数：组件已经发生了更新时，就会回调
+-  `componentWillUnmount` 函数：组件即将被移除时，就会回调
 - 我们可以在这些回调函数中编写自己的逻辑代码，来完成自己的需求功能
 
-**我们说到 `React` 生命周期时，主要谈的是类的生命周期，因为函数式组件是没有生命周期函数的(后面我们可以通过 `hooks` 来模拟一些生命周期的回调)**
+> **我们说到 `React` 生命周期时，主要谈的是类的生命周期，因为函数式组件是没有生命周期函数的*
 
-### 生命周期函数
+### 常用生命周期函数
 
 ![生命周期解析](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90.png)
 
 #### Constructor
-
-如果不初始化 `state` 或不进行方法绑定，则不需要为 `React`组件实现构造函数
 
 `constructor` 中通常只做两件事情：
 
@@ -90,11 +91,11 @@ export default function App() {
 
 `componentDidMount()`会在组件挂载后（插入 `DOM` 树中）立即调用
 
-`componentDidMount`中通常进行哪里操作呢？
+`componentDidMount`中通常进行:
 
 - 依赖于 `DOM`的操作可以在这里进行
 - 在此处发送网络请求就最好的地方（官方建议）
-- 可以在此处添加一些订阅（会在 `componentWillUnmount` 取消订阅）
+- 可以在此处添加一些订阅（在 `componentWillUnmount` 取消订阅）
 
 #### componentDidUpdate
 
@@ -117,37 +118,13 @@ componentDidUpdate(prevProps) {
 `componentWillUnmount()` 会在组件卸载及销毁之前直接调用
 
 - 在此方法中执行必要的清理操作
-- 例如，清除 `timer`，取消网络请求或清除在 `componentDidMount()`中创建的订阅等
-
-## 组件的嵌套
-
-组件化的核心思想应该是对组件进行拆分，拆分成一个个小的组件，再将这些组件组合嵌套在一起，最终形成我们的应用程序
-
-一个简单的组件嵌套的例子 🌰：
-
-<center>
-
-![组件的嵌套](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E7%BB%84%E4%BB%B6%E7%9A%84%E5%B5%8C%E5%A5%97.png)
-
-</center>
-
-<CodePen
-  link="https://codepen.io/zhangfanhang/pen/qBpQegw"
-  :theme="$isDarkMode? 'dark': 'light'"
-/>
+- 例如，清除 `timer`，取消网络请求或清除在 `componentDidMount()`中创建的订阅(events?)
 
 ## 组件间的通信
 
 ### 父组件传递子组件
 
-::: tip super(props),super()以及不写 super 的区别
 
-- 如果用到了 `constructor` 就必须写 `super()`,是用来初始化 `this` 的
-- 如果你在 `constructor` 中要使用 `this.props`,就必须给 `super` 加参数：`super(props)`
-- **无论有没有 `constructor`，在 `render` 中 `this.props` 都是可以使用的，这是 React 默认实现的**
-- 如果没用到 `constructor`,是可以不写的；React 会默认添加一个空的 `constructor`。
-
-:::
 父组件在展示子组件，可能会传递一些数据给子组件：
 
 - 父组件通过**属性=值**的形式来传递给子组件数据；
@@ -207,13 +184,9 @@ export default class App extends Component {
 
 :::
 
-### 参数 propTypes
+### 参数校验证propTypes
 
-对于传递给子组件的数据，有时候我们可能希望进行验证，特别是对于大型项目来说：
-
-当然，如果你项目中集成了 `Flow` 或者 `TypeScript`，那么直接就可以进行类型验证；但是，**即使我们没有使用 Flow 或者 TypeScript，也可以通过 prop-types 库来进行参数验证**；
-
-从 `React v15.5`开始，`React.PropTypes` 已移入另一个包中：`prop-types` 库
+对于传递给子组件的数据，有时候我们可能希望进行验证,那么就需要使用`propTypes`
 
 更多的验证方式，可以[参考官网](https://zh-hans.reactjs.org/docs/typechecking-with-proptypes.html)
 
@@ -223,7 +196,11 @@ export default class App extends Component {
 
 如果没有传递，我们希望有默认值呢？**我们使用 `defaultProps`就可以了**
 
-```jsx
+::: code-tabs
+
+@tab 写法1
+
+```jsx {11,12,13,14}
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 
@@ -257,11 +234,12 @@ export default class App extends Component {
 }
 ```
 
-::: details 这样写也是可以的
+@tab 写法2
 
-```jsx
+```jsx {6,7,8,9,10,11,12,13}
 import { Component } from 'react'
 import PropTypes from 'prop-types'
+
 
 class ChildCom extends Component {
   static propTypes = {
@@ -313,7 +291,7 @@ export default HelloWorldComponent
 
 接着，可以直接在 `HelloWorldComponent` 上添加 `PropTypes`：
 
-```jsx
+```jsx {7,8,9}
 import PropTypes from 'prop-types'
 
 function HelloWorldComponent({ name }) {
@@ -392,9 +370,11 @@ export default class App extends Component {
 
 `children`(即：标签(组件)内的内容)被默认添加到`props`上，可以通过`this.props.children`访问，如果存在多个`children`，那么被添加到`props`上的是一个`children`数组
 
-App.jsx：
+::: code-tabs
 
-```jsx
+@tab App.jsx
+
+```jsx 
 import { Component } from 'react'
 
 import NavBar from './NavBar'
@@ -420,7 +400,7 @@ export default class App extends Component {
 }
 ```
 
-第一种方式(这种方式传递过去的 `html `结构不能混乱)
+@tab 方式1(这种方式传递过去的html结构不能混乱)
 
 ```jsx
 import { Component } from 'react'
@@ -439,7 +419,7 @@ export default class NavBar extends Component {
 }
 ```
 
-第二种方式(**推荐**)：
+@tab 方式2(推荐)
 
 ```jsx
 import { Component } from 'react'
@@ -457,12 +437,12 @@ export default class NavBar extends Component {
   }
 }
 ```
+:::
 
-效果图：
+![在React中实现Slot](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%9C%A8React%E4%B8%AD%E5%AE%9E%E7%8E%B0Slot.jpg 'slot效果图')
 
-![在React中实现Slot](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%9C%A8React%E4%B8%AD%E5%AE%9E%E7%8E%B0Slot.jpg)
 
-### Context(跨组件通信)
+### 跨组件通信 Context
 
 [知识点扩充：属性展开](https://zh-hans.reactjs.org/docs/jsx-in-depth.html#spread-attributes)
 
@@ -480,7 +460,7 @@ export default class NavBar extends Component {
 
 - `React` 提供了一个 `API`：`Context`
 - `Context` 提供了一种在组件之间共享此类值的方式，而不必显式地通过组件树的逐层传递 `props`
-- `Context` 设计目的是为了共享那些对于一个组件树而言是“全局”的数据，例如当前认证的用户、主题或首选语言
+- `Context` 设计目的是为了共享那些对于一个组件树而言是“全局”的数据
 
 #### Context 相关 API
 
@@ -499,7 +479,7 @@ const MyContext = React.createContext({ nickName: 'null', level: 0 }//默认值)
 - 每个 `Context` 对象都会返回一个 `Provider React` 组件，它允许消费组件订阅 `context `的变化
 - `Provider` 接收一个 `value` 属性，传递给消费组件
 - 一个 `Provider` 可以和多个消费组件有对应关系
-- 多个 `Provider` 也可以嵌套使用，里层的会覆盖外层的数据(如需使用多个 context 请使用`Context.Consumer`)
+- 多个 `Provider` 也可以嵌套使用，里层的会覆盖外层的数据(如需使用多个 `context` 请使用`Context.Consumer`)
 - 当 `Provider `的 `value` 值发生变化时，它内部的所有消费组件都会重新渲染
 
 ```jsx
@@ -730,8 +710,8 @@ export default class App extends Component {
 events 常用的 API：
 
 - 创建 EventEmitter 对象:const eventBus =new EventEmitter()
-- 发出事件：eventBus.emit("事件名称", 参数列表)
-- 监听事件：eventBus.addListener("事件名称", 监听函数)
+- 触发事件：eventBus.emit("事件名称", 参数列表)
+- 订阅事件：eventBus.addListener("事件名称", 监听函数)
 - 移除事件：eventBus.removeListener("事件名称", 监听函数)
 
 ::: details events 案例
@@ -774,6 +754,7 @@ class MainBanner extends Component {
   }
 
   componentWillUnmount() {
+    // 取消订阅
     eventBus.removeListener('helloMainBanner')
   }
 }
@@ -805,7 +786,7 @@ export default class App extends Component {
 
 :::
 
-## setState <Badge text='存在于类组件，拥抱Hook可忽略'/>
+## setState <Badge text='类组件'/>
 
 [setState API](https://zh-hans.reactjs.org/docs/react-component.html#setstate)
 
@@ -971,13 +952,15 @@ this.setState(state => {
 
 - `react`的更新流程：
 
-`props`/`state`的改变--->`render`函数重新执行---->产生新的虚拟 DOM--->新旧虚拟`DOM`进行`diff`--->计算出差异进行更新（patch）---->更新到真实的`DOM`
+`props`/`state`的改变--->`render`函数重新执行---->产生新的虚拟 `DOM`--->新旧虚拟`DOM`进行`diff`--->计算出差异进行更新---->更新到真实的`DOM`
 
 ## React 性能优化
 
 ### 列表中 keys 的作用
 
 在遍历列表时，总是会提示一个警告，让我们加入一个`key`属性
+
+//  TODO change
 
 #### 方式一:在最后位置插入数据
 
@@ -1674,15 +1657,15 @@ export default class App extends PureComponent {
 
 ## fragment
 
-在之前的开发中，我们总是在一个组件中返回内容时包裹一个 div 元素
+在之前的开发中，我们总是在一个组件中返回内容时包裹一个 `div` 元素
 
-使用 Fragment 后，无需向 DOM 添加额外节点
+使用 [Fragment](https://zh-hans.reactjs.org/docs/fragments.html]) 后，无需向 `DOM` 添加额外节点
 
-React 还提供了 Fragment 的短语法
+React 还提供了` Fragment `的短语法
 
 它看起来像空标签` <> </>`
 
-但是，如果我们需要在 Fragment 中添加 key，那么就不能使用短语法
+但是，如果我们需要在` Fragment` 中添加 `key`，那么就不能使用短语法
 
 ## StrictMode
 

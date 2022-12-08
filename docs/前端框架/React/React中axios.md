@@ -14,7 +14,7 @@ category:
 ## 为什么不是...?
 
 1. Jquery-ajax:没什么好说的
-2. Fetch API：Fetch 是一个 low-level（底层）的 API，没有帮助你封装好各种各样的功能 和实现
+2. Fetch API：Fetch 是一个 low-level（底层）的 API，没有帮助你封装好各种各样的功能和实现
 
 ## 为什么是 Axios？
 

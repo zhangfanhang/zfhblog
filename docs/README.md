@@ -13,9 +13,9 @@ projects:
     desc: 一个使用 vue2 开发的简单待办事项
     link: https://todo.zfhblog.top
 
-  - name: nnHamburg Cart
+  - name: 汉堡王
     icon: react
-    desc: 一个移动端简易购物车
+    desc: 移动端汉堡点单
     link: https://cart.zfhblog.top
 
   - name: 前端面试宝典
@@ -67,14 +67,6 @@ projects:
     icon: vue
     desc: 目前实现了简单的时钟功能，待完善
     link: https://tab.zfhblog.top
-
-  - name: 全国疫情数据大屏
-    icon: react
-    desc: 基于React + DataV + Vite + 网易疫情数据接口实现
-    link: https://zfhblog.top
-
-copyright: false
-footer: Copyright © 2020-present Fanhang Zhang
 ---
 
 <Busuanzi />

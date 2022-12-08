@@ -6,18 +6,7 @@ category:
 order: 3
 ---
 
-目前来看，整个前端已经是组件化的天下。而`css`的设计就不是为组件化而生的，所以在目前组件化的框架中都在需要一种合适的`css`解决方案 	
-
-事实上，`css` 一直是 `React` 的痛点，也是被很多开发者吐槽、诟病的一个点
-
-在这一点上，`Vue` 做的要确实要好于 `React`
-
-相比而言，`React` 官方并没有给出在 `React` 中统一的样式风格
-
-以下介绍几种 `React` 中的 `CSS` 解决方案
-
-
-http://reactcommunity.org/react-transition-group/css-transition
+> 事实上，`css` 一直是 `React` 的痛点， 在这一点上，`Vue` 做的要确实要好于 `React`，`React` 官方并没有给出在 `React` 中统一的样式风格，以下介绍几种 `React` 中的 `CSS` 解决方案
 
 ## 内联样式
 
@@ -63,10 +52,6 @@ http://reactcommunity.org/react-transition-group/css-transition
 - 引用的类名，不能使用连接符`(.home-title)`，在`JavaScript`中是不识别的
 - 所有的`className`都必须使用`{style.className} `的形式来编写
 
-
-// TODO: 看下why当时怎么讲的
-- ~~不方便动态来修改某些样式，依然需要使用内联样式的方式~~
-
 ::: tip css modules 动态控制classNames
 
 🌟使用函数抽离（适合多条件判断）
@@ -103,7 +88,9 @@ http://reactcommunity.org/react-transition-group/css-transition
 
 :::
 
-如果你觉得上面的缺陷还算 OK，那么你在开发中完全可以选择使用`css modules`来编写，并且也是在 React 中很受欢迎的一种方式
+
+// TODO: 看下why当时怎么讲的
+- ~~不方便动态来修改某些样式，依然需要使用内联样式的方式~~
 
 ```jsx
 import style from 'app.moudle.css'
@@ -113,22 +100,44 @@ import style from 'app.moudle.css'
 // 多个
 <span className={[style.fz20,style.red].join('')}></span>
 // 多个 优雅的写法 composes
-参考: https://www.ruanyifeng.com/blog/2016/06/css_modules.html
+// 参考: https://www.ruanyifeng.com/blog/2016/06/css_modules.html
 ```
 
 ## CSS in JS
 
-“CSS-in-JS” 是指一种模式，其中 CSS 由 JavaScript 生成而不是在外部文件中定义；注意此功能并不是 React 的一部分，而是由第三方库提供。 React 对样式如何定义并没有明确态度
+“`CSS-in-JS`” 是指一种模式，其中 `CSS` 由 `JavaScript` 生成而不是在外部文件中定义；注意此功能并不是` Reac`t 的一部分，而是由第三方库提供。 `React` 对样式如何定义并没有明确态度
 
-React 的思想中认为逻辑本身和 UI 是无法分离的，所以才会有了 JSX 的语法。样式呢？样式也是属于 UI 的一部分。 事实上 CSS-in-JS 的模式就是一种将样式（CSS）也写入到 JavaScript 中的方式，并且可以方便的使用 JavaScript 的状态。所以 React 有被人称之为 All in JS
+`React` 的思想中认为逻辑本身和 UI 是无法分离的，所以才会有了` JSX `的语法。样式呢？样式也是属于`UI` 的一部分。 事实上` CSS-in-JS `的模式就是一种将样式`CSS`也写入到 `JavaScript` 中的方式，并且可以方便的使用 `JavaScript` 的状态。所以` React `又被人称之为` All in JS`
 
-styled-components 是社区最流行的 CSS-in-JS 库
+`styled-components` 是社区最流行的` CSS-in-JS` 库
 
-安装 styled-components：`yarn add styled-components`
+安装 `styled-components`:
+
+::: code-tabs
+
+@tab npm
+
+```bash
+npm install styled-components
+```
+
+@tab yarn
+
+```bash
+yarn add styled-components
+```
+
+:::
+
+
+
+
+
+// TODO: 看下why 系统课
 
 ## styled-components 的基本使用
 
-styled-components 的本质是通过函数的调 用，最终创建出一个组件：
+styled-components 的本质是通过函数的调用，最终创建出一个组件：
 
 - 这个组件会被自动添加上一个不重复的 class
 - styled-components 会给该 class 添加相关的样式

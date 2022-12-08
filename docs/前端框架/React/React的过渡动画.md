@@ -228,8 +228,6 @@ SwitchTransition 中主要有一个属性：`mode`，有两个值
 
 ::: code-tabs
 
-
-
 @tab Switch.jsx
 
 ```jsx

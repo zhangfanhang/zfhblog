@@ -12,6 +12,8 @@ export default hopeTheme({
   repoDisplay: false,
   iconAssets: '//at.alicdn.com/t/c/font_3677319_czg4268xzb9.css',
   logo: '/logo.jpg',
+  footer: '❤️FE,❤️LIFE.',
+  copyright: 'Copyright © 2020-present Fanhang Zhang',
   pageInfo: [
     'Author',
     'Original',
@@ -24,7 +26,7 @@ export default hopeTheme({
   ],
   navbar: Navbar,
   sidebar: Sidebar,
-  displayFooter: false,
+  displayFooter: true,
   breadcrumb: false,
   blog: {
     roundAvatar: true,
