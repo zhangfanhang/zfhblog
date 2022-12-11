@@ -1,9 +1,9 @@
 ---
 title: React与TypeScript
-tag: create-react-app
 category:
   - 前端框架
   - React
+order: 8
 ---
 
 ## 创建react-ts项目

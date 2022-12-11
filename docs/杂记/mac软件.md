@@ -1,6 +1,7 @@
 ---
 title: mac软件
 category: 杂记
+order: 5
 ---
 
 ## app Store
@@ -11,6 +12,7 @@ category: 杂记
 - `WPSOffice`
 - 企业微信
 - 网易邮箱大师
+- `Thor Launcher`:应用快捷启动器
 
 ## 官网
 
@@ -33,6 +35,8 @@ category: 杂记
 - 哔哩哔哩：[下载](https://app.bilibili.com/)
 - ~~`Blender`:3D 建模软件,[下载](https://www.blender.org/download/)~~
 - ~~`docker`:容器化技术学习中，[下载](https://www.docker.com/)~~
+- `Input Source Pro`:通过简洁的提示方式，配合输入法自动切换功能，让每一次输入都信心十足，[下载](https://inputsource.pro/zh-CN)
+- `Pretty Clean`,[下载](https://www.prettyclean.cc/zh)
 
 ## icloud 云盘（破解软件）
 

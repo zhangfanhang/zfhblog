@@ -10,9 +10,9 @@ export default hopeTheme({
     url: 'https://zfhblog.top',
   },
   repoDisplay: false,
-  iconAssets: '//at.alicdn.com/t/c/font_3677319_czg4268xzb9.css',
+  iconAssets: '//at.alicdn.com/t/c/font_3677319_1uth5ggfw63.css',
   logo: '/logo.jpg',
-  footer: '❤️FE,❤️LIFE.',
+  footer: '<span style="font-weight:bold">❤️ FE,❤️ LIFE.</span>',
   copyright: 'Copyright © 2020-present Fanhang Zhang',
   pageInfo: [
     'Author',
@@ -52,6 +52,7 @@ export default hopeTheme({
     <hr>
     💪正在学习:<br>
     <img src='https://img.shields.io/badge/-Three.js-000?style=flat-square&logo=Three.js&logoColor=white'/>
+    <img src='https://img.shields.io/badge/-Next.js-000?style=flat-square&logo=Next.js&logoColor=white'/>
     <img src='https://img.shields.io/badge/-NestJS-E0234E?style=flat-square&logo=NestJS&logoColor=white'/>
     <img src='https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white'/>
     <img src='https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=Docker&logoColor=white'/>
@@ -65,10 +66,7 @@ export default hopeTheme({
     },
   },
   encrypt: {
-    config: {
-      '/杂记/二二年八月总结.html': '0049003914',
-      '/杂记/二二年九月总结.html': '0049003914',
-    },
+    config: {},
   },
   plugins: {
     blog: true,
@@ -79,6 +77,8 @@ export default hopeTheme({
     },
     components: ['Badge', 'CodePen', 'PDF'],
     mdEnhance: {
+      // 启用流程图
+      flowchart: true,
       codetabs: true,
       container: true,
       demo: true,

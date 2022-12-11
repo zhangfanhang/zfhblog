@@ -3,7 +3,7 @@ title: React组件化开发
 category:
   - 前端框架
   - React
-order: 2
+order: 3
 ---
 
 ## React 的组件化
@@ -78,7 +78,7 @@ export default function App() {
 
 ### 常用生命周期函数
 
-![生命周期解析](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90.png)
+![生命周期解析](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90.png 'react生命周期流程图')
 
 #### Constructor
 
@@ -184,7 +184,7 @@ export default class App extends Component {
 
 :::
 
-### 参数校验证propTypes
+### 参数校验证 propTypes
 
 对于传递给子组件的数据，有时候我们可能希望进行验证,那么就需要使用`propTypes`
 
@@ -886,7 +886,7 @@ export default class App extends Component {
 
 当调用`setState`时，并不会覆盖之前的`state`,`React`底层通过`Object.assign`进行合并
 
-比如：{name:'zhang',age:23},修改 age 并不会对 name 造成影响
+比如：`{name:'zhang',age:23}`,修改 `age` 并不会对 `name` 造成影响
 
 ```jsx
 this.state = {
@@ -948,19 +948,33 @@ this.setState(state => {
 
 ## React 的更新机制
 
-- `react`的渲染流程：`jsx`--->虚拟`DOM`--->真实`DOM`
+### `react`的渲染流程
+```flow
+st=>start: jsx
+p=>operation: 虚拟DOM
+e=>end: 真实DOM
 
-- `react`的更新流程：
+st->p->e
+```
 
-`props`/`state`的改变--->`render`函数重新执行---->产生新的虚拟 `DOM`--->新旧虚拟`DOM`进行`diff`--->计算出差异进行更新---->更新到真实的`DOM`
+### `react`的更新流程
+```flow
+st=>start: props/state的改变
+p=>operation: 重新执行render函数
+q=>operation: 产生新的虚拟DOM
+r=>operation: 新旧虚拟DOM进行diff
+s=>operation: 计算出差异进行更新
+t=>end: 更新到真实的DOM
+
+st->p->q->r->s->t
+```
+
 
 ## React 性能优化
 
 ### 列表中 keys 的作用
 
 在遍历列表时，总是会提示一个警告，让我们加入一个`key`属性
-
-//  TODO change
 
 #### 方式一:在最后位置插入数据
 
@@ -987,34 +1001,30 @@ this.setState(state => {
 
 ### shouldComponentUpdate
 
-只要是修改了 App 中的数据，所有的组件都需要重新 render，进行 diff 算法，性能必然是很低的
+只要是修改了 `App` 中的数据，所有的组件都需要重新 `render`，进行 `diff` 算法，性能必然是很低的
 
-事实上，很多的组件没有必须要重新 render；它们调用 render 应该有一个前提，就是依赖的数据（state、 props）发生改变时，再调用自己的 render 方法
+事实上，很多的组件没有必须要重新` render`；它们调用 `render `应该有一个前提，就是依赖的数据（`state`、` props`）发生改变时，再调用自己的 `render` 方法
 
-如何来控制 render 方法是否被调用呢？通过 shouldComponentUpdate 方法即可
+通过` shouldComponentUpdate` 方法可以控制 `render` 方法是否被调用
 
 该方法有两个参数：
 
-- 参数一：nextProps ，修改之后，最新的 props 属性
-- 参数二：nextState ，修改之后，最新的 state 属性
+- 参数一：`nextProps` :修改之后最新的 props 属性
+- 参数二：`nextState` :修改之后最新的 state 属性
 
-该方法返回值是一个 boolean 类型：
+该方法返回值是一个 `boolean` 类型：
 
-- 返回值为 true，那么就需要调用 render 方法
-- 返回值为 false，那么就不需要调用 render 方法
-- 默认返回的是 true，也就是只要 state 发生改变，就会调用 render 方法
+- 返回值为 `true`，那么就需要调用 `render` 方法
+- 返回值为 `false`，那么就不需要调用 `render` 方法
+- 默认返回的是 `true`，也就是只要 `state` 发生改变，就会调用` render` 方法
 
 ### PureComponent
 
-如果所有的类，我们都需要手动来实现 shouldComponentUpdate，这样做是很麻烦的
+如果所有的类，我们都需要手动来实现 `shouldComponentUpdate`，这样做是很麻烦的
 
-我们来设想一下 shouldComponentUpdate 中的各种判断的目的是什么？
+事实上 `React` 已经考虑到了这一点，所以 `React` 已经默认帮我们实现好了， 将` class `继承自 `PureComponent`即可
 
-**props 或者 state 中的数据是否发生了改变，来决定 shouldComponentUpdate 返回 true 或者 false**
-
-事实上 React 已经考虑到了这一点，所以 React 已经默认帮我们实现好了，如何实现呢？ 将 class 继承自 PureComponent
-
-```jsx
+```jsx {10,11,12,13}
 import { PureComponent } from 'react'
 
 export default class App extends PureComponent {
@@ -1024,8 +1034,8 @@ export default class App extends PureComponent {
       movie: ['流浪地球', '长津湖', '信条', '肖生客的救赎'],
     }
   }
-
-  // shouldComponentUpdate(nextProps, nextState, nextContext) {
+  // shouldComponentUpdate实现
+  // shouldComponentUpdate(nextProps, nextState) {
   //     return nextState.movie !== this.state.movie
   // }
 
@@ -1056,11 +1066,11 @@ export default class App extends PureComponent {
 }
 ```
 
-当点击按钮时，电影列表并没有更新。问题在于 `PureComponent` 仅仅会对新老 `this.state.movie` 的值进行简单的对比。由于代码中 `add` 方法改变了同一个 `movie` 数组，使得新老 `this.state.movie` 比较的其实还是同一个数组。即便实际上数组中的内容已经变了，但是比较结果是相同的。 所以[不可变性在 React 中非常重要](https://zh-hans.reactjs.org/tutorial/tutorial.html#why-immutability-is-important)
+当点击按钮时，电影列表并没有更新。问题在于 `PureComponent` 仅仅会对新老 `this.state.movie` 的值进行浅层比较。由于代码中 `add` 方法改变了同一个 `movie` 数组，使得新老 `this.state.movie` 比较的其实还是同一个数组。即便实际上数组中的内容已经变了，但是比较结果是相同的。 所以[不可变性在 React 中非常重要](https://zh-hans.reactjs.org/tutorial/tutorial.html#why-immutability-is-important)
 
 ### 高阶组件 memo
 
-如何让函数组件实现和`PureComponent`相同的功能呢？此时需要使用一个高阶组件 memo
+如何让函数组件实现和`PureComponent`相同的功能呢？此时需要使用一个高阶组件 `memo`,`memo` 仅检查` props` 的变更
 
 ```jsx
 import { Component, memo, PureComponent } from 'react'
@@ -1137,38 +1147,113 @@ export default class App extends Component {
 }
 ```
 
-header 组件使用 memo 进行了包裹，而 footer 组件没有
+`header` 组件使用 `memo` 进行了包裹，而 `footer` 组件没有
 
-当我们改变 APP 中的 num 的值时，footer 组件重新 render 了，而 header 组件并没有重新 render
-MainBanner、MainProductList 组件没有使用 memo 进行包裹，为什么也没有重新 render？引文他们的父组件 Main 继承自 PureComponent
+当我们改变 `APP` 中的 `num` 的值时，`footer` 组件重新` render` 了，而 `header` 组件并没有重新` render`
+`MainBanner`、`MainProductList` 组件没有使用 `memo` 进行包裹，为什么也没有重新 `render`？他们的父组件 `Main` 继承自 `PureComponent`
 
 ## refs
 
-[details](https://zh-hans.reactjs.org/docs/refs-and-the-dom.html#gatsby-focus-wrapper)
+在 React 的开发模式中，通常情况下不需要、也不建议直接操作 `DOM`，但是某些特殊的情况，确实需要获取到 `DOM` 进行某些操作
 
-在 React 的开发模式中，通常情况下不需要、也不建议直接操作 DOM，但是某些特殊的情况，确实需要获取到 DOM 进行某些操作
+如何创建 `refs` 来获取对应的 `DOM `呢？目前有三种方式：
 
-如何创建 refs 来获取对应的 DOM 呢？目前有三种方式：
+- 方式一<Badge type="note" text='已废弃'/>：~~传入字符串，使用时通过 this.refs 传入的字符串格式获取对应的元素~~
 
-- 方式一(废弃)：传入字符串，使用时通过 this.refs 传入的字符串格式获取对应的元素
+- 方式二<Badge type="tip" text='推荐'/>：传入一个对象,对象是通过` React.createRef()` 方式创建出来的；使用时获取到创建的对象其中有一个 `current` 属性就是对应的元素
 
-- 方式二(推荐)：传入一个对象,对象是通过 React.createRef() 方式创建出来的；使用时获取到创建的对象其中有一个 current 属性就是对应的元素
+- 方式三：传入一个函数，该函数会在 `DOM` 被挂载时进行回调，这个函数会传入一个元素对象，我们可以自己保存
 
-- 方式三：传入一个函数，该函数会在 DOM 被挂载时进行回调，这个函数会传入一个元素对象，我们可以自己保存；使用时，直接拿到之前保存的元素对象即可
+`ref` 的值根据节点的类型而有所不同：
 
-ref 的值根据节点的类型而有所不同：
+- 当 `ref` 属性用于 `HTML` 元素时，构造函数中使用` React.createRef()` 创建的 `ref` 接收底层 `DOM`元素作为其 `current` 属性
 
-- 当 ref 属性用于 HTML 元素时，构造函数中使用 React.createRef() 创建的 ref 接收底层 DOM 元素作为其 current 属性
+- 当 `ref` 属性用于自定义类·组件时，`ref `对象接收组件的挂载实例作为其`current` 属性
+- 你不能在函数组件上使用 `ref` 属性，因为他们没有实例
 
-- 当 ref 属性用于自定义 class 组件时，ref 对象接收组件的挂载实例作为其 current 属性
-- 你不能在函数组件上使用 ref 属性，因为他们没有实例。
+::: code-tabs
 
-<CodePen
-  link="https://codepen.io/zhangfanhang/pen/KKZrOev"
-  :theme="$isDarkMode? 'dark': 'light'"
-/>
+@tab 方式一(废弃)
 
-### ref 的转发
+```jsx {9,15}
+class App extends React.Component {
+  constructor() {
+    super()
+  }
+
+  render() {
+    return (
+      <div>
+        <div ref="message">hello,react</div>
+        <button onClick={this.changeText.bind(this)}>改变文本</button>
+      </div>
+    );
+  }
+
+  changeText() {
+    this.refs.message.innerHTML = "hello,frank"
+  }
+}
+```
+
+@tab 方式二
+
+```jsx {10,17}
+class App extends React.Component {
+  constructor() {
+    super();
+    this.textRef = React.createRef();
+  }
+
+  render() {
+    return (
+      <div>
+        <div ref={this.textRef}>hello,react</div>
+        <button onClick={this.changeText.bind(this)}>改变文本</button>
+      </div>
+    );
+  }
+
+  changeText() {
+    this.textRef.current.innerHTML = "hello,zhang";
+  }
+}
+
+```
+
+@tab 方式三
+
+```jsx {11,12,13,23}
+class App extends React.Component {
+  constructor() {
+    super();
+    this.textRef = null;
+  }
+
+  render() {
+    return (
+      <div>
+        <div
+          ref={(args) => {
+            this.textRef = args;
+          }}
+        >
+          hello,react
+        </div>
+        <button onClick={this.changeText.bind(this)}>改变文本</button>
+      </div>
+    );
+  }
+
+  changeText() {
+    this.textRef.innerHTML = "hello,girl";
+  }
+}
+
+```
+:::
+
+### ref 的转发 <Badge type='tip' text='函数式组件推荐使用useRef'/>
 
 如果要在函数组件中使用 `ref`，你可以使用 [`forwardRef`](https://zh-hans.reactjs.org/docs/forwarding-refs.html)来转发`ref`
 
@@ -1214,8 +1299,10 @@ export default class App extends PureComponent {
 
 ### 注意点
 
-- select:React 并不会使用 selected 属性，而是在根 select 标签上使用 value 属性,表示默认选中
-- 处理多个输入官网案例注意 checkbox 的处理逻辑
+- `select`:`React` 并不会使用 `selected` 属性，而是在根` select` 标签上使用 `value` 属性,表示默认选中
+- 处理多个输入官网案例注意 `checkbox` 的处理逻辑
+
+// TODO : change there
 
 ## 高阶组件
 

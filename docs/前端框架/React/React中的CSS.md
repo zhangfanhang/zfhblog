@@ -3,7 +3,7 @@ title: React中的CSS
 category:
   - 前端框架
   - React
-order: 3
+order: 2
 ---
 
 > 事实上，`css` 一直是 `React` 的痛点， 在这一点上，`Vue` 做的要确实要好于 `React`，`React` 官方并没有给出在 `React` 中统一的样式风格，以下介绍几种 `React` 中的 `CSS` 解决方案
@@ -41,7 +41,7 @@ order: 3
 
 ## css modules
 
-`css modules`并不是`React`特有的解决方案，而是所有使用了类似于`webpack`配置的环境下都可以使用的
+[css modules](https://www.ruanyifeng.com/blog/2016/06/css_modules.html)并不是`React`特有的解决方案，而是所有使用了类似于`webpack`配置的环境下都可以使用的
 
 `React`的脚手架已经内置了`css modules`的配置：`.css/.less/.scss `等样式文件都修改成 `.module.css/.module.less/.module.scss` ，之后就可以引用并且进行使用了
 
@@ -50,66 +50,53 @@ order: 3
 但是这种方案也有自己的缺陷：
 
 - 引用的类名，不能使用连接符`(.home-title)`，在`JavaScript`中是不识别的
-- 所有的`className`都必须使用`{style.className} `的形式来编写
+- 所有的`className`都必须使用`{style.className} `的形式来编写,编写较为繁琐
 
-::: tip css modules 动态控制classNames
+`css modules` 动态控制`className`:
 
-🌟使用函数抽离（适合多条件判断）
+::: code-tabs
+
+@tab 使用函数抽离（适合多条件判断）
 
 ```jsx
     const buttonClassChange=()=>{
         if(cart.totalAmount>0){
             return style.button
-        }else{
+        }else if(cart.totalAmount=0){
             return style.noMealButton
+        }else{
+           return style.otherButton
         }
     }
-    // ------------
+    // jsx
   <div className={buttonClassChange()}>我是一个按钮</div>
 ```
 
-🌟三元运算符
+@tab 三元运算符
 
 ```jsx
  <div className={cart.totalAmount>0?style.button:style.noMealButton}>{props.buttonText}</div>
 ```
 
-🌟运算符判断
+@tab 运算符判断
 
 ```jsx
  <div className={(cart.totalAmount>0&&style.button)||style.noMealButton}>{props.buttonText}</div>
 ```
 
-🌟模板字符串拼接
+@tab 模板字符串拼接
 
 ```jsx
-<div className={`${style.button} ${cart.totalAmount===0?style.noMealButton:''}`}>{props.buttonText}</div>
+<div className={`${style.button} ${cart.totalAmount===0&&style.noMealButton}`}>{props.buttonText}</div>
 ```
 
 :::
 
-
-// TODO: 看下why当时怎么讲的
-- ~~不方便动态来修改某些样式，依然需要使用内联样式的方式~~
-
-```jsx
-import style from 'app.moudle.css'
-
-// 单个
-<div className={style.fz20}></div>
-// 多个
-<span className={[style.fz20,style.red].join('')}></span>
-// 多个 优雅的写法 composes
-// 参考: https://www.ruanyifeng.com/blog/2016/06/css_modules.html
-```
-
 ## CSS in JS
 
-“`CSS-in-JS`” 是指一种模式，其中 `CSS` 由 `JavaScript` 生成而不是在外部文件中定义；注意此功能并不是` Reac`t 的一部分，而是由第三方库提供。 `React` 对样式如何定义并没有明确态度
+“`CSS-in-JS`” 是指一种模式，其中 `CSS` 由 `JavaScript` 生成而不是在外部文件中定义；注意此功能并不是` React`的一部分，而是由第三方库提供
 
-`React` 的思想中认为逻辑本身和 UI 是无法分离的，所以才会有了` JSX `的语法。样式呢？样式也是属于`UI` 的一部分。 事实上` CSS-in-JS `的模式就是一种将样式`CSS`也写入到 `JavaScript` 中的方式，并且可以方便的使用 `JavaScript` 的状态。所以` React `又被人称之为` All in JS`
-
-`styled-components` 是社区最流行的` CSS-in-JS` 库
+[styled-component] (https://styled-components.com/docs)是社区最流行的` CSS-in-JS` 库
 
 安装 `styled-components`:
 
@@ -131,144 +118,107 @@ yarn add styled-components
 
 
 
+`styled-components` 的本质是创建出一个组件：这个组件会被自动添加上一个不重复的 `class`,`styled-components` 会给该` class` 添加相关的样式
 
-
-// TODO: 看下why 系统课
-
-## styled-components 的基本使用
-
-styled-components 的本质是通过函数的调用，最终创建出一个组件：
-
-- 这个组件会被自动添加上一个不重复的 class
-- styled-components 会给该 class 添加相关的样式
-
-另外，它支持类似于 CSS 预处理器一样的特性：
+另外，它支持类似于 `CSS `预处理器一样的特性：
 
 - 支持样式嵌套，如嵌套后代选择器
 
-- 可以通过&符号获取当前元素
-
-```jsx
-const Panel = styled.div`
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  flex: 0.5;
-  height: 80vh;
-  border-radius: 50px;
-  margin: 10px;
-  transition: all 300ms ease-in;
-
-  &.active {
-    flex: 5;
-  }
-`
-```
+- 可以通过`&`符号获取当前元素
 
 - 使用伪类选择器、伪元素等
 
-### props、attrs 属性
-
-#### props 可以穿透
-
-props 可以被传递给 styled 组件,**并映射到组件 html 结构最外层的标签上**
-
-```jsx
-<Panel
-  onClick={this.changeCurrentNum.bind(this, num)}
-  className={classNames({ active: this.state.currentNum === num })}
-  key={num}
-></Panel>
+```css
+const AppWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: #f1f1f1;
+   .color{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+  }
+  &:hover{
+    background-color: red;
+  }
+  a:hover{
+    color:#f6d365;
+  }
+  a::before{
+    content:"✨";
+    font-size: 100px;
+  }
+`
 ```
 
-- 获取 props 需要通过`${}`传入一个插值函数，props 会作为该函数的参数,这种方式可以有效的解决动态样式的问题
+::: tip 提示
+
+`style-conpontents`非常强大，此处并非是`sc`的全部特性，这些已经可以可以结合react高效编写`css`了
+
+:::
+
+#### props 穿透
+
+props 可以被传递给` styled`  组件,`style-compontents`可以自动过滤非`html`标签属性，**并将标准html属性映射到组件 html 结构最外层的标签上**
 
 ```jsx
-import { PureComponent } from 'react'
-import styled from 'styled-components'
+ <MyInput value='这是我的输入组件' onChange={inputChange} className='myInput'></MyInput>
+// value,className会映射至组件 html 结构最外层的标签上，而onChange事件会绑定到组件 html 结构最外层的标签上
+```
 
-const HomeWrapper = styled.div`
-  color: ${props => props.color};
+获取 props 需要通过`${}`传入一个插值函数，`props `会作为该函数的参数,这种方式可以有效的解决**动态样式**的问题
+
+```jsx
+import styled from "styled-components";
+import {useState} from "react";
+
+
+const MyButton =styled.button`
 `
 
-function Home() {
-  return (
-    <HomeWrapper color="red">
-      <h1>我是home组件</h1>
-    </HomeWrapper>
-  )
+const AppWrapper=styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: ${props=>props.show?'black':'red'};
+`
+
+function App(props) {
+    const [show,setShow]=useState(false)
+    return (
+            <AppWrapper show={show}>
+                <MyButton onClick={()=>{setShow(!show)}}>切换背景色</MyButton>
+            </AppWrapper>
+    );
 }
 
-export default class App extends PureComponent {
-  render() {
-    return (
-      <div>
-        <Home />
-      </div>
-    )
-  }
-}
+export default App;
 ```
 
 #### 添加 attrs 属性
 
+除了直接写在组件上，属性也可以使用`attrs`进行附加，它会和组件上的属性进行合并，传入`styled`组件
+
 ```jsx
 const Wrapper = styled.div.attrs(
     {
-        padding-left:props=>props.pleft || '5px'
+        pleft:props=>props.pleft || '5px'
     }
 )`
  padding-left:${props=>props.pleft}
 `
 ```
 
-### styled 高级特性
+#### 样式的继承
 
-#### 支持样式的继承
-
-```jsx
+```css
 const MainButtion = styled.div`
   color: #000;
   font-size: 30px;
   padding: 8px 30px;
 `
+/* 对MainButton组件样式进行扩展 */
 const MenuButton = styled(MainButton)`
   background-color: red;
 `
 ```
 
-#### styled 设置主题
-
-```jsx
-import { PureComponent } from 'react'
-
-import styled, { ThemeProvider } from 'styled-components'
-
-const HomeWrapper = styled.div`
-  font-size: ${props => props.theme.fontSize};
-  color: ${props => props.theme.color};
-`
-
-const MenuWrapper = styled.div`
-  font-size: ${props => props.theme.fontSize};
-`
-
-function Home() {
-  return <HomeWrapper>我是home组件</HomeWrapper>
-}
-
-function Menu() {
-  return <MenuWrapper>我是menu组件</MenuWrapper>
-}
-
-export default class App extends PureComponent {
-  render() {
-    return (
-      <ThemeProvider theme={{ fontSize: '30px', color: 'yellow' }}>
-        <Home />
-        <Menu />
-      </ThemeProvider>
-    )
-  }
-}
-```

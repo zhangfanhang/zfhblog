@@ -1,6 +1,6 @@
 ---
 title: Redux
-tag: Redux
+order: 5
 category:
   - 前端框架
   - React
@@ -308,7 +308,7 @@ import { connect } from 'react-redux'
 
 ## redux 中异步操作
 
-​ 事实上，网络请求到的数据也属于我们状态管理的一部分，更好的一种方式应该是将其也交给 redux 来管理
+ 事实上，网络请求到的数据也属于我们状态管理的一部分，更好的一种方式应该是将其也交给 redux 来管理
 
 ![redux-异步操作](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/redux-%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C.png)
 

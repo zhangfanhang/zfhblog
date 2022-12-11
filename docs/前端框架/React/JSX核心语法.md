@@ -93,7 +93,8 @@ class App extends React.Component {
 <div title={this.state.title}></div>
 ```
 
-- 比如 `img `元素会有 `src `属性(有坑注意 ⚠️[参考](https://zfhblog.top/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/React/React%E4%B8%AD%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87.html))
+- 比如 `img `元素会有 `src `属性(有坑注意 ⚠️)
+
 - 比如 `a` 元素会有 `href` 属性
 - 比如元素可能需要绑定 `class`
 
@@ -110,21 +111,7 @@ class App extends React.Component {
 动态添加类名:
 
 ```jsx
-  ......
-
-    <style>
-        .active{
-            color:red
-        }
-        .fz30{
-            font-size:30px
-        }
-    </style>
-
-    ......
-
-
-<div  className={'fz30 ' + (this.state.active?'active':'')}>'hello,world'</div>
+<div  className={`fz30 ${this.state.active&&'active'}`}>hello,world</div>
 ```
 
 动态类名可以使用这个第三方的库： [classnames](https://github.com/JedWatson/classnames) 
@@ -299,7 +286,7 @@ class App extends React.Component {
 `v-show` 的效果:主要是控制 `display` 属性是否为 `none`
 
 ```jsx
-<h2 style={{ display: isLogin ? 'block' : 'false' }}>欢迎回来</h2>
+<h2 style={{ display: isLogin ? 'block' : 'none' }}>欢迎回来</h2>
 ```
 
 ## React 列表渲染

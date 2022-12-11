@@ -26,6 +26,7 @@ export default sidebar({
   '/前端图形/CSS世界阅读笔记/': 'structure',
   '/前端框架/Vue/': 'structure',
   '/前端框架/React/': 'structure',
+  '/前端框架/Next.js/': 'structure',
   '/前端进阶/ES6/': 'structure',
   '/前端进阶/移动开发/': 'structure',
   '/前端进阶/重学前端/': 'structure',

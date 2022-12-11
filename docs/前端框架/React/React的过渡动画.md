@@ -3,7 +3,7 @@ title: React的过渡动画
 category:
   - 前端框架
   - React
-order: 4
+order: 7
 ---
 
 [官方文档](https://reactcommunity.org/react-transition-group/)

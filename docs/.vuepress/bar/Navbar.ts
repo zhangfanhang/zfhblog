@@ -128,21 +128,6 @@ export default navbar([
         icon: 'm-siweidaotu',
         link: '/前端知识体系',
       },
-      // {
-      //   text: '前端面试',
-      //   children: [
-      //     {
-      //       text: '面试题总结',
-      //       icon: 'zongjie',
-      //       link: '/前端面试/面试题总结/html面试题',
-      //     },
-      //     {
-      //       text: '面试复盘',
-      //       icon: 'fupan',
-      //       link: '/前端面试/面试复盘/21.9.14一面复盘',
-      //     },
-      //   ],
-      // },
     ],
   },
   /**
@@ -160,11 +145,6 @@ export default navbar([
             icon: 'node',
             link: '/node/node基础知识&工具',
           },
-          // {
-          //   text: 'koa',
-          //   icon: 'node',
-          //   link: '/node/Koa',
-          // },
           {
             text: 'Nest',
             icon: 'nest',

@@ -1,10 +1,12 @@
 ---
 title: React Hook
-tag: Hook
+order: 8
 category:
   - 前端框架
   - React
 ---
+
+// TODO 待修改
 
 ## Class 组件存在的问题
 
@@ -461,16 +463,16 @@ export default () => {
 
 ## useRef
 
-useRef 返回一个 ref 对象，返回的 ref 对象在组件的整个生命周期保持不变。
+`useRef` 返回一个` ref` 对象，返回的` ref `对象在组件的整个生命周期保持不变
 
-最常用的 ref 是两种用法：
+最常用的 `ref` 是两种用法：
 
-- 用法一：引入 DOM（或者组件，但是需要是 class 组件）元素
+- 用法一：引入` DOM`（或者组件，但是需要是 `class` 组件）元素
 - 用法二：保存一个数据，这个对象在整个生命周期中可以保存不变
 
 案例：
 
-- 案例一：引用 DOM
+- 案例一：引用 `DOM`
 
 ```jsx
 import { useRef } from 'react'
@@ -492,7 +494,7 @@ export default () => {
 }
 ```
 
-- 案例二：使用 ref 保存上一次的某一个值<Badge text='待修改' type='warning' />
+- 案例二：使用 ref 保存上一次的某一个值
 
 ```jsx
 import { useEffect, useRef, useState } from 'react'
