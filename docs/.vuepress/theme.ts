@@ -10,7 +10,7 @@ export default hopeTheme({
     url: 'https://zfhblog.top',
   },
   repoDisplay: false,
-  iconAssets: '//at.alicdn.com/t/c/font_3677319_1uth5ggfw63.css',
+  iconAssets: '//at.alicdn.com/t/c/font_3677319_cnfzyz5lzk.css',
   logo: '/logo.jpg',
   footer: '<span style="font-weight:bold">❤️ FE,❤️ LIFE.</span>',
   copyright: 'Copyright © 2020-present Fanhang Zhang',
@@ -27,7 +27,7 @@ export default hopeTheme({
   navbar: Navbar,
   sidebar: Sidebar,
   displayFooter: true,
-  breadcrumb: false,
+  breadcrumb: true,
   blog: {
     roundAvatar: true,
     avatar:
@@ -69,13 +69,17 @@ export default hopeTheme({
     config: {},
   },
   plugins: {
-    blog: true,
+    blog: {
+      excerpt: false,
+    },
     comment: {
       dark: 'auto',
       provider: 'Waline',
       serverURL: 'https://waline.zfhblog.top',
     },
-    components: ['Badge', 'CodePen', 'PDF'],
+    components: {
+      components: ['Badge', 'CodePen', 'PDF'],
+    },
     mdEnhance: {
       // 启用流程图
       flowchart: true,
@@ -83,9 +87,10 @@ export default hopeTheme({
       container: true,
       demo: true,
       imageSize: true,
-      imageTitle: true,
+      figure: true,
       mark: true,
       tabs: true,
+      tasklist: true,
     },
   },
 })

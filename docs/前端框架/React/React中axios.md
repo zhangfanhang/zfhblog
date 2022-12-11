@@ -4,6 +4,7 @@ order: 6
 category:
   - 前端框架
   - React
+icon: wangluo
 ---
 
 // TODO： 待整理
@@ -68,7 +69,7 @@ axios
   .then(([res1, res2]) => {
     console.log(res1, res2)
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err)
   })
 ```
@@ -167,7 +168,7 @@ const instance = axios.create({
 })
 
 axios.interceptors.request.use(
-  config => {
+  (config) => {
     // 1.发送网络请求时，在页面中添加一个loading组件作为动画；
 
     // 2.某些网络请求要求用户必须登录，可以在请求中判断是否携带了token，没有携带token直接跳转到login页面；
@@ -175,16 +176,16 @@ axios.interceptors.request.use(
     // 3.对某些请求参数进行序列化；
     return config
   },
-  err => {
+  (err) => {
     return err
   }
 )
 
 instance.interceptors.response.use(
-  response => {
+  (response) => {
     return response.data
   },
-  err => {
+  (err) => {
     if (err && err.response) {
       switch (err.response.status) {
         case 400:

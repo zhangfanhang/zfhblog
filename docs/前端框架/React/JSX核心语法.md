@@ -3,12 +3,13 @@ title: JSX核心语法
 category:
   - 前端框架
   - React
+icon: jsx-
 order: 1
 ---
 
-::: tip 修订记录📝
+::: tip 修订记录 📝
 
-2022.11.30开始更新文档内容至`React 18`,移除弃用的`API,`添加新特性，全面拥抱`hook`
+2022.11.30 开始更新文档内容至`React 18`,移除弃用的`API,`添加新特性，全面拥抱`hook`
 
 :::
 
@@ -111,10 +112,10 @@ class App extends React.Component {
 动态添加类名:
 
 ```jsx
-<div  className={`fz30 ${this.state.active&&'active'}`}>hello,world</div>
+<div className={`fz30 ${this.state.active && 'active'}`}>hello,world</div>
 ```
 
-动态类名可以使用这个第三方的库： [classnames](https://github.com/JedWatson/classnames) 
+动态类名可以使用这个第三方的库： [classnames](https://github.com/JedWatson/classnames)
 
 ```jsx
 classNames('foo', 'bar') // => 'foo bar'

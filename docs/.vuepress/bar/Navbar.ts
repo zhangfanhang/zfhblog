@@ -47,7 +47,7 @@ export default navbar([
           {
             text: 'React',
             icon: 'react',
-            link: '/前端框架/React/JSX核心语法',
+            link: '/前端框架/React/',
           },
         ],
       },
@@ -263,6 +263,6 @@ export default navbar([
   {
     text: '杂记',
     icon: 'note',
-    link: '/杂记/初来南京',
+    link: '/杂记/',
   },
 ])

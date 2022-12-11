@@ -4,6 +4,7 @@ category:
   - 前端框架
   - React
 order: 3
+icon: zujian
 ---
 
 ## React 的组件化
@@ -49,7 +50,7 @@ export default class App extends Component {
 
 ### 函数组件
 
-函数组件是使用 `function` 来进行定义的函数，**只是这个函数会返回和类组件中` render `函数返回一样的内容**
+函数组件是使用 `function` 来进行定义的函数，**只是这个函数会返回和类组件中`render`函数返回一样的内容**
 
 特点：
 
@@ -69,12 +70,12 @@ export default function App() {
 
 `React` 内部为了告诉我们当前处于哪些阶段，会对我们组件内部实现的某些函数进行回调，这些函数就是生命周期函数：
 
--  `componentDidMount` 函数：组件已经挂载到 `DOM `上时，就会回调
+- `componentDidMount` 函数：组件已经挂载到 `DOM `上时，就会回调
 - `componentDidUpdate`函数：组件已经发生了更新时，就会回调
--  `componentWillUnmount` 函数：组件即将被移除时，就会回调
+- `componentWillUnmount` 函数：组件即将被移除时，就会回调
 - 我们可以在这些回调函数中编写自己的逻辑代码，来完成自己的需求功能
 
-> **我们说到 `React` 生命周期时，主要谈的是类的生命周期，因为函数式组件是没有生命周期函数的*
+> \*_我们说到 `React` 生命周期时，主要谈的是类的生命周期，因为函数式组件是没有生命周期函数的_
 
 ### 常用生命周期函数
 
@@ -123,7 +124,6 @@ componentDidUpdate(prevProps) {
 ## 组件间的通信
 
 ### 父组件传递子组件
-
 
 父组件在展示子组件，可能会传递一些数据给子组件：
 
@@ -198,7 +198,7 @@ export default class App extends Component {
 
 ::: code-tabs
 
-@tab 写法1
+@tab 写法 1
 
 ```jsx {11,12,13,14}
 import { Component } from 'react'
@@ -234,12 +234,11 @@ export default class App extends Component {
 }
 ```
 
-@tab 写法2
+@tab 写法 2
 
 ```jsx {6,7,8,9,10,11,12,13}
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-
 
 class ChildCom extends Component {
   static propTypes = {
@@ -350,7 +349,7 @@ export default class App extends Component {
       <div>
         <h1>{this.state.age}</h1>
         <Ibutton
-          increment={value => {
+          increment={(value) => {
             this.increment(value)
           }}
         />
@@ -374,7 +373,7 @@ export default class App extends Component {
 
 @tab App.jsx
 
-```jsx 
+```jsx
 import { Component } from 'react'
 
 import NavBar from './NavBar'
@@ -400,7 +399,7 @@ export default class App extends Component {
 }
 ```
 
-@tab 方式1(这种方式传递过去的html结构不能混乱)
+@tab 方式 1(这种方式传递过去的 html 结构不能混乱)
 
 ```jsx
 import { Component } from 'react'
@@ -419,7 +418,7 @@ export default class NavBar extends Component {
 }
 ```
 
-@tab 方式2(推荐)
+@tab 方式 2(推荐)
 
 ```jsx
 import { Component } from 'react'
@@ -437,10 +436,10 @@ export default class NavBar extends Component {
   }
 }
 ```
+
 :::
 
 ![在React中实现Slot](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E5%9C%A8React%E4%B8%AD%E5%AE%9E%E7%8E%B0Slot.jpg 'slot效果图')
-
 
 ### 跨组件通信 Context
 
@@ -467,7 +466,7 @@ export default class NavBar extends Component {
 **`React.createContext`**
 
 - 创建一个需要共享的 `Context` 对象
-- 当 `React` 渲染一个订阅了这个 `Context` 对象的组件，这个组件会从离自身最近的那个匹配的 `Provider` 中读取到当前的 `context` 值 
+- 当 `React` 渲染一个订阅了这个 `Context` 对象的组件，这个组件会从离自身最近的那个匹配的 `Provider` 中读取到当前的 `context` 值
 - 当组件没有匹配到 `Provider` 时，其 `defaultValue` 参数才会生效（只要匹配到就不会生效，即使不传递 value）
 
 ```js
@@ -604,7 +603,7 @@ class UserInfo extends Component {
 ::: tip 什么时候使用 Context.Consumer 呢？
 
 - 当使用 `value` 的组件是一个函数式组件时
-- 或者当组件中需要使用多个` Context `时
+- 或者当组件中需要使用多个`Context`时
 
 :::
 
@@ -614,7 +613,7 @@ class UserInfo extends Component {
 function UserInfo() {
   return (
     <MyContext.Consumer>
-      {value => {
+      {(value) => {
         return (
           <div>
             <h2>用户名：{value.nickName}</h2>
@@ -654,10 +653,10 @@ function List() {
 function UserInfo() {
   return (
     <MyContext.Consumer>
-      {value => {
+      {(value) => {
         return (
           <themeContext.Consumer>
-            {theme => {
+            {(theme) => {
               return (
                 <div>
                   <h2 style={{ color: theme.color }}>
@@ -928,17 +927,17 @@ Object.assign(
 如果后续状态取决于当前状态，可以使用`updater`函数的形式代替：
 
 ```jsx
-this.setState(state => {
+this.setState((state) => {
   return {
     num: state.num + 1,
   }
 })
-this.setState(state => {
+this.setState((state) => {
   return {
     num: state.num + 1,
   }
 })
-this.setState(state => {
+this.setState((state) => {
   return {
     num: state.num + 1,
   }
@@ -949,6 +948,7 @@ this.setState(state => {
 ## React 的更新机制
 
 ### `react`的渲染流程
+
 ```flow
 st=>start: jsx
 p=>operation: 虚拟DOM
@@ -958,6 +958,7 @@ st->p->e
 ```
 
 ### `react`的更新流程
+
 ```flow
 st=>start: props/state的改变
 p=>operation: 重新执行render函数
@@ -968,7 +969,6 @@ t=>end: 更新到真实的DOM
 
 st->p->q->r->s->t
 ```
-
 
 ## React 性能优化
 
@@ -1022,7 +1022,7 @@ st->p->q->r->s->t
 
 如果所有的类，我们都需要手动来实现 `shouldComponentUpdate`，这样做是很麻烦的
 
-事实上 `React` 已经考虑到了这一点，所以 `React` 已经默认帮我们实现好了， 将` class `继承自 `PureComponent`即可
+事实上 `React` 已经考虑到了这一点，所以 `React` 已经默认帮我们实现好了， 将`class`继承自 `PureComponent`即可
 
 ```jsx {10,11,12,13}
 import { PureComponent } from 'react'
@@ -1043,7 +1043,7 @@ export default class App extends PureComponent {
     return (
       <div>
         <ul>
-          {this.state.movie.map(item => {
+          {this.state.movie.map((item) => {
             return <li>{item}</li>
           })}
         </ul>
@@ -1187,11 +1187,11 @@ class App extends React.Component {
         <div ref="message">hello,react</div>
         <button onClick={this.changeText.bind(this)}>改变文本</button>
       </div>
-    );
+    )
   }
 
   changeText() {
-    this.refs.message.innerHTML = "hello,frank"
+    this.refs.message.innerHTML = 'hello,frank'
   }
 }
 ```
@@ -1201,8 +1201,8 @@ class App extends React.Component {
 ```jsx {10,17}
 class App extends React.Component {
   constructor() {
-    super();
-    this.textRef = React.createRef();
+    super()
+    this.textRef = React.createRef()
   }
 
   render() {
@@ -1211,14 +1211,13 @@ class App extends React.Component {
         <div ref={this.textRef}>hello,react</div>
         <button onClick={this.changeText.bind(this)}>改变文本</button>
       </div>
-    );
+    )
   }
 
   changeText() {
-    this.textRef.current.innerHTML = "hello,zhang";
+    this.textRef.current.innerHTML = 'hello,zhang'
   }
 }
-
 ```
 
 @tab 方式三
@@ -1226,8 +1225,8 @@ class App extends React.Component {
 ```jsx {11,12,13,23}
 class App extends React.Component {
   constructor() {
-    super();
-    this.textRef = null;
+    super()
+    this.textRef = null
   }
 
   render() {
@@ -1235,22 +1234,22 @@ class App extends React.Component {
       <div>
         <div
           ref={(args) => {
-            this.textRef = args;
+            this.textRef = args
           }}
         >
           hello,react
         </div>
         <button onClick={this.changeText.bind(this)}>改变文本</button>
       </div>
-    );
+    )
   }
 
   changeText() {
-    this.textRef.innerHTML = "hello,girl";
+    this.textRef.innerHTML = 'hello,girl'
   }
 }
-
 ```
+
 :::
 
 ### ref 的转发 <Badge type='tip' text='函数式组件推荐使用useRef'/>
@@ -1320,7 +1319,7 @@ export default class App extends PureComponent {
 import { PureComponent } from 'react'
 
 function enhanceProps(Comp, otherProps) {
-  return props => <Comp {...props} {...otherProps} />
+  return (props) => <Comp {...props} {...otherProps} />
 }
 
 class Home extends PureComponent {
@@ -1376,10 +1375,10 @@ const UserContext = createContext()
 //定义高阶组件
 
 function withUser(Comp) {
-  return props => {
+  return (props) => {
     return (
       <UserContext.Consumer>
-        {value => {
+        {(value) => {
           return <Comp {...value} {...props} />
         }}
       </UserContext.Consumer>
@@ -1656,7 +1655,7 @@ class About extends PureComponent {
     return (
       <div>
         <ul>
-          {this.state.table.map(item => {
+          {this.state.table.map((item) => {
             return <li key={item.user}>{item.word}</li>
           })}
         </ul>
@@ -1748,7 +1747,7 @@ export default class App extends PureComponent {
 
 使用 [Fragment](https://zh-hans.reactjs.org/docs/fragments.html]) 后，无需向 `DOM` 添加额外节点
 
-React 还提供了` Fragment `的短语法
+React 还提供了`Fragment`的短语法
 
 它看起来像空标签` <> </>`
 
@@ -1835,7 +1834,7 @@ export default class MouseTracker extends React.Component {
     return (
       <div>
         <h1>移动鼠标!</h1>
-        <Mouse render={mouse => <Cat mouse={mouse} />} />
+        <Mouse render={(mouse) => <Cat mouse={mouse} />} />
       </div>
     )
   }
@@ -1857,7 +1856,7 @@ class MouseTracker extends React.Component {
   render() {
     return (
       <div>
-        <Mouse render={mouse => <Cat mouse={mouse} />} />
+        <Mouse render={(mouse) => <Cat mouse={mouse} />} />
       </div>
     )
   }

@@ -4,9 +4,10 @@ category:
   - 前端框架
   - React
 order: 8
+icon: typescript
 ---
 
-## 创建react-ts项目
+## 创建 react-ts 项目
 
 ::: code-tabs
 
@@ -23,6 +24,3 @@ npm create vite@latest my-vue-app -- --template react-ts
 ```
 
 :::
-
-
-

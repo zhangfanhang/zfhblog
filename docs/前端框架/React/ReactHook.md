@@ -4,6 +4,7 @@ order: 8
 category:
   - 前端框架
   - React
+icon: hook
 ---
 
 // TODO 待修改
@@ -104,7 +105,7 @@ export default function App() {
             <li key={index}>
               {item.name},{item.age},
               <button
-                onClick={e => {
+                onClick={(e) => {
                   addAge(index)
                 }}
               >
@@ -130,8 +131,8 @@ function Counter({ initialCount }) {
     <>
       Count: {count}
       <button onClick={() => setCount(initialCount)}>Reset</button>
-      <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
-      <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
+      <button onClick={() => setCount((prevCount) => prevCount - 1)}>-</button>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>+</button>
     </>
   )
 }
@@ -160,7 +161,7 @@ export default () => {
       {count}
       <button
         onClick={() => {
-          setCount(prevCount => prevCount + 1)
+          setCount((prevCount) => prevCount + 1)
         }}
       >
         +1
@@ -230,8 +231,8 @@ export default () => {
   return (
     <div>
       {count}
-      <button onClick={event => setCount(count + 1)}>+</button>
-      <button onClick={event => setLogin(!login)}>
+      <button onClick={(event) => setCount(count + 1)}>+</button>
+      <button onClick={(event) => setLogin(!login)}>
         {login ? '已登陆' : '未登录'}
       </button>
     </div>
@@ -463,7 +464,7 @@ export default () => {
 
 ## useRef
 
-`useRef` 返回一个` ref` 对象，返回的` ref `对象在组件的整个生命周期保持不变
+`useRef` 返回一个` ref` 对象，返回的`ref`对象在组件的整个生命周期保持不变
 
 最常用的 `ref` 是两种用法：
 
@@ -646,7 +647,7 @@ export default () => {
   )
 }
 
-const usePrintLog = name => {
+const usePrintLog = (name) => {
   useEffect(() => {
     console.log(`${name}创建了`)
     return () => {
@@ -721,7 +722,7 @@ export default () => {
 ```jsx
 import { useEffect, useState } from 'react'
 
-const useLocalStorage = key => {
+const useLocalStorage = (key) => {
   const [data, setData] = useState(() => {
     return JSON.parse(window.localStorage.getItem(key))
   })
@@ -833,7 +834,7 @@ const ComponentUseReactRedux = () => {
 }
 
 const ChildComponentUseReactRedux = () => {
-  const num = useSelector(state => state.num)
+  const num = useSelector((state) => state.num)
   const dispatch = useDispatch()
   return (
     <div>

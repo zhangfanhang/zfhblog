@@ -4,6 +4,7 @@ order: 4
 category:
   - 前端框架
   - React
+icon: luyou
 ---
 
 ## 路由的由来
@@ -146,7 +147,7 @@ history 接口是 HTML5 新增的, 它有六种模式改变 URL 而不刷新页�
   // 获取所有的a元素, 自己来监听a元素的改变
   const aEls = document.getElementsByTagName('a')
   for (let el of aEls) {
-    el.addEventListener('click', e => {
+    el.addEventListener('click', (e) => {
       e.preventDefault()
       const href = el.getAttribute('href')
       history.pushState({}, '', href)
@@ -343,7 +344,7 @@ import { Link, Switch, Route } from 'react-router-dom'
 function GoodList() {
   return (
     <ul>
-      {[1, 2, 3].map(item => {
+      {[1, 2, 3].map((item) => {
         return <li>{`商品${item}`}</li>
       })}
     </ul>
@@ -353,7 +354,7 @@ function GoodList() {
 function NewsList() {
   return (
     <ul>
-      {[1, 2, 3].map(item => {
+      {[1, 2, 3].map((item) => {
         return <li>{`消息${item}`}</li>
       })}
     </ul>
@@ -418,7 +419,7 @@ function JoinUs() {
 function GoodList() {
   return (
     <ul>
-      {[1, 2, 3].map(item => {
+      {[1, 2, 3].map((item) => {
         return <li key={item}>{`商品${item}`}</li>
       })}
     </ul>
@@ -428,7 +429,7 @@ function GoodList() {
 function NewsList() {
   return (
     <ul>
-      {[1, 2, 3].map(item => {
+      {[1, 2, 3].map((item) => {
         return <li key={item}>{`消息${item}`}</li>
       })}
     </ul>
@@ -733,7 +734,7 @@ class Order2 extends Component {
     let query = {}
     const search = this.props.location.search.split('&')
     search[0] = search[0].split('?')[1]
-    search.forEach(item => {
+    search.forEach((item) => {
       const kv = item.split('=')
       query[kv[0]] = kv[1]
     })
@@ -899,7 +900,7 @@ export function JoinUs() {
 export function GoodList() {
   return (
     <ul>
-      {[1, 2, 3].map(item => {
+      {[1, 2, 3].map((item) => {
         return <li key={item}>{`商品${item}`}</li>
       })}
     </ul>
@@ -909,7 +910,7 @@ export function GoodList() {
 export function NewsList() {
   return (
     <ul>
-      {[1, 2, 3].map(item => {
+      {[1, 2, 3].map((item) => {
         return <li key={item}>{`消息${item}`}</li>
       })}
     </ul>
@@ -994,7 +995,7 @@ export default Abouts
    import React from 'react'
    import ReactDOM from 'react-dom'
    import { BrowserRouter } from 'react-router-dom'
-   
+
    ReactDOM.render(
      <BrowserRouter>{/* 整体结构（通常为App组件） */}</BrowserRouter>,
      root
@@ -1049,7 +1050,7 @@ export default Abouts
 
    ```jsx
    import { Link } from 'react-router-dom'
-   
+
    function Test() {
      return (
        <div>
@@ -1067,7 +1068,7 @@ export default Abouts
 
    ```jsx
    // 注意: NavLink默认类名是active，下面是指定自定义的class
-   
+
    //自定义样式
    <NavLink
        to="login"
@@ -1076,7 +1077,7 @@ export default Abouts
            return isActive ? 'base one' : 'base'
        }}
    >login</NavLink>
-   
+
    /*
    	默认情况下，当Home的子组件匹配成功，Home的导航也会高亮，
    	当NavLink上添加了end属性后，若Home的子组件匹配成功，则Home的导航没有高亮效果。
@@ -1095,7 +1096,7 @@ export default Abouts
    ```jsx
    import React, { useState } from 'react'
    import { Navigate } from 'react-router-dom'
-   
+
    export default function Home() {
      const [sum, setSum] = useState(1)
      return (
@@ -1141,11 +1142,11 @@ export default Abouts
        ],
      },
    ])
-   
+
    //Home.js
    import React from 'react'
    import { NavLink, Outlet } from 'react-router-dom'
-   
+
    export default function Home() {
      return (
        <div>
@@ -1184,7 +1185,7 @@ export default Abouts
    import About from '../pages/About'
    import Home from '../pages/Home'
    import {Navigate} from 'react-router-dom'
-   
+
    export default [
    	{
    		path:'/about',
@@ -1199,12 +1200,12 @@ export default Abouts
    		element:<Navigate to="/about"/>
    	}
    ]
-   
+
    //App.jsx
    import React from 'react'
    import {NavLink,useRoutes} from 'react-router-dom'
    import routes from './routes'
-   
+
    export default function App() {
    	//根据路由表生成对应的路由规则
    	const element = useRoutes(routes)
@@ -1217,7 +1218,7 @@ export default Abouts
    		</div>
    	)
    }
-   
+
    ```
 
 #### useNavigate()
@@ -1229,7 +1230,7 @@ export default Abouts
    ```jsx
    import React from 'react'
    import { useNavigate } from 'react-router-dom'
-   
+
    export default function Demo() {
      const navigate = useNavigate()
      const handle = () => {
@@ -1241,7 +1242,7 @@ export default Abouts
        //第二种使用方式：传入数值进行前进或后退，类似于5.x中的 history.go()方法
        navigate(-1)
      }
-   
+
      return (
        <div>
          <button onClick={handle}>按钮</button>
@@ -1260,12 +1261,12 @@ export default Abouts
    import React from 'react'
    import { Routes, Route, useParams } from 'react-router-dom'
    import User from './pages/User.jsx'
-   
+
    function ProfilePage() {
      // 获取URL中携带过来的params参数
      let { id } = useParams()
    }
-   
+
    function App() {
      return (
        <Routes>
@@ -1286,7 +1287,7 @@ export default Abouts
    ```jsx
    import React from 'react'
    import { useSearchParams } from 'react-router-dom'
-   
+
    export default function Detail() {
      const [search, setSearch] = useSearchParams()
      const id = search.get('id')
@@ -1316,7 +1317,7 @@ export default Abouts
    ```jsx
    import React from 'react'
    import { useLocation } from 'react-router-dom'
-   
+
    export default function Detail() {
      const x = useLocation()
      console.log('@', x)
@@ -1349,7 +1350,7 @@ export default Abouts
    ```jsx
    <Route path="/login/:page/:pageSize" element={<Login />}/>
    <NavLink to="/login/1/10">登录</NavLink>
-   
+
    export default function Login() {
      const match = useMatch('/login/:x/:y')
      console.log(match) //输出match对象

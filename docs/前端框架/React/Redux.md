@@ -4,6 +4,7 @@ order: 5
 category:
   - 前端框架
   - React
+icon: redux
 ---
 
 ## JavaScript 纯函数
@@ -244,13 +245,13 @@ import connect from './utils/connect'
 
 import { JIAA_ACTION } from './store/actionCreators'
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     counter: state.counter,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     add: function () {
       dispatch(JIAA_ACTION(3))
@@ -308,7 +309,7 @@ import { connect } from 'react-redux'
 
 ## redux 中异步操作
 
- 事实上，网络请求到的数据也属于我们状态管理的一部分，更好的一种方式应该是将其也交给 redux 来管理
+事实上，网络请求到的数据也属于我们状态管理的一部分，更好的一种方式应该是将其也交给 redux 来管理
 
 ![redux-异步操作](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/redux-%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C.png)
 
@@ -356,10 +357,10 @@ const store = createStore(reducer, storeEnhancer)
 
 ```js
 export function getbannerDataAction() {
-  return dispath => {
+  return (dispath) => {
     {
       console.log('react-thuck数据接受成功')
-      axios.get('http://123.207.32.32:8000/home/multidata').then(res => {
+      axios.get('http://123.207.32.32:8000/home/multidata').then((res) => {
         // console.log(res)
         // console.log(res.data.data.banner.list)
         dispath(bannerAction(res.data.data.banner.list))
@@ -372,12 +373,12 @@ export function getbannerDataAction() {
 4. 映射该 action 的 dispatch 操作,和相关的 store 中的 state：
 
 ```js
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     banner: state.banner,
   }
 }
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     getbanner: function () {
       dispatch(getbannerDataAction())

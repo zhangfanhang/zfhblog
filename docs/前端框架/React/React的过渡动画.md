@@ -3,6 +3,7 @@ title: React的过渡动画
 category:
   - 前端框架
   - React
+icon: donghua
 order: 7
 ---
 
@@ -28,8 +29,6 @@ yarn add react-transition-group
 
 :::
 
- 
-
 ## CSSTransition
 
 CSSTransition 执行过程中，有三个状态：`appear`(初次入场)、`enter`(入场)、`exit`退场)
@@ -47,13 +46,13 @@ CSSTransition 执行过程中，有三个状态：`appear`(初次入场)、`ente
 触发进入或者退出状态
 
 - 如果添加了 `unmountOnExit`，那么该组件会在执行退出动画结束后被移除掉；
-- 当 `in` 为` true` 时，触发进入状态，会添加`-enter`、`-enter-acitve` 的` class `，当动画执行结束后，会移除这两个 `class`，并且添加`-enter-done` 的 `class`
+- 当 `in` 为` true` 时，触发进入状态，会添加`-enter`、`-enter-acitve` 的`class`，当动画执行结束后，会移除这两个 `class`，并且添加`-enter-done` 的 `class`
 - 当 `in` 为 `false `时，触发退出状态，会添加`-exit`、`-exit-active` 的 `class`开始执行动画，当动画执行结束后，会移除这两个 `class`，并且添加`-done-done` 的 `class`
 
 ::: tip 比如说，一个 div 的显示/隐藏动画
 
 1. `div `显示:对应的` class` 为` card-enter` `card-enter-active` 动画走完为 `card-enter-done`
-2. `div `消失:对应的` class `为 `card-exit` `card-exit-active` 动画走完为 `card-exit-done`
+2. `div `消失:对应的`class`为 `card-exit` `card-exit-active` 动画走完为 `card-exit-done`
 
 :::
 
@@ -64,6 +63,7 @@ CSSTransition 执行过程中，有三个状态：`appear`(初次入场)、`ente
 决定了在编写 `css` 时，设置为`card`对应的 `class` 名称：比如 `card-enter`、`card-enter-active`、`card-enter-done`
 
 这些类名也可以自定义，如：
+
 ```jsx
 classNames={{
  appear: 'my-appear',
@@ -77,43 +77,49 @@ classNames={{
  exitDone: 'my-done-exit',
 }}
 ```
-这里就可以结合`animate.css`实现动画：
-```jsx
-import {useState} from "react";
 
-import {CSSTransition} from 'react-transition-group'
+这里就可以结合`animate.css`实现动画：
+
+```jsx
+import { useState } from 'react'
+
+import { CSSTransition } from 'react-transition-group'
 
 function CssAni(props) {
-    const [show, setShow] = useState(true)
-    return (
-        <div>
-            <button onClick={() => {
-                setShow(!show)
-            }}>show
-            </button>
-            <CSSTransition
-                timeout={3000}
-                unmountOnExit
-                in={show}
-                classNames={
-                    {
-                        enter: "animate__animated",
-                        enterActive: "animate__backInRight",
-                        exit: "animate__animated",
-                        exitActive: "animate__backOutRight",
-                    }
-                }
-            >
-                <div style={{width: '200px', height: '300px', backgroundColor: 'black'}}>
-                    ...
-                </div>
-            </CSSTransition>
+  const [show, setShow] = useState(true)
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setShow(!show)
+        }}
+      >
+        show
+      </button>
+      <CSSTransition
+        timeout={3000}
+        unmountOnExit
+        in={show}
+        classNames={{
+          enter: 'animate__animated',
+          enterActive: 'animate__backInRight',
+          exit: 'animate__animated',
+          exitActive: 'animate__backOutRight',
+        }}
+      >
+        <div
+          style={{ width: '200px', height: '300px', backgroundColor: 'black' }}
+        >
+          ...
         </div>
-    );
+      </CSSTransition>
+    </div>
+  )
 }
 
-export default CssAni;
+export default CssAni
 ```
+
 #### timeout <Badge text='必需的属性' type='dange' />
 
 类添加删除的时间，动画/过渡的时间还是得通过`css`设置
@@ -126,83 +132,84 @@ export default CssAni;
 
 退出后卸载组件(移除 `DOM `节点)
 
-
-
-## 一个栗子🌰
+## 一个栗子 🌰
 
 ::: code-tabs
-
-
 
 @tab CSS.jsx
 
 ```jsx
-import {CSSTransition} from 'react-transition-group'
-import {useState} from "react";
+import { CSSTransition } from 'react-transition-group'
+import { useState } from 'react'
 import './CSS.css'
 
 function Css(props) {
-    const [show, setShow] = useState(true)
-    return (
-        <div>
-            <button onClick={()=>{setShow(!show)}}>show</button>
-            <CSSTransition
-                timeout={2000}
-                in={show}
-                appear={true}
-                classNames='card'
-                unmountOnExit
-            >
-                <div className='box'></div>
-            </CSSTransition>
-        </div>
-    );
+  const [show, setShow] = useState(true)
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setShow(!show)
+        }}
+      >
+        show
+      </button>
+      <CSSTransition
+        timeout={2000}
+        in={show}
+        appear={true}
+        classNames="card"
+        unmountOnExit
+      >
+        <div className="box"></div>
+      </CSSTransition>
+    </div>
+  )
 }
 
-export default Css;
+export default Css
 ```
 
 @tab CSS.css
 
 ```css
 .card-enter {
-    opacity: 0;
-    transform: scale(.7);
+  opacity: 0;
+  transform: scale(0.7);
 }
 
 .card-enter-active {
-    opacity: 1;
-    transform: scale(1);
-    transition: all 300ms;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms;
 }
 
 .card-appear {
-    opacity: 0;
-    transform: scale(.7);
+  opacity: 0;
+  transform: scale(0.7);
 }
 
 .card-appear-active {
-    opacity: 1;
-    transform: scale(1);
-    transition: all 300ms;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms;
 }
 
-
 .card-exit {
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
 
 .card-exit-active {
-    opacity: 0;
-    transform: scale(.7);
-    transition: all 300ms;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 300ms;
 }
 
-.box{
-    width: 200px;
-    height: 200px;
-    background-color: #000;
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #000;
 }
 ```
 
@@ -231,57 +238,63 @@ SwitchTransition 中主要有一个属性：`mode`，有两个值
 @tab Switch.jsx
 
 ```jsx
-import {SwitchTransition,CSSTransition} from "react-transition-group";
-import {useState} from "react";
+import { SwitchTransition, CSSTransition } from 'react-transition-group'
+import { useState } from 'react'
 import './Switch.css'
 function SWitch(props) {
-    const [isShow,setShow]=useState(false)
-    return (
-        <div>
-            <SwitchTransition mode="out-in">
-                <CSSTransition
-                    key={isShow ? 'on' : 'off'}
-                    classNames="btn"
-                    timeout={1000}
-                >
-                    <button
-                        style={{ marginBottom: '20px',marginTop:"20px",marginLeft:'30px' }}
-                        onClick={()=>{setShow(!isShow)}}
-                    >
-                        {isShow ? '隐藏' : '显示'}
-                    </button>
-                </CSSTransition>
-            </SwitchTransition>
-        </div>
-    );
+  const [isShow, setShow] = useState(false)
+  return (
+    <div>
+      <SwitchTransition mode="out-in">
+        <CSSTransition
+          key={isShow ? 'on' : 'off'}
+          classNames="btn"
+          timeout={1000}
+        >
+          <button
+            style={{
+              marginBottom: '20px',
+              marginTop: '20px',
+              marginLeft: '30px',
+            }}
+            onClick={() => {
+              setShow(!isShow)
+            }}
+          >
+            {isShow ? '隐藏' : '显示'}
+          </button>
+        </CSSTransition>
+      </SwitchTransition>
+    </div>
+  )
 }
 
-export default SWitch;
+export default SWitch
 ```
 
 @tab Switch.css
 
 ```css
 .btn-enter {
-    opacity: 0;
-    transform: translateX(100%);
+  opacity: 0;
+  transform: translateX(100%);
 }
 
 .btn-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 1000ms;
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1000ms;
 }
 
 .btn-exit {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .btn-exit-active {
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: all 1000ms;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1000ms;
 }
 ```
 

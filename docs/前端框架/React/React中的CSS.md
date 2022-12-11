@@ -4,6 +4,7 @@ category:
   - 前端框架
   - React
 order: 2
+icon: css
 ---
 
 > 事实上，`css` 一直是 `React` 的痛点， 在这一点上，`Vue` 做的要确实要好于 `React`，`React` 官方并没有给出在 `React` 中统一的样式风格，以下介绍几种 `React` 中的 `CSS` 解决方案
@@ -59,35 +60,43 @@ order: 2
 @tab 使用函数抽离（适合多条件判断）
 
 ```jsx
-    const buttonClassChange=()=>{
-        if(cart.totalAmount>0){
-            return style.button
-        }else if(cart.totalAmount=0){
-            return style.noMealButton
-        }else{
-           return style.otherButton
-        }
-    }
-    // jsx
-  <div className={buttonClassChange()}>我是一个按钮</div>
+const buttonClassChange = () => {
+  if (cart.totalAmount > 0) {
+    return style.button
+  } else if ((cart.totalAmount = 0)) {
+    return style.noMealButton
+  } else {
+    return style.otherButton
+  }
+}
+// jsx
+;<div className={buttonClassChange()}>我是一个按钮</div>
 ```
 
 @tab 三元运算符
 
 ```jsx
- <div className={cart.totalAmount>0?style.button:style.noMealButton}>{props.buttonText}</div>
+<div className={cart.totalAmount > 0 ? style.button : style.noMealButton}>
+  {props.buttonText}
+</div>
 ```
 
 @tab 运算符判断
 
 ```jsx
- <div className={(cart.totalAmount>0&&style.button)||style.noMealButton}>{props.buttonText}</div>
+<div className={(cart.totalAmount > 0 && style.button) || style.noMealButton}>
+  {props.buttonText}
+</div>
 ```
 
 @tab 模板字符串拼接
 
 ```jsx
-<div className={`${style.button} ${cart.totalAmount===0&&style.noMealButton}`}>{props.buttonText}</div>
+<div
+  className={`${style.button} ${cart.totalAmount === 0 && style.noMealButton}`}
+>
+  {props.buttonText}
+</div>
 ```
 
 :::
@@ -96,7 +105,7 @@ order: 2
 
 “`CSS-in-JS`” 是指一种模式，其中 `CSS` 由 `JavaScript` 生成而不是在外部文件中定义；注意此功能并不是` React`的一部分，而是由第三方库提供
 
-[styled-component] (https://styled-components.com/docs)是社区最流行的` CSS-in-JS` 库
+[styled-component](https://styled-components.com/docs)是社区最流行的` CSS-in-JS` 库
 
 安装 `styled-components`:
 
@@ -115,8 +124,6 @@ yarn add styled-components
 ```
 
 :::
-
-
 
 `styled-components` 的本质是创建出一个组件：这个组件会被自动添加上一个不重复的 `class`,`styled-components` 会给该` class` 添加相关的样式
 
@@ -153,45 +160,53 @@ const AppWrapper = styled.div`
 
 ::: tip 提示
 
-`style-conpontents`非常强大，此处并非是`sc`的全部特性，这些已经可以可以结合react高效编写`css`了
+`style-conpontents`非常强大，此处并非是`sc`的全部特性，这些已经可以可以结合 react 高效编写`css`了
 
 :::
 
 #### props 穿透
 
-props 可以被传递给` styled`  组件,`style-compontents`可以自动过滤非`html`标签属性，**并将标准html属性映射到组件 html 结构最外层的标签上**
+props 可以被传递给` styled` 组件,`style-compontents`可以自动过滤非`html`标签属性，**并将标准 html 属性映射到组件 html 结构最外层的标签上**
 
 ```jsx
- <MyInput value='这是我的输入组件' onChange={inputChange} className='myInput'></MyInput>
+<MyInput
+  value="这是我的输入组件"
+  onChange={inputChange}
+  className="myInput"
+></MyInput>
 // value,className会映射至组件 html 结构最外层的标签上，而onChange事件会绑定到组件 html 结构最外层的标签上
 ```
 
 获取 props 需要通过`${}`传入一个插值函数，`props `会作为该函数的参数,这种方式可以有效的解决**动态样式**的问题
 
 ```jsx
-import styled from "styled-components";
-import {useState} from "react";
+import styled from 'styled-components'
+import { useState } from 'react'
 
+const MyButton = styled.button``
 
-const MyButton =styled.button`
-`
-
-const AppWrapper=styled.div`
+const AppWrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: ${props=>props.show?'black':'red'};
+  background-color: ${(props) => (props.show ? 'black' : 'red')};
 `
 
 function App(props) {
-    const [show,setShow]=useState(false)
-    return (
-            <AppWrapper show={show}>
-                <MyButton onClick={()=>{setShow(!show)}}>切换背景色</MyButton>
-            </AppWrapper>
-    );
+  const [show, setShow] = useState(false)
+  return (
+    <AppWrapper show={show}>
+      <MyButton
+        onClick={() => {
+          setShow(!show)
+        }}
+      >
+        切换背景色
+      </MyButton>
+    </AppWrapper>
+  )
 }
 
-export default App;
+export default App
 ```
 
 #### 添加 attrs 属性
@@ -199,12 +214,10 @@ export default App;
 除了直接写在组件上，属性也可以使用`attrs`进行附加，它会和组件上的属性进行合并，传入`styled`组件
 
 ```jsx
-const Wrapper = styled.div.attrs(
-    {
-        pleft:props=>props.pleft || '5px'
-    }
-)`
- padding-left:${props=>props.pleft}
+const Wrapper = styled.div.attrs({
+  pleft: (props) => props.pleft || '5px',
+})`
+  padding-left: ${(props) => props.pleft};
 `
 ```
 
@@ -221,4 +234,3 @@ const MenuButton = styled(MainButton)`
   background-color: red;
 `
 ```
-
