@@ -4,7 +4,7 @@ icon: react
 index: false
 ---
 
-- [JSX 核心语法](/前端框架/React/JSX核心语法)
+- [JSX 核心语法](/前端框架/React/JSX核心语法.html)
 
   - [x] `JSX`嵌入变量
   - [x] `JSX` 嵌入表达式
@@ -14,8 +14,10 @@ index: false
   - [x] `JSX` 条件渲染
   - [x] `JSX` 列表渲染
 
-- [React 中的 CSS](/前端框架/React/React中的CSS)
+- [React 中的 CSS](/前端框架/React/React中的CSS.html)
 
   - [x] 处理动态样式问题
   - [ ] react css 最佳实践
   - [x] CSS in JS（`style-compontent` 的使用）
+
+- [React 组件花开发](/前端框架/React/React组件花开发.html)

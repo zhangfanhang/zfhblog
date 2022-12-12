@@ -2,6 +2,7 @@
 home: true
 heroFullScreen: true
 layout: BlogHome
+icon: home
 title: 首页
 heroText: ZFH's Blog
 heroImage: /logo.jpg
