@@ -105,6 +105,16 @@ const buttonClassChange = () => {
 
 “`CSS-in-JS`” 是指一种模式，其中 `CSS` 由 `JavaScript` 生成而不是在外部文件中定义；注意此功能并不是` React`的一部分，而是由第三方库提供
 
+
+
+<center>
+  <img src='https://styled-components.com/logo.png'/>
+</center>
+
+
+
+
+
 [styled-component](https://styled-components.com/docs)是社区最流行的` CSS-in-JS` 库
 
 安装 `styled-components`:
@@ -160,7 +170,7 @@ const AppWrapper = styled.div`
 
 ::: tip 提示
 
-`style-conpontents`非常强大，此处并非是`sc`的全部特性，这些已经可以可以结合 react 高效编写`css`了
+`style-conpontents`非常强大，此处并非是`sc`的全部特性，这些说到的点已经可以可以结合 `react`高效编写`css`了
 
 :::
 

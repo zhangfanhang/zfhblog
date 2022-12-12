@@ -4,6 +4,8 @@ icon: react
 index: false
 ---
 
+![](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/jq表情包.png =300x300)
+
 - [JSX 核心语法](/前端框架/React/JSX核心语法.html)
 
   - [x] `JSX`嵌入变量
@@ -20,4 +22,17 @@ index: false
   - [ ] react css 最佳实践
   - [x] CSS in JS（`style-compontent` 的使用）
 
-- [React 组件花开发](/前端框架/React/React组件花开发.html)
+- [React 组件化开发](/前端框架/React/React组件化开发.html)
+
+  - [x] 类组件
+  - [x] 函数组件
+  - [x] ~~生命周期~~ <Badge text='hook用的不多' type='tip'/>
+  - [x] 组件通信：父子相互传值
+  - [x] 跨组件通信`context`=>`hook`:`useContext`
+  - [x] react 中`slot`实现
+  - [ ] 性能优化
+  - [x] `refs`=>`hook`:`useRef`
+  - [x] `Portals`、`fragment`
+  - [ ] 表单处理
+  - [ ] ~~高阶组件~~
+  - [ ] ~~`render props`~~
