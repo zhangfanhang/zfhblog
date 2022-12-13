@@ -48,33 +48,53 @@ icon: redux
 
 ### 单一数据源
 
-- 整个应用程序的 state 被存储在一颗 object tree 中，并且这个 object tree 只存储在一个 store 中
-- Redux 并没有强制让我们不能创建多个 Store，但是那样做并不利于数据的维护
-- 单一的数据源可以让整个应用程序的 state 变得方便维护、追踪、修改
+- 整个应用程序的 `state` 被存储在一颗 `object tree` 中，并且这个 `object tree` 只存储在一个 `store `中
+- `Redux` 并没有强制让我们不能创建多个 `Store`，但是那样做并不利于数据的维护
+- 单一的数据源可以让整个应用程序的 `state` 变得方便维护、追踪、修改
 
 ### State 是只读的
 
-- 唯一修改 State 的方法一定是触发 action，不要试图在其他地方通过任何的方式来修改 State
-- 这样就确保了 View 或网络请求都不能直接修改 state，它们只能通过 action 来描述自己想要如何修改 state
-- 这样可以保证所有的修改都被集中化处理，并且按照严格的顺序来执行，所以不需要担心 race condition（竟态）的问题
+- 唯一修改 `State` 的方法一定是触发 `action`，不要试图在其他地方通过任何的方式来修改 `State`
+- 这样就确保了 `view `层或网络请求都不能直接修改 `state`，它们只能通过 `action` 来描述自己想要如何修改` state`
+- 这样可以保证所有的修改都被集中化处理，并且按照严格的顺序来执行，所以不需要担心` race condition`（竟态）的问题
 
 ### 使用纯函数来执行修改
 
-- 通过 reducer 将 旧 state 和 actions 联系在一起，并且返回一个新的 State
-- 随着应用程序的复杂度增加，我们可以将 reducer 拆分成多个小的 reducers，分别操作不同 state tree 的一部分
-- 但是所有的 reducer 都应该是纯函数，不能产生任何的副作用
-
-## Redux 使用流程
-
-![redux使用流程](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/redux%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B.png)
+- 通过` reducer `将 旧` state` 和 `actions` 联系在一起，并且返回一个新的 `state`
+- 随着应用程序的复杂度增加，我们可以将` reducer` 拆分成多个小的 `reducer`，分别操作不同 `state tree` 的一部分
+- 所有的 `reducer` 都应该是纯函数，不能产生任何的副作用  
 
 ## 在 react 项目中使用 redux
 
-1. 创建 store 文件夹，创建 4 个文件：actionCreators.js（创建 action 的文件），constants.js（定义 action 名称常量),reducer.js(将 aciton 和 state 联系在一起)，index.js(导出创建好的 store)
+## 安装redux
+
+::: code-tabs
+
+@tab npm
+
+```shell
+npm install redux
+```
+@tab yarn
+```shell
+yarn add redux
+```
+:::
+
+## 基本使用
+
+创建` store` 文件夹，创建 4 个文件：
+
+- `actionCreators.js`（创建 `action` 的文件）
+- `constants.js`（定义 `action` 名称常量)
+- `reducer.js`(将` aciton` 和 `state` 联系在一起)
+- `index.js`(导出创建好的` store`)
 
 这里实现一个简单的 couter 案例：
 
-::: details actionCreators.js
+::: code-tabs
+
+@tab actionCreators.js
 
 ```js
 import { JIA_ACTION } from './constants'
@@ -87,17 +107,13 @@ export function JIAA_ACTION(num) {
 }
 ```
 
-:::
-
-::: details constants.js
+@tab constants.js
 
 ```js
 export const JIA_ACTION = 'JIA_ACTION'
 ```
 
-:::
-
-::: details reducer.js
+@tab reducer.js
 
 ```js
 import { JIA_ACTION } from './constants'
@@ -116,9 +132,7 @@ export default function reducer(state = defaultStore, action) {
 }
 ```
 
-:::
-
-::: details index.js
+@tab index.js
 
 ```js
 import { createStore } from 'redux'
@@ -128,24 +142,30 @@ const store = createStore(reducer)
 
 export default store
 ```
-
 :::
 
-2. 接着创建 utils 文件夹，这里编写 connect 工具函数。创建 connect.js(抽象 react 与 redux 连接逻辑的工具函数)，context.js(利用 context 全局共享 store)
 
-::: details connect.js
+
+接着创建 `utils` 文件夹， 创建2个文件：
+
+- `connect.js`(返回一个抽象` react` 与` redux` 连接逻辑的高阶组件)
+- `context.js`(利用 `context` 全局共享` store`)
+
+::: code-tabs
+
+@tab connect.js
 
 ```js
 import { PureComponent } from 'react'
 import storeContext from './context'
 
 export default function connect(mapStateToProps, mapDispatchToProps) {
-  return function enhanceHOC(WrapperComponent) {
+  return function connectHOC(WrapperComponent) {
     class ReduxConnect extends PureComponent {
       constructor(props, context) {
         super(props, context)
         this.state = {
-          storeState: context.getState(),
+          storeState: mapStateToProps(context.getState()),
         }
       }
 
@@ -162,10 +182,8 @@ export default function connect(mapStateToProps, mapDispatchToProps) {
       }
 
       componentDidMount() {
-        // console.log(this.context)
         this.unsubscribe = this.context.subscribe(() => {
           this.setState({
-            // { counter:1}
             storeState: mapStateToProps(this.context.getState()),
           })
         })
@@ -182,7 +200,7 @@ export default function connect(mapStateToProps, mapDispatchToProps) {
 }
 ```
 
-:::
+@tab context.js
 
 ::: details context.js
 
@@ -196,7 +214,9 @@ export default StoreContext
 
 :::
 
-3. 在项目 index.js 文件中引入 store，利用 StoreContext 的 Provider 组件，让 App 组件共享 store
+
+
+在项目 `index.js` 文件中引入` store`，利用 `StoreContext` 的 `Provider` 组件，让 `App` 组件共享 `store`
 
 ```jsx
 import store from './redux/store'
@@ -209,7 +229,7 @@ ReactDOM.render(
 )
 ```
 
-4. 在想要使用 store 的组件中定义 mapStateToProps,mapDispatchToProps。把需要的 state 和 dispatch 映射到想要使用 store 的组件的 props 中
+在想要使用 `store` 的组件中定义`mapStateToProps`、 `mapDispatchToProps`。把需要的`state` 和` dispatch `映射到想要使用 `store` 的组件的 `props` 中
 
 ```js
 import { PureComponent } from 'react'
@@ -258,12 +278,31 @@ const EnApp = connect(mapStateToProps, mapDispatchToProps)(App)
 export default EnApp
 ```
 
-虽然已经实现了 connect、Provider 这些帮助我们完成连接 redux、react 的辅助工具，但是实际上 redux 官方提供了 react-redux 的库，可以直接在项目中使用，并且实现的逻辑会更加的严谨和高效
+虽然手动实现了`connect`帮助我们完成`redux`与`react` 的连接，但是实际上 `redux` 官方提供了 `react-redux` 的库，可以直接在项目中使用，并且实现的逻辑会更加的严谨和高效
 
-1. 安装：yarn add react-redux
-2. 在 index.js 中将 Provider 组件替换成 react-redux 中的 Provider 组件
+1. 安装:
 
-```jsx
+::: code-tabs
+
+@tab npm
+
+```shell
+npm install react-redux
+```
+
+@tab yarn
+
+```shell
+yarn add react-redux
+```
+
+:::
+
+2. 改造之前的代码：
+
+在 `index.js` 中将 `Provider` 组件替换成 `react-redux `中的 `Provider` 组件
+
+```jsx {4,5,6}
 import { Provider } from 'react-redux'
 
 ReactDOM.render(
@@ -273,10 +312,9 @@ ReactDOM.render(
   document.getElementById('root')
 )
 ```
+组件中将 connect 替换成 react-redux 中 connect
 
-3. 组件中将 connect 替换成 react-redux 中 connect
-
-```js
+```jsx {1}
 import { connect } from 'react-redux'
 ```
 
@@ -461,3 +499,9 @@ const reducer = combineReducers({
 
 export default reducer
 ```
+
+## RTK <Badge />
+
+
+
+## redux中的hook <Badge />

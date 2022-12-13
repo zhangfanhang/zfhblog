@@ -22,7 +22,7 @@ body,
 .description {
   font-weight: bold;
   font-size: 30px;
-  @include typing(17, 3);
+  @include typing(20, 3);
 }
 @keyframes caret {
   50% {
@@ -34,12 +34,10 @@ body,
     width: 0;
   }
 }
-
 .logo,
 .hero-image {
   border-radius: 5px;
 }
-
 div.blog-hero h1 {
   font-weight: bold;
   font-style: italic;
