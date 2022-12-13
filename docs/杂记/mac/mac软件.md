@@ -1,6 +1,8 @@
 ---
 title: mac软件
-category: 杂记
+category:
+  - 杂记
+  - mac
 order: 5
 ---
 
@@ -37,6 +39,7 @@ order: 5
 - ~~`docker`:容器化技术学习中，[下载](https://www.docker.com/)~~
 - `Input Source Pro`:通过简洁的提示方式，配合输入法自动切换功能，让每一次输入都信心十足，[下载](https://inputsource.pro/zh-CN)
 - `Pretty Clean`,[下载](https://www.prettyclean.cc/zh)
+- `MTMR`:[下载](https://github.com/Toxblh/MTMR)
 
 ## icloud 云盘（破解软件）
 

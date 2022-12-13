@@ -1,5 +1,5 @@
 ---
-title: node基础知识&工具
+title: node基础知识以及常用库
 tag:
   - npm
   - yarn
@@ -8,6 +8,7 @@ tag:
   - nvm
   - node
 category: node技术栈
+order: 1
 ---
 
 ## node.js 介绍

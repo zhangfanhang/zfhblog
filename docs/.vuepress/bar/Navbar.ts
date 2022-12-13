@@ -141,9 +141,9 @@ export default navbar([
         text: 'node技术栈',
         children: [
           {
-            text: 'node基础知识&工具',
+            text: 'node基础知识以及常用库',
             icon: 'node',
-            link: '/node/node基础知识&工具',
+            link: '/node/node基础知识以及常用库',
           },
           {
             text: 'Nest',

@@ -1,6 +1,8 @@
 ---
 title: mac提示app已损坏解决方法
-category: 杂记
+category:
+  - 杂记
+  - mac
 order: 6
 ---
 

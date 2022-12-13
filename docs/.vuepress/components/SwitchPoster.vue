@@ -51,19 +51,19 @@ export default {
       games: [
         {
           name: 'switch-hades',
-          link: '/hades',
+          link: 'hades',
         },
         {
           name: 'switch-fifa23',
-          link: '/fifa23',
+          link: 'fifa23',
         },
         {
           name: 'switch-Hollow-Knight',
-          link: '/HollowKnight',
+          link: 'hollowknight',
         },
         {
           name: 'switch-Door-Kickers',
-          link: '/DoorKickers',
+          link: 'doorkickers',
         },
       ],
     }

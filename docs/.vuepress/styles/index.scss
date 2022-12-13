@@ -1,6 +1,15 @@
 // place your custom styles herend
 @import 'atropos/scss';
-
+@font-face {
+  font-family: Sans;
+  src: url('/Sans.otf') format('opentype');
+}
+body,
+.title,
+.blogger-info,
+.description {
+  font-family: Sans !important;
+}
 @mixin typing($count: 0, $duration: 0, $delay: 0) {
   overflow: hidden;
   border-right: 1px solid transparent;
@@ -13,7 +22,7 @@
 .description {
   font-weight: bold;
   font-size: 30px;
-  @include typing(25, 3);
+  @include typing(17, 3);
 }
 @keyframes caret {
   50% {

@@ -42,5 +42,5 @@ export default sidebar({
   /**
    * node
    */
-  '/node/nest/': 'structure',
+  '/node/': 'structure',
 })
