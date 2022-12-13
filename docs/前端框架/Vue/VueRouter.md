@@ -3,6 +3,8 @@ title: VueRouter
 category:
   - 前端框架
   - Vue
+icon: vue
+order: 3
 ---
 
 ::: warning 注意

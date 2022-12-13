@@ -4,6 +4,7 @@ category:
   - 前端框架
   - Vue
 order: 1
+icon: vue
 ---
 
 ## vue 简介

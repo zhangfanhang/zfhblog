@@ -3,6 +3,8 @@ title: Pinia
 category:
   - 前端框架
   - Vue
+icon: vue
+order: 6
 ---
 
 <center>
@@ -73,21 +75,21 @@ export const useCounterStore = defineStore('count', {
 })
 ```
 
-### 使用actions
+### 使用 actions
 
 ```js
 import { useCounterStore } from '../stores/counterStore'
 
 // setup
- const counterStore = useCounterStore()
- const incrementAndPrint= ()=>{
-      counterStore.increment()
-    }
+const counterStore = useCounterStore()
+const incrementAndPrint = () => {
+  counterStore.increment()
+}
 ```
 
 ### state
 
-有时我们可能需要使state在模板中保持响应式，此时应该使用计算属性：
+有时我们可能需要使 state 在模板中保持响应式，此时应该使用计算属性：
 
 ```js
 let tabs = computed(() => tabsStore.tabs)
@@ -95,7 +97,7 @@ let tabs = computed(() => tabsStore.tabs)
 
 ## 热更新
 
-当你更改` store `中的代码时，可能项目无法正常工作
+当你更改`store`中的代码时，可能项目无法正常工作
 
 这时你需要加入热更新支持,如果你有多个 store,那么每个 store 都需要添加
 
@@ -117,4 +119,3 @@ if (import.meta.hot) {
   import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
 }
 ```
-

@@ -42,7 +42,7 @@ export default navbar([
           {
             text: 'Vue',
             icon: 'vue',
-            link: '/前端框架/Vue/Vue核心',
+            link: '/前端框架/Vue/',
           },
           {
             text: 'React',

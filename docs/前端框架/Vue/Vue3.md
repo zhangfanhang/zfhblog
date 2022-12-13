@@ -1,11 +1,10 @@
 ---
 title: Vue3
-tags:
-  - vue3
-  - Composition API
 category:
   - 前端框架
   - Vue
+icon: vue
+order: 5
 ---
 
 # Vue3

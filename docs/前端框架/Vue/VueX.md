@@ -3,6 +3,8 @@ title: VueX
 category:
   - 前端框架
   - Vue
+icon: vue
+order: 4
 ---
 
 ## 概念
