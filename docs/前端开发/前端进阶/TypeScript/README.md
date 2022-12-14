@@ -1,11 +1,8 @@
 ---
-title: 为什么要学习TS
-tags:
-  - TypeScript
+title: TypeScript
 category:
   - 前端进阶
   - TypeScript
-order: 1
 ---
 
 <center>

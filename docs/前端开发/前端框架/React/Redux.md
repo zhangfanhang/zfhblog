@@ -7,6 +7,16 @@ category:
 icon: redux
 ---
 
+::: tip 推荐阅读
+
+
+
+[Redux 入门教程（一）：基本用法](https://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
+
+[官方文档](https://redux.js.org/)
+
+:::
+
 `Redux` 就是一个帮助我们管理 `State` 的容器
 
 ## Redux 的核心概念
@@ -320,7 +330,7 @@ import { connect } from 'react-redux'
 
 ## redux 中异步操作
 
-事实上，网络请求到的数据也属于我们状态管理的一部分，更好的一种方式应该是将其也交给 redux 来管理
+事实上，网络请求到的数据也属于我们状态管理的一部分，更好的一种方式应该是将其也交给 `redux` 来管理
 
 ![redux-异步操作](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/redux-%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C.png)
 
@@ -505,3 +515,10 @@ export default reducer
 
 
 ## redux中的hook <Badge />
+
+
+
+
+
+## RTKQ
+

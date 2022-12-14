@@ -1,8 +1,8 @@
 ---
 title: Next.js
 index: false
+icon: vercel
 dir:
-  icon: vercel
   link: true
 ---
 
