@@ -1,9 +1,7 @@
 ---
 title: PBR材质纹理
-tag:
-  - Threejs
-  - PBR
 category:
+  - 前端开发
   - 前端图形
   - Three.js
 order: 5

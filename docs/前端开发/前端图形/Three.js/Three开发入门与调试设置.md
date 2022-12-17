@@ -1,8 +1,7 @@
 ---
 title: Three开发入门与调试设置
-tag:
-  - Threejs
 category:
+  - 前端开发
   - 前端图形
   - Three.js
 order: 2

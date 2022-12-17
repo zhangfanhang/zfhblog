@@ -1,15 +1,12 @@
 ---
 title: TypeScript
-category:
-  - 前端进阶
-  - TypeScript
+icon: typescript
+index: false
+dir:
+  link: true
 ---
 
-<center>
-
-![ts](https://www.runoob.com/wp-content/uploads/2019/01/typescript-logo.jpg)
-
-</center>
+>  为什么学习TS????
 
 ## 程序更容易理解
 

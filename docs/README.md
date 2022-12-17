@@ -1,13 +1,13 @@
 ---
 home: true
-heroFullScreen: true
+heroFullScreen: false
 layout: BlogHome
 icon: home
 title: 首页
 heroText: ZFH's Blog
 heroImage: /logo.jpg
-tagline: '你只管努力 剩下的交给天意'
-bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg5.jpg'
+tagline: '无他，惟手熟尔。'
+bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg6.jpg'
 projects:
   - name: todoList
     icon: vue

@@ -1,11 +1,9 @@
 ---
 title: Threejs物体
-tag:
-  - Threejs
-  - 物体
 category:
+  - 前端开发
   - 前端图形
-  - Three.js'
+  - Three.js
 order: 3
 ---
 

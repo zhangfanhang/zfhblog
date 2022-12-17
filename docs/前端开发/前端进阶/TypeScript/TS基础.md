@@ -1,8 +1,8 @@
 ---
 title: TS基础
-tags:
-  - TypeScript
+icon: typescript
 category:
+  - 前端开发
   - 前端进阶
   - TypeScript
 order: 2
@@ -148,13 +148,19 @@ function printRes2(): undefined {
 }
 ```
 
+## Enum
+
+[enum](https://www.typescriptlang.org/docs/handbook/enums.html)
+
+
+
 ## Interface
 
-在 TypeScript 中，我们使用接口（Interfaces）来定义对象的类型
+在 `TypeScript` 中，我们使用接口`Interfaces`来定义对象的类型
 
-在面向对象语言中，接口（Interfaces）是一个很重要的概念，它是对行为的抽象，而具体如何行动需要由类（classes）去实现（implement）
+在面向对象语言中，接口`nterfaces`是一个很重要的概念，它是对行为的抽象，而具体如何行动需要由类`classes`去实现`implement`
 
-TypeScript 中的接口是一个非常灵活的概念，除了可用于对类的一部分行为进行抽象以外，也常用于对「对象的形状（Shape）」进行描述:
+`TypeScript` 中的接口是一个非常灵活的概念，除了可用于对类的一部分行为进行抽象以外，也常用于对「对象的形状（`Shape`」进行描述:
 
 ```ts
 interface IPoint {
@@ -326,6 +332,25 @@ fun3(1, 2, 3, 4, 6)
 - 三种参数都应定义在参数列表的末尾
 
 :::
+
+## Object
+
+在 `ts` 中对象的定义不是`key to value` 键值对，而是 `key to type` 键类型对
+
+```ts
+const person: {
+  name: string
+  age: number
+} = {
+  name: 'frank',
+  age: 14,
+}
+// 上面的定义等价于：
+const person2 = {
+  name: 'zhang',
+  age: 13,
+}
+```
 
 ## Type Assertions类型断言
 

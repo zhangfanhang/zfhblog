@@ -1,7 +1,5 @@
 ---
-title: 杂记
+title: 杂七杂八
 icon: note
 index: false
 ---
-
-记录一些有的没的......

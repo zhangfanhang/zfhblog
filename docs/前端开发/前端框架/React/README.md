@@ -2,6 +2,8 @@
 title: React
 icon: react
 index: false
+dir:
+  link: true
 ---
 
 ![](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/jq表情包.png =300x300)

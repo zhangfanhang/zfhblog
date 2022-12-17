@@ -236,9 +236,9 @@ brew install nvm
 
 [github](https://github.com/mongodb/homebrew-brew)
 
-## ~~fd~~
+## fd
 
-~~检索文件工具，速度较快，比`everything`还是差一点,[github](https://github.com/sharkdp/fd)~~
+检索文件工具，速度较快，比`everything`还是差一点,[github](https://github.com/sharkdp/fd)
 
 ##  autojump
  [autojump](https://github.com/wting/autojump),快速跳转目录(只能跳转已经 cd 过的目录)
@@ -324,3 +324,30 @@ print_info() {
 ```
 
 ![neofetch](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/neofetch.png "neofetch效果图")
+
+## tree
+
+用于生成文件夹树形结构图
+
+```shell
+├── App.jsx
+├── AsyncData.jsx
+├── store
+│   ├── Count
+│   │   ├── actionCreators.js
+│   │   ├── constants.js
+│   │   ├── index.js
+│   │   └── reducer.js
+│   ├── Data
+│   │   ├── actionCreators.js
+│   │   ├── constants.js
+│   │   ├── index.js
+│   │   └── reducer.js
+│   ├── index.js
+│   └── reducer.js
+├── tree.txt
+└── utils
+    ├── connect.js
+    └── context.js
+```
+

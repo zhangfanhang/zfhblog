@@ -15,7 +15,6 @@
 <script>
 /* 不蒜子访问量统计 */
 import script from 'busuanzi.pure.js'
-
 export default {
   // 监听,当路由发生变化的时候执行
   watch: {

@@ -1,16 +1,18 @@
 ---
 title: TS进阶
+icon: typescript
 category:
+  - 前端开发
   - 前端进阶
   - TypeScript
 order: 3
 ---
 
-::: warning 开始之前...
+## 类型收窄
 
-本文不包含所有`TypeScript`高级特性
+[类型收窄](https://yayujs.com/handbook/Narrowing.html)
 
-:::
+
 
 ## Generics泛型
 
@@ -68,7 +70,7 @@ function createArray<T>(length: number, value: T): Array<T> {
 createArray(3, 'x') // ['x', 'x', 'x']
 ```
 
-## 多个类型参
+### 多个类型参
 
 定义泛型的时候，可以一次定义多个类型参数：
 
@@ -80,9 +82,9 @@ function swap<T, U>(tuple: [T, U]): [U, T] {
 swap([7, 'seven']) // ['seven', 7]
 ```
 
-上例中，我们定义了一个 `swap` 函数，用来交换输入的元组。
+上例中，我们定义了一个 `swap` 函数，用来交换输入的元组
 
-## 泛型约束
+### 泛型约束
 
 在函数内部使用泛型变量的时候，由于事先不知道它是哪种类型，所以不能随意的操作它的属性或方法：
 
@@ -146,7 +148,7 @@ copyFields(x, { b: 10, d: 20 })
 
 上例中，我们使用了两个类型参数，其中要求 `T` 继承 `U`，这样就保证了 `U` 上不会出现 `T` 中不存在的字段。
 
-## 泛型接口
+### 泛型接口
 
 可以使用接口的方式来定义一个函数需要符合的形状：
 
@@ -201,7 +203,7 @@ createArray(3, 'x') // ['x', 'x', 'x']
 
 注意，此时在使用泛型接口的时候，需要定义泛型的类型。
 
-## 泛型类
+### 泛型类
 
 与泛型接口类似，泛型也可以用于类的类型定义中：
 
@@ -218,7 +220,7 @@ myGenericNumber.add = function (x, y) {
 }
 ```
 
-## 泛型参数的默认类型
+### 泛型参数的默认类型
 
 在 TypeScript 2.3 以后，我们可以为泛型中的类型参数指定默认类型。当使用泛型时没有在代码中直接指定类型参数，从实际值参数中也无法推测出时，这个默认类型就会起作用。
 
@@ -234,7 +236,7 @@ function createArray<T = string>(length: number, value: T): Array<T> {
 
 ## 类型别名
 
-类型别名用来给一个类型起个新名字。
+类型别名用来给一个类型起个新名字
 
 ```typescript
 type Name = string
@@ -255,17 +257,19 @@ function getName(n: NameOrResolver): Name {
 
 ### 类型别名与接口的区别
 
-::: tip 最佳实践
+// TODO: 重新梳理 
 
-用 interface 描述**数据结构**，用 type 描述**类型**
-
-:::
+- [一分钟带你搞清楚ts中 interface 和 type 的概念和用法（较全）](https://blog.csdn.net/TIAN20121221/article/details/120085998)
+  
+  - ## [TypeScript type 和 interface区别](https://segmentfault.com/a/1190000041878441)
+  
+- [TypeScript中interface和type](https://segmentfault.com/a/1190000038825361)
 
 #### 相同点
 
 都可以描述一个对象或者函数：
 
-interface
+`interface`
 
 ```typescript
 interface User {
@@ -278,7 +282,7 @@ interface SetUser {
 }
 ```
 
-type
+`type`
 
 ```ts
 type User = {
@@ -289,11 +293,11 @@ type User = {
 type SetUser = (name: string, age: number) => void
 ```
 
-都允许拓展（extends）：
+都允许拓展`extends`：
 
-terface 和 type 都可以拓展，并且两者并不是相互独立的，也就是说 interface 可以 extends type, type 也可以 extends interface 。 **虽然效果差不多，但是两者语法不同**。
+`interface` 和 `type` 都可以拓展，并且两者并不是相互独立的，也就是说` interface `可以 `extends` `type`, `type` 也可以 `extends` `interface `。 **虽然效果差不多，但是两者语法不同**。
 
-interface extends interface
+`interface extends interface`
 
 ```ts
 interface Name {
@@ -304,7 +308,7 @@ interface User extends Name {
 }
 ```
 
-type extends type
+`type extends type`
 
 ```ts
 type Name = {
@@ -313,7 +317,7 @@ type Name = {
 type User = Name & { age: number }
 ```
 
-interface extends type
+`interface extend type`
 
 ```ts
 type Name = {
@@ -324,7 +328,7 @@ interface User extends Name {
 }
 ```
 
-type extends interface
+`type extends interface`
 
 ```ts
 interface Name {
@@ -337,9 +341,9 @@ type User = Name & {
 
 #### 不同点
 
-type 可以而 interface 不行：
+`type` 可以而 `interface` 不行：
 
-- type 可以声明基本类型别名，联合类型，元组等类型
+- `type` 可以声明基本类型别名，联合类型，元组等类型
 
 ```ts
 // 基本类型别名
@@ -359,7 +363,7 @@ type Pet = Dog | Cat
 type PetList = [Dog, Pet]
 ```
 
-- type 语句中还可以使用 typeof 获取实例的 类型进行赋值
+- `type `语句中还可以使用 `typeof` 获取实例的 类型进行赋值
 
 ```ts
 // 当你想获取一个变量的类型时，使用 typeof
@@ -367,9 +371,9 @@ let div = document.createElement('div')
 type B = typeof div
 ```
 
-interface 可以而 type 不行：
+`interface` 可以而 `type `不行：
 
-interface 能够声明合并
+`interface` 能够声明合并
 
 ```ts
 interface User {
@@ -390,9 +394,7 @@ User 接口为 {
 */
 ```
 
-## 类型保护
 
-[typescript-typeguard](https://www.wenjiangs.com/doc/typescript-typeguard)
 
 ## 重载
 
@@ -583,7 +585,7 @@ function fn(ctor: SomeConstructor) {
 #### 数字索引签名:通过定义接口用来约束数组
 
 ```typescript
-type numberIndex{
+type numberIndex={
     [index:number]:string
 }
 const testArray:numberIndex = ["1","2",3]// 不能将类型“number”分配给类型“string”。ts(2322) 所需类型来自此索引签名
@@ -620,7 +622,7 @@ type attentionType{
 }
 ```
 
-- 虽然 TypeScript 可以同时支持 `string` 和 `number` 类型，但数字索引的返回类型一定要是字符索引返回类型的子类型。这是因为当使用一个数字进行索引的时候，JavaScript 实际上把它转成了一个字符串。这就意味着使用数字 100 进行索引跟使用字符串 100 索引，是一样的。
+- 虽然 TypeScript 可以同时支持 `string` 和 `number` 类型，但数字索引的返回类型一定要是字符索引返回类型的子类型。这是因为当使用一个数字进行索引的时候，`JavaScript` 实际上把它转成了一个字符串。这就意味着使用数字 100 进行索引跟使用字符串 100 索引，是一样的。
 
 ```ts
 interface Animal {
@@ -745,4 +747,209 @@ type User = Concrete<MaybeUser>
 //    name: string;
 //    age: number;
 // }
+```
+
+
+## 类
+
+### 基础概念
+
+- 类（Class）：定义了一件事物的抽象特点，包含它的属性和方法
+- 对象（Object）：类的实例，通过 new 生成
+- 面向对象（OOP）的三大特性：封装、继承、多态
+- 封装（Encapsulation）：将对数据的操作细节隐藏起来，只暴露对外的接口。外界调用端不需要（也不可能）知道细节，就能通过对外提供的接口来访问该对象，同时也保证了外界无法任意更改对象内部的数据
+- 继承（Inheritance）：子类继承父类，子类除了拥有父类的所有特性外，还有一些更具体的特性
+- 多态（Polymorphism）：由继承而产生了相关的不同的类，对同一个方法可以有不同的响应。比如 Cat 和 Dog 都继承自 Animal，但是分别实现了自己的 eat 方法。此时针对某一个实例，我们无需了解它是 Cat 还是 Dog，就可以直接调用 eat 方法，程序会自动判断出来应该如何执行 eat
+- 存取器（getter & setter）：用以改变属性的读取和赋值行为
+- 修饰符（Modifiers）：修饰符是一些关键字，用于限定成员或类型的性质。比如 public 表示公有属性或方法
+- 抽象类（Abstract Class）：抽象类是供其他类继承的基类，抽象类不允许被实例化。抽象类中的抽象方法必须在子类中被实现
+- 接口（Interfaces）：不同类之间公有的属性或方法，可以抽象成一个接口。接口可以被类实现（implements）。一个类只能继承自另一个类，但是可以实现多个接口
+
+### Access Modifiers访问修饰符
+
+TypeScript 可以使用三种访问修饰符（Access Modifiers），分别是 `public`、`private` 和 `protected`。
+
+- `public` 修饰的属性或方法是公有的，可以在任何地方被访问到，默认所有的属性和方法都是 `public` 的
+- `private` 修饰的属性或方法是私有的，不能在声明它的类的外部访问
+- `protected` 修饰的属性或方法是受保护的，它和 `private` 类似，区别是它在子类中也是允许被访问的
+
+```ts
+interface IPoint {
+  X: number
+  Y: number
+  drawPoint: () => void
+  getDistances: (p: IPoint) => number
+}
+class Point implements IPoint {
+  constructor(private _x: number, private _y: number) {}
+  drawPoint() {
+    console.log('x：' + this._x, 'y:' + this._y)
+  }
+  getDistances(p: IPoint) {
+    return Math.sqrt((p.X - this._x) ** 2 + (p.Y - this._y) ** 2)
+  }
+  get X() {
+    return this._x
+  }
+  set X(value: number) {
+    if (value < 0) throw new Error('x不能小于0')
+    this._x = value
+  }
+  get Y() {
+    return this._y
+  }
+  set Y(value: number) {
+    if (value < 0) throw new Error('y不能小于0')
+    this._y = value
+  }
+}
+
+const p1 = new Point(0, -1)
+const p2 = new Point(0, 2)
+```
+
+### readonly
+
+readonly 只读属性关键字
+
+```ts
+class Animal {
+  readonly name
+  constructor(name) {
+    this.name = name
+  }
+}
+
+let a = new Animal('Jack')
+console.log(a.name) // Jack
+a.name = 'Tom'
+
+// index.ts(10,3): TS2540: Cannot assign to 'name' because it is a read-only property.
+```
+
+注意如果 `readonly` 和其他访问修饰符同时存在的话，需要写在其后面。
+
+```ts
+class Animal {
+  constructor(public readonly name) {
+    this.name = name
+  }
+}
+```
+
+###  抽象类
+
+`abstract` 用于定义抽象类和其中的抽象方法。
+
+什么是抽象类？
+
+首先，抽象类是不允许被实例化的：
+
+```ts
+abstract class Animal {
+  constructor(pubilc name) {
+    this.name = name;
+  }
+   abstract sayHi();
+}
+
+let a = new Animal('Jack');
+
+// index.ts(9,11): error TS2511: Cannot create an instance of the abstract class 'Animal'.
+```
+
+上面的例子中，我们定义了一个抽象类 `Animal`，并且定义了一个抽象方法 `sayHi`。在实例化抽象类的时候报错了。
+
+其次，抽象类中的抽象方法必须被子类实现：
+
+```ts
+abstract class Animal {
+  constructor(public name) {
+    this.name = name
+  }
+  abstract sayHi()
+}
+
+class Cat extends Animal {
+  eat() {
+    console.log(`${this.name} is eating.`)
+  }
+}
+
+let cat = new Cat('Tom')
+
+// index.ts(9,7): error TS2515: Non-abstract class 'Cat' does not implement inherited abstract member 'sayHi' from class 'Animal'.
+```
+
+上面的例子中，我们定义了一个类 `Cat` 继承了抽象类 `Animal`，但是没有实现抽象方法 `sayHi`，所以编译报错了。
+
+下面是一个正确使用抽象类的例子：
+
+```ts
+abstract class Animal {
+  public name
+  public constructor(name) {
+    this.name = name
+  }
+  public abstract sayHi()
+}
+
+class Cat extends Animal {
+  public sayHi() {
+    console.log(`Meow, My name is ${this.name}`)
+  }
+}
+
+let cat = new Cat('Tom')
+```
+
+### 类实现接口
+
+实现（implements）是面向对象中的一个重要概念。一般来讲，一个类只能继承自另一个类，有时候不同类之间可以有一些共有的特性，这时候就可以把特性提取成接口（interfaces），用 implements 关键字来实现。这个特性大大提高了面向对象的灵活性。
+
+举例来说，门是一个类，防盗门是门的子类。如果防盗门有一个报警器的功能，我们可以简单的给防盗门添加一个报警方法。这时候如果有另一个类，车，也有报警器的功能，就可以考虑把报警器提取出来，作为一个接口，防盗门和车都去实现它：
+
+```ts
+interface Alarm {
+  alert(): void
+}
+
+class Door {}
+
+class SecurityDoor extends Door implements Alarm {
+  alert() {
+    console.log('SecurityDoor alert')
+  }
+}
+
+class Car implements Alarm {
+  alert() {
+    console.log('Car alert')
+  }
+}
+```
+
+一个类可以实现多个接口：
+
+```ts
+interface Alarm {
+  alert(): void
+}
+
+interface Light {
+  lightOn(): void
+  lightOff(): void
+}
+
+class Car implements Alarm, Light {
+  alert() {
+    console.log('Car alert')
+  }
+  lightOn() {
+    console.log('Car light on')
+  }
+  lightOff() {
+    console.log('Car light off')
+  }
+}
 ```

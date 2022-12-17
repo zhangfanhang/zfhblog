@@ -13,7 +13,9 @@ icon: redux
 
 [Redux 入门教程（一）：基本用法](https://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
 
-[官方文档](https://redux.js.org/)
+[redux](https://redux.js.org/)
+
+[redux-toolkit](https://redux-toolkit.js.org/)
 
 :::
 
@@ -21,9 +23,9 @@ icon: redux
 
 ## Redux 的核心概念
 
-### state
+### store
 
-使用**普通对象**来描述应用的`state`,没错就是这么简单
+使用**普通对象**来描述应用的`state`,存放在`store`中 
 
 ```js
 {
@@ -334,88 +336,104 @@ import { connect } from 'react-redux'
 
 ![redux-异步操作](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/redux-%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C.png)
 
-但是在 redux 中如何可以进行异步的操作呢？
+但是在 `redux` 中如何可以进行异步的操作呢？
 
-- 答案就是使用中间件（Middleware）
-- 学习过 Express 或 Koa 框架的童鞋对中间件的概念一定不陌生
-- 在这类框架中，Middleware 可以帮助我们在请求和响应之间嵌入一些操作的代码，比如 cookie 解析、日志记录、文件压缩等操作
+- 答案就是使用中间件
+- 在`Koa`框架中，`Middleware` 可以帮助我们在请求和响应之间嵌入一些操作的代码，比如 `cookie `解析、日志记录、文件压缩等操作
 
 ### 理解中间件
 
-redux 也引入了中间件（Middleware）的概念：
+`redux` 也引入了中间件`Middleware`的概念：
 
-- 这个中间件的目的是在 dispatch 的 action 和最终达到的 reducer 之间，扩展一些自己的代码。比如日志记录、调用异步接口、添加代码调试功能等等
+- 这个中间件的目的是在` dispatch` 的 `action` 和最终达到的 `reducer` 之间，扩展一些自己的代码。比如日志记录、调用异步接口、添加代码调试功能等等
 
-- 我们现在要做的事情就是发送异步的网络请求，所以我们可以添加对应的中间件。官网推荐的、包括演示的网络请求的中间件是使用 redux-thunk
+- 我们现在要做的事情就是发送异步的网络请求，所以我们可以添加对应的中间件。官网推荐的、包括演示的网络请求的中间件是使用` redux-thunk`
 
-redux-thunk 是如何做到让我们可以发送异步的请求呢？
+r`edux-thunk `是如何做到让我们可以发送异步的请求呢？
 
-- 我们知道，默认情况下的 dispatch(action)，action 需要是一个 JavaScript 的对象
-- redux-thunk 可以让 dispatch(action 函数)，action 可以是一个函数
-- 该函数会被调用，并且会传给这个函数一个 dispatch 函数和 getState 函数：
+- 我们知道，默认情况下的 `dispatch(action)`，`action` 需要是一个 `JavaScript` 的对象
+- `redux-thunk` 可以让`action` 可以是一个函数
+- 该函数会被调用，并且会传给这个函数一个 `dispatch` 函数和 `getState` 函数：
 
-  - dispatch 函数用于我们之后再次派发 action
-  - getState 函数考虑到我们之后的一些操作需要依赖原来的状态，用于让我们可以获取之前的一些状态
+  - `dispatch` 函数用于我们之后再次派发 `action`
+  - `getState` 函数考虑到我们之后的一些操作需要依赖原来的状态，用于让我们可以获取之前的一些状态
 
 ### 使用 redux-thunk
 
-1. 安装 redux-thunk:`yarn add redux-thunk`
+1. 安装 redux-thunk:
 
-2. 在创建 store 时传入应用了 middleware 的 enhance 函数
-   - 通过 applyMiddleware 来结合多个 Middleware, 返回一个 enhancer
-   - 将 enhancer 作为第二个参数传入到 createStore 中
+::: code-tabs
 
-```js
-import thunkMiddleware from 'redux-thunk'
-const storeEnhancer = applyMiddleware(thunkMiddleware)
-const store = createStore(reducer, storeEnhancer)
+
+
+@tab npm
+
+```shell
+npm install redux-thunk
 ```
 
-3. 在 actionCreators.js 定义一个返回函数的 action：
+@tab yarn
 
-- 注意：这里不是返回一个对象了，而是一个函数
-- 该函数在 dispatch 之后会被执行
+```shell
+yarn add redux-thunk
+```
+
+:::
+
+1. 在创建 `store` 时传入应用了` middleware` 的 `enhance` 函数
+   - 通过 `applyMiddleware` 来结合多个 `Middleware`, 返回一个 `enhancer`
+   - 将 `enhancer` 作为第二个参数传入到 `createStore` 中
+
+```js {4,5}
+import {applyMiddleware, createStore} from "redux"
+import thunkMiddleware from 'redux-thunk'
+import reducer from './reducer'
+const storeEnhancer = applyMiddleware(thunkMiddleware)
+const store = createStore(reducer, storeEnhancer)
+export default store
+```
+
+3. 在` actionCreators.js `定义一个返回函数的 `action`：
+
+- 注意：**这里不是返回一个对象了，而是一个函数**
+- 该函数在 `dispatch `之后会被执行
 
 ```js
-export function getbannerDataAction() {
+export function getDataAction() {
   return (dispath) => {
     {
       console.log('react-thuck数据接受成功')
-      axios.get('http://123.207.32.32:8000/home/multidata').then((res) => {
-        // console.log(res)
-        // console.log(res.data.data.banner.list)
-        dispath(bannerAction(res.data.data.banner.list))
+      axios.get('https://www.imooc.com/api/http/search/suggest').then((res) => {
+        // 我们依然需要触发相关的action，经过reducer的处理更新数据
+        dispath(dataAction(res.data.data))
       })
     }
   }
 }
 ```
 
-4. 映射该 action 的 dispatch 操作,和相关的 store 中的 state：
+4. 映射该 `action` 的 `dispatch `操作,和相关的 `store `中的` state`：
 
 ```js
 const mapStateToProps = (state) => {
   return {
-    banner: state.banner,
+    data: state.list,
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    getbanner: function () {
-      dispatch(getbannerDataAction())
+    getData: function () {
+      dispatch(getDataAction())
     },
   }
 }
 ```
 
-5. 在 componentDidMount 调用，就可以拿到数据
+5. 在 `componentDidMount `调用，就可以拿到数据
 
 ```js
     componentDidMount() {
-
-        this.props.getbanner()
-
-        console.log(this.props.banner)
+        this.props.getData()
     }
 }
 ```
@@ -424,97 +442,340 @@ const mapDispatchToProps = (dispatch) => {
 
 利用这个工具，我们可以知道每次状态是如何被修改的，修改前后的状态变化等等
 
-1. 在对应的浏览器中安装相关的插件（Chrome 浏览器扩展商店中搜索 Redux DevTools 即可
-2. 对 store 的 index.js 进行改造
+1. 在对应的浏览器中安装相关的插件，项目中安装这个包：
 
-```js
-import { createStore, applyMiddleware, compose } from 'redux'
-import reducer from './reducer'
+```shell
+npm install --save @redux-devtools/extension
+```
+
+1. 对 store 的 index.js 进行改造
+
+```js {4,5,6}
+import {applyMiddleware, createStore} from "redux"
 import thunkMiddleware from 'redux-thunk'
-// 应用中间件
-const storeEnhancer = applyMiddleware(thunkMiddleware)
-// 合并多个enhancer
-const composeEnhancers =
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(tra) || compose
-// 官方不推荐createStore 需要使用redux工具包🔧
-const store = createStore(reducer, composeEnhancers(storeEnhancer))
+import reducer from './reducer'
+import { composeWithDevTools } from '@redux-devtools/extension';
+const store = createStore(reducer,   composeWithDevTools(
+    applyMiddleware(thunkMiddleware )
+))
 export default store
 ```
 
 对于基本的 redux,只需要添加：
 
 ```js
+import { createStore } from 'redux';
+import { devToolsEnhancer } from '@redux-devtools/extension';
+
 const store = createStore(
-  reducer /* preloadedState, */,
-  +window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+  reducer,
+  devToolsEnhancer()
+);
 ```
 
 ## Redux 代码文件拆分
 
-随着项目的不断扩大，可能导致 store 结构越来越复杂，action 越来越多。所有有必要对代码结构进行拆分
+随着项目的不断扩大，可能导致 `store` 结构越来越复杂，`action `越来越多。所有有必要对代码结构进行拆分
 
 代码结构如下：
 
-![redux代码拆分](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/redux%E4%BB%A3%E7%A0%81%E6%8B%86%E5%88%86.png)
+```
+├── store
+│   ├── Count
+│   │   ├── actionCreators.js
+│   │   ├── constants.js
+│   │   ├── index.js
+│   │   └── reducer.js
+│   ├── Data
+│   │   ├── actionCreators.js
+│   │   ├── constants.js
+│   │   ├── index.js
+│   │   └── reducer.js
+│   ├── index.js
+│   └── reducer.js	
+```
 
-主目录 reducer.js:
+`data`模块下代码：
+
+::: code-tabs
+
+
+
+@tab actionCreators.js
 
 ```js
-import { counterReducer } from './counter'
-import { bannerReducer } from './banner'
+import {LIST_DATA} from './constants'
+import axios from "axios";
 
+export function getList(listData) {
+    return {
+        type: LIST_DATA,
+        listData
+    }
+}
+
+// redux-thuck
+export function getSomthing() {
+    return (dispatch, getStore) => {
+        axios.get('https://www.imooc.com/api/http/search/suggest').then(res => {
+            console.log(res)
+            dispatch(getList(res.data.data))
+        })
+    }
+}
+```
+
+@tab constants.js
+
+```js
+
+export const LIST_DATA='LIST_DATA'
+```
+
+@tab index.js
+
+```js
+import {getSomthing} from './actionCreators'
+import DataReducer from './reducer'
+
+export {getSomthing,DataReducer}
+```
+
+@tab reducer.js
+
+```js
+import {LIST_DATA} from "./constants";
+
+const defaultStore={
+    listData:[]
+}
+
+export default function reducer(state=defaultStore,action){
+    switch (action.type){
+        case LIST_DATA:
+            return {...state,listData:action.listData}
+        default:
+            return state
+    }
+}
+```
+
+:::
+
+主模块代码：
+
+::: code-tabs
+
+@tab reducer.js
+
+
+
+```js {4,5,6,7}
+import {counterReducer} from "./Count";
+import {DataReducer} from "./Data";
 export default function reducer(state = {}, action) {
-  return {
-    counterInfo: counterReducer(state.counterInfo, action),
-    bannerInfo: bannerReducer(state.bannerInfo, action),
-  }
+    return {
+        countStore: counterReducer(state.countStore, action),
+        DataStore: DataReducer(state.DataStore, action),
+    }
 }
 ```
 
-Banner.js
+@tab index.js
 
 ```js
-import { GET_BANNER_DATA } from './constants'
-// banner默认数据
-const defaultBannerState = {
-  banner: [],
-}
-// banner独有的reducer逻辑
-export default function bannerReducer(state = defaultBannerState, action) {
-  switch (action.type) {
-    case GET_BANNER_DATA:
-      return { ...state, banner: action.banner }
-    default:
-      return state
-  }
-}
+import {applyMiddleware, createStore} from "redux"
+
+import reducer from './reducer'
+import thunkMiddleware from 'redux-thunk'
+import { composeWithDevTools } from '@redux-devtools/extension';
+const store = createStore(reducer,composeWithDevTools(
+    applyMiddleware(thunkMiddleware )
+))
+export default store
 ```
+
+:::
 
 ## combineReducers 函数
 
-目前我们合并的方式是通过每次调用 reducer 函数自己来返回一个新的对象
+目前我们合并的方式是通过每次调用 `reducer` 函数自己来返回一个新的对象
 
-事实上，redux 给我们提供了一个 combineReducers 函数可以方便的让我们对多个 reducer 进行合并：
+事实上，`redux`给我们提供了一个 `combineReducers` 函数可以方便的让我们对多个 `reducer `进行合并：
 
-```js
-import { counterReducer } from './counter'
-import { bannerReducer } from './banner'
-import { combineReducers } from 'redux'
+```js {5,6,7,8,9}
+import {counterReducer} from "./Count";
+import {DataReducer} from "./Data";
+import {combineReducers} from "redux"
 
 const reducer = combineReducers({
-  counterInfo: counterReducer,
-  bannerInfo: bannerReducer,
+    // reducer的目的就是为了返回state
+    countStore: counterReducer,
+    DataStore: DataReducer
 })
 
 export default reducer
 ```
 
-## RTK <Badge />
+## RTK  <Badge text='官方推荐' type='tip'/>
+
+`Redux ToolKit`是目前官方推荐编写`redux`逻辑的方法
+
+`redux`的编写逻辑过于繁琐和麻烦，`RTK`的目的就是解决这个问题
+
+安装：
+
+```shell
+npm install @reduxjs/toolkit react-redux
+```
+
+ ### 基本使用
+
+1. 将之前的`store`代码结构作以调整
+
+```
+└── store
+    ├── index.js
+    └── moudles
+        ├── count.js
+        └── data.js
+```
+
+2. 创建`store`
+
+```js
+import {configureStore} from "@reduxjs/toolkit";
+// 日志打印中间件，需要自己安装
+// 默认启用devtools和redux-thunk
+import logger from 'redux-logger'
+import  counterReducer  from "./moudles/count";
+export default configureStore({
+    // 传入多个reducer,或单个reducer函数
+    reducer:{
+        countStore:counterReducer
+    },
+    // 应用中间件｜getDefaultMiddleware获取默认中间件在和我们要用的其他中间件concat返回中间件数组
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+    // 默认开启devTools
+    devTools:true
+})
+```
+
+3. 定义单个模块`store`
+
+```jsx
+import {createSlice} from "@reduxjs/toolkit";
+
+const countSlice=createSlice({
+  // 显示在redux devtools中的名称
+    name:'count',
+  // 初始值
+    initialState:{
+        count:1000,
+    },
+  // 里面定义各种action
+    reducers:{
+        addNumber(state,{payload}){
+          // 在这里直接可以修改state
+            state.count=state.count+payload
+        }
+    }
+})
+
+export const {addNumber}=countSlice.actions
+
+export default countSlice.reducer
+```
+
+4. `RTK`仅仅是简化了`rdux`的逻辑编写，而连接仍需要通过`react-redux`,和之前的写法是一样的
+
+### 异步处理
+
+1. 引入`createAsyncThunk`,使用该`api`创建一个`thunk`,创建时第一个参数显示在`devtools`，表示是哪一个`thunk`，第二个函数用于异步数据的获取，必须返回一个`promise`
+2. 在`createSlice`中` extraReducers`选项，操作`state`。有两种方式对象或者函数，官方推荐使用函数(使用对象貌似会导致`ts`使用比较麻烦，还没用到)。`fulfilled`表示数据成功获取到需要执行的逻辑
+
+```js {2,5,6,7,8,15,16,17,18,19,20,21}
+import {createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk} from "@reduxjs/toolkit";
+import axios from "axios";
+
+const getListData = createAsyncThunk('getListData', async (num) => {
+  //组件调用传递过来的参数
+    console.log(num)
+    const res = await axios.get('https://www.imooc.com/api/http/search/suggest')
+    return res.data.data
+})
+const dataSlice = createSlice({
+    name: 'data',
+    initialState: {
+        list: [],
+    },
+    reducers: {},
+    extraReducers: {
+        [getListData.fulfilled](state, {payload}) {
+          // 在此直接操作state
+            state.list=payload
+        },
+    }
+    // extraReducers:(builder)=>{
+    //     builder.addCase(getListData.fulfilled,(state,{payload})=>{
+    //         state.list=payload
+    //     })
+})
+
+export {getListData}
+
+export default dataSlice.reducer
+```
+
+3. 跟普通的`aciton`一样在组件中进行映射，消费：
+
+```jsx {31,32,33}
+import {connect} from "react-redux";
+import {addNumber} from "./store/moudles/count";
+import {PureComponent} from "react";
+import {getListData} from "./store/moudles/data";
+class App extends PureComponent{
+    componentDidMount() {
+        this.props.getList('123')
+    }
+
+    render() {
+        return (
+            <div onClick={this.props.add}>
+                {this.props.count}
+                <ul>
+                    {
+                        this.props.list.map(item=><li>{item.word}</li>)
+                    }
+                </ul>
+            </div>
+        );
+    }
+}
+const mapStateToProps=state=>({
+    count:state.countStore.count,
+    list:state.dataStore.list
+})
+const mapDispatchToProps=dispatch=>({
+    add(){
+        dispatch(addNumber(3))
+    },
+    getList(num){
+        dispatch(getListData(num))
+    }
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);
+```
 
 
 
-## redux中的hook <Badge />
+
+
+
+
+## redux中的hook <Badge text='官方推荐' type='tip'/>
 
 
 

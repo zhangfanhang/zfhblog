@@ -22,7 +22,7 @@ body,
 .description {
   font-weight: bold;
   font-size: 30px;
-  @include typing(20, 3);
+  @include typing(11, 3);
 }
 @keyframes caret {
   50% {

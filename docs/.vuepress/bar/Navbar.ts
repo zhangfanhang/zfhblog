@@ -27,13 +27,13 @@ export default navbar([
     link: '/开发日志/',
   },
   {
-    text: '我的收藏',
+    text: '书签收藏',
     icon: 'shuqian',
-    link: '/我的收藏',
+    link: '/书签收藏',
   },
   {
     text: '杂七杂八',
-    icon: 'shuqian',
+    icon: 'note',
     link: '/杂七杂八/',
   },
 ])
