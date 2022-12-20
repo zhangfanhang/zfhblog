@@ -1,8 +1,13 @@
 ---
 title: 概述
+index: false
+dir:
+  link: true
+  text: CSS世界阅读笔记
 category:
+  - 前端开发
   - 前端图形
-  - CSS世界阅读笔记
+  - 玩转CSS艺术之美
 ---
 
 ::: tip 写在开始

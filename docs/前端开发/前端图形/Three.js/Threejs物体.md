@@ -33,19 +33,31 @@ const mesh = new THREE.Mesh(geometry, material)
 
 ## uv
 
-三维建模中的"UV"可理解为立体模型的“皮肤”，将“皮肤”展开然后进行二维平面上的绘制并赋予物体
+三维建模中的`UV`可理解为立体模型的“皮肤”，将“皮肤”展开然后进行二维平面上的绘制
 
-"UV"这里是指 u,v 纹理贴图坐标的简称(它和空间模型的 X, Y, Z 轴是类似的)
+
+
+`UV`这里是指 `u`,`v` 纹理贴图坐标的简称(它和空间模型的 `X`,`Y`, `Z` 轴是类似的)
+
+
 
 它定义了图片上每个点的位置的信息. 这些点与 3D 模型是相互联系的, 以决定表面纹理贴图的位置.
 
-UV 就是将图像上每一个点精确对应到模型物体的表面. 在点与点之间的间隙位置由软件进行图像光滑插值处理. 这就是所谓的 UV 贴图
+
 
 ## 法向
 
-在几何中，法向是指垂直于某种元素的方向
+在从字面理解，法向即法线的方向，与切向，即切线的方向垂直。切向和法向都是相对于界面、轨迹等而言的。
 
-## 酷炫三角形科技物体
+## 案例
+
+显卡毁灭者:随机生成99999个三角形
+
+::: danger
+
+容易造成浏览器卡死
+
+:::
 
 ```js
 import * as THREE from 'three'
@@ -67,7 +79,7 @@ camera.position.set(3, 3, 3)
 scene.add(camera)
 
 // 随机创建50个三角形
-for (let i = 0; i < 500; i++) {
+for (let i = 0; i < 99999; i++) {
   const geometry = new THREE.BufferGeometry()
   const positionArr = new Float32Array(9)
   for (let j = 0; j < 9; j++) {
@@ -106,13 +118,3 @@ function render() {
 }
 render()
 ```
-
-## 常用网格几何体
-
-官方文档搜索 🔍：`geometry`
-
-`BoxGeometry` 和 `BoxBufferGeometry` 均是缓冲几何体
-
-[BufferGeometry 和 Geometry 有什么不同](https://blog.csdn.net/u014291990/article/details/91954333)
-
-新版` three` 估计进行了合并，查看了源码这两是一个东西

@@ -4,7 +4,5 @@ index: false
 icon: zongjiehuibao
 dir:
   icon: zongjiehuibao
-  link: true
+article: false
 ---
-
-- [菜鸟前端的 22 年总结]()

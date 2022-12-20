@@ -1,5 +1,5 @@
 ---
-title: mac软件
+title: 正在使用的mac软件
 category:
   - 杂记
   - mac
@@ -38,8 +38,9 @@ order: 5
 - ~~`Blender`:3D 建模软件,[下载](https://www.blender.org/download/)~~
 - ~~`docker`:容器化技术学习中，[下载](https://www.docker.com/)~~
 - `Input Source Pro`:通过简洁的提示方式，配合输入法自动切换功能，让每一次输入都信心十足，[下载](https://inputsource.pro/zh-CN)
-- `Pretty Clean`,[下载](https://www.prettyclean.cc/zh)
-- `MTMR`:[下载](https://github.com/Toxblh/MTMR)
+- `Pretty Clean`,简洁垃圾清理，[下载](https://www.prettyclean.cc/zh)
+- `MTMR`:定制你的 touchbar，touchbar 最后的倔强[下载](https://github.com/Toxblh/MTMR)
+- `PICGO`:图床管理软件，[下载](https://github.com/Molunerfinn/PicGo)
 
 ## icloud 云盘（破解软件）
 
@@ -57,3 +58,4 @@ order: 5
 - `sourceTree`:git 可视化
 - `Moivst Pro`:mac 最强播放器，`iina` 有时播放 4k 视频卡顿，用这个
 - `Easy Connect`:公司内网 VPN 工具
+- `PD17`:虚拟机软件

@@ -2,6 +2,8 @@
 title: Vue
 index: false
 icon: vue
+dir:
+  link: true
 ---
 
 <center>
@@ -9,6 +11,8 @@ icon: vue
 <img src='https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/尤大摊手.png'/>
 
 </center>
+
+<BiliBili bvid="BV1uC4y1a7Ek" />
 
 - [vue 核心](/前端框架/Vue/Vue核心.html)
 

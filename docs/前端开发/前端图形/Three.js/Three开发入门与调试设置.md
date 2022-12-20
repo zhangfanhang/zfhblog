@@ -50,41 +50,42 @@ document.body.appendChild(renderer.domElement)
 renderer.render(scene, camera)
 ```
 
-## 透视相机（PerspectiveCamera）示意图
+## 透视相机PerspectiveCamera
 
-这一投影模式被用来模拟人眼所看到的景象，它是 3D 场景的渲染中使用得最普遍的投影模式。
+::: tip 图片来源
+
+
+
+[Three 之 three.js （webgl）透视视角和正交视角，以及透视转正交的视角切换](https://blog.csdn.net/u014361280/article/details/124544320)
+
+[带你入门three.js——从0到1实现一个3d可视化地图](https://blog.csdn.net/KlausLily/article/details/118715483)
+
+:::
+
+这一投影模式被用来模拟人眼所看到的景象，它是 3D 场景的渲染中使用得最普遍的投影模式
 
 ![透视相机示意图](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E9%80%8F%E8%A7%86%E7%9B%B8%E6%9C%BA%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
 
 1. 摄像机视锥体垂直视野角度 也就是图中的 **「a」**
-
 2. 摄像机视锥体近端面 也就是图中的 **「near plane」**
-
 3. 摄像机视锥体远端面 也就是图中的 **「far plane」**
-
 4. 摄像机视锥体长宽比 **「表示输出图像的宽和高之比」**
-
-5. 对应的 three 中的照相机：
-
-```js
-const camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000)
-```
 
 参数依次位：
 
-`fov `— 摄像机视锥体垂直视野角度
-`aspect `— 摄像机视锥体长宽比
-`near` — 摄像机视锥体近端面
-`far` — 摄像机视锥体远端面
+![透视相机示意图2](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E9%80%8F%E8%A7%86%E7%9B%B8%E6%9C%BA%E7%A4%BA%E6%84%8F%E5%9B%BE2.png)
 
-## 轨道控制器查看物体
+`fov `— 摄像机视锥体垂直视野角度,默认45
+`aspect `— 摄像机视锥体长宽比，默认1
+`near` — 摄像机视锥体近端面,`near`属性表示的是从距离相机多远的位置开始渲染，一般情况会设置一个很小的值，默认0.1
+`far` — 摄像机视锥体远端面,`far`属性表示的是距离相机多远的位置截止渲染，如果设置的值偏小，会有部分场景看不到，默认1000
 
-轨道控制器：`new OrbitControls( object : Camera, domElement : HTMLDOMElement )`
+## 利用轨道控制器查看物体
 
 - 参数 1:`object`: 将要被控制的相机
 - 参数 2:`domElement`: 用于事件监听的 `HTML `元素
 
-```js
+```js {36,37,38,39,40,41,42,43,44,45}
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 // 创建场景
@@ -132,14 +133,6 @@ function render() {
 render()
 ```
 
-## 关于坐标系
-
-WebGL 和 Three.js 使用的坐标系是右手坐标系，即右手伸开，拇指为 X，四指为 Y，手心为 Z。
-
-![threejs坐标系](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/threejs%E5%9D%90%E6%A0%87%E7%B3%BB.jpeg)
-
-## requestAnimationFrame
-
 [`window.requestAnimationFrame()`](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame)告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。该方法需要传入一个回调函数作为参数，该回调函数会在浏览器下一次重绘之前执行。在大多数遵循 W3C 建议的浏览器中，回调函数执行次数通常与浏览器屏幕刷新次数相匹配
 
 ## 添加坐标轴辅助器
@@ -153,37 +146,27 @@ scene.add(axesHelper)
 
 红色代表 X 轴. 绿色代表 Y 轴. 蓝色代表 Z 轴
 
-## 设置物体移动
 
-```js
-function render() {
-  cube.position.x += 0.01
-  if (cube.position.x > 5) {
-    cube.position.x = 0
-  }
-  renderer.render(scene, camera)
-  //   渲染下一帧的时候就会调用render函数
-  requestAnimationFrame(render)
-}
-```
 
-打印之前创建的物体`cube`其属性`positon`为一个三维向量对象，通过`set`进行设置，当然也可以通过更改对象属性值更改物体的位置
+` Three.js `使用的坐标系是右手坐标系，即右手伸开，拇指为 X，四指为 Y，手心为 Z。
+
+![threejs坐标系](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/threejs%E5%9D%90%E6%A0%87%E7%B3%BB.jpeg)
 
 ## 物体的缩放与旋转
 
-`scale`缩放;`rotation`旋转两者使用和位置差不多,通过`set`进行设置，当然也可以通过更改对象属性值更改物体的位置
+`scale`缩放、`rotation`旋转两者使用和位置`positon`差不多,通过`set`进行设置，当然也可以通过更改对象属性值更改物体的位置
 
 旋转有第四个参数代表表示旋转顺序的字符串，默认为`"XYZ"`
 
 ## GSAP 动画库
+
+[官方文档](https://greensock.com/docs/v3)
 
 ```shell
 npm i gsap
 ```
 
 ### gsap.to()
-
-[官方文档：gsap.to](<https://greensock.com/docs/v3/GSAP/gsap.to()>)
 
 定义**目标值**，动画**到**某些值
 
@@ -228,8 +211,7 @@ window.addEventListener('resize', () => {
 
 ## 设置控制器的阻尼
 
-`enableDamping` 将其设置为`true`以启用阻尼（惯性），这将给控制器带来重量感。默认值为 false。
-请注意，如果该值被启用，你将必须在你的动画循环里调用.update()
+`enableDamping` 将其设置为`true`以启用阻尼（惯性），这将给控制器带来重量感。默认值为 `false`。请注意，如果该值被启用，你将必须在你的动画循环里调用`.update()`
 
 ```js
 controls.enableDamping = true
@@ -247,7 +229,7 @@ function render() {
 render()
 ```
 
-## 调用 js 接口控制画布全屏和退出全屏
+## 控制画布全屏和退出全屏
 
 ```js
 window.addEventListener('dblclick', () => {
@@ -304,9 +286,11 @@ GUI.addColor(params, 'color')
   })
   .name('颜色设置')
 // 设置文件夹
-const folder = GUI.addFolder('文件夹1')
-// 显示隐藏
+const folder = GUI.addFolder('操作')
+// 传入布尔值，为checkbox
 folder.add(cube, 'visible').name('是否显示')
-// 执行函数
+// 传入函数，为按钮
 folder.add(params, 'fn').name('正方体运动')
+// 传入字符串值，为input输入框
+folder.add(cube.rotation,'_order').name('旋转顺序') 
 ```

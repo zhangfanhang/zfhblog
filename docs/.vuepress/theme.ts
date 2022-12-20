@@ -78,7 +78,7 @@ export default hopeTheme({
       serverURL: 'https://waline.zfhblog.top',
     },
     components: {
-      components: ['Badge', 'CodePen', 'PDF'],
+      components: ['Badge', 'CodePen', 'PDF', 'BiliBili'],
     },
     mdEnhance: {
       // 启用流程图

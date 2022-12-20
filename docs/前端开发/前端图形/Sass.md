@@ -1,7 +1,9 @@
 ---
 title: Sass
-tag: Sass
-category: 前端图形
+icon: sass
+category:
+  - 前端开发
+  - 前端图形
 ---
 
 ::: warning 注意

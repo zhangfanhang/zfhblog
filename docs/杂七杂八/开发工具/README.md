@@ -4,4 +4,5 @@ index: false
 icon: gongju
 dir:
   link: true
+article: false
 ---
