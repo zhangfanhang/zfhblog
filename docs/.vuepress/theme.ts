@@ -10,7 +10,7 @@ export default hopeTheme({
     url: 'https://zfhblog.top',
   },
   repoDisplay: false,
-  iconAssets: '//at.alicdn.com/t/c/font_3677319_oahe2s4vqga.css',
+  iconAssets: '//at.alicdn.com/t/c/font_3677319_d34iwp552ll.css',
   logo: '/logo.jpg',
   footer: '<span style="font-weight:bold">❤️ FE,❤️ LIFE.</span>',
   copyright: 'Copyright © 2020-present Fanhang Zhang',

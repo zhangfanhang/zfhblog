@@ -21,6 +21,8 @@ category:
 
 [元素大小和滚动（目前看到解释最好的一篇）](https://zh.javascript.info/size-and-scroll#offsetwidthheight)
 
+[盒模型相关](/前端开发/前端基石/CSS3/基础与盒模型.html#盒模型种类和-box-sizing-属性)
+
 :::
 
 写业务碰到需要固定容器判断文字是否超出，超出部分使用省略号隐藏，鼠标悬浮显示 tip。

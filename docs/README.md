@@ -36,6 +36,16 @@ projects:
     icon: vue
     desc: 一个基于vue的虚拟列表组件
     link: https://vlist.zfhblog.top
+
+  - name: 前端面试宝典
+    icon: fe
+    desc: 前端菜鸟的成长见证
+    link: https://fib.zfhblog.top
+
+  - name: demo display
+    icon: vue
+    desc: 前端demo演示
+    link: https://demo.zfhblog.top
 ---
 
 <Busuanzi />
