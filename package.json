@@ -7,7 +7,7 @@
   "scripts": {
     "build": "vuepress build docs",
     "clean-dev": "vuepress dev docs --clean-cache",
-    "dev": "vuepress dev docs",
+    "dev": "vuepress dev docs --port 8888",
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
@@ -19,8 +19,6 @@
     "vuepress-theme-hope": "2.0.0-beta.143"
   },
   "dependencies": {
-    "@smallwei/avue": "3.2.6",
-    "atropos": "1.0.2",
     "busuanzi.pure.js": "1.0.3"
   }
 }

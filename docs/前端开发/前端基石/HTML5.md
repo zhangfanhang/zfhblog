@@ -5,10 +5,6 @@ category: 前端基石
 order: 1
 ---
 
-## 修订进度
-
-- [ ] 2021.9.30 `meta`的具体功能
-
 ## html5 骨架
 
 ::: warning 注意
@@ -271,6 +267,8 @@ order: 1
 
 **语义化的标签，旨在让标签有自己的含义**
 
+![语义化](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%AF%AD%E4%B9%89%E5%8C%96.png)
+
 ```html
 <p>一行文字</p>
 <span>一行文字</span>
@@ -286,13 +284,11 @@ order: 1
 
 - **提升用户体验**： 例如 `title`、`alt` 可以用于解释名称或者解释图片信息，以及 `label` 标签的灵活运用。
 
-- **便于团队开发和维护**: 语义化使得代码更具有可读性，让其他开发人员更加理解你的 `html` 结构，减少差异化。
+- **便于团队开发和维护**: 语义化使得代码更具有可读性，让其他开发人员更加理解你的 `html` 结构，减少差异化
 
-- **方便其他设备解析**: 如屏幕阅读器、盲人阅读器、移动设备等，以有意义的方式来渲染网页。
+- **方便其他设备解析**: 如屏幕阅读器、盲人阅读器、移动设备等，以有意义的方式来渲染网页
 
 ### 常见的语义化标签
-
-![语义化](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E8%AF%AD%E4%B9%89%E5%8C%96.png)
 
 #### h1~h6 元素
 
@@ -324,40 +320,9 @@ order: 1
   <a>Contact</a>
 </nav>
 ```
-
-#### article 标签
-
-标签定义外部的内容。
-
-外部内容可以是来自一个外部的新闻提供者的一篇新的文章，或者来自 `blog` 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。
-
-```html
-<article>
-  <header>
-    <h3>
-      <a href="">My blog</a>
-    </h3>
-  </header>
-  <section>
-    <p>这是我的个人博客地址</p>
-  </section>
-  <footer>
-    <small>
-      Posted on
-      <time datetime="2021-011-20T19:00">Apr 20</time> in
-      <a href="https://www.zfhblog.top">点我访问</a>
-    </small>
-  </footer>
-</article>
-```
-
 #### main 标签
 
-定义页面的主要内容，一个页面只能使用一次.
-
-::: warning 注意
-在一个文档中，不能出现一个以上的 `<main>` 元素。`<main>` 元素不能是以下元素的后代：`<article>`、`<aside>`、`<footer>`、`<header>` 或 `<nav>`。
-:::
+定义页面的主要内容 
 
 ```html
 <main>
@@ -369,68 +334,13 @@ order: 1
   <p>etc.</p>
 </main>
 ```
-
-#### section 标签
-
-`section` 标签定义文档中的节（`section`、区段）。比如章节、页眉、页脚或文档中的其他部分。
-
-```html
-<section>
-  <h2>Section title</h2>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec
-    nulla vitae mollis.
-  </p>
-</section>
-```
-
-#### aside 标签
-
-定义与主要内容相关的内容块。通常显示为侧边栏。
-
 #### footer 标签
 
 定义文档的底部区域，通常包含文档的作者，著作权信息，链接的使用条款，联系信息等
 
-#### small 标签
-
-为较不重要的内容定义小字体。如果被包围的字体已经是字体模型所支持的最小字号，那么`small` 标签将不起任何作用。
-
-#### strong 标签
-
-把文本定义为语气更强的强调的内容，以表示内容的重要性。
-
-#### em 标签
-
-标记内容着重点（大量用于提升段落文本语义），通常呈现为斜体文字。
-
-#### blockquote 标签
-
-定义块引用，浏览器会在 `blockquote` 元素前后添加换行，并增加外边距。`cite` 属性可用来规定引用的来源
-
-```html
-<blockquote cite="https://en.wikiquote.org/wiki/Marie_Curie">
-  Here is a long quotation here is a long quotation here is a long quotation
-  here is a long quotation here is a long quotation here is a long quotation
-  here is a long quotation here is a long quotation here is a long quotation.
-</blockquote>
-```
-
-#### abbr 标签
-
-解释缩写词。使用 `title` 属性可提供全称，只在第一次出现时使用就 ok。
-
-```html
-The <abbr title="People's Republic of China">PRC</abbr> was founded in 1949.
-```
 
 ## 表格标签
 
-::: warning ⛔️
-
-`table`作为块级元素，其在没有指定宽度的情况并不会继承父元素的宽度，其默认的宽度是根据表格中填写的数据所控制的
-
-:::
 
 ```html
 <!DOCTYPE html>

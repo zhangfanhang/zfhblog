@@ -1,9 +1,9 @@
 <template>
   <div class="busuanzi">
-    本站总访问量
+    👀 本站总访问量
     <span id="busuanzi_value_site_pv"></span> 次
     <div id="runtime_span">
-      本站勉强运行 <span class="color">{{ A }}</span
+      💻 本站勉强运行 <span class="color">{{ A }}</span
       >天<span class="color">{{ B }}</span
       >小时<span class="color">{{ C }}</span
       >分<span class="color">{{ D }}</span
@@ -60,7 +60,7 @@ export default {
 }
 #busuanzi_value_site_pv,
 .color {
-  color: #ffd215;
+  color: #64b687;
   font-weight: bold;
 }
 #runtime_span {

@@ -143,7 +143,7 @@ server.listen(3000, () => {
 
 类似于工厂的流水线
 
-![koa2中间件](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/koa2%E4%B8%AD%E9%97%B4%E4%BB%B6.png)
+![koa2中间件](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images1/koa2%E4%B8%AD%E9%97%B4%E4%BB%B6.png)
 
 为什么使用中间件？
 
@@ -157,7 +157,7 @@ koa2 业务代码都是中间件所有的 app.use(...)都是中间件
 
 路由也是中间件（只不过限制了 url 规则），所有的请求都会经过 app.use，路由规则匹配后才会进入对应路由中间件
 
-![koa2中间件2](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/koa2%E4%B8%AD%E9%97%B4%E4%BB%B62.png)
+![koa2中间件2](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images1/koa2%E4%B8%AD%E9%97%B4%E4%BB%B62.png)
 
 ```js
 const Koa = require('koa')
@@ -236,7 +236,7 @@ app.use(index.routes(),......)
 
 ```
 
-![koa2中间件3](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/koa2%E4%B8%AD%E9%97%B4%E4%BB%B63.png)
+![koa2中间件3](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images1/koa2%E4%B8%AD%E9%97%B4%E4%BB%B63.png)
 
 ## koa2 洋葱圈模型
 
@@ -245,7 +245,7 @@ app.use(index.routes(),......)
 :::
 中间件机制，是 koa 的精髓，每个中间件都是 **async** 函数，中间件的运行机制，就像**洋葱圈**
 
-![洋葱圈模型图示](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E6%B4%8B%E8%91%B1%E5%9C%88%E6%A8%A1%E5%9E%8B%E5%9B%BE%E7%A4%BA.png)
+![洋葱圈模型图示](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images1/%E6%B4%8B%E8%91%B1%E5%9C%88%E6%A8%A1%E5%9E%8B%E5%9B%BE%E7%A4%BA.png)
 
 代码演示：
 
@@ -345,7 +345,7 @@ app.use(async (ctx) => {
 
 服务端判断 cookie 有无 user=zhangsan，即可验证
 
-![登录校验cookie](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E7%99%BB%E5%BD%95%E6%A0%A1%E9%AA%8Ccookie.png)
+![登录校验cookie](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images1/%E7%99%BB%E5%BD%95%E6%A0%A1%E9%AA%8Ccookie.png)
 
 ### session-介绍
 
@@ -355,7 +355,7 @@ cookie 存放用户信息明文，非常危险;解决方案：cookie 存一个�
 
 cookie 存储用户标识,用户信息则存储到 session 中,session 即用户信息的存储，和 cookie 有对应关系
 
-![sessioncookie关系](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/sessioncookie%E5%85%B3%E7%B3%BB.png)
+![sessioncookie关系](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-image1s/sessioncookie%E5%85%B3%E7%B3%BB.png)
 
 ### koa2 实现登录-session
 

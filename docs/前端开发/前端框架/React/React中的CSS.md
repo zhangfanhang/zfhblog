@@ -174,20 +174,20 @@ const AppWrapper = styled.div`
 
 :::
 
-#### props 穿透
+### props 穿透
 
-props 可以被传递给` styled` 组件,`style-compontents`可以自动过滤非`html`标签属性，**并将标准 html 属性映射到组件 html 结构最外层的标签上**
+`props` 可以被传递给` styled` 组件,`style-compontents`可以自动过滤非`html`标签属性，并将标准 `html` 属性映射到组件 `html` 结构最外层的标签上
 
 ```jsx
+// value,className会映射至组件 html 结构最外层的标签上
 <MyInput
   value="这是我的输入组件"
   onChange={inputChange}
   className="myInput"
 ></MyInput>
-// value,className会映射至组件 html 结构最外层的标签上，而onChange事件会绑定到组件 html 结构最外层的标签上
 ```
 
-获取 props 需要通过`${}`传入一个插值函数，`props `会作为该函数的参数,这种方式可以有效的解决**动态样式**的问题
+获取 `props` 需要通过`${}`传入一个函数，`props `会作为该函数的参数,这种方式可以有效的解决**动态样式**的问题
 
 ```jsx
 import styled from 'styled-components'
@@ -219,19 +219,7 @@ function App(props) {
 export default App
 ```
 
-#### 添加 attrs 属性
-
-除了直接写在组件上，属性也可以使用`attrs`进行附加，它会和组件上的属性进行合并，传入`styled`组件
-
-```jsx
-const Wrapper = styled.div.attrs({
-  pleft: (props) => props.pleft || '5px',
-})`
-  padding-left: ${(props) => props.pleft};
-`
-```
-
-#### 样式的继承
+### 扩展样式
 
 ```css
 const MainButtion = styled.div`
@@ -244,3 +232,35 @@ const MenuButton = styled(MainButton)`
   background-color: red;
 `
 ```
+
+### 扩展非styled组件的样式
+
+如果想要扩展非`styled`组件的样式，前提是把`className`作为`props`传递给`DOM`元素
+
+其他`props`会传递给被扩展的组件,像使用被扩展组件一样，使用`styled`组件
+
+`Ant Desgin`的组件均支持传递`className`给组件根 `dom `节点 
+
+```jsx
+const Link = ({ className, children }) => (
+  <a className={className}>
+    {children}
+  </a>
+);
+
+const StyledLink = styled(Link)`
+  color: palevioletred;
+  font-weight: bold;
+`;
+
+render(
+  <div>
+    <Link>Unstyled, boring Link</Link>
+    <br />
+    <StyledLink>Styled, exciting Link</StyledLink>
+  </div>
+);
+```
+
+
+

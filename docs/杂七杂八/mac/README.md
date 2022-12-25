@@ -2,9 +2,7 @@
 title: mac
 index: false
 icon: mac
-dir:
-  icon: mac
-  link: true
+article: false
 ---
 
 - [mac 软件]()

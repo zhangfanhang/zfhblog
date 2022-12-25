@@ -1,8 +1,8 @@
 ---
 title: webpack
-tags:
-  - webpack
+icon: webpack
 category:
+  - 前端开发
   - 前端工程化
 ---
 

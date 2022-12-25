@@ -14,7 +14,6 @@ order: 5
 - `WPSOffice`
 - 企业微信
 - 网易邮箱大师
-- `Thor Launcher`:应用快捷启动器
 
 ## 官网
 
@@ -59,3 +58,4 @@ order: 5
 - `Moivst Pro`:mac 最强播放器，`iina` 有时播放 4k 视频卡顿，用这个
 - `Easy Connect`:公司内网 VPN 工具
 - `PD17`:虚拟机软件
+- `iShot Pro`:iShot是Mac上一款优秀、功能全面的区域截图、窗口截图、多窗口截图、长截图、带壳截图、延时截图、快速标注、贴图、取色、屏幕录制、录音、OCR、截图翻译工具
