@@ -7,6 +7,8 @@ order: 8
 icon: typescript
 ---
 
+https://mp.weixin.qq.com/s/mUblBpj6pmdxz9mLKEDJTw
+
 ## 创建 react-ts 项目
 
 ::: code-tabs
@@ -24,3 +26,8 @@ npm create vite@latest my-vue-app -- --template react-ts
 ```
 
 :::
+
+## React.FC
+
+### 定义propsType
+

@@ -106,7 +106,7 @@ ssh-add ~/.ssh/github_id_rsa
 
 ### git 忽略文件.gitignore
 
-::: .gitignore只对从来没有commit过的文件起作用
+::: warning  .gitignore只对从来没有commit过的文件起作用 
 
 项目中的某个文件（比如stupid.txt)已经被commit，并push到server了，这时发现stupid.txt不应该被git管理，
 同步到团队每个开发人员那里，这时在.gitignore文件里面添加"stupid.txt"已经不起作用了。
@@ -114,7 +114,7 @@ ssh-add ~/.ssh/github_id_rsa
 
 1. 文件夹：`git rm -r --cached directory_name`
 2. 文件：`git rm --cached stupid.txt`
-3. 在.gitignore中添加要忽略的文件
+3. 在`.gitignore`中添加要忽略的文件
 
 :::
 

@@ -42,6 +42,11 @@ projects:
     desc: 前端菜鸟的成长见证
     link: https://fib.zfhblog.top
 
+  - name: 去哪里
+    icon: react
+    desc: 旅游网PC主页（开发🀄️）
+    link: https://qunal.zfhblog.top
+
   - name: demo display
     icon: vue
     desc: 前端demo演示

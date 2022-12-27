@@ -619,7 +619,7 @@ export default reducer
 
 ## RTK  <Badge text='官方推荐' type='tip'/>
 
-`Redux ToolKit`是目前官方推荐编写`redux`逻辑的方法
+[Redux ToolKit](https://redux-toolkit.js.org/)是目前官方推荐编写`redux`逻辑的方法
 
 `redux`的编写逻辑过于繁琐和麻烦，`RTK`的目的就是解决这个问题
 
@@ -646,7 +646,6 @@ npm install @reduxjs/toolkit react-redux
 ```js
 import {configureStore} from "@reduxjs/toolkit";
 // 日志打印中间件，需要自己安装
-// 默认启用devtools和redux-thunk
 import logger from 'redux-logger'
 import  counterReducer  from "./moudles/count";
 export default configureStore({
@@ -655,6 +654,8 @@ export default configureStore({
         countStore:counterReducer
     },
     // 应用中间件｜getDefaultMiddleware获取默认中间件在和我们要用的其他中间件concat返回中间件数组
+  // 默认启用devtools和redux-thunk
+  // middleware:[thunk, logger],
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
     // 默认开启devTools
     devTools:true
@@ -768,10 +769,6 @@ const mapDispatchToProps=dispatch=>({
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);
 ```
-
-
-
-
 
 
 
