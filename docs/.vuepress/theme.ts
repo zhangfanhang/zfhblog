@@ -13,7 +13,7 @@ export default hopeTheme({
   iconAssets: '//at.alicdn.com/t/c/font_3677319_d34iwp552ll.css',
   logo: '/logo.jpg',
   footer: '<span style="font-weight:bold">❤️ FE,❤️ LIFE.</span>',
-  copyright: 'Copyright © 2020-present Fanhang Zhang | 由VuePress主题Hope驱动',
+  copyright: 'Copyright © 2020-present Fanhang Zhang',
   pageInfo: [
     'Author',
     'Original',
@@ -27,7 +27,7 @@ export default hopeTheme({
   navbar: Navbar,
   sidebar: Sidebar,
   displayFooter: true,
-  breadcrumb: true,
+  breadcrumb: false,
   blog: {
     roundAvatar: true,
     avatar:
@@ -69,6 +69,7 @@ export default hopeTheme({
     config: {},
   },
   plugins: {
+    copyright: true,
     blog: {
       excerpt: false,
     },

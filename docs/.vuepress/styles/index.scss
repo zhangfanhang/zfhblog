@@ -1,19 +1,21 @@
 // place your custom styles herend
-@font-face {
-  font-family: Sans;
-  src: url('/Sans.otf') format('opentype');
-}
-body,
-.title,
-.blogger-info,
-.description {
-  font-family: Sans !important;
-}
-.logo {
+.logo,
+.hero img {
   border-radius: 5px;
+}
+.hero img {
+  display: none;
 }
 div.blog-hero h1 {
   font-weight: bold;
   font-style: italic;
   font-size: 5vw;
+  background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blog-hero.fullscreen {
+  display: none;
 }

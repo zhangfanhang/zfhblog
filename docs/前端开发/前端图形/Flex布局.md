@@ -230,7 +230,84 @@ category:
 
 ## flex 实现圣杯布局
 
-<CodePen
-  link="https://codepen.io/zhangfanhang/pen/XWVzOLJ"
-  :theme="$isDarkMode? 'dark': 'light'"
-/>
+::: normal-demo 圣杯布局
+
+```html
+<header>this is a heder</header>
+<div class="main">
+  <div class="main-left">left</div>
+  <div class="main-body">body</div>
+  <div class="main-right">right</div>
+</div>
+<footer>this is a footer</footer>
+```
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+header,
+footer {
+  height: 100px;
+  background-color: aquamarine;
+}
+.main {
+  display: flex;
+  flex: 1;
+}
+.main-left,
+.main-right {
+  width: 200px;
+  background-color: yellow;
+}
+.main-body {
+  flex: 1;
+  background-color: blue;
+}
+```
+
+
+
+:::
+
+
+
+## 实践是检验真理的唯一标准
+
+1. `flex`容器的默认高度是最高的项目的高度,未设置高度的项目默认占满交叉轴
+
+::: normal-demo demo
+
+```html
+    <div class="box">
+      <div class="son1">未设置height</div>
+      <div class="son2">height：400px</div>
+    </div>
+```
+
+```css
+      .son1 {
+        width: 200px;
+        background-color: red;
+      }
+      .son2 {
+        width: 300px;
+        height: 400px;
+        background-color: blue;
+      }
+      .box {
+        display: flex;
+        background-color: green;
+      }
+```
+
+:::

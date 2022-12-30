@@ -1,15 +1,16 @@
 ---
 title: git
 category: 开发工具
+order: 1
 ---
 
-:::  tip 参考文章
+::: tip 参考文章
 
 [常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
 
-[如何将一个项目同时提交到GitHub和Gitee(码云)两个仓库](https://blog.csdn.net/yilovexing/article/details/107226141)
+[如何将一个项目同时提交到 GitHub 和 Gitee(码云)两个仓库](https://blog.csdn.net/yilovexing/article/details/107226141)
 
-[git忽略已经提交的文件，管用！](https://blog.csdn.net/m0_37897396/article/details/125992705)
+[git 忽略已经提交的文件，管用！](https://blog.csdn.net/m0_37897396/article/details/125992705)
 
 :::
 
@@ -78,7 +79,7 @@ ssh-add ~/.ssh/github_id_rsa
 :::
 
 - `git init`:在项目中初始化 Git，让 Git 管理当前项目
-- ` git status`:检查当前文件状态 
+- ` git status`:检查当前文件状态
 - ` git add <file1> <file2>` ...:将工作区的指定内容添加到暂存区
 - `git add .` :将工作区的内容一起添加到暂存区
 
@@ -100,17 +101,16 @@ ssh-add ~/.ssh/github_id_rsa
 - `git reset --soft 版本号`：仅重置本地仓库
 - `git reset --mixed 版本号`：重置本地仓库和暂存区，默认行为
 - `git reset --hard 版本号`：重置本地仓库、暂存区和工作区(危险，会覆盖正在开发的代码)
-  
 - `git reflog`:可以查看所有记录，包括被"丢弃"的版本
 - `git log`:查看提交记录，不包括被"丢弃"的版本
 
 ### git 忽略文件.gitignore
 
-::: warning  .gitignore只对从来没有commit过的文件起作用 
+::: warning .gitignore 只对从来没有 commit 过的文件起作用
 
-项目中的某个文件（比如stupid.txt)已经被commit，并push到server了，这时发现stupid.txt不应该被git管理，
-同步到团队每个开发人员那里，这时在.gitignore文件里面添加"stupid.txt"已经不起作用了。
-因为.gitignore只对从来没有commit过的文件起作用。这时可以
+项目中的某个文件（比如 stupid.txt)已经被 commit，并 push 到 server 了，这时发现 stupid.txt 不应该被 git 管理，
+同步到团队每个开发人员那里，这时在.gitignore 文件里面添加"stupid.txt"已经不起作用了。
+因为.gitignore 只对从来没有 commit 过的文件起作用。这时可以
 
 1. 文件夹：`git rm -r --cached directory_name`
 2. 文件：`git rm --cached stupid.txt`
@@ -159,8 +159,4 @@ checkout=>**签出**操作(webstrom)
 
 克隆远程仓库到本地：`git clone `
 
-拉取远程仓库的最新代码到本地：`git pull` 
-
-
-
- 
+拉取远程仓库的最新代码到本地：`git pull`

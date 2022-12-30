@@ -175,27 +175,11 @@ history 接口是 HTML5 新增的, 它有六种模式改变 URL 而不刷新页�
 </script>
 ```
 
-## react-router
+<img src="https://ftp.bmp.ovh/imgs/2022/02/f86f98dd6ff7d01b.png" style="width:50%;margin-left:50%;transform:translateX(-50%)" />
 
-::: warning ⚠️
+## React-Router V5
 
-这里我使用的版本是版本：V5 ,最新版本是 V6
-
-官方文档：
-
-[v5](https://v5.reactrouter.com/web/guides/quick-start)
-
-[v6](https://reactrouter.com/docs/en/v6)
-
-相关文章：
-
-[React-Router v6 完全解读指南 - react-router 篇（万字长文，学懂毕业）](https://juejin.cn/post/7067436563457638413)
-
-[浅谈 react-router-dom V6 的配置使用](https://juejin.cn/post/7095293981713498149)
-
-[「React 进阶」react-router v6 通关指南](https://juejin.cn/post/7069555976717729805)
-
-:::
+//TODO v6 over=> review codewhy_react核心精讲 现在的文档是`依托答辩`
 
 React Router 的版本 4 开始，路由不再集中在一个包中进行管理了：
 
@@ -207,20 +191,19 @@ React Router 的版本 4 开始，路由不再集中在一个包中进行管理�
 
 安装 react-router-dom 会自动帮助我们安装 react-router 的依赖：`yarn add react-router-dom`
 
-## Router 的基本使用
+###  基本使用
 
-react-router 最主要的 API 是给我们提供的一些组件：
+`react-router` 最主要的` API` 是给我们提供的一些组件：
 
-- BrowserRouter 或 HashRouter
-  - Router 中包含了对路径改变的监听，并且会将相应的路径传递给子组件
-  - BrowserRouter 使用 history 模式
-  - HashRouter 使用 hash 模式
-- Link 和 NavLink：
-
-  - 通常路径的跳转是使用 Link 组件，最终会被渲染成 a 元素
-  - NavLink 是在 Link 基础之上增加了一些样式属性
-  - to 属性：Link 中最重要的属性，用于设置跳转到的路径
-
+- `BrowserRouter `或 `HashRouter`
+  - `Router `中包含了对路径改变的监听，并且会将相应的路径传递给子组件
+  - `BrowserRouter` 使用` history `模式
+  - `HashRouter` 使用 `hash` 模式
+- `Link `和 `NavLink`：
+  - 通常路径的跳转是使用 `Link` 组件，最终会被渲染成 `a` 元素
+  - `NavLink `是在` Link `基础之上增加了一些样式属性
+  - `to` 属性：`Link `中最重要的属性，用于设置跳转到的路径
+  
 - Route：
   - Route 用于路径的匹配
   - path 属性：用于设置匹配到的路径
@@ -240,7 +223,6 @@ class App extends Component {
         <BrowserRouter>
           <Link to="/">首页</Link>
           <Link to="/about">关于</Link>
-
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
         </BrowserRouter>
@@ -252,19 +234,7 @@ class App extends Component {
 export default App
 ```
 
-## NavLink 的使用
-
-需求：路径选中时，对应的 a 元素变为红色
-
-这个时候，我们要使用 NavLink 组件来替代 Link 组件：
-
-- activeStyle：活跃时（匹配时）的样式
-- activeClassName：活跃时添加的 class
-- exact：是否精准匹配
-
-默认的 activeClassName：事实上在默认匹配成功时，NavLink 就会添加上一个动态的 active class，所以我们也可以直接编写样式。当然，如果你担心这个 class 在其他地方被使用了，出现样式的层叠，也可以自定义 class
-
-## Switch 的作用
+### Switch
 
 我们来看下面的路由规则：
 
@@ -291,7 +261,7 @@ export default App
 </Switch>
 ```
 
-## Redirect
+### Redirect
 
 Redirect 用于路由的重定向，当这个组件出现时，就会执行跳转到对应的 to 路径中：
 
@@ -328,7 +298,7 @@ class User extends Component {
 export default User
 ```
 
-## 路由的嵌套
+### 路由嵌套
 
 在开发中，路由之间是存在嵌套关系的
 
@@ -380,7 +350,7 @@ class Abouts extends Component {
 export default Abouts
 ```
 
-## 手动路由跳转
+### 手动路由跳转
 
 目前我们实现的跳转主要是通过 Link 或者 NavLink 进行跳转的，实际上我们也可以通过 JavaScript 代码进行跳转
 
@@ -563,9 +533,9 @@ ReactDOM.render(
 )
 ```
 
-## 参数传递
+### 参数传递
 
-### 动态路由
+#### 动态路由
 
 动态路由的概念指的是路由中的路径并不会固定：
 
@@ -647,7 +617,7 @@ class Order extends Component {
 export default Order;
 ```
 
-### search 传递参数
+#### search 传递参数
 
 ```jsx
 // app.js
@@ -745,7 +715,7 @@ class Order2 extends Component {
 export default Order2
 ```
 
-### Link 中 to 可以直接传入一个对象
+#### Link 中 to 可以直接传入一个对象
 
 这个对象有四个属性：
 
@@ -760,7 +730,7 @@ export default Order2
 </NavLink>
 ```
 
-## react-router-config
+### react-router-config
 
 目前我们所有的路由定义都是直接使用 Route 组件，并且添加属性来完成的。 但是这样的方式会让路由变得非常混乱，我们希望将所有的路由配置放到一个地方进行集中管理： 这个时候可以使用 react-router-config 来完成
 
@@ -959,445 +929,135 @@ class Abouts extends Component {
 export default Abouts
 ```
 
-## 🌟🌟🌟React-Router V6
+## React-Router V6
+
+## 基本使用
+
+不同于`vueRouter`作为一个`Vue`插件进行注册使用，`ReactRouter`需要使用`BrowserRouter`（` history `模式）或`HashRouter`（ `hash` 模式）对根`App`组件进行包裹使用
+
+```jsx
+<HashRouter>
+<App />
+</HashRouter>
+```
+
+## 路由映射配置
+
+`Routes`:包裹所有的`Route`，在其中匹配一个路由
+
+v5使用的`Switch`组件，或者`Route`可以单独存在
+
+`Route`:`Route`用于路径的匹配
+
+- `path`属性：用于设置匹配到的路径
+- `element`属性：设置匹配到路径后，渲染的组件 <Badge text='v5使用的是component属性' />
+- `exact`:精准匹配，只有精准匹配到完全一致的路径，才会渲染对应的组件 <Badge text='v6不再支持该属性,自动精准匹配' type='danger'/>
+
+## 路由配置和跳转
+
+通常路径的跳转是使用`Link`组件，最终会被渲染成`a`元素
+
+`to`属性：`Link`中最重要的属性，用于设置跳转到的路径
+
+```jsx
+import {Link, Route, Routes} from "react-router-dom";
+import About from "./About"; 
+import Home from "./Home";
+
+function App(props) {
+    return (
+        <div>
+            <header>
+                <Link to={'/'}>首页</Link>
+                <Link to={'/about'}>关于</Link>
+            </header>
+            <div className="main">
+                <Routes>
+                    <Route  path='/' element={<Home/>}></Route>
+                    <Route path='/about' element={<About/>}></Route>
+                </Routes>
+            </div>
+        </div>
+    );
+}
+
+export default App;
+```
+
+## Navigate导航 <Badge text='v5的Redirect'/>
+
+`navigate`用于路由的重定向，当这个组件出现时，就会执行跳转到对应的`to`路径中。
+
+例如判断当前用户登录状态，未登录跳转到登录页：
+
+```jsx
+function Home(props) {
+    const {isLogin,changeLoginStatus}=useState(false)
+    return (
+        <div>
+            {
+                isLogin?'这是首页':<Navigate to={'/login'}></Navigate>
+            }
+        </div>
+    );
+}
+```
+
+## 404页面配置
+
+设置这样一个`Route`，当前面的路由都没有匹配上就会匹配这个路由:
+
+```jsx {4}
+                <Routes>
+                    <Route  path='/' element={<Home/>}></Route>
+                    <Route path='/about' element={<About/>}></Route>
+                    <Route path='*' element={<NotFound />}></Route>
+                </Routes>
+```
+
+## 路由嵌套
+
+让父路由包裹子路由：
+
+```jsx
+                <Routes>
+                    <Route path='/' element={<Navigate to={'/home'}/>}></Route>
+                    <Route path={'/home'} element={<Home/>}>
+                        {/*子路由匹配时,/home默认跳转到'/home/shop' 防止页面空白*/}
+                        <Route path='/home' element={<Navigate to={'/home/shop'}/>}></Route>
+                        <Route path={'/home/shop'} element={<Cart/>}></Route>
+                        <Route path={'/home/news'} element={<New/>}></Route>
+                    </Route>
+                    <Route path='/about' element={<About/>}>
+                    </Route>
+                    <Route path='/login' element={<Login/>}></Route>
+                    <Route path='*' element={<NotFound/>}></Route>
+                </Routes>
+```
+
+在`home`组件下：
+
+```jsx
+            <div>
+                <Link to={'/home/shop'}>商品列表</Link>
+                <Link to={'/home/news'}>消息列表</Link>
+            </div>
+{/*用于在父路由元素中作为子路由的占位元素*/}
+            <Outlet/>
+```
+
+## 编程式导航
+
+## 函数组件
+
+```jsx
+    const navigate=useNavigate()
+    function goAbout(){
+        navigate('/about')
+    }
+    
+              <button onClick={goAbout}>
+                    编程式导航去关于
+                </button>
+```
 
-# <img src="https://ftp.bmp.ovh/imgs/2022/02/f86f98dd6ff7d01b.png" style="width:50%;margin-left:50%;transform:translateX(-50%)" />
-
-### 概述
-
-1. React Router 以三个不同的包发布到 npm 上，它们分别为：
-
-   1. react-router: 路由的核心库，提供了很多的：组件、钩子。
-   2. <strong style="color:#dd4d40">**react-router-dom:**</strong > <strong style="color:#dd4d40">包含 react-router 所有内容，并添加一些专门用于 DOM 的组件，例如 `<BrowserRouter>`等 </strong>。
-   3. react-router-native: 包括 react-router 所有内容，并添加一些专门用于 ReactNative 的 API，例如:`<NativeRouter>`等。
-
-2. 与 React Router 5.x 版本相比，改变了什么？
-
-   1. 内置组件的变化：移除`<Switch/>` ，新增 `<Routes/>`等。
-
-   2. 语法的变化：`component={About}` 变为 `element={<About/>}`等。
-
-   3. 新增多个 hook：`useParams`、`useNavigate`、`useMatch`等。
-
-   4. <strong style="color:#dd4d40">官方明确推荐函数式组件了！！！</strong>
-
-      ......
-
-### Component
-
-#### `<BrowserRouter>`
-
-1. 说明：`<BrowserRouter> `用于包裹整个应用。
-
-2. 示例代码：
-
-   ```jsx
-   import React from 'react'
-   import ReactDOM from 'react-dom'
-   import { BrowserRouter } from 'react-router-dom'
-
-   ReactDOM.render(
-     <BrowserRouter>{/* 整体结构（通常为App组件） */}</BrowserRouter>,
-     root
-   )
-   ```
-
-#### `<HashRouter>`
-
-1. 说明：作用与`<BrowserRouter>`一样，但`<HashRouter>`修改的是地址栏的 hash 值。
-2. 备注：6.x 版本中`<HashRouter>`、`<BrowserRouter> ` 的用法与 5.x 相同。
-
-#### `<Routes/> 与 <Route/>`
-
-1. v6 版本中移出了先前的`<Switch>`，引入了新的替代者：`<Routes>`。
-
-2. `<Routes>` 和 `<Route>`要配合使用，且必须要用`<Routes>`包裹`<Route>`。
-
-3. `<Route>` 相当于一个 if 语句，如果其路径与当前 URL 匹配，则呈现其对应的组件。
-
-4. `<Route caseSensitive>` 属性用于指定：匹配时是否区分大小写（默认为 false）。
-
-5. 当 URL 发生变化时，`<Routes> `都会查看其所有子` <Route>` 元素以找到最佳匹配并呈现组件 。
-
-6. `<Route>` 也可以嵌套使用，且可配合`useRoutes()`配置 “路由表” ，但需要通过 `<Outlet>` 组件来渲染其子路由。
-
-7. 示例代码：
-
-   ```jsx
-   <Routes>
-     /*path属性用于定义路径，element属性用于定义当前路径所对应的组件*/
-     <Route path="/login" element={<Login />}></Route>
-     /*用于定义嵌套路由，home是一级路由，对应的路径/home*/
-     <Route path="home" element={<Home />}>
-       /*test1 和 test2 是二级路由,对应的路径是/home/test1 或 /home/test2*/
-       <Route path="test1" element={<Test />}></Route>
-       <Route path="test2" element={<Test2 />}></Route>
-     </Route>
-     //Route也可以不写element属性, 这时就是用于展示嵌套的路由 .所对应的路径是/users/xxx
-     <Route path="users">
-       <Route path="xxx" element={<Demo />} />
-     </Route>
-   </Routes>
-   ```
-
-#### `<Link>`
-
-1. 作用: 修改 URL，且不发送网络请求（路由链接）。
-
-2. 注意: 外侧需要用`<BrowserRouter>`或`<HashRouter>`包裹。
-
-3. 示例代码：
-
-   ```jsx
-   import { Link } from 'react-router-dom'
-
-   function Test() {
-     return (
-       <div>
-         <Link to="/路径">按钮</Link>
-       </div>
-     )
-   }
-   ```
-
-#### `<NavLink>`
-
-1. 作用: 与`<Link>`组件类似，且可实现导航的“高亮”效果。
-
-2. 示例代码：
-
-   ```jsx
-   // 注意: NavLink默认类名是active，下面是指定自定义的class
-
-   //自定义样式
-   <NavLink
-       to="login"
-       className={({ isActive }) => {
-           console.log('home', isActive)
-           return isActive ? 'base one' : 'base'
-       }}
-   >login</NavLink>
-
-   /*
-   	默认情况下，当Home的子组件匹配成功，Home的导航也会高亮，
-   	当NavLink上添加了end属性后，若Home的子组件匹配成功，则Home的导航没有高亮效果。
-   */
-   <NavLink to="home" end >home</NavLink>
-   ```
-
-#### `<Navigate>`
-
-1. 作用：只要`<Navigate>`组件被渲染，就会修改路径，切换视图。
-
-2. `replace`属性用于控制跳转模式（push 或 replace，默认是 push）。
-
-3. 示例代码：
-
-   ```jsx
-   import React, { useState } from 'react'
-   import { Navigate } from 'react-router-dom'
-
-   export default function Home() {
-     const [sum, setSum] = useState(1)
-     return (
-       <div>
-         <h3>我是Home的内容</h3>
-         {/* 根据sum的值决定是否切换视图 */}
-         {sum === 1 ? (
-           <h4>sum的值为{sum}</h4>
-         ) : (
-           <Navigate to="/about" replace={true} />
-         )}
-         <button onClick={() => setSum(2)}>点我将sum变为2</button>
-       </div>
-     )
-   }
-   ```
-
-#### `<Outlet>`
-
-1. 当`<Route>`产生嵌套时，渲染其对应的后续子路由。
-
-2. 示例代码：
-
-   ```jsx
-   //根据路由表生成对应的路由规则
-   const element = useRoutes([
-     {
-       path: '/about',
-       element: <About />,
-     },
-     {
-       path: '/home',
-       element: <Home />,
-       children: [
-         {
-           path: 'news',
-           element: <News />,
-         },
-         {
-           path: 'message',
-           element: <Message />,
-         },
-       ],
-     },
-   ])
-
-   //Home.js
-   import React from 'react'
-   import { NavLink, Outlet } from 'react-router-dom'
-
-   export default function Home() {
-     return (
-       <div>
-         <h2>Home组件内容</h2>
-         <div>
-           <ul className="nav nav-tabs">
-             <li>
-               <NavLink className="list-group-item" to="news">
-                 News
-               </NavLink>
-             </li>
-             <li>
-               <NavLink className="list-group-item" to="message">
-                 Message
-               </NavLink>
-             </li>
-           </ul>
-           {/* 指定路由组件呈现的位置 */}
-           <Outlet />
-         </div>
-       </div>
-     )
-   }
-   ```
-
-### Hooks
-
-#### useRoutes()
-
-1. 作用：根据路由表，动态创建`<Routes>`和`<Route>`。
-
-2. 示例代码：
-
-   ```jsx
-   //路由表配置：src/routes/index.js
-   import About from '../pages/About'
-   import Home from '../pages/Home'
-   import {Navigate} from 'react-router-dom'
-
-   export default [
-   	{
-   		path:'/about',
-   		element:<About/>
-   	},
-   	{
-   		path:'/home',
-   		element:<Home/>
-   	},
-   	{
-   		path:'/',
-   		element:<Navigate to="/about"/>
-   	}
-   ]
-
-   //App.jsx
-   import React from 'react'
-   import {NavLink,useRoutes} from 'react-router-dom'
-   import routes from './routes'
-
-   export default function App() {
-   	//根据路由表生成对应的路由规则
-   	const element = useRoutes(routes)
-   	return (
-   		<div>
-   			......
-         {/* 注册路由 */}
-         {element}
-   		  ......
-   		</div>
-   	)
-   }
-
-   ```
-
-#### useNavigate()
-
-1. 作用：返回一个函数用来实现编程式导航。
-
-2. 示例代码：
-
-   ```jsx
-   import React from 'react'
-   import { useNavigate } from 'react-router-dom'
-
-   export default function Demo() {
-     const navigate = useNavigate()
-     const handle = () => {
-       //第一种使用方式：指定具体的路径
-       navigate('/login', {
-         replace: false,
-         state: { a: 1, b: 2 },
-       })
-       //第二种使用方式：传入数值进行前进或后退，类似于5.x中的 history.go()方法
-       navigate(-1)
-     }
-
-     return (
-       <div>
-         <button onClick={handle}>按钮</button>
-       </div>
-     )
-   }
-   ```
-
-#### useParams()
-
-1. 作用：回当前匹配路由的`params`参数，类似于 5.x 中的`match.params`。
-
-2. 示例代码：
-
-   ```jsx
-   import React from 'react'
-   import { Routes, Route, useParams } from 'react-router-dom'
-   import User from './pages/User.jsx'
-
-   function ProfilePage() {
-     // 获取URL中携带过来的params参数
-     let { id } = useParams()
-   }
-
-   function App() {
-     return (
-       <Routes>
-         <Route path="users/:id" element={<User />} />
-       </Routes>
-     )
-   }
-   ```
-
-#### useSearchParams()
-
-1. 作用：用于读取和修改当前位置的 URL 中的查询字符串。
-
-2. 返回一个包含两个值的数组，内容分别为：当前的 seaech 参数、更新 search 的函数。
-
-3. 示例代码：
-
-   ```jsx
-   import React from 'react'
-   import { useSearchParams } from 'react-router-dom'
-
-   export default function Detail() {
-     const [search, setSearch] = useSearchParams()
-     const id = search.get('id')
-     const title = search.get('title')
-     const content = search.get('content')
-     return (
-       <ul>
-         <li>
-           <button onClick={() => setSearch('id=008&title=哈哈&content=嘻嘻')}>
-             点我更新一下收到的search参数
-           </button>
-         </li>
-         <li>消息编号：{id}</li>
-         <li>消息标题：{title}</li>
-         <li>消息内容：{content}</li>
-       </ul>
-     )
-   }
-   ```
-
-#### useLocation()
-
-1. 作用：获取当前 location 信息，对标 5.x 中的路由组件的`location`属性。
-
-2. 示例代码：
-
-   ```jsx
-   import React from 'react'
-   import { useLocation } from 'react-router-dom'
-
-   export default function Detail() {
-     const x = useLocation()
-     console.log('@', x)
-     // x就是location对象:
-     /*
-   		{
-         hash: "",
-         key: "ah9nv6sz",
-         pathname: "/login",
-         search: "?name=zs&age=18",
-         state: {a: 1, b: 2}
-       }
-   	*/
-     return (
-       <ul>
-         <li>消息编号：{id}</li>
-         <li>消息标题：{title}</li>
-         <li>消息内容：{content}</li>
-       </ul>
-     )
-   }
-   ```
-
-#### useMatch()
-
-1. 作用：返回当前匹配信息，对标 5.x 中的路由组件的`match`属性。
-
-2. 示例代码：
-
-   ```jsx
-   <Route path="/login/:page/:pageSize" element={<Login />}/>
-   <NavLink to="/login/1/10">登录</NavLink>
-
-   export default function Login() {
-     const match = useMatch('/login/:x/:y')
-     console.log(match) //输出match对象
-     //match对象内容如下：
-     /*
-     	{
-         params: {x: '1', y: '10'}
-         pathname: "/LoGin/1/10"
-         pathnameBase: "/LoGin/1/10"
-         pattern: {
-         	path: '/login/:x/:y',
-         	caseSensitive: false,
-         	end: false
-         }
-       }
-     */
-     return (
-     	<div>
-         <h1>Login</h1>
-       </div>
-     )
-   }
-   ```
-
-#### useInRouterContext()
-
-    		作用：如果组件在 `<Router>` 的上下文中呈现，则 `useInRouterContext` 钩子返回 true，否则返回 false。
-
-#### useNavigationType()
-
-1. 作用：返回当前的导航类型（用户是如何来到当前页面的）。
-2. 返回值：`POP`、`PUSH`、`REPLACE`。
-3. 备注：`POP`是指在浏览器中直接打开了这个路由组件（刷新页面）。
-
-#### useOutlet()
-
-1. 作用：用来呈现当前组件中渲染的嵌套路由。
-
-2. 示例代码：
-
-   ```jsx
-   const result = useOutlet()
-   console.log(result)
-   // 如果嵌套路由没有挂载,则result为null
-   // 如果嵌套路由已经挂载,则展示嵌套的路由对象
-   ```
-
-#### useResolvedPath()
-
-1. 作用：给定一个 URL 值，解析其中的：path、search、hash 值。

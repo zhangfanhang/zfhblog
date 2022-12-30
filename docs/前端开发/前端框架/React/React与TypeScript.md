@@ -3,7 +3,7 @@ title: React与TypeScript
 category:
   - 前端框架
   - React
-order: 8
+order: 9
 icon: typescript
 ---
 

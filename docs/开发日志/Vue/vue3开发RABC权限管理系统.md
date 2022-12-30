@@ -341,7 +341,9 @@ vue-router官网已经有示范代码：
 
 ::: danger 特别注意
 
-路由组件下必须只能有一个根节点，否则切换就会不正常，虽然vue3支持多个根节点的写法。
+路由组件下必须只能有一个根节点，否则切换就会不正常，虽然vue3支持多个根节点的写法
+
+[解决 Component inside ＜Transition＞ renders non-element root node that cannot be animated 问题](https://blog.csdn.net/qq_40719787/article/details/125631055)
 
 :::
 

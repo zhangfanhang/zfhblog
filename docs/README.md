@@ -4,8 +4,6 @@ heroFullScreen: true
 layout: BlogHome
 icon: home
 title: 首页
-heroText: ZFH's Blog
-bgImage: 'https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg7.jpg'
 projects:
   - name: 汉堡王
     icon: react

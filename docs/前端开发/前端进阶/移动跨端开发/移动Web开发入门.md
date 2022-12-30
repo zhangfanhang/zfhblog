@@ -2,7 +2,7 @@
 title: 移动Web开发入门
 tag: 移动Web
 category:
-  - 移动开发
+  - 移动跨端开发
 ---
 
 ::: tip 参考文章

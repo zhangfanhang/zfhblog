@@ -7,24 +7,9 @@ export default navbar([
     icon: 'home',
   },
   {
-    text: '前端开发',
-    link: '/前端开发/',
-    icon: 'html',
-  },
-  {
-    text: '后端开发',
-    icon: 'be',
-    link: '/后端开发/',
-  },
-  {
-    text: '基础知识',
-    icon: 'study',
-    link: '/基础知识/',
-  },
-  {
-    text: '开发日志',
-    icon: 'biji',
-    link: '/开发日志/',
+    text: '知识管理',
+    link: '/LIBRARY',
+    icon: 'zhishiku',
   },
   {
     text: '书签收藏',
@@ -32,8 +17,8 @@ export default navbar([
     link: '/书签收藏',
   },
   {
-    text: '杂七杂八',
+    text: '总结记录',
+    link: '/总结记录/菜鸟前端的22年总结',
     icon: 'note',
-    link: '/杂七杂八/',
   },
 ])
