@@ -1,13 +1,13 @@
 ---
 home: true
-heroFullScreen: false
+heroFullScreen: true
 layout: BlogHome
 icon: home
 title: 首页
 heroImage: /logo.jpg
 heroText: ZFH's Blog
 tagline: 无他，惟手熟尔
-bgImage: https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg3.jpg
+bgImage: https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/bg4.jpg
 projects:
   - name: 汉堡王
     icon: react
