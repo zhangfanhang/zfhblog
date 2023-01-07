@@ -5,7 +5,7 @@ tag:
   - elementUI
   - vue2
 category:
-  - 开发笔记
+  - 开发日志
   - Vue
 ---
 
@@ -17,7 +17,7 @@ category:
 
 `scrollWidth/scrollHeight`这些属性就像 `clientWidth/clientHeight`，但它们还包括滚动出（隐藏）的部分
 
-`clientWidth/clientHeight`:这些属性提供了元素边框内区域的大小。它们包括了 “content width” 和 “padding”，但不包括滚动条宽度（scrollbar:不同的设备和浏览器，滚动条的宽度可能有所不同，chorme浏览器的滚动条宽带为`15px`）
+`clientWidth/clientHeight`:这些属性提供了元素边框内区域的大小。它们包括了 “content width” 和 “padding”，但不包括滚动条宽度（scrollbar:不同的设备和浏览器，滚动条的宽度可能有所不同，chorme 浏览器的滚动条宽带为`15px`）
 
 [元素大小和滚动（目前看到解释最好的一篇）](https://zh.javascript.info/size-and-scroll#offsetwidthheight)
 
@@ -52,5 +52,3 @@ const el = this.$refs.text
 // 大于即超出可视区
 this.show = el && el.scrollWidth > el.offsetWidth
 ```
-
- 

@@ -5,7 +5,7 @@ tag:
   - vite3
   - vue3
 category:
-  - 开发笔记
+  - 开发日志
   - Vue
 ---
 

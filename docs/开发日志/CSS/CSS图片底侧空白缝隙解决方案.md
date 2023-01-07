@@ -2,7 +2,7 @@
 title: CSS图片底侧空白缝隙解决方案
 isOriginal: true
 category:
-  - 开发笔记
+  - 开发日志
   - CSS
 ---
 

@@ -3,7 +3,7 @@ title: vue2如何实现界面刷新
 isOriginal: true
 order: 1
 category:
-  - 开发笔记
+  - 开发日志
   - Vue2
 ---
 

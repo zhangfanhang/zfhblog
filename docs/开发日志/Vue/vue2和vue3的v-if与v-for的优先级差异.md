@@ -1,7 +1,7 @@
 ---
 title: vue2和vue3的v-if与v-for的优先级差异
 category:
-  - 开发笔记
+  - 开发日志
   - Vue
 ---
 
@@ -9,16 +9,18 @@ category:
 
 ```vue
 <template slot-scope="scope">
-   <template v-if="item.showConfig.type=== 'button'">
-      <el-button class="table-opt-button" 
-                 plain 
-                 v-for="(button, index) in item.showConfig.buttons" 
-                 :key="index + button.title"
-                 :title="button.title" 
-                 @click="button.func(scope.row)" 
-                 v-if="button.show ? button.show(scope.row, button.buttonCode) : true">
-                  <i :class="button.icon"></i>
-      </el-button>
+  <template v-if="item.showConfig.type === 'button'">
+    <el-button
+      class="table-opt-button"
+      plain
+      v-for="(button, index) in item.showConfig.buttons"
+      :key="index + button.title"
+      :title="button.title"
+      @click="button.func(scope.row)"
+      v-if="button.show ? button.show(scope.row, button.buttonCode) : true"
+    >
+      <i :class="button.icon"></i>
+    </el-button>
   </template>
 </template>
 ```
@@ -38,7 +40,7 @@ category:
 - `Vue3`:当它们同时存在于一个节点上时，`v-if` 比 `v-for` 的优先级更高。这意味着 `v-if` 的条件将无法访问到 `v-for` 作用域内定义的变量别名：
 
 ```vue
-	<!--
+<!--
  这会抛出一个错误，因为属性 todo 此时
  没有在该实例上定义
 -->
@@ -60,4 +62,3 @@ category:
   </li>
 </template>
 ```
-

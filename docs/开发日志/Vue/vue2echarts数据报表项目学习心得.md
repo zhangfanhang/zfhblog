@@ -5,7 +5,7 @@ tag:
   - echarts
   - vue2
 category:
-  - 开发笔记
+  - 开发日志
   - Vue
 ---
 

@@ -8,8 +8,6 @@ category:
 
 [DOM 接口](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model)
 
-// TODO: 2022.10.23 改。
-
 **"DOM 是 JS 操控 HTML 和 CSS 的桥梁"**
 
 ## DOM 简介

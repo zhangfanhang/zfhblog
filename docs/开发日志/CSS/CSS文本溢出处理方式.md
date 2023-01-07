@@ -1,7 +1,7 @@
 ---
 title: CSS文本溢出处理方式
 category:
-  - 开发笔记
+  - 开发日志
   - CSS
 order: 1
 ---

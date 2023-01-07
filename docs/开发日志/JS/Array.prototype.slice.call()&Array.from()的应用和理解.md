@@ -1,7 +1,7 @@
 ---
 title: Array.prototype.slice.call()&Array.from()的应用和理解
 category:
-  - 开发笔记
+  - 开发日志
   - JS
 ---
 

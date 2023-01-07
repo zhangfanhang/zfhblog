@@ -1,7 +1,7 @@
 ---
 title: Hook对比HOC和renderProps
 category:
-  - 开发笔记
+  - 开发日志
   - React
 ---
 
@@ -74,7 +74,7 @@ class MouseTracker extends React.Component {
     return (
       <div>
         <h1>移动鼠标!</h1>
-        <Mouse render={position => <Logo position={position} />} />
+        <Mouse render={(position) => <Logo position={position} />} />
       </div>
     )
   }
@@ -124,7 +124,7 @@ function withMouse(WrappedComponent) {
       window.removeEventListener('mousemove', this.handleMouseMove)
     }
     x
-    handleMouseMove = e => {
+    handleMouseMove = (e) => {
       this.setState({
         x: e.clientX,
         y: e.clientY,
@@ -183,7 +183,7 @@ import { useEffect, useState } from 'react'
 
 function Mouse(props) {
   const [position, setPostion] = useState({ x: 0, y: 0 })
-  const handleMouseMove = e => {
+  const handleMouseMove = (e) => {
     setPostion({ x: e.clientX, y: e.clientY })
   }
   useEffect(() => {
@@ -219,7 +219,7 @@ function Logo(props) {
 function App() {
   return (
     <div>
-      <Mouse render={position => <Logo position={position} />} />
+      <Mouse render={(position) => <Logo position={position} />} />
     </div>
   )
 }

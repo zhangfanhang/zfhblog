@@ -1,8 +1,5 @@
 ---
 title: Set和Map数据结构
-tag:
-  - Set
-  - Map
 category:
   - 前端进阶
   - ES6
@@ -10,36 +7,28 @@ category:
 
 ## Set
 
-### set 是什么
+`Set` 是一种**无序且唯一**的数据结构
 
-1. 什么是 Set  
-   Set 是一系列**无序**、**没有重复值**的数据集合
-2. 理解 Set
-
-- set 中不能有重复的成员
-- Set**没有下标**去标示每一个值，所以 Set 是无序的，也不能像数组那样通过下标去访问 Set 的成员
+`Set`本身是一个构造函数，用来生成 `Set` 数据结构
 
 ```js
 const s = new Set()
-s.add(1)
-s.add(2)
-console.log(s) // Set { 1, 2 }
 ```
 
 ### set 实例的方法和属性
 
-1. 方法
+#### add
 
-- add
-
-返回值：`Set`对象本身
+添加某个值，返回 `Set` 结构本身
 
 ```js
 const s = new Set()
 s.add(1).add(2)
 ```
 
-- has
+#### has
+
+返回一个布尔值，表示该值是否为`Set`的成员
 
 ```js
 const s = new Set()
@@ -47,8 +36,8 @@ s.add(1).add(2)
 console.log(s.has(1)) // true
 ```
 
-- delete  
-  使用 delete 删除不存在的成员，什么都不会发生，也不会报错
+####  delete  
+删除某个值，返回一个布尔值，表示删除是否成功
 
 ```js
 const s = new Set()
@@ -56,7 +45,9 @@ s.add(1).add(2)
 s.delete(1) // true
 ```
 
-- clear:清空 set
+####  clear
+
+清空 `Set`，没有返回值
 
 ```js
 const s = new Set()
@@ -66,7 +57,7 @@ s.clear()
 console.log(s) // Set {}
 ```
 
-- forEach(数组,set map 都有这个方法)
+####  forEach <Badge text='数组,set map 都有这个方法'/>
 
 ```js
 const s = new Set()
@@ -78,9 +69,9 @@ s.forEach(function (v, k, set) {
 }, 这里修改this执向)
 ```
 
-1. 属性
+####  size
 
-size:返回成员个数
+返回成员个数
 
 ### Set 构造函数的参数
 
@@ -91,7 +82,7 @@ const s = new Set([1, 2, 1])
 console.log(s) // Set(2) { 1, 2 }
 ```
 
-2. 字符串、arguments、Nodelist、Set 等
+2. 字符串、arguments、Nodelist、Set 等类数组对象
 
 ```js
 // 字符串组作为Set构造函数的参数
@@ -106,17 +97,12 @@ s.add(1).add(2)
 // 相当于复制了了一个全新的Set
 const b = new Set(s)
 console.log(b) //Set { 1, 2 }
+console.log(b===s) // false
 ```
 
-### Set 的注意事项
+### Set判断重复的方式
 
-1. 判断重复的方式  
-   set 对重复值的判断**基本**遵循严格相等,但是对于 NaN 的判断与（===）不同，**Set 中 NaN 等于 NaN**
-2. 什么时候使用 Set
-
-- `数组`或`字符串`去重时
-- 不需要通过下标访问，只需要遍历时
-- 为了使用 Set 提供的方法和属性时（add delete clear has forEach size 等）
+`set` 对重复值的判断**基本**遵循严格相等,但是对于 `NaN` 的判断与`===`不同，**`Set `中 `NaN` 等于` NaN`**
 
 ### Set 的应用
 
@@ -133,55 +119,23 @@ console.log([...new Set([1, 2, 1, 2, 1])])
 console.log([...new Set('aabbccd')].join(''))
 ```
 
-3. 存放 DOM 元素
-
-```html
-<body>
-  <p>1</p>
-  <p>2</p>
-  <p>3</p>
-  <script>
-    // nodelist 作为Set构造函数的参数
-    const s = new Set(document.querySelectorAll('p'))
-    s.forEach(function (e) {
-      e.style.backgroundColor = 'red'
-    })
-  </script>
-</body>
-```
-
 ## Map
 
-### Map 是什么
-
-1. Map 和对象都是键值对的集合
-
-key->value
-
-```js
-const m = new Map()
-m.set('name', 'alex')
-```
-
-2. Map 和对象的区别
-
-- 对象一般用字符串当作键
-- 基本数据类型：数字、字符串、布尔值、 undefined、null,引用数据类型：对象（［］、｛｝、函数、Set、Map 等），以上都可以作为 Map 的键
+`Map` 和对象都是键值对的集，但是`Map`“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键
 
 ### Map 实例的属性和方法
 
-1. 方法
+#### set  
 
-- set  
-  使用 set 添加的新成员，键如果已经存在，后添加的键值对覆盖已有的,返回值为该 map 对象
+使用 `set` 添加的新成员，键如果已经存在，后添加的键值对覆盖已有的,返回值为该` map `对象
 
 ```js
 const m = new Map()
 m.set('age', 18).set('name', 'alex').set('age', 111)
 ```
 
-- get  
-  get 获取不存在的成员，返回 undefined
+#### get  
+`get`方法读取`key`对应的键值，如果找不到`key`，返回`undefined`
 
 ```js
 const m=new Map()
@@ -189,7 +143,9 @@ m.set('age',18).set('name','alex').set('age',111)
 console.log(m.get('name') // 'alex'
 ```
 
-- has
+#### has
+
+`has`方法返回一个布尔值，表示某个键是否在当前 `Map `对象之中
 
 ```js
 const m = new Map()
@@ -197,8 +153,8 @@ m.set('age', 18).set('name', 'alex').set('age', 111)
 console.log(m.has('name')) // true
 ```
 
-- delete  
-  使用 delete 删除不存在的成员，什么都不会发生，也不会报错
+#### delete  
+`delete`方法删除某个键，返回`true`。如果删除失败，返回`false`
 
 ```js
 const m = new Map()
@@ -206,7 +162,9 @@ m.set('age', 18).set('name', 'alex').set('age', 111)
 m.delete('name') // true
 ```
 
-- clear
+#### clear
+
+清除所有成员没有返回值
 
 ```js
 const m = new Map()
@@ -214,7 +172,7 @@ m.set('age', 18).set('name', 'alex').set('age', 111)
 m.clear()
 ```
 
-- forEach
+#### forEach
 
 ```js
 const m = new Map()
@@ -224,14 +182,16 @@ m.forEach(function (value, key, map) {
 }, 这里修改this指向)
 ```
 
-2. 属性
+#### size
 
-size：对象没有类似属性
+// 看下imooc怎么讲的
+
+返回 Map 结构的成员总数
 
 ### Map 构造函数的参数
 
-1. 数组
-   **只能**传二维数组，而且必须体现出键和值
+#### 数组
+**只能**传二维数组，而且必须体现出键和值
 
 ```js
 const m = new Map([
@@ -241,9 +201,9 @@ const m = new Map([
 console.log(m)
 ```
 
-2. Set Map
+#### Set 
 
-- Set 中也必须体现出键和值，和二维数组类似
+Set 中也必须体现出键和值，和二维数组类似
 
 ```js
 const s = new Set([
@@ -254,43 +214,10 @@ const m = new Map(s)
 console.log(m) // Map { 'age' => 123, 'name' => 'frank' }
 ```
 
-- 传入 Map 相当于复制了一个全新的 Map
+#### Map
 
-### Map 的注意事项
+传入 `Map `相当于复制了一个全新的 `Map`
 
-1. 判断重复的方式(后添加的新成员，键如果已经存在，后添加的键值对覆盖已有的)
-   基本遵循严格相等，例外 Map 中 NaN 等于 NaN
-2. 什么时候使用 Map  
-   如果**只是需要 key->value**的结构，或者需要字符串以外的值做键，使用 Map 更合适
+### Map 判断重复的方式
 
-**只有模拟现实世界的实体时，才使用对象**
-
-### Map 的应用
-
-```html
-<body>
-  <p>1</p>
-  <p>2</p>
-  <p>3</p>
-  <script>
-    const [p1, p2, p3] = document.querySelectorAll('p')
-    const creatMap = (color, backgroundColor, fontSize) => {
-      const m = new Map([
-        ['color', color],
-        ['backgroundColor', backgroundColor],
-        ['fontSize', fontSize],
-      ])
-      return m
-    }
-    const newm = new Map([
-      // 调用creatMap函数返回的是一个map
-      [p1, creatMap('red', 'green', '34px')],
-      [p2, creatMap('black', 'blue', '30px')],
-      [p3, creatMap('green', 'orange', '15px')],
-    ])
-    newm.forEach(function (resultmap, elem) {
-      resultmap.forEach((value, k) => (elem.style[k] = value))
-    })
-  </script>
-</body>
-```
+判断重复的方式和`Set`相同

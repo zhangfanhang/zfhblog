@@ -25,7 +25,7 @@ order: 5
 
 环境光`AmbientLight`环境光会均匀的照亮场景中的所有物体。环境光不能用来投射阴影，因为它没有方向
 
-平行光`DirectionalLight` ,必须设置`positon`它的方向是从一个平行光的位置` position`到 `target`(默认(0,0,0))的位置
+平行光`DirectionalLight` ,必须设置`positon`它的方向是从一个平行光的位置` position`到 `target`(默认(0,0,0))的位置。平行光可以投射阴影
 
 ## 置换贴图与顶点细分设置
 
@@ -133,9 +133,7 @@ render()
 
 [poliigon](https://www.poliigon.com/)
 
-~~[3dtextures](https://3dtextures.me/)~~
-
-[Bridge](https://quixel.com/bridge)<Badge text='free'/>
+[Bridge](https://quixel.com/bridge)<Badge text='推荐资源多'/>
 
 ## 环境贴图
 

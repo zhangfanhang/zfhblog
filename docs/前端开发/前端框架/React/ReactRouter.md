@@ -1055,9 +1055,7 @@ function Home(props) {
     function goAbout(){
         navigate('/about')
     }
-    
               <button onClick={goAbout}>
                     编程式导航去关于
                 </button>
 ```
-

@@ -1,5 +1,5 @@
 ---
-title: JS高级
+title: ES6
 icon: javascript
 index: false
 dir:

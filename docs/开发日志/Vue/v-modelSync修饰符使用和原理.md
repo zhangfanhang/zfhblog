@@ -6,7 +6,7 @@ tag:
   - vue3
   - 原理
 category:
-  - 开发笔记
+  - 开发日志
   - Vue
 ---
 
@@ -27,7 +27,7 @@ category:
       <input
         style="width: 300px;height: 20px"
         :value="text2"
-        @input="e => (text2 = e.target.value)"
+        @input="(e) => (text2 = e.target.value)"
       />
     </div>
   </div>
@@ -111,8 +111,8 @@ export default {
 <template>
   <div>
     <h1>sync修饰符</h1>
-    
-   <!-- <my-sync :title="title" @update:title="titleChange" /> :-->
+
+    <!-- <my-sync :title="title" @update:title="titleChange" /> :-->
     <!-- 使用 sync 修饰符 :-->
     <my-sync :title.sync="title" />
     <h2>title:{{ title }}</h2>

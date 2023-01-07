@@ -1,7 +1,7 @@
 ---
 title: 数组delete元素
 category:
-  - 开发笔记
+  - 开发日志
   - JS
 ---
 

@@ -54,29 +54,16 @@ renderer.render(scene, camera)
 
 ::: tip 图片来源
 
-
-
 [Three 之 three.js （webgl）透视视角和正交视角，以及透视转正交的视角切换](https://blog.csdn.net/u014361280/article/details/124544320)
-
-[带你入门three.js——从0到1实现一个3d可视化地图](https://blog.csdn.net/KlausLily/article/details/118715483)
 
 :::
 
 这一投影模式被用来模拟人眼所看到的景象，它是 3D 场景的渲染中使用得最普遍的投影模式
 
-![透视相机示意图](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E9%80%8F%E8%A7%86%E7%9B%B8%E6%9C%BA%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
-
-1. 摄像机视锥体垂直视野角度 也就是图中的 **「a」**
-2. 摄像机视锥体近端面 也就是图中的 **「near plane」**
-3. 摄像机视锥体远端面 也就是图中的 **「far plane」**
-4. 摄像机视锥体长宽比 **「表示输出图像的宽和高之比」**
-
-参数依次位：
-
 ![透视相机示意图2](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/%E9%80%8F%E8%A7%86%E7%9B%B8%E6%9C%BA%E7%A4%BA%E6%84%8F%E5%9B%BE2.png)
 
-`fov `— 摄像机视锥体垂直视野角度,默认45
-`aspect `— 摄像机视锥体长宽比，默认1
+`fov `— fov表示视场，所谓视场就是能够看到的角度范围，人的眼睛大约能够看到180度的视场，视角大小设置要根据具体应用，一般游戏会设置60~90度
+`aspect `— aspect表示渲染窗口的长宽比，如果一个网页上只有一个全屏的canvas画布且画布上只有一个窗口，那么aspect的值就是网页窗口客户区的宽高比
 `near` — 摄像机视锥体近端面,`near`属性表示的是从距离相机多远的位置开始渲染，一般情况会设置一个很小的值，默认0.1
 `far` — 摄像机视锥体远端面,`far`属性表示的是距离相机多远的位置截止渲染，如果设置的值偏小，会有部分场景看不到，默认1000
 
