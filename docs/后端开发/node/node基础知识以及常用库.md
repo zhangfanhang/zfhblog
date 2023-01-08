@@ -1,13 +1,8 @@
 ---
 title: node基础知识以及常用库
-tag:
-  - npm
-  - yarn
-  - commonJs
-  - nrm
-  - nvm
+category: 
+  - 后端开发
   - node
-category: node技术栈
 order: 1
 ---
 

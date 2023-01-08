@@ -63,6 +63,7 @@ export default hopeTheme({
       Email: 'mailto:zhangfanhang@znv.com',
       Github: 'https://github.com/zhangfanhang',
       Gitee: 'https://gitee.com/zhangfanhang',
+      qq: '543629463',
     },
   },
   encrypt: {

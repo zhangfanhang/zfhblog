@@ -1,4 +1,14 @@
 // place your custom styles herend
+@font-face {
+  font-family: Sans;
+  src: url('/Sans.otf') format('opentype');
+}
+body,
+.title,
+.blogger-info,
+.description {
+  font-family: Sans !important;
+}
 .logo,
 .hero-image {
   border-radius: 5px;
