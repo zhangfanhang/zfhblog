@@ -179,36 +179,31 @@ history 接口是 HTML5 新增的, 它有六种模式改变 URL 而不刷新页�
 
 ## React-Router V5
 
-//TODO v6 over=> review codewhy_react核心精讲 现在的文档是`依托答辩`
+`React Router` 的版本 4 开始，路由不再集中在一个包中进行管理了：
 
-React Router 的版本 4 开始，路由不再集中在一个包中进行管理了：
+- `react-router` 是 `router `的核心部分代码
+- `react-router-dom` 是用于浏览器的
+- `react-router-native` 是用于原生应用的
 
-- react-router 是 router 的核心部分代码
-- react-router-dom 是用于浏览器的
-- react-router-native 是用于原生应用的
+目前我们使用的` React Router` 版本是@5.2.0 的版本
 
-目前我们使用的 React Router 版本是@5.2.0 的版本
-
-安装 react-router-dom 会自动帮助我们安装 react-router 的依赖：`yarn add react-router-dom`
+安装 `react-router-dom` 会自动帮助我们安装` react-router `的依赖：`yarn add react-router-dom`
 
 ###  基本使用
 
 `react-router` 最主要的` API` 是给我们提供的一些组件：
 
 - `BrowserRouter `或 `HashRouter`
-  - `Router `中包含了对路径改变的监听，并且会将相应的路径传递给子组件
   - `BrowserRouter` 使用` history `模式
   - `HashRouter` 使用 `hash` 模式
-- `Link `和 `NavLink`：
+- `Link `：<Badge text='不太常用，通常使用编程式导航'/>
   - 通常路径的跳转是使用 `Link` 组件，最终会被渲染成 `a` 元素
-  - `NavLink `是在` Link `基础之上增加了一些样式属性
   - `to` 属性：`Link `中最重要的属性，用于设置跳转到的路径
-  
-- Route：
-  - Route 用于路径的匹配
-  - path 属性：用于设置匹配到的路径
-  - component 属性：设置匹配到路径后，渲染的组件
-  - exact：精准匹配，只有精准匹配到完全一致的路径，才会渲染对应的组件；
+- `Route`：
+  - `Route` 用于路径的匹配
+  - `path` 属性：用于设置匹配到的路径
+  - `component `属性：设置匹配到路径后，渲染的组件
+  - `exact`：精准匹配，只有精准匹配到完全一致的路径，才会渲染对应的组件 
 
 ```jsx
 import { Component } from 'react'
@@ -221,7 +216,7 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <Link to="/">首页</Link>
+          
           <Link to="/about">关于</Link>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
@@ -239,7 +234,7 @@ export default App
 我们来看下面的路由规则：
 
 - 当我们匹配到某一个路径时，我们会发现有一些问题
-- 比如/about 路径匹配到的同时，/:userid 也被匹配到了，并且最后的一个 NoMatch 组件总是被匹配到
+- 比如`/about` 路径匹配到的同时，`/:userid` 也被匹配到了，并且最后的一个` NoMatch `组件总是被匹配到
 
 ```jsx
                         <Route exact path='/' component={Home}/>
@@ -248,9 +243,9 @@ export default App
                         <Route component={NoMatch}/>
 ```
 
-原因是什么呢？默认情况下，react-router 中只要是路径被匹配到的 Route 对应的组件都会被渲染
+原因是什么呢？默认情况下，`react-router` 中只要是路径被匹配到的 Route` 对应的组件都会被渲染
 
-但是实际开发中，我们往往希望有一种排他的思想:只要匹配到了第一个，那么后面的就不应该继续匹配了；这个时候我们可以使用 Switch 来将所有的 Route 进行包裹即可
+但是实际开发中，我们往往希望有一种排他的思想:只要匹配到了第一个，那么后面的就不应该继续匹配了；这个时候我们可以使用 `Switch` 来将所有的 `Route` 进行包裹即可
 
 ```jsx
 <Switch>
@@ -263,15 +258,15 @@ export default App
 
 ### Redirect
 
-Redirect 用于路由的重定向，当这个组件出现时，就会执行跳转到对应的 to 路径中：
+`Redirect` 用于路由的重定向，当这个组件出现时，就会执行跳转到对应的 to 路径中：
 
 我们这里使用这个的一个案例：
 
-用户跳转到 User 界面,但是在 User 界面有一个 isLogin 用于记录用户是否登录：
+用户跳转到 `User` 界面,但是在 `User` 界面有一个 `isLogin` 用于记录用户是否登录：
 
-- true：那么显示用户的名称
+- `true`：那么显示用户的名称
 
-- false：直接重定向到登录界面
+- `false`：直接重定向到登录界面
 
 ```jsx
 // user.jsx
@@ -296,6 +291,16 @@ class User extends Component {
 }
 
 export default User
+```
+
+### 404
+
+// TOOD 未测试
+
+> 必须放在最后一个！
+
+```jsx
+    <Route path="*" component={404}></Route>
 ```
 
 ### 路由嵌套
@@ -732,6 +737,8 @@ export default Order2
 
 ### react-router-config
 
+// TODO https://v5.reactrouter.com/web/example/route-config
+
 目前我们所有的路由定义都是直接使用 Route 组件，并且添加属性来完成的。 但是这样的方式会让路由变得非常混乱，我们希望将所有的路由配置放到一个地方进行集中管理： 这个时候可以使用 react-router-config 来完成
 
 1. 安装 react-router-config:`yarn add react-router-config`
@@ -1048,7 +1055,7 @@ function Home(props) {
 
 ## 编程式导航
 
-## 函数组件
+### 函数组件
 
 ```jsx
     const navigate=useNavigate()
@@ -1059,3 +1066,185 @@ function Home(props) {
                     编程式导航去关于
                 </button>
 ```
+
+### 类组件
+
+通过高阶组件实现
+
+```js
+import {useNavigate} from "react-router-dom";
+
+
+export default function (WrapperCompontent){
+    return (props)=>{
+        const navigator=useNavigate()
+        return (
+            <WrapperCompontent {...props} router={navigator}/>
+        )
+    }
+}
+```
+
+## 路由参数传递
+
+### 动态路由Params
+
+#### 生产
+
+```jsx
+ <Route path={'/home/shop/details/:id'} element={<Details/>}></Route>
+```
+
+```jsx
+import {useNavigate} from "react-router-dom";
+
+export default function Cart(props) {
+    const navigator=useNavigate()
+    return (
+        <div>
+            <ul>
+                {
+                    // 传递params id参数
+                    [1,2,3].map(item=><li  onClick={()=>{navigator(`/home/shop/details/${item}`)}} key={item}>商品{item}</li>)
+                }
+            </ul>
+        </div>
+    );
+}
+```
+
+#### 消费
+
+```jsx
+import {useParams} from "react-router-dom";
+
+function Details(props) {
+    let { id } = useParams();
+    return (
+        <div>
+            商品ID为:{id}
+        </div>
+    );
+}
+
+export default Details;
+```
+
+
+
+#### 查询参数Query
+
+#### 生产
+
+```jsx
+   function goAbout() {
+        navigate('/about?name=frank&age=19')
+    }
+```
+
+#### 消费
+
+```jsx
+import { useSearchParams } from "react-router-dom";
+function About(props) {
+    let [searchParams, setSearchParams] = useSearchParams();
+    const query=Object.fromEntries(searchParams)
+    console.log(query)
+    return (
+        <div>
+            这是关于页面
+            我的姓名：
+            {searchParams.get('name')}
+            我的年龄：
+            {searchParams.get('age')}
+        </div>
+    );
+}
+
+export default About;
+```
+
+## 路由配置文件
+
+v5需要使用额外的库`react-router-config`，v6像`vue-router`一样支持路由配置
+
+```js
+import About from "../About";
+import Home from "../Home";
+import NotFound from "../NotFound";
+import Login from "../Login";
+import New from '../New'
+import Cart from "../Cart";
+import Details from "../Details";
+import {Navigate} from "react-router-dom";
+
+
+export default [
+    {
+        path:'/',
+        element:<Navigate to={'/home'}/>
+    },
+    {
+        path:"/home",
+        element: <Home />,
+        children:[
+            {
+                path:'/home',
+                element:<Navigate to={'/home/shop'}/>
+            },
+            {
+                path:'/home/shop',
+                element: <Cart/>
+            },
+            {
+                path:'/home/news',
+                element: <New />
+            },
+            {
+                path:'/home/shop/details/:id',
+                element: <Details/>
+            },
+        ],
+    },
+    {
+        path:'/about',
+        element: <About/>
+    },
+    {
+        path:'/login',
+        element: <Login/>
+    },
+    {
+        path:"*",
+        element: <NotFound/>
+    }
+]
+```
+
+#### 使用
+
+```jsx
+                {
+                    useRoutes(routes)
+                }
+```
+
+
+
+## 页面懒加载
+
+```js
+const About=React.lazy(()=>import('../About'))
+```
+
+```js
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+    <Suspense fallback={<div>Loading...</div>}>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    </Suspense>
+)
+```
+

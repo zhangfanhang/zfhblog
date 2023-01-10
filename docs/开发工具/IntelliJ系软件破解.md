@@ -1,7 +1,7 @@
 ---
 title: IntelliJ系软件破解
-category: 杂记
-order: 4
+category: 开发工具
+order: 5
 ---
 
 ::: warning 目前已知可破解版本

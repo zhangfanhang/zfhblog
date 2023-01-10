@@ -1,7 +1,7 @@
 ---
 title: IntelliJ软件插件
-category: 杂记
-order: 3
+category: 开发工具
+order: 5
 ---
 
 - `Atom Material Icons`:文件类型图标

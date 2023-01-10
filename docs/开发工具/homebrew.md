@@ -1,6 +1,7 @@
 ---
 title: homebrew
 category: 开发工具
+order: 4
 ---
 
 Homebrew 是一款 Mac OS 平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。例如 homebrew 可以快速安装 git,nvm,mysql,mongodb 等开发工具
@@ -214,9 +215,11 @@ mysql -u root -p
 ```
 
 ## git
+
 ```shell
 brew install git
 ```
+
 ## nvm
 
 [更多细节](/node技术栈/node基础知识&工具#nvm)
@@ -240,15 +243,18 @@ brew install nvm
 
 检索文件工具，速度较快，比`everything`还是差一点,[github](https://github.com/sharkdp/fd)
 
-##  autojump
- [autojump](https://github.com/wting/autojump),快速跳转目录(只能跳转已经 cd 过的目录)
+## autojump
+
+[autojump](https://github.com/wting/autojump),快速跳转目录(只能跳转已经 cd 过的目录)
 
 ```shell
 # .zshrc
  [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 fpath=($fpath "/Users/frank/.zfunctions")
 ```
+
 ## zsh-syntax-highlighting
+
 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting):高亮终端的代码
 
 ```shell
@@ -323,7 +329,7 @@ print_info() {
 }
 ```
 
-![neofetch](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/neofetch.png "neofetch效果图")
+![neofetch](https://zfh-nanjing-bucket.oss-cn-nanjing.aliyuncs.com/blog-images/neofetch.png 'neofetch效果图')
 
 ## tree
 
@@ -350,4 +356,3 @@ print_info() {
     ├── connect.js
     └── context.js
 ```
-
